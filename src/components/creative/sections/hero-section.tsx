@@ -195,7 +195,7 @@ export function HeroSection({
         <div ref={titleParallax} className="will-change-transform">
           <h1
             ref={titleRef}
-            className="font-display max-w-[11ch] text-[clamp(4.5rem,18vw,11.5rem)] leading-[0.78] tracking-[-0.055em] text-[var(--foreground)] will-change-transform"
+            className="font-display text-gradient-signal max-w-[11ch] text-[clamp(4.5rem,18vw,11.5rem)] leading-[0.78] tracking-[-0.055em] will-change-transform"
             style={
               reduced
                 ? undefined

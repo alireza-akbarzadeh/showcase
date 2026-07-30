@@ -50,8 +50,8 @@
     "semantic_hash": "1fa9e4fcb3c1732ea2030e0ca4dc67c3"
   },
   "src/app/sitemap.ts": {
-    "mtime": 1785407196.7536404,
-    "ast_hash": "491edd34d9122bd5b165f6b657a5b74e",
+    "mtime": 1785408328.4340312,
+    "ast_hash": "82d6b8b9df0a0caccf339755fc91f870",
     "semantic_hash": ""
   },
   "src/app/twitter-image.tsx": {
@@ -140,8 +140,8 @@
     "semantic_hash": ""
   },
   "src/components/layout/app-shell.tsx": {
-    "mtime": 1785407953.4024327,
-    "ast_hash": "d563c116d196f5a917daed57050f2489",
+    "mtime": 1785408326.0001783,
+    "ast_hash": "3414511b63078e6b6fce779ca3317661",
     "semantic_hash": ""
   },
   "src/components/layout/index.ts": {
@@ -285,13 +285,13 @@
     "semantic_hash": "2bebd3b81ac6ecf8a92897c8b7b55256"
   },
   "src/engine/scroll/scroll-manager.ts": {
-    "mtime": 1785401321.5526254,
-    "ast_hash": "4721176f1909f755dfd83736dd28ce55",
-    "semantic_hash": "4721176f1909f755dfd83736dd28ce55"
+    "mtime": 1785408238.4343648,
+    "ast_hash": "ec2c0c4f53b79fff33c0d2a856032680",
+    "semantic_hash": ""
   },
   "src/hooks/index.ts": {
-    "mtime": 1785407937.4009078,
-    "ast_hash": "6f824ec018d9ec7872913ba3dfe7e4b0",
+    "mtime": 1785408330.294327,
+    "ast_hash": "17022d1874cccdd923bd2aa1b8c068a5",
     "semantic_hash": ""
   },
   "src/hooks/use-asset.ts": {
@@ -310,9 +310,9 @@
     "semantic_hash": ""
   },
   "src/hooks/use-reduced-motion.ts": {
-    "mtime": 1785401452.1194584,
-    "ast_hash": "6aeb1b2754d6b5515a08938891ad117c",
-    "semantic_hash": "6aeb1b2754d6b5515a08938891ad117c"
+    "mtime": 1785408277.6307096,
+    "ast_hash": "908554cabb600c69cc80a6a3568ff861",
+    "semantic_hash": ""
   },
   "src/hooks/use-scroll.ts": {
     "mtime": 1785404535.0807748,
@@ -340,18 +340,18 @@
     "semantic_hash": ""
   },
   "src/providers/index.ts": {
-    "mtime": 1785401492.632742,
-    "ast_hash": "662d2b029cca143c10aeec9705340528",
-    "semantic_hash": "662d2b029cca143c10aeec9705340528"
+    "mtime": 1785408330.1069727,
+    "ast_hash": "59cd64f67f8af761e3c32bc2a87553aa",
+    "semantic_hash": ""
   },
   "src/providers/motion-provider.tsx": {
-    "mtime": 1785404412.8357983,
-    "ast_hash": "af930147288e5abea156220ffeed14c2",
+    "mtime": 1785408275.7405365,
+    "ast_hash": "0e106b4ec9d404bb31ed00954d7270e4",
     "semantic_hash": ""
   },
   "src/providers/scroll-provider.tsx": {
-    "mtime": 1785404037.793566,
-    "ast_hash": "d9d6b338e12cc1117fc3b24d8117695d",
+    "mtime": 1785408545.5560677,
+    "ast_hash": "f2275199f9fa0d898447733630698bb0",
     "semantic_hash": ""
   },
   "src/providers/theme-context.ts": {
@@ -390,9 +390,9 @@
     "semantic_hash": ""
   },
   "src/types/scroll.ts": {
-    "mtime": 1785401259.6923852,
-    "ast_hash": "150d2ac090aa47c44a31d1ffb0732553",
-    "semantic_hash": "150d2ac090aa47c44a31d1ffb0732553"
+    "mtime": 1785408305.7062984,
+    "ast_hash": "b042021f287dcd306109ede307508f95",
+    "semantic_hash": ""
   },
   "src/utils/cn.ts": {
     "mtime": 1785401415.165508,
@@ -430,8 +430,8 @@
     "semantic_hash": "5c27369b226fcf2be8a6cfe52224e767"
   },
   "FEATURE_ROADMAP.md": {
-    "mtime": 1785408025.93462,
-    "ast_hash": "9937d9cb3b8a49f6d97d1a6ed2be919d",
+    "mtime": 1785408586.8788624,
+    "ast_hash": "c57490f9540e6f47f2aedd74c6d50311",
     "semantic_hash": ""
   },
   "README.md": {
@@ -670,8 +670,8 @@
     "semantic_hash": ""
   },
   "src/components/layout/shortcuts-overlay.tsx": {
-    "mtime": 1785407986.621904,
-    "ast_hash": "97062ad8b6c178fbe6a382e8482966e2",
+    "mtime": 1785408551.8190947,
+    "ast_hash": "3d7522ceda39484bb765055243928637",
     "semantic_hash": ""
   },
   "src/components/playground/experiments.ts": {
@@ -725,8 +725,8 @@
     "semantic_hash": ""
   },
   "src/components/layout/delight-hooks.tsx": {
-    "mtime": 1785407899.7368124,
-    "ast_hash": "532f8c588e548ee8dcebdfad0dae351b",
+    "mtime": 1785408294.1892774,
+    "ast_hash": "1b69e6f135560e021e3aac2a1a9da158",
     "semantic_hash": ""
   },
   "src/components/layout/sound-toggle.tsx": {
@@ -757,6 +757,46 @@
   "src/lib/achievements.ts": {
     "mtime": 1785407880.1793876,
     "ast_hash": "4e50bb212133a5738822a464729dbe7a",
+    "semantic_hash": ""
+  },
+  "src/app/apple-icon.tsx": {
+    "mtime": 1785408315.798125,
+    "ast_hash": "cea6bf83cc386f52d7b480ffa0437fd1",
+    "semantic_hash": ""
+  },
+  "src/app/icon.tsx": {
+    "mtime": 1785408308.209553,
+    "ast_hash": "f04aabe40c0ae3f913a1e25acc0d2e7c",
+    "semantic_hash": ""
+  },
+  "src/app/privacy/page.tsx": {
+    "mtime": 1785408317.7940629,
+    "ast_hash": "d549d497b6f0d7032fe212ffcded8e62",
+    "semantic_hash": ""
+  },
+  "src/hooks/use-motion-intensity.ts": {
+    "mtime": 1785408229.3979452,
+    "ast_hash": "e87f078987bade790618dda54435d4d8",
+    "semantic_hash": ""
+  },
+  "src/lib/analytics.test.ts": {
+    "mtime": 1785408623.2945845,
+    "ast_hash": "f3ecea5778f08ce892abf7b9c8ba5d51",
+    "semantic_hash": ""
+  },
+  "src/lib/analytics.ts": {
+    "mtime": 1785408293.685389,
+    "ast_hash": "7a4ae9fb899256bf29c90ccf6fdf6e3d",
+    "semantic_hash": ""
+  },
+  "src/lib/motion-intensity.test.ts": {
+    "mtime": 1785408623.9792876,
+    "ast_hash": "362e0a3080f2a16c8f0bb5eab5e5ff5f",
+    "semantic_hash": ""
+  },
+  "src/lib/motion-intensity.ts": {
+    "mtime": 1785408222.0925796,
+    "ast_hash": "af7c6becc5af8fcbe0ec7bf058430a8f",
     "semantic_hash": ""
   }
 }

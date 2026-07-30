@@ -46,8 +46,6 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@fontsource-variable/bricolage-grotesque": "^5.3.0",
-    "@fontsource-variable/sora": "^5.3.0",
     "@lhci/cli": "^0.15.1",
     "@next/bundle-analyzer": "^16.2.12",
     "@tailwindcss/postcss": "^4.3.3",

@@ -130,6 +130,9 @@ export const SITE = {
   calendarUrl: "https://cal.com/",
 } as const;
 
+/** Acid-lime signal — WebGL/canvas hex (matches --signal-hex). */
+export const SIGNAL_HEX = "#b8ff2e";
+
 export const SOCIALS = [
   { id: "github", label: "GitHub", href: "https://github.com/alireza-akbarzadeh" },
   { id: "linkedin", label: "LinkedIn", href: "https://linkedin.com/in/alireza-akbarzadeh" },
