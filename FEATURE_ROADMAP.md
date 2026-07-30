@@ -537,6 +537,8 @@ Fast first paint, stable scroll, no jank foundations, accessible shell.
 
 **Phase 1 exit criteria:** CI green · Lighthouse baseline captured · engines documented · GSAP-only deps · debug perf flag works.
 
+> Status: CI (lint/typecheck/test/build) + Vitest engines + `?debug=perf` + error boundaries + `engines.node>=22` are in place. Remaining Phase 1 gap: Lighthouse baseline capture.
+
 ---
 
 ## Phase 2 — Navigation & Global Systems
