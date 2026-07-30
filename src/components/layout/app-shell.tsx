@@ -1,6 +1,8 @@
+"use client";
+
 import Link from "next/link";
-import { SCENE_ORDER, SCENE_LABELS } from "@/constants";
-import type { SceneId } from "@/types/scene";
+import { ACTS, SITE } from "@/constants";
+import { getScrollManager } from "@/engine/scroll";
 
 export function SkipLink() {
   return (
@@ -19,22 +21,32 @@ export function Header() {
       <div className="flex items-center justify-between px-6 py-5 md:px-12">
         <Link
           href="#hero"
-          className="pointer-events-auto font-display text-sm tracking-[0.25em] uppercase text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+          className="pointer-events-auto font-display text-sm tracking-[0.25em] text-white uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
         >
-          Showcase
+          {SITE.name}
         </Link>
-        <nav aria-label="Primary" className="pointer-events-auto hidden md:block">
-          <ul className="flex gap-6 text-xs uppercase tracking-[0.2em] text-white/80">
-            {SCENE_ORDER.filter((id) => id !== "hero").map((id: SceneId) => (
-              <li key={id}>
-                <a
-                  href={`#${id}`}
-                  className="transition-opacity hover:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 opacity-70"
-                >
-                  {SCENE_LABELS[id]}
-                </a>
-              </li>
-            ))}
+        <nav
+          aria-label="Primary"
+          className="pointer-events-auto hidden lg:block"
+        >
+          <ul className="flex gap-6 text-xs tracking-[0.2em] text-white/80 uppercase">
+            {ACTS.map((act) => {
+              const scene = act.scenes[0];
+              return (
+                <li key={act.id}>
+                  <a
+                    href={`#${scene}`}
+                    className="opacity-70 transition-opacity hover:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+                    onClick={(event) => {
+                      event.preventDefault();
+                      if (scene) getScrollManager().scrollTo(`#${scene}`);
+                    }}
+                  >
+                    {act.short}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </div>
@@ -47,10 +59,10 @@ export function Footer() {
     <footer className="border-t border-[var(--border)] px-6 py-10 md:px-12">
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <p className="text-sm text-[var(--muted)]">
-          © {new Date().getFullYear()} Showcase. Built for the scroll.
+          © {new Date().getFullYear()} {SITE.name}. Five acts. One scroll.
         </p>
         <p className="text-sm text-[var(--muted)]">
-          Prefers reduced motion respected.
+          Keys 1–5 jump acts · ?debug=perf for FPS
         </p>
       </div>
     </footer>

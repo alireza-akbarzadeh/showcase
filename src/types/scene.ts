@@ -4,9 +4,17 @@ import type { RafFrame } from "@/types/raf";
 export type SceneId =
   | "hero"
   | "intro"
-  | "projects"
-  | "about"
   | "skills"
+  | "about"
+  | "projects"
+  | "proof"
+  | "contact";
+
+export type ActId =
+  | "introduction"
+  | "craft"
+  | "projects"
+  | "proof"
   | "contact";
 
 export interface SceneRange {

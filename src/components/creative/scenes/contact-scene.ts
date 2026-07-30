@@ -22,7 +22,7 @@ export function createContactScene(
 
   return {
     id: "contact",
-    range: { start: 0.78, end: 1, normalized: true },
+    range: { start: 0.86, end: 1, normalized: true },
     label: "Contact",
     onProgress: (ctx) => {
       const values = timeline.setProgress(ctx.progress);

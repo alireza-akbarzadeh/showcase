@@ -2,49 +2,110 @@
 
 import { useEffect, useRef } from "react";
 import { getSceneManager } from "@/engine/animation";
+import { getScrollManager } from "@/engine/scroll";
 import { createHeroScene } from "@/components/creative/scenes/hero-scene";
 import { createIntroScene } from "@/components/creative/scenes/intro-scene";
 import { createProjectsScene } from "@/components/creative/scenes/projects-scene";
 import { createAboutScene } from "@/components/creative/scenes/about-scene";
 import { createSkillsScene } from "@/components/creative/scenes/skills-scene";
+import { createProofScene } from "@/components/creative/scenes/proof-scene";
 import { createContactScene } from "@/components/creative/scenes/contact-scene";
+import { HeroSection } from "@/components/creative/sections/hero-section";
+import { ContactForm } from "@/components/creative/contact-form";
 import { Section } from "@/components/scroll/section";
-import { SCENE_LABELS } from "@/constants";
+import {
+  ABOUT_CHAPTERS,
+  PROJECTS,
+  SCENE_LABELS,
+  SKILL_CLUSTERS,
+} from "@/constants";
 import { willChange, clearWillChange } from "@/utils/performance";
 
+interface SceneHostProps {
+  ready: boolean;
+}
+
 /**
- * Scene host — wires DOM sections to the SceneManager.
- * Animation logic lives in scene factories, never in the page.
+ * Five-act narrative host — showcase content, animation in scene factories.
  */
-export function SceneHost() {
+export function SceneHost({ ready }: SceneHostProps) {
   const heroTitle = useRef<HTMLHeadingElement>(null);
   const heroSubtitle = useRef<HTMLParagraphElement>(null);
+  const heroLine = useRef<HTMLDivElement>(null);
+  const heroCue = useRef<HTMLParagraphElement>(null);
+  const heroMeta = useRef<HTMLParagraphElement>(null);
+
   const introRoot = useRef<HTMLDivElement>(null);
-  const projectsRoot = useRef<HTMLDivElement>(null);
-  const aboutRoot = useRef<HTMLDivElement>(null);
+  const introAccent = useRef<HTMLParagraphElement>(null);
+  const introLines = useRef<(HTMLParagraphElement | null)[]>([]);
+
   const skillsRoot = useRef<HTMLDivElement>(null);
+  const skillClusters = useRef<(HTMLLIElement | null)[]>([]);
+  const skillConnectors = useRef<(HTMLDivElement | null)[]>([]);
+
+  const aboutRoot = useRef<HTMLDivElement>(null);
+  const aboutChapters = useRef<(HTMLLIElement | null)[]>([]);
+
+  const projectsRoot = useRef<HTMLDivElement>(null);
+  const projectsHeading = useRef<HTMLDivElement>(null);
+  const projectPanels = useRef<(HTMLElement | null)[]>([]);
+
+  const proofRoot = useRef<HTMLDivElement>(null);
+  const proofStats = useRef<(HTMLLIElement | null)[]>([]);
+
   const contactRoot = useRef<HTMLDivElement>(null);
+  const heroSectionEl = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
+    const heroEl = document.getElementById("hero");
+    heroSectionEl.current = heroEl;
+    const unregisterHero = heroEl
+      ? getScrollManager().registerSection("hero", heroEl)
+      : undefined;
+
     const manager = getSceneManager();
     const disposers = [
       manager.register(
         createHeroScene(() => ({
           title: heroTitle.current,
           subtitle: heroSubtitle.current,
+          line: heroLine.current,
+          cue: heroCue.current,
+          meta: heroMeta.current,
         })),
       ),
       manager.register(
-        createIntroScene(() => ({ root: introRoot.current })),
+        createIntroScene(() => ({
+          root: introRoot.current,
+          accent: introAccent.current,
+          lines: introLines.current.filter(Boolean) as HTMLElement[],
+        })),
       ),
       manager.register(
-        createProjectsScene(() => ({ root: projectsRoot.current })),
+        createSkillsScene(() => ({
+          root: skillsRoot.current,
+          clusters: skillClusters.current.filter(Boolean) as HTMLElement[],
+          connectors: skillConnectors.current.filter(Boolean) as HTMLElement[],
+        })),
       ),
       manager.register(
-        createAboutScene(() => ({ root: aboutRoot.current })),
+        createAboutScene(() => ({
+          root: aboutRoot.current,
+          chapters: aboutChapters.current.filter(Boolean) as HTMLElement[],
+        })),
       ),
       manager.register(
-        createSkillsScene(() => ({ root: skillsRoot.current })),
+        createProjectsScene(() => ({
+          root: projectsRoot.current,
+          heading: projectsHeading.current,
+          panels: projectPanels.current.filter(Boolean) as HTMLElement[],
+        })),
+      ),
+      manager.register(
+        createProofScene(() => ({
+          root: proofRoot.current,
+          stats: proofStats.current.filter(Boolean) as HTMLElement[],
+        })),
       ),
       manager.register(
         createContactScene(() => ({ root: contactRoot.current })),
@@ -54,16 +115,21 @@ export function SceneHost() {
     const animated = [
       heroTitle.current,
       heroSubtitle.current,
+      heroLine.current,
+      heroCue.current,
+      heroMeta.current,
       introRoot.current,
-      projectsRoot.current,
-      aboutRoot.current,
       skillsRoot.current,
+      aboutRoot.current,
+      projectsRoot.current,
+      proofRoot.current,
       contactRoot.current,
     ].filter(Boolean) as HTMLElement[];
 
     for (const el of animated) willChange(el);
 
     return () => {
+      unregisterHero?.();
       for (const dispose of disposers) dispose();
       for (const el of animated) clearWillChange(el);
     };
@@ -71,66 +137,97 @@ export function SceneHost() {
 
   return (
     <>
-      <Section
-        id="hero"
-        className="flex min-h-[100svh] flex-col justify-end px-6 pb-24 pt-32 md:px-12 lg:px-20"
-        aria-label={SCENE_LABELS.hero}
-      >
-        <h1
-          ref={heroTitle}
-          className="font-display max-w-5xl text-[clamp(3rem,12vw,9rem)] leading-[0.9] tracking-[-0.04em] text-[var(--foreground)] will-change-transform"
-        >
-          Showcase
-        </h1>
-        <p
-          ref={heroSubtitle}
-          className="mt-6 max-w-md text-lg text-[var(--muted)] will-change-transform md:text-xl"
-        >
-          A continuous scroll-driven experience. One animation. Infinite
-          presence.
-        </p>
-      </Section>
+      {/* ACT I — Introduction */}
+      <HeroSection
+        ready={ready}
+        titleRef={heroTitle}
+        subtitleRef={heroSubtitle}
+        lineRef={heroLine}
+        cueRef={heroCue}
+        metaRef={heroMeta}
+      />
 
       <Section
         id="intro"
-        className="flex min-h-[100svh] items-center px-6 md:px-12 lg:px-20"
+        className="relative flex min-h-[110svh] items-center px-6 md:px-12 lg:px-20"
         aria-label={SCENE_LABELS.intro}
       >
-        <div ref={introRoot} className="max-w-3xl will-change-transform">
-          <p className="text-sm uppercase tracking-[0.3em] text-[var(--accent)]">
-            Intro
+        <div ref={introRoot} className="max-w-4xl will-change-transform">
+          <p
+            ref={introAccent}
+            className="font-mono text-[11px] tracking-[0.35em] text-[var(--accent)] uppercase"
+            style={{ opacity: 0 }}
+          >
+            Act I · The interface
           </p>
-          <h2 className="font-display mt-4 text-[clamp(2rem,6vw,4.5rem)] leading-[1.05] tracking-[-0.03em]">
-            Scroll is the interface.
-          </h2>
-          <p className="mt-6 max-w-xl text-lg text-[var(--muted)]">
-            Every section is a scene. Camera, shaders, and typography react to
-            velocity and progress — never to React re-renders.
-          </p>
+          <div className="mt-8 space-y-5 md:space-y-7">
+            {[
+              "Every scroll movement changes something.",
+              "Scenes own timelines. React stays out of the frame.",
+              "Performance is not an afterthought — it is the product.",
+            ].map((text, i) => (
+              <p
+                key={text}
+                ref={(el) => {
+                  introLines.current[i] = el;
+                }}
+                className="font-display text-[clamp(1.75rem,5vw,3.75rem)] leading-[1.08] tracking-[-0.03em] text-[var(--foreground)] will-change-transform"
+                style={{ opacity: 0 }}
+              >
+                {text}
+              </p>
+            ))}
+          </div>
         </div>
       </Section>
 
+      {/* ACT II — Craft */}
       <Section
-        id="projects"
-        className="flex min-h-[120svh] items-center px-6 md:px-12 lg:px-20"
-        aria-label={SCENE_LABELS.projects}
+        id="skills"
+        className="relative flex min-h-[120svh] items-center px-6 md:px-12 lg:px-20"
+        aria-label={SCENE_LABELS.skills}
       >
-        <div ref={projectsRoot} className="w-full will-change-transform">
-          <p className="text-sm uppercase tracking-[0.3em] text-[var(--accent)]">
-            Projects
+        <div ref={skillsRoot} className="w-full will-change-transform">
+          <p className="font-mono text-[11px] tracking-[0.35em] text-[var(--accent)] uppercase">
+            Act II · Craft
           </p>
-          <h2 className="font-display mt-4 text-[clamp(2rem,6vw,4.5rem)] leading-[1.05] tracking-[-0.03em]">
-            Selected work
+          <h2 className="font-display mt-4 max-w-3xl text-[clamp(2.25rem,6vw,4.75rem)] leading-[1.02] tracking-[-0.035em]">
+            How I think in systems.
           </h2>
-          <ul className="mt-12 grid gap-8 md:grid-cols-2">
-            {["Orbit", "Pulse", "Lattice", "North"].map((name) => (
-              <li key={name} className="border-t border-[var(--border)] pt-6">
-                <h3 className="font-display text-3xl tracking-[-0.02em]">
-                  {name}
+
+          <ul className="relative mt-16 grid gap-0 md:grid-cols-2 lg:grid-cols-4">
+            {SKILL_CLUSTERS.map((cluster, i) => (
+              <li
+                key={cluster.id}
+                ref={(el) => {
+                  skillClusters.current[i] = el;
+                }}
+                className="relative border-t border-[var(--border)] py-8 pr-6 will-change-transform md:min-h-[280px]"
+                style={{ opacity: 0 }}
+              >
+                <span className="font-mono text-[10px] tracking-[0.25em] text-[var(--muted)]">
+                  0{i + 1}
+                </span>
+                <h3 className="font-display mt-4 text-3xl tracking-[-0.02em]">
+                  {cluster.label}
                 </h3>
-                <p className="mt-2 text-[var(--muted)]">
-                  Placeholder case study — wire real content later.
-                </p>
+                <ul className="mt-6 space-y-2.5 text-[var(--muted)]">
+                  {cluster.skills.map((skill) => (
+                    <li key={skill} className="text-base md:text-lg">
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+                {i < SKILL_CLUSTERS.length - 1 ? (
+                  <div
+                    ref={(el) => {
+                      skillConnectors.current[i] = el;
+                    }}
+                    className="pointer-events-none absolute top-8 right-0 hidden h-px w-8 origin-left bg-[var(--accent)] lg:block"
+                    style={{ opacity: 0, transform: "scaleX(0)" }}
+                    aria-hidden="true"
+                  />
+                ) : null}
               </li>
             ))}
           </ul>
@@ -139,71 +236,202 @@ export function SceneHost() {
 
       <Section
         id="about"
-        className="flex min-h-[100svh] items-center px-6 md:px-12 lg:px-20"
+        className="relative flex min-h-[110svh] items-center px-6 md:px-12 lg:px-20"
         aria-label={SCENE_LABELS.about}
       >
-        <div ref={aboutRoot} className="max-w-2xl will-change-transform">
-          <p className="text-sm uppercase tracking-[0.3em] text-[var(--accent)]">
-            About
+        <div ref={aboutRoot} className="w-full max-w-4xl will-change-transform">
+          <p className="text-sm tracking-[0.3em] text-[var(--accent)] uppercase">
+            Principles
           </p>
-          <h2 className="font-display mt-4 text-[clamp(2rem,6vw,4.5rem)] leading-[1.05] tracking-[-0.03em]">
+          <h2 className="font-display mt-4 text-[clamp(2.25rem,6vw,4.5rem)] leading-[1.02] tracking-[-0.035em]">
             Built for sixty frames.
           </h2>
-          <p className="mt-6 text-lg text-[var(--muted)]">
-            Architecture first: RAF scheduler, scroll manager, timeline engine,
-            asset loader. Creative layers plug in without rewriting the core.
-          </p>
+          <ol className="mt-14 space-y-10">
+            {ABOUT_CHAPTERS.map((chapter, i) => (
+              <li
+                key={chapter.year}
+                ref={(el) => {
+                  aboutChapters.current[i] = el;
+                }}
+                className="grid gap-4 border-t border-[var(--border)] pt-8 will-change-transform md:grid-cols-[80px_1fr]"
+                style={{ opacity: 0 }}
+              >
+                <span className="font-mono text-sm text-[var(--accent)]">
+                  {chapter.year}
+                </span>
+                <div>
+                  <h3 className="font-display text-2xl tracking-[-0.02em] md:text-3xl">
+                    {chapter.title}
+                  </h3>
+                  <p className="mt-3 max-w-xl text-lg text-[var(--muted)]">
+                    {chapter.body}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </Section>
 
+      {/* ACT III — Projects */}
       <Section
-        id="skills"
-        className="flex min-h-[100svh] items-center px-6 md:px-12 lg:px-20"
-        aria-label={SCENE_LABELS.skills}
+        id="projects"
+        className="relative px-6 md:px-12 lg:px-20"
+        aria-label={SCENE_LABELS.projects}
       >
-        <div ref={skillsRoot} className="w-full will-change-transform">
-          <p className="text-sm uppercase tracking-[0.3em] text-[var(--accent)]">
-            Skills
+        <div ref={projectsRoot} className="will-change-transform">
+          <div
+            ref={projectsHeading}
+            className="flex min-h-[50svh] flex-col justify-end pb-16 pt-32"
+            style={{ opacity: 0 }}
+          >
+            <p className="font-mono text-[11px] tracking-[0.35em] text-[var(--accent)] uppercase">
+              Act III · Projects
+            </p>
+            <h2 className="font-display mt-4 text-[clamp(2.5rem,7vw,5rem)] leading-[0.98] tracking-[-0.04em]">
+              Selected work
+            </h2>
+          </div>
+
+          <div className="space-y-6 pb-24 md:space-y-10">
+            {PROJECTS.map((project, i) => (
+              <article
+                key={project.id}
+                ref={(el) => {
+                  projectPanels.current[i] = el;
+                }}
+                className="relative min-h-[85svh] overflow-hidden border-t border-[var(--border)] py-16 will-change-transform md:py-24"
+                style={{ opacity: 0 }}
+              >
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 -z-10 opacity-40"
+                  style={{
+                    background: `radial-gradient(ellipse 70% 60% at ${i === 1 ? "20%" : "85%"} 30%, color-mix(in oklab, var(--accent) 16%, transparent), transparent 70%)`,
+                  }}
+                />
+                <p className="font-mono text-[10px] tracking-[0.3em] text-[var(--muted)] uppercase">
+                  0{i + 1} · {project.role}
+                </p>
+                <h3 className="font-display mt-6 text-[clamp(3rem,10vw,7rem)] leading-[0.9] tracking-[-0.045em]">
+                  {project.name}
+                </h3>
+                <p className="mt-6 max-w-xl text-xl text-[var(--muted)] md:text-2xl">
+                  {project.tagline}
+                </p>
+
+                <div className="mt-12 grid max-w-3xl gap-8 md:grid-cols-2">
+                  <div>
+                    <p className="font-mono text-[10px] tracking-[0.25em] text-[var(--accent)] uppercase">
+                      Problem
+                    </p>
+                    <p className="mt-3 text-[var(--foreground)]">
+                      {project.problem}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-mono text-[10px] tracking-[0.25em] text-[var(--accent)] uppercase">
+                      Approach
+                    </p>
+                    <p className="mt-3 text-[var(--foreground)]">
+                      {project.approach}
+                    </p>
+                  </div>
+                </div>
+
+                <dl className="mt-14 flex flex-wrap gap-10">
+                  {project.metrics.map((metric) => (
+                    <div key={metric.label}>
+                      <dt className="font-mono text-[10px] tracking-[0.2em] text-[var(--muted)] uppercase">
+                        {metric.label}
+                      </dt>
+                      <dd
+                        className="font-display mt-2 text-4xl tracking-[-0.03em] text-[var(--accent)] md:text-5xl"
+                        data-metric-value
+                        data-metric-target={
+                          "divisor" in metric && metric.divisor
+                            ? metric.target / metric.divisor
+                            : metric.target
+                        }
+                        data-metric-prefix={metric.prefix}
+                        data-metric-suffix={metric.suffix}
+                        data-metric-float={
+                          "float" in metric && metric.float ? "true" : "false"
+                        }
+                      >
+                        {metric.display}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </article>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* ACT IV — Proof */}
+      <Section
+        id="proof"
+        className="flex min-h-[100svh] items-center px-6 md:px-12 lg:px-20"
+        aria-label={SCENE_LABELS.proof}
+      >
+        <div ref={proofRoot} className="w-full will-change-transform">
+          <p className="font-mono text-[11px] tracking-[0.35em] text-[var(--accent)] uppercase">
+            Act IV · Proof
           </p>
-          <h2 className="font-display mt-4 text-[clamp(2rem,6vw,4.5rem)] leading-[1.05] tracking-[-0.03em]">
-            Stack
+          <h2 className="font-display mt-4 text-[clamp(2.25rem,6vw,4.75rem)] leading-[1.02] tracking-[-0.035em]">
+            Measurable impact.
           </h2>
-          <ul className="mt-10 flex flex-wrap gap-x-8 gap-y-4 text-xl text-[var(--muted)]">
+          <ul className="mt-16 grid gap-10 sm:grid-cols-3">
             {[
-              "Next.js",
-              "GSAP",
-              "Lenis",
-              "Three.js",
-              "R3F",
-              "Shaders",
-              "TypeScript",
-            ].map((skill) => (
-              <li key={skill}>{skill}</li>
+              { label: "Target FPS", target: 120, suffix: "", display: "60–120" },
+              { label: "LCP budget (ms)", target: 2000, suffix: "", display: "≤2000" },
+              { label: "Scroll re-renders", target: 0, suffix: "", display: "0" },
+            ].map((item, i) => (
+              <li
+                key={item.label}
+                ref={(el) => {
+                  proofStats.current[i] = el;
+                }}
+                className="border-t border-[var(--border)] pt-6 will-change-transform"
+                style={{ opacity: 0 }}
+              >
+                <p className="font-mono text-[10px] tracking-[0.2em] text-[var(--muted)] uppercase">
+                  {item.label}
+                </p>
+                <p
+                  className="font-display mt-3 text-5xl tracking-[-0.04em] text-[var(--accent)] md:text-6xl"
+                  data-proof-value
+                  data-proof-target={item.target}
+                  data-proof-suffix={item.suffix}
+                >
+                  {item.display}
+                </p>
+              </li>
             ))}
           </ul>
         </div>
       </Section>
 
+      {/* ACT V — Contact */}
       <Section
         id="contact"
         className="flex min-h-[100svh] items-end px-6 pb-24 md:px-12 lg:px-20"
         aria-label={SCENE_LABELS.contact}
       >
-        <div ref={contactRoot} className="will-change-transform">
-          <p className="text-sm uppercase tracking-[0.3em] text-[var(--accent)]">
-            Contact
+        <div ref={contactRoot} className="w-full will-change-transform">
+          <p className="font-mono text-[11px] tracking-[0.35em] text-[var(--accent)] uppercase">
+            Act V · Contact
           </p>
-          <h2 className="font-display mt-4 text-[clamp(2.5rem,8vw,6rem)] leading-[0.95] tracking-[-0.04em]">
+          <h2 className="font-display mt-4 text-[clamp(2.75rem,8vw,6rem)] leading-[0.92] tracking-[-0.045em]">
             Let&apos;s build
             <br />
             something alive.
           </h2>
-          <a
-            href="mailto:hello@example.com"
-            className="mt-8 inline-flex text-lg text-[var(--accent)] underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)]"
-          >
-            hello@example.com
-          </a>
+          <div className="mt-14">
+            <ContactForm />
+          </div>
         </div>
       </Section>
     </>

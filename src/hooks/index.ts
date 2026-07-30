@@ -5,3 +5,4 @@ export { useReducedMotion } from "./use-reduced-motion";
 export { useMediaQuery, useBreakpoint, useIsMobile } from "./use-breakpoint";
 export { useTheme, useAccentColor, useSetThemeMode } from "./use-theme";
 export { useAsset } from "./use-asset";
+export { useKeyboardNavigation } from "./use-keyboard-navigation";

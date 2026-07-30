@@ -21,6 +21,7 @@ export type {
 
 export type {
   SceneId,
+  ActId,
   SceneRange,
   SceneContext,
   SceneDefinition,
