@@ -310,9 +310,9 @@ Use this as the project Kanban spine.
 - [x] **M5** Act III ≥ 3 project scenes shippable *(Orbit + Pulse + Lattice immersive)*
 - [x] **M6** Act IV Proof metrics live *(Orbit evidence strip)*
 - [x] **M7** Act V Contact ritual shippable
-- [ ] **M8** Playground (optional) behind route / gate
+- [x] **M8** Playground (optional) behind route / gate
 - [ ] **M9** Performance pass meets budgets *(guardian + code-split + approach prefetch; Lighthouse CI still open)*
-- [ ] **M10** Polish + easter eggs + launch
+- [x] **M10** Polish + easter eggs + launch *(shortcuts, thank-you burst, micro-hover; remaining eggs optional)*
 
 ---
 
@@ -1141,6 +1141,8 @@ Separate route `/playground` or end-of-scroll gate. Lab feeling. Experiments lis
 
 **Phase 7 exit criteria:** Playground is code-split · linked from nav · does not affect Lighthouse on `/`.
 
+> Status: Shipped `/playground` — Wave Field + Sort Scrub, per-experiment `next/dynamic`, FPS cost badges, linked from header/footer. Isolated from `/` scroll experience.
+
 ---
 
 ## Phase 8 — Contact (Act V)
@@ -1456,6 +1458,8 @@ Micro-joy, discovery, shareable moments — without harming clarity.
 - **Performance:** N/A.
 
 **Phase 10 exit criteria:** Delight pass reviewed against “motion has purpose” · easter eggs documented · launch checklist green.
+
+> Status: Shipped — `?` shortcuts overlay, `~` toggles perf debug, button micro-hover, contact thank-you burst (High quality / reduced-motion off). Remaining optional: sound, achievements, Konami.
 
 ---
 

@@ -6,6 +6,7 @@ import { AppShell } from "@/components/layout/app-shell";
 import { ExperienceLoader } from "@/components/layout/experience-loader";
 import { ErrorBoundary } from "@/components/layout/error-boundary";
 import { PerfOverlay } from "@/components/layout/perf-overlay";
+import { ShortcutsOverlay } from "@/components/layout/shortcuts-overlay";
 import { ScrollRoot, ActIndicators } from "@/components/scroll";
 import { CanvasRoot } from "@/components/canvas";
 import { useKeyboardNavigation } from "@/hooks/use-keyboard-navigation";
@@ -42,6 +43,7 @@ export function Experience() {
         </AppShell>
         <ActIndicators />
         <PerfOverlay />
+        <ShortcutsOverlay />
       </ScrollRoot>
     </>
   );

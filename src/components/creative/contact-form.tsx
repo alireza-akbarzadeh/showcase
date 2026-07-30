@@ -10,6 +10,7 @@ import {
   type FormEvent,
 } from "react";
 import { submitContact } from "@/app/actions/contact";
+import { ThankYouBurst } from "@/components/creative/thank-you-burst";
 import { Button } from "@/components/ui/button";
 import { ensureGsap } from "@/engine/animation";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
@@ -195,10 +196,11 @@ export function ContactForm() {
     return (
       <div
         ref={thankYouRef}
-        className="max-w-lg"
+        className="relative max-w-lg"
         role="status"
         aria-live="polite"
       >
+        <ThankYouBurst active />
         <p className="font-mono text-[11px] tracking-[0.3em] text-[var(--accent)] uppercase">
           Sent
         </p>

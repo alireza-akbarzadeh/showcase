@@ -47,6 +47,14 @@ export function Header() {
                 </li>
               );
             })}
+            <li>
+              <Link
+                href="/playground"
+                className="opacity-70 transition-opacity hover:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+              >
+                Lab
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
@@ -62,7 +70,14 @@ export function Footer() {
           © {new Date().getFullYear()} {SITE.name}. Five acts. One scroll.
         </p>
         <p className="text-sm text-[var(--muted)]">
-          Keys 1–5 jump acts · ?debug=perf for FPS
+          Keys 1–5 jump acts ·{" "}
+          <Link
+            href="/playground"
+            className="text-[var(--accent)] underline-offset-4 hover:underline"
+          >
+            /playground
+          </Link>{" "}
+          · ?debug=perf for FPS · press ? for shortcuts
         </p>
       </div>
     </footer>
