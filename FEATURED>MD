@@ -1,0 +1,421 @@
+# ROLE
+
+You are the Lead Product Designer, Creative Director, Motion Designer, UX Engineer, and Senior Frontend Architect.
+
+You are planning one of the most memorable developer portfolio experiences ever built.
+
+Do NOT generate code.
+
+Generate a complete FEATURE_ROADMAP.md that acts as the blueprint for the project.
+
+The roadmap should be implementation-first.
+
+Every feature should explain
+
+• Purpose
+• User experience
+• Technical implementation
+• Dependencies
+• Priority
+• Estimated complexity
+• Performance considerations
+
+---
+
+# PROJECT VISION
+
+The portfolio should not feel like a website.
+
+It should feel like entering an interactive digital world.
+
+Every scroll movement changes something.
+
+Every pixel has intention.
+
+Scrolling is storytelling.
+
+The website should communicate
+
+"I build software differently."
+
+Visitors should remember it.
+
+Recruiters should bookmark it.
+
+Developers should inspect it.
+
+Clients should contact me.
+
+---
+
+# DESIGN PRINCIPLES
+
+- Motion has purpose.
+- Every animation teaches something.
+- Never animate for decoration.
+- Performance over visual effects.
+- GPU-first.
+- Accessibility-first.
+- Progressive enhancement.
+- Mobile deserves equal attention.
+- Every interaction should delight.
+
+---
+
+# IMPLEMENTATION PHASES
+
+Create a detailed roadmap divided into phases.
+
+## Phase 0
+
+Research
+
+References
+
+Moodboards
+
+Interaction inspiration
+
+Animation library decisions
+
+Performance benchmarks
+
+Success metrics
+
+---
+
+## Phase 1
+
+Infrastructure
+
+Project setup
+
+Folder architecture
+
+Animation engine
+
+Scroll engine
+
+RAF scheduler
+
+Timeline system
+
+Scene manager
+
+Canvas layer
+
+Accessibility
+
+SEO
+
+Theme system
+
+Performance monitoring
+
+Analytics
+
+Error boundaries
+
+Testing setup
+
+---
+
+## Phase 2
+
+Navigation
+
+Animated loading experience
+
+Global transitions
+
+Custom cursor
+
+Smooth scrolling
+
+Progress indicator
+
+Section indicators
+
+Magnetic buttons
+
+Keyboard navigation
+
+Context menu
+
+Sound system
+
+---
+
+## Phase 3
+
+Hero
+
+Massive typography
+
+3D background
+
+Shader distortion
+
+Dynamic lighting
+
+Animated grid
+
+Floating particles
+
+Interactive cursor
+
+Mouse parallax
+
+Intro reveal
+
+Signature animation
+
+---
+
+## Phase 4
+
+Projects
+
+Each project becomes an experience.
+
+Cards transform into full-screen presentations.
+
+3D previews.
+
+Video backgrounds.
+
+Case study storytelling.
+
+Interactive metrics.
+
+Technology visualization.
+
+GitHub statistics.
+
+Architecture diagrams.
+
+Performance graphs.
+
+---
+
+## Phase 5
+
+Skills
+
+Animated knowledge graph.
+
+Interactive tech ecosystem.
+
+3D network.
+
+Timeline of experience.
+
+Growth animation.
+
+Tech stack visualization.
+
+---
+
+## Phase 6
+
+About
+
+Storytelling timeline.
+
+Career journey.
+
+Interactive map.
+
+Fun facts.
+
+Daily workflow.
+
+Favorite tools.
+
+Office setup.
+
+---
+
+## Phase 7
+
+Creative Playground
+
+Physics experiments.
+
+Shader playground.
+
+Canvas demos.
+
+WebGL demos.
+
+Generative art.
+
+Creative coding experiments.
+
+Mini games.
+
+AI experiments.
+
+Code visualizer.
+
+Algorithm visualizations.
+
+---
+
+## Phase 8
+
+Contact
+
+Animated form.
+
+Live validation.
+
+Interactive send animation.
+
+Social links.
+
+Availability status.
+
+Calendar integration.
+
+Email animation.
+
+Thank-you experience.
+
+---
+
+## Phase 9
+
+Performance
+
+Lazy loading.
+
+Asset streaming.
+
+Texture compression.
+
+Bundle optimization.
+
+Code splitting.
+
+Shader optimization.
+
+Memory management.
+
+Object pooling.
+
+Frame budget.
+
+GPU profiling.
+
+---
+
+## Phase 10
+
+Polish
+
+Micro interactions.
+
+Hover animations.
+
+Sound effects.
+
+Page transitions.
+
+Confetti.
+
+Achievement system.
+
+Keyboard shortcuts.
+
+Hidden easter eggs.
+
+Developer mode.
+
+Performance dashboard.
+
+Analytics dashboard.
+
+---
+
+# BONUS FEATURES
+
+Suggest at least 100 additional ideas categorized into:
+
+Motion
+
+Scroll interactions
+
+Creative storytelling
+
+Typography
+
+Audio
+
+Particles
+
+Physics
+
+3D
+
+AI
+
+Accessibility
+
+Performance
+
+Developer experience
+
+SEO
+
+Recruiter experience
+
+Fun easter eggs
+
+Portfolio differentiation
+
+Personal branding
+
+Interactive resume
+
+Creative project showcase
+
+Experimental UI
+
+---
+
+# DELIVERABLE
+
+Produce a FEATURE_ROADMAP.md with:
+
+- Executive summary
+- Design philosophy
+- Architecture overview
+- Milestone checklist
+- Detailed implementation phases
+- Feature dependency graph
+- Risk assessment
+- Performance budget
+- Accessibility checklist
+- SEO checklist
+- QA checklist
+- Browser support strategy
+- Mobile strategy
+- Launch checklist
+- Future expansion ideas
+
+This roadmap should be detailed enough that another AI agent can implement the project from start to finish without guessing architectural decisions.
+
+One more recommendation
+
+To make this portfolio genuinely stand out in 2026, don't stop at "everything moves on scroll." Many portfolios already do that.
+
+Instead, make the scroll itself tell a narrative. Treat the site like a directed experience:
+
+Act I — Introduction: Introduce yourself with bold typography and a cinematic entrance.
+Act II — Craft: Reveal how you think, design, and engineer software through interactive visualizations rather than paragraphs.
+Act III — Projects: Each project becomes its own immersive scene with animations tied to scroll progress.
+Act IV — Proof: Show measurable impact—performance improvements, architecture diagrams, GitHub activity, before/after metrics, and case studies.
+Act V — Contact: End with a memorable interaction that makes reaching out feel like completing the journey.
+
+The strongest developer portfolios don't just demonstrate animation skill—they communicate engineering quality, performance discipline, product thinking, and storytelling all at once.

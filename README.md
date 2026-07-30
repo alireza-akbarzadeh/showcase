@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Showcase
 
-## Getting Started
+Scroll-driven creative portfolio foundation.
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Next.js 16 · React 19 · TypeScript · pnpm
+- GSAP + ScrollTrigger · Lenis
+- Three.js · React Three Fiber · Drei · postprocessing
+- Tailwind CSS v4 · CVA · Radix · shadcn/ui
+
+## Architecture
+
+```
+src/
+  engine/
+    scheduler/   # Single RAF loop
+    scroll/      # Lenis + scroll snapshot (SoT)
+    animation/   # Timeline + SceneManager + GSAP
+    assets/      # Lazy load / unload / prefetch
+    observers/   # IO / Resize / idle
+    render/      # Renderer + camera helpers
+  components/
+    creative/    # Scene factories + SceneHost
+    canvas/      # R3F root, camera, FX
+    scroll/      # Section bindings, progress UI
+    layout/      # Shell, a11y
+    ui/          # shadcn primitives
+  hooks/         # Non-rerendering scroll/RAF hooks
+  providers/     # Theme, scroll, canvas, motion
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Rules
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **One RAF** — everything registers with `getRafScheduler()`.
+2. **Scroll outside React** — use `useScroll` / refs / transforms. Never `setState` on scroll.
+3. **GPU props only** — `translate` / `scale` / `rotate` / `opacity` / uniforms / camera.
+4. **Scenes own animation** — pages compose; scene factories animate.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
 
-## Learn More
+```bash
+pnpm dev
+pnpm build
+pnpm lint
+pnpm typecheck
+pnpm format
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Extending a scene
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Add a factory in `src/components/creative/scenes/`.
+2. Register it in `SceneHost`.
+3. Drive DOM/Three via timeline progress — not React state.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Accessibility
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `prefers-reduced-motion` disables Lenis smoothing + WebGL canvas
+- Skip link, semantic sections, focus styles
+- Keyboard-friendly nav anchors
