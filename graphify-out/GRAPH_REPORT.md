@@ -1,25 +1,25 @@
 # Graph Report - showcase  (2026-07-30)
 
 ## Corpus Check
-- 159 files · ~42,931 words
+- 163 files · ~43,944 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 881 nodes · 1987 edges · 62 communities (40 shown, 22 thin omitted)
+- 901 nodes · 2028 edges · 56 communities (32 shown, 24 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 64 edges (avg confidence: 0.76)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `02249a07`
+- Built from commit: `1dfa1dcf`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- types/index.ts
+- jsdom
 - Showcase Portfolio Foundation
 - scene-host.tsx
 - factories.ts
-- scroll-manager.ts
+- getScrollManager
 - scripts
 - dependencies
 - RafScheduler
@@ -50,29 +50,23 @@
 - intersection.ts
 - eslint-config-prettier
 - sort-scrub.tsx
-- getScrollManager
+- @lhci/cli
 - scene.ts
 - eslint
-- @next/bundle-analyzer
+- getRafScheduler
 - @tailwindcss/postcss
-- hero-section.tsx
+- raw-loader
 - @types/react
 - prettier-plugin-tailwindcss
-- @types/three
-- cn
+- @types/jsdom
 - typescript
 - SoundSystem
 - experience.tsx
-- getRafScheduler
-- useScroll
-- idle.ts
+- scroll-provider.tsx
 - achievements.test.ts
-- signature-motif.tsx
-- @types/react-dom
-- math.ts
-- button.tsx
 - apple-icon.tsx
 - icon.tsx
+- prettier
 - motion-intensity.test.ts
 
 ## God Nodes (most connected - your core abstractions)
@@ -107,27 +101,23 @@
 - **Five-Act Narrative Arc** — feature_roadmap_act_i_introduction, feature_roadmap_act_ii_craft, feature_roadmap_act_iii_projects, feature_roadmap_act_iv_proof, feature_roadmap_act_v_contact [EXTRACTED 1.00]
 - **Shared Architecture Discipline (README + Roadmap)** — readme_one_raf, readme_scroll_outside_react, readme_gpu_props_only, feature_roadmap_react_never_owns_scroll, feature_roadmap_gpu_first, feature_roadmap_gsap_only [INFERRED 0.85]
 
-## Communities (62 total, 22 thin omitted)
-
-### Community 0 - "types/index.ts"
-Cohesion: 0.17
-Nodes (15): ImmersiveProject, ImmersiveProjectProps, OrbitProject, ProjectArchEdge, ProjectCaseStudy, ProjectChapter, ProjectChapterId, ProjectMetric (+7 more)
+## Communities (56 total, 24 thin omitted)
 
 ### Community 1 - "Showcase Portfolio Foundation"
 Cohesion: 0.06
 Nodes (48): Next.js Dist Docs Guide, Next.js (Project-Specific Breaking APIs), Next.js Agent Rules, CLAUDE.md Agents Pointer, Act I — Introduction, Act II — Craft, Act III — Projects, Act IV — Proof (+40 more)
 
 ### Community 2 - "scene-host.tsx"
-Cohesion: 0.10
-Nodes (42): SceneHost(), SceneHostProps, createAboutScene(), createContactScene(), createHeroScene(), createIntroScene(), chapterLocal(), morphAmount() (+34 more)
+Cohesion: 0.14
+Nodes (34): SceneHost(), SceneHostProps, createAboutScene(), createContactScene(), createHeroScene(), createIntroScene(), chapterLocal(), morphAmount() (+26 more)
 
 ### Community 3 - "factories.ts"
-Cohesion: 0.10
-Nodes (25): AssetOptions, font(), image(), loadFont(), loadImage(), loadModel(), loadTexture(), loadVideo() (+17 more)
+Cohesion: 0.11
+Nodes (23): AssetOptions, font(), image(), loadFont(), loadImage(), loadModel(), loadTexture(), loadVideo() (+15 more)
 
-### Community 4 - "scroll-manager.ts"
-Cohesion: 0.18
-Nodes (15): Section, SectionProps, SCROLL_DEFAULTS, getBreakpoint(), getViewportSize(), prefersReducedMotion(), createInitialSnapshot(), emptySections() (+7 more)
+### Community 4 - "getScrollManager"
+Cohesion: 0.08
+Nodes (39): ScrollMesh(), DelightHooks(), resolveHashId(), ActIndicators(), ScrollProgress(), ScrollRoot(), Section, SectionProps (+31 more)
 
 ### Community 5 - "scripts"
 Cohesion: 0.11
@@ -135,7 +125,7 @@ Nodes (18): scripts, analyze, build, dev, format, format:check, graphify:mcp, gr
 
 ### Community 6 - "dependencies"
 Cohesion: 0.05
-Nodes (37): class-variance-authority, clsx, gsap, lenis, lucide-react, next, dependencies, class-variance-authority (+29 more)
+Nodes (39): class-variance-authority, clsx, gsap, lenis, lucide-react, next, dependencies, class-variance-authority (+31 more)
 
 ### Community 7 - "RafScheduler"
 Cohesion: 0.14
@@ -146,12 +136,12 @@ Cohesion: 0.11
 Nodes (18): compilerOptions, allowJs, baseUrl, esModuleInterop, exactOptionalPropertyTypes, incremental, isolatedModules, jsx (+10 more)
 
 ### Community 9 - "constants/index.ts"
-Cohesion: 0.10
-Nodes (14): size, metadata, size, PROOF, SCENE_LABELS, SITE, syncLocationChrome(), titleForHash() (+6 more)
+Cohesion: 0.06
+Nodes (34): size, metadata, size, ImmersiveProject, ImmersiveProjectProps, OrbitProject, ProofSection, ProofSectionProps (+26 more)
 
 ### Community 10 - "devDependencies"
-Cohesion: 0.13
-Nodes (15): eslint-config-next, @lhci/cli, devDependencies, eslint-config-next, @lhci/cli, prettier, raw-loader, tailwindcss (+7 more)
+Cohesion: 0.12
+Nodes (17): axe-core, eslint-config-next, @next/bundle-analyzer, devDependencies, axe-core, eslint-config-next, @next/bundle-analyzer, tailwindcss (+9 more)
 
 ### Community 11 - "paths"
 Cohesion: 0.12
@@ -170,8 +160,8 @@ Cohesion: 0.20
 Nodes (9): *.frag, *.fs, *.glsl, RequestIdleCallbackDeadline, RequestIdleCallbackHandle, RequestIdleCallbackOptions, *.vert, *.vs (+1 more)
 
 ### Community 16 - "contact-form.tsx"
-Cohesion: 0.16
-Nodes (19): clientKey(), ContactActionResult, hits, rateLimited(), submitContact(), ContactForm(), EmailLockup(), Status (+11 more)
+Cohesion: 0.06
+Nodes (50): clientKey(), ContactActionResult, hits, rateLimited(), submitContact(), metadata, ContactForm(), Field() (+42 more)
 
 ### Community 17 - "globe.svg"
 Cohesion: 0.33
@@ -206,76 +196,48 @@ Cohesion: 0.29
 Nodes (6): engines, node, name, packageManager, private, version
 
 ### Community 33 - "intersection.ts"
-Cohesion: 0.40
-Nodes (5): cacheKey(), IntersectionHandler, observeIntersection(), ObserveIntersectionOptions, observerCache
-
-### Community 36 - "getScrollManager"
-Cohesion: 0.11
-Nodes (30): ProofSection, ProofSectionProps, ActTransitionVeil(), getScrollManager(), useBreakpoint(), useIsMobile(), useMediaQuery(), useKeyboardNavigation() (+22 more)
+Cohesion: 0.20
+Nodes (8): cacheKey(), IntersectionHandler, observeIntersection(), ObserveIntersectionOptions, observerCache, observeResize(), ResizeHandler, SharedResizeObserver
 
 ### Community 37 - "scene.ts"
-Cohesion: 0.36
-Nodes (9): approachProgress(), resolveRange(), SceneManager, sectionProgress(), RafFrame, SceneContext, SceneDefinition, SceneId (+1 more)
-
-### Community 42 - "hero-section.tsx"
 Cohesion: 0.16
-Nodes (18): HeroField(), PARTICLE_POSITIONS, HeroSection(), HeroSectionProps, CursorMode, CustomCursor(), Magnetic(), MagneticProps (+10 more)
+Nodes (17): EasingFn, approachProgress(), resolveRange(), SceneManager, sectionProgress(), lerp(), sampleTrack(), Timeline (+9 more)
 
-### Community 46 - "cn"
-Cohesion: 0.26
-Nodes (7): Field(), AboutSection(), AboutSectionProps, SkillsSection(), SkillsSectionProps, ActIndicators(), cn()
+### Community 39 - "getRafScheduler"
+Cohesion: 0.05
+Nodes (60): CameraRig(), CanvasRoot(), R3FCanvas, HeroField(), PARTICLE_POSITIONS, Effects, PostFX(), EmailLockup() (+52 more)
 
 ### Community 49 - "SoundSystem"
 Cohesion: 0.23
 Nodes (3): resetSoundSystem(), SoundCue, SoundSystem
 
-### Community 51 - "experience.tsx"
+### Community 52 - "experience.tsx"
 Cohesion: 0.06
-Nodes (48): metadata, Experience(), HeroField, SceneHost, AchievementToasts(), Toast, AppShell(), Footer() (+40 more)
+Nodes (33): display, jsonLd, metadata, mono, sans, viewport, metadata, SignatureMotif() (+25 more)
 
-### Community 53 - "getRafScheduler"
-Cohesion: 0.06
-Nodes (42): display, jsonLd, metadata, mono, sans, viewport, getPerfFlag(), PerfOverlay() (+34 more)
-
-### Community 55 - "useScroll"
-Cohesion: 0.14
-Nodes (15): CameraRig(), CanvasRoot(), R3FCanvas, Effects, PostFX(), ScrollMesh(), ScrollProgress(), ScrollRoot() (+7 more)
-
-### Community 56 - "idle.ts"
-Cohesion: 0.25
-Nodes (6): IdleTask, runWhenIdle(), schedulePrefetch(), observeResize(), ResizeHandler, SharedResizeObserver
-
-### Community 59 - "signature-motif.tsx"
-Cohesion: 0.19
-Nodes (9): metadata, SignatureMotif(), SignatureMotifProps, SIZES, ExperienceLoader(), LoaderProps, PrintButton(), SOCIALS (+1 more)
-
-### Community 61 - "math.ts"
-Cohesion: 0.57
-Nodes (6): approx(), clamp(), inverseLerp(), lerp(), mapRange(), mod()
-
-### Community 64 - "button.tsx"
-Cohesion: 0.70
-Nodes (3): Button, ButtonProps, buttonVariants
+### Community 53 - "scroll-provider.tsx"
+Cohesion: 0.09
+Nodes (37): ActTransitionVeil(), ensureGsap(), getSceneManager(), resetSceneManager(), resetScrollManager(), useMotionIntensity(), useMotionRestricted(), getMotionIntensity() (+29 more)
 
 ## Knowledge Gaps
-- **227 isolated node(s):** `${userHome}/.local/bin/graphify-mcp`, `${userHome}/.local/bin/graphify-mcp`, `semi`, `singleQuote`, `trailingComma` (+222 more)
+- **232 isolated node(s):** `${userHome}/.local/bin/graphify-mcp`, `${userHome}/.local/bin/graphify-mcp`, `semi`, `singleQuote`, `trailingComma` (+227 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **22 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **24 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `ScrollManager` connect `ScrollManager` to `scene.ts`, `getRafScheduler`, `getScrollManager`, `scroll-manager.ts`?**
-  _High betweenness centrality (0.021) - this node is a cross-community bridge._
+- **Why does `ScrollManager` connect `ScrollManager` to `scroll-provider.tsx`, `getScrollManager`, `scene.ts`?**
+  _High betweenness centrality (0.020) - this node is a cross-community bridge._
 - **Why does `RafScheduler` connect `RafScheduler` to `getRafScheduler`?**
   _High betweenness centrality (0.019) - this node is a cross-community bridge._
-- **Why does `getRafScheduler()` connect `getRafScheduler` to `scroll-manager.ts`, `scene.ts`, `RafScheduler`, `hero-section.tsx`, `contact-form.tsx`, `ScrollManager`?**
-  _High betweenness centrality (0.019) - this node is a cross-community bridge._
+- **Why does `getRafScheduler()` connect `getRafScheduler` to `getScrollManager`, `scene.ts`, `RafScheduler`, `scroll-provider.tsx`, `ScrollManager`?**
+  _High betweenness centrality (0.018) - this node is a cross-community bridge._
 - **What connects `${userHome}/.local/bin/graphify-mcp`, `${userHome}/.local/bin/graphify-mcp`, `semi` to the rest of the system?**
-  _227 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _232 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Showcase Portfolio Foundation` be split into smaller, more focused modules?**
   _Cohesion score 0.06028368794326241 - nodes in this community are weakly interconnected._
 - **Should `scene-host.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.10144927536231885 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.1414141414141414 - nodes in this community are weakly interconnected._
 - **Should `factories.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.10220673635307782 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11025641025641025 - nodes in this community are weakly interconnected._

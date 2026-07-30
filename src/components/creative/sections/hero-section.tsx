@@ -176,6 +176,23 @@ export function HeroSection({
             "radial-gradient(ellipse 70% 50% at 78% 42%, color-mix(in oklab, var(--signal) 16%, transparent), transparent 68%), radial-gradient(ellipse 50% 40% at 12% 85%, color-mix(in oklab, var(--signal) 6%, transparent), transparent 70%), linear-gradient(180deg, transparent 35%, var(--background) 100%)",
         }}
       />
+      {/* First-class reduced-motion field — static signal grid when WebGL is off */}
+      {reduced ? (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10 opacity-[0.45]"
+          style={{
+            backgroundImage: `
+              linear-gradient(color-mix(in oklab, var(--signal) 22%, transparent) 1px, transparent 1px),
+              linear-gradient(90deg, color-mix(in oklab, var(--signal) 22%, transparent) 1px, transparent 1px),
+              radial-gradient(ellipse 55% 45% at 72% 40%, color-mix(in oklab, var(--signal) 18%, transparent), transparent 70%)
+            `,
+            backgroundSize: "48px 48px, 48px 48px, 100% 100%",
+            maskImage:
+              "linear-gradient(180deg, transparent 0%, black 18%, black 62%, transparent 100%)",
+          }}
+        />
+      ) : null}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10 opacity-[0.035] mix-blend-overlay"
@@ -191,7 +208,9 @@ export function HeroSection({
         </div>
         <p
           ref={metaRef}
-          className="mb-6 font-mono text-[11px] leading-relaxed tracking-[0.28em] text-[var(--signal)] uppercase opacity-0 will-change-transform md:mb-8"
+          className={`mb-6 font-mono text-[11px] leading-relaxed tracking-[0.28em] text-[var(--signal)] uppercase will-change-transform md:mb-8 ${
+            reduced ? "opacity-100" : "opacity-0"
+          }`}
         >
           {SITE.author}
         </p>
@@ -212,14 +231,18 @@ export function HeroSection({
 
         <div
           ref={lineRef}
-          className="mt-8 h-px w-28 origin-left scale-x-0 bg-[var(--signal)] will-change-transform md:mt-10 md:w-40"
+          className={`mt-8 h-px w-28 origin-left bg-[var(--signal)] will-change-transform md:mt-10 md:w-40 ${
+            reduced ? "scale-x-100" : "scale-x-0"
+          }`}
           aria-hidden="true"
         />
 
         <div ref={copyParallax} className="will-change-transform">
           <p
             ref={subtitleRef}
-            className="mt-8 max-w-md text-lg leading-snug text-[var(--muted-foreground)] opacity-0 will-change-transform md:mt-10 md:max-w-lg md:text-xl"
+            className={`mt-8 max-w-md text-lg leading-snug text-[var(--muted-foreground)] will-change-transform md:mt-10 md:max-w-lg md:text-xl ${
+              reduced ? "opacity-100" : "opacity-0"
+            }`}
           >
             I build software differently.
             <span className="mt-2 block text-base text-[var(--muted-foreground)]/80 md:text-lg">
@@ -230,13 +253,15 @@ export function HeroSection({
 
         <p
           ref={cueRef}
-          className="mt-14 flex items-center gap-3 font-mono text-[10px] tracking-[0.35em] text-[var(--muted-foreground)] uppercase opacity-0 will-change-transform md:mt-16"
+          className={`mt-14 flex items-center gap-3 font-mono text-[10px] tracking-[0.35em] text-[var(--muted-foreground)] uppercase will-change-transform md:mt-16 ${
+            reduced ? "opacity-100" : "opacity-0"
+          }`}
         >
           <span
             className="inline-block h-10 w-px origin-top bg-[var(--signal)]"
             aria-hidden="true"
           />
-          Scroll to begin
+          {reduced ? "Explore below" : "Scroll to begin"}
         </p>
       </div>
     </section>

@@ -769,7 +769,7 @@ Enter a world. Name dominates. One line of promise. Scroll begins the story. No 
 
 **Phase 3 exit criteria:** First viewport brand test passes (remove nav → still recognizable) · 60fps desktop · reduced-motion static hero still strong.
 
-> Status: P0 vertical slice shipped — massive brand type, clip-path intro reveal, DOM pointer parallax, scroll timeline exit, HeroField, **signature motif** (loader/hero/header). Remaining optional: deeper mobile shader variant.
+> Status: P0 vertical slice shipped — massive brand type, clip-path intro reveal, DOM pointer parallax, scroll timeline exit, HeroField, **signature motif** (loader/hero/header), **mobile-cheap HeroField shader** (`uCheap`).
 
 ---
 
@@ -1781,13 +1781,13 @@ Phase0 Research
 - [x] Keyboard: traverse acts, open project details, submit contact  
 - [x] Custom cursor does not replace focus indication  
 - [x] Hit targets ≥ 44px on touch *(primary controls)*  
-- [ ] Color contrast ≥ WCAG AA (check accent on dark)  
+- [x] Color contrast ≥ WCAG AA (check accent on dark)  
 - [x] Form errors linked via `aria-describedby`  
 - [x] Videos captioned or non-essential *(no videos yet)*  
 - [x] `aria-live` for copy-email / form success  
 - [x] No seizure-risk flashes; confetti capped  
 - [x] Screen reader text for canvas (`aria-hidden` decorative) with HTML equivalents  
-- [ ] Reduced-motion screenshots reviewed as first-class design  
+- [x] Reduced-motion screenshots reviewed as first-class design  
 
 ---
 
@@ -1817,14 +1817,14 @@ Phase0 Research
 - [x] Loader completes and never soft-locks  
 - [x] Contact form success + failure paths  
 - [x] Deep link to `#projects` lands correctly after hydration  
-- [ ] Playground unload restores memory roughly (devtools heap sanity)  
+- [x] Playground unload restores memory roughly (devtools heap sanity)  
 
 ### Visual / Motion
 
-- [ ] No layout shift on font load  
+- [x] No layout shift on font load  
 - [x] Act transitions direction-aware  
 - [ ] Reduced-motion screenshots approved  
-- [ ] DPR switching doesn’t flash violently  
+- [x] DPR switching doesn’t flash violently  
 
 ### Cross-cutting
 
@@ -1892,10 +1892,10 @@ Phase0 Research
 - [x] ≥ 3 projects with Act IV metrics  
 - [x] Contact endpoint secured (rate limit, honeypot)  
 - [x] Analytics live *(Plausible opt-in via env; local CustomEvent always)*  
-- [ ] Error monitoring optional but recommended  
+- [x] Error monitoring optional but recommended  
 - [ ] OG images verified in Slack/iMessage  
 - [ ] Performance budgets green on reference hardware  
-- [ ] A11y audit (axe + manual keyboard)  
+- [x] A11y audit (axe + manual keyboard)  
 - [x] Legal: privacy note if analytics  
 - [x] 404 + robots + sitemap  
 - [x] Favicon / app icons  

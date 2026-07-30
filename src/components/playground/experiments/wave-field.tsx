@@ -81,6 +81,9 @@ export function WaveFieldExperiment() {
     return () => {
       getRafScheduler().unregister(id);
       window.removeEventListener("resize", resize);
+      // Release backing store so leaving /playground drops GPU/CPU memory.
+      canvas.width = 0;
+      canvas.height = 0;
     };
   }, [seed]);
 

@@ -35,6 +35,19 @@ export default function PrivacyPage() {
           CustomEvents.
         </p>
         <p>
+          Error monitoring is optional. If configured (
+          <code className="font-mono text-xs text-[var(--foreground)]">
+            NEXT_PUBLIC_SENTRY_DSN
+          </code>
+          ), unexpected render failures may be reported to Sentry without
+          intentionally collecting personal data. Without that env var, errors
+          stay in the console and as local{" "}
+          <code className="font-mono text-xs text-[var(--foreground)]">
+            showcase:error
+          </code>{" "}
+          CustomEvents.
+        </p>
+        <p>
           Preferences for sound and motion intensity are stored in your browser
           localStorage only.
         </p>

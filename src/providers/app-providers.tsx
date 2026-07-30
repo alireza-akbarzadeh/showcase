@@ -1,6 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
+import { MonitoringBoot } from "@/components/layout/monitoring-boot";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { ScrollProvider } from "@/providers/scroll-provider";
 import { CanvasProvider } from "@/providers/canvas-provider";
@@ -11,7 +12,10 @@ export function AppProviders({ children }: { children: ReactNode }) {
     <ThemeProvider>
       <MotionProvider>
         <ScrollProvider>
-          <CanvasProvider>{children}</CanvasProvider>
+          <CanvasProvider>
+            <MonitoringBoot />
+            {children}
+          </CanvasProvider>
         </ScrollProvider>
       </MotionProvider>
     </ThemeProvider>

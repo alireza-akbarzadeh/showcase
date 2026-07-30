@@ -13,6 +13,9 @@ const display = Bricolage_Grotesque({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
+  preload: true,
+  adjustFontFallback: true,
+  fallback: ["Arial", "Helvetica Neue", "sans-serif"],
 });
 
 const sans = Sora({
@@ -20,6 +23,9 @@ const sans = Sora({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
+  preload: true,
+  adjustFontFallback: true,
+  fallback: ["system-ui", "Segoe UI", "sans-serif"],
 });
 
 const mono = JetBrains_Mono({
@@ -27,6 +33,9 @@ const mono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["400", "500"],
   display: "swap",
+  preload: true,
+  adjustFontFallback: true,
+  fallback: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
 });
 
 export const metadata: Metadata = {

@@ -1,5 +1,6 @@
 export { AppShell, Header, Footer, SkipLink } from "./app-shell";
 export { ErrorBoundary } from "./error-boundary";
+export { MonitoringBoot } from "./monitoring-boot";
 export { ExperienceLoader } from "./experience-loader";
 export { PerfOverlay } from "./perf-overlay";
 export { CustomCursor } from "./custom-cursor";

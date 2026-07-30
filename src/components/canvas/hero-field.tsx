@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
+import { BREAKPOINTS } from "@/constants";
 import { getQualityGuardian } from "@/engine/performance";
 import { getPointerState, retainPointerTracking } from "@/engine/observers";
 import { useScroll } from "@/hooks/use-scroll";
+import { useCanvas } from "@/providers/canvas-provider";
 import { damp } from "@/utils/math";
 import type { ScrollSnapshot } from "@/types/scroll";
 
@@ -31,6 +33,7 @@ const PARTICLE_POSITIONS = (() => {
 /**
  * Act I world — grid plane, core mesh, sparse particles.
  * Motion via uniforms / transforms in useFrame — no React state.
+ * Mobile / low-tier uses a cheaper shader + geometry path (uCheap).
  */
 export function HeroField() {
   const group = useRef<THREE.Group>(null);
@@ -43,6 +46,21 @@ export function HeroField() {
   const scrollRef = useRef<ScrollSnapshot | null>(null);
   const material = useRef<THREE.ShaderMaterial | null>(null);
   const smoothed = useRef({ x: 0, y: 0 });
+  const { quality } = useCanvas();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia(`(max-width: ${BREAKPOINTS.tablet - 1}px)`);
+    const sync = () => setIsMobile(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+
+  const cheap = isMobile || quality.simplifyShaders;
+  const gridSegs = cheap ? 16 : 48;
+  const torusSegs = cheap ? 64 : 128;
+  const icoDetail = cheap ? 0 : 1;
 
   useScroll((snapshot) => {
     scrollRef.current = snapshot;
@@ -59,14 +77,15 @@ export function HeroField() {
     const s = scrollRef.current;
     if (!g || !c || !r) return;
 
-    const quality = getQualityGuardian().getFlags();
+    const flags = getQualityGuardian().getFlags();
     const progress = s?.progress ?? 0;
     const velocity = Math.min(Math.abs(s?.velocity ?? 0), 3);
     const heroProgress = Math.min(Math.max(progress / 0.16, 0), 1);
     const nearHero = progress < 0.28;
-    const mobile = s?.breakpoint === "mobile";
+    const mobile = s?.breakpoint === "mobile" || isMobile;
+    const useCheap = mobile || flags.simplifyShaders;
     const t = state.clock.elapsedTime;
-    const velocityFx = quality.simplifyShaders ? 0 : velocity;
+    const velocityFx = useCheap || flags.simplifyShaders ? 0 : velocity;
 
     // Soft unload past Act I — keep in tree but dim / freeze cost
     const presence = nearHero ? 1 : Math.max(0, 1 - (progress - 0.28) / 0.12);
@@ -74,8 +93,10 @@ export function HeroField() {
     if (!g.visible) return;
 
     const pointer = getPointerState();
-    smoothed.current.x = damp(smoothed.current.x, pointer.x, 5, delta);
-    smoothed.current.y = damp(smoothed.current.y, pointer.y, 5, delta);
+    const targetX = useCheap ? 0 : pointer.x;
+    const targetY = useCheap ? 0 : pointer.y;
+    smoothed.current.x = damp(smoothed.current.x, targetX, 5, delta);
+    smoothed.current.y = damp(smoothed.current.y, targetY, 5, delta);
     const px = smoothed.current.x;
     const py = smoothed.current.y;
 
@@ -104,8 +125,11 @@ export function HeroField() {
       keyLight.current.position.set(2.2 + px * 0.8, 2 + py * 0.4, 3);
     }
     if (fillLight.current) {
-      fillLight.current.intensity = (0.45 + heroProgress * 0.35) * presence;
-      fillLight.current.position.set(-3 - px * 0.5, -1, 2);
+      fillLight.current.visible = !useCheap;
+      if (!useCheap) {
+        fillLight.current.intensity = (0.45 + heroProgress * 0.35) * presence;
+        fillLight.current.position.set(-3 - px * 0.5, -1, 2);
+      }
     }
 
     if (gr && material.current) {
@@ -113,6 +137,7 @@ export function HeroField() {
       if (uniforms.uTime) uniforms.uTime.value = t;
       if (uniforms.uProgress) uniforms.uProgress.value = heroProgress;
       if (uniforms.uVelocity) uniforms.uVelocity.value = velocityFx;
+      if (uniforms.uCheap) uniforms.uCheap.value = useCheap ? 1 : 0;
       if (uniforms.uPointer) {
         (uniforms.uPointer.value as THREE.Vector2).set(px, py);
       }
@@ -122,7 +147,7 @@ export function HeroField() {
     }
 
     if (pts) {
-      pts.visible = !mobile && presence > 0.2 && quality.particles;
+      pts.visible = !mobile && presence > 0.2 && flags.particles;
       if (pts.visible) {
         pts.rotation.y = t * 0.02 + px * 0.05;
         pts.position.y = -heroProgress * 0.55;
@@ -131,7 +156,7 @@ export function HeroField() {
           ptsMat.opacity = 0.55 * presence;
         }
         const drawCount =
-          quality.tier === "medium" ? PARTICLE_COUNT_MED : PARTICLE_COUNT;
+          flags.tier === "medium" ? PARTICLE_COUNT_MED : PARTICLE_COUNT;
         pts.geometry.setDrawRange(0, drawCount);
       }
     }
@@ -140,7 +165,7 @@ export function HeroField() {
   return (
     <group ref={group} position={[1.6, 0.15, 0]}>
       <mesh ref={core}>
-        <icosahedronGeometry args={[1.15, 1]} />
+        <icosahedronGeometry args={[1.15, icoDetail]} />
         <meshStandardMaterial
           color="#b8ff2e"
           emissive="#1a4d28"
@@ -152,12 +177,12 @@ export function HeroField() {
       </mesh>
 
       <mesh ref={ring}>
-        <torusGeometry args={[1.45, 0.012, 8, 128]} />
+        <torusGeometry args={[1.45, 0.012, 8, torusSegs]} />
         <meshBasicMaterial color="#b8ff2e" transparent opacity={0.5} />
       </mesh>
 
       <mesh ref={grid} position={[0, -2.2, -1]}>
-        <planeGeometry args={[18, 18, 48, 48]} />
+        <planeGeometry args={[18, 18, gridSegs, gridSegs]} />
         <shaderMaterial
           ref={material}
           transparent
@@ -166,6 +191,7 @@ export function HeroField() {
             uTime: { value: 0 },
             uProgress: { value: 0 },
             uVelocity: { value: 0 },
+            uCheap: { value: cheap ? 1 : 0 },
             uPointer: { value: new THREE.Vector2(0, 0) },
             uAccent: { value: new THREE.Color("#b8ff2e") },
           }}
@@ -174,14 +200,19 @@ export function HeroField() {
             uniform float uTime;
             uniform float uProgress;
             uniform float uVelocity;
+            uniform float uCheap;
             uniform vec2 uPointer;
             void main() {
               vUv = uv;
               vec3 pos = position;
               float wave = sin(pos.x * 2.0 + uTime * 0.6) * 0.08;
-              wave += sin(pos.y * 1.5 - uTime * 0.4) * 0.05;
-              float cursor = exp(-length(uv - (uPointer * 0.5 + 0.5)) * 4.0);
-              pos.z += wave * (0.4 + uProgress) + uVelocity * 0.04 + cursor * 0.22;
+              if (uCheap < 0.5) {
+                wave += sin(pos.y * 1.5 - uTime * 0.4) * 0.05;
+                float cursor = exp(-length(uv - (uPointer * 0.5 + 0.5)) * 4.0);
+                pos.z += wave * (0.4 + uProgress) + uVelocity * 0.04 + cursor * 0.22;
+              } else {
+                pos.z += wave * 0.22 * (0.35 + uProgress * 0.5);
+              }
               gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
             }
           `}
@@ -190,12 +221,15 @@ export function HeroField() {
             uniform vec3 uAccent;
             uniform float uProgress;
             uniform float uVelocity;
+            uniform float uCheap;
             void main() {
-              float gridX = abs(fract(vUv.x * 24.0) - 0.5);
-              float gridY = abs(fract(vUv.y * 24.0) - 0.5);
-              float line = 1.0 - smoothstep(0.0, 0.04, min(gridX, gridY));
+              float density = mix(24.0, 10.0, uCheap);
+              float edge = mix(0.04, 0.08, uCheap);
+              float gridX = abs(fract(vUv.x * density) - 0.5);
+              float gridY = abs(fract(vUv.y * density) - 0.5);
+              float line = 1.0 - smoothstep(0.0, edge, min(gridX, gridY));
               float fade = smoothstep(0.0, 0.2, vUv.y) * (1.0 - smoothstep(0.55, 1.0, vUv.y));
-              float pulse = 0.18 + uProgress * 0.35 + uVelocity * 0.04;
+              float pulse = 0.18 + uProgress * 0.35 + uVelocity * 0.04 * (1.0 - uCheap);
               float alpha = line * fade * pulse;
               gl_FragColor = vec4(uAccent, alpha);
             }

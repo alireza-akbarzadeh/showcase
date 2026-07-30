@@ -1,6 +1,7 @@
 "use client";
 
 import { Component, type ErrorInfo, type ReactNode } from "react";
+import { reportError } from "@/lib/monitoring";
 
 interface Props {
   children: ReactNode;
@@ -24,6 +25,10 @@ export class ErrorBoundary extends Component<Props, State> {
 
   override componentDidCatch(error: Error, info: ErrorInfo): void {
     console.error(`[ErrorBoundary:${this.props.name ?? "app"}]`, error, info);
+    reportError(error, {
+      boundary: this.props.name ?? "app",
+      componentStack: info.componentStack ?? undefined,
+    });
   }
 
   override render(): ReactNode {

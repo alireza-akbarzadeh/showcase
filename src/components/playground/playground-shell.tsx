@@ -11,6 +11,7 @@ import {
 import { AchievementToasts } from "@/components/layout/achievement-toasts";
 import { SoundToggle } from "@/components/layout/sound-toggle";
 import { SITE } from "@/constants";
+import { getAssetLoader } from "@/engine/assets";
 import { unlockAchievement } from "@/lib/achievements";
 import { cn } from "@/utils/cn";
 
@@ -47,6 +48,9 @@ export function PlaygroundShell() {
 
   useEffect(() => {
     unlockAchievement("playground");
+    return () => {
+      getAssetLoader().unloadAll();
+    };
   }, []);
 
   return (

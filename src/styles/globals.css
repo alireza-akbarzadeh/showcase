@@ -44,12 +44,12 @@
   --color-surface-elevated: var(--surface-raised);
   --color-signal: var(--signal);
   --color-signal-foreground: var(--signal-foreground);
-  --font-display: var(--font-display-family), "Bricolage Grotesque", ui-sans-serif,
-    system-ui, sans-serif;
-  --font-sans: var(--font-sans-family), "Sora", ui-sans-serif, system-ui,
-    sans-serif;
-  --font-mono: var(--font-mono-family), "JetBrains Mono", ui-monospace,
-    SFMono-Regular, monospace;
+  /* Metric-adjusted fallbacks live inside *-family (next/font size-adjust).
+     Avoid naming the webfont again here — that can bypass size-adjust and CLS. */
+  --font-display: var(--font-display-family), Arial, Helvetica Neue, sans-serif;
+  --font-sans: var(--font-sans-family), system-ui, "Segoe UI", sans-serif;
+  --font-mono: var(--font-mono-family), ui-monospace, SFMono-Regular, Menlo,
+    monospace;
 }
 
 @layer base {

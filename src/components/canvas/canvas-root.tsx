@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useCanvas } from "@/providers/canvas-provider";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { createRendererConfig } from "@/engine/render";
@@ -11,13 +11,27 @@ const R3FCanvas = dynamic(
   { ssr: false, loading: () => null },
 );
 
+/**
+ * Soft-fades the WebGL layer when adaptive DPR changes so the respec
+ * doesn’t flash a hard pixel jump.
+ */
 export function CanvasRoot({ children }: { children?: ReactNode }) {
   const { enabled, setReady, quality } = useCanvas();
   const reduced = useReducedMotion();
+  const [veil, setVeil] = useState(false);
+  const prevDpr = useRef(quality.dprMax);
 
   useEffect(() => {
     if (reduced) setReady(false);
   }, [reduced, setReady]);
+
+  useEffect(() => {
+    if (prevDpr.current === quality.dprMax) return;
+    prevDpr.current = quality.dprMax;
+    setVeil(true);
+    const id = window.setTimeout(() => setVeil(false), 320);
+    return () => window.clearTimeout(id);
+  }, [quality.dprMax]);
 
   if (!enabled || reduced) return null;
 
@@ -28,7 +42,8 @@ export function CanvasRoot({ children }: { children?: ReactNode }) {
 
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-0"
+      className="pointer-events-none fixed inset-0 z-0 transition-opacity duration-300 ease-out"
+      style={{ opacity: veil ? 0.35 : 1 }}
       aria-hidden="true"
     >
       <R3FCanvas
