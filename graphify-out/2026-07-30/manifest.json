@@ -105,8 +105,8 @@
     "semantic_hash": ""
   },
   "src/components/creative/scene-host.tsx": {
-    "mtime": 1785405131.8019793,
-    "ast_hash": "9e00d5a3336037d3483d48cc18fd93f0",
+    "mtime": 1785405701.369965,
+    "ast_hash": "4ad61829169e43d7f6a4a8974249603c",
     "semantic_hash": ""
   },
   "src/components/creative/scenes/about-scene.ts": {
@@ -130,8 +130,8 @@
     "semantic_hash": ""
   },
   "src/components/creative/scenes/projects-scene.ts": {
-    "mtime": 1785404414.0809288,
-    "ast_hash": "c9271b031afd26457be14849b287ac0b",
+    "mtime": 1785405581.7738843,
+    "ast_hash": "a95c347d7c0052cb34595f1589e7ab79",
     "semantic_hash": ""
   },
   "src/components/creative/scenes/skills-scene.ts": {
@@ -180,8 +180,8 @@
     "semantic_hash": "f6ee71b29e1f11ba178565ef1790f6d6"
   },
   "src/constants/index.ts": {
-    "mtime": 1785405039.6115015,
-    "ast_hash": "0539daf48051bbdd0fa50570f02f59d9",
+    "mtime": 1785405517.89015,
+    "ast_hash": "ef4d773b32f62158c1f5155acfc44918",
     "semantic_hash": ""
   },
   "src/engine/animation/easings.ts": {
@@ -375,8 +375,8 @@
     "semantic_hash": "2b1ce3fb034cda0a1796d40e030fa01d"
   },
   "src/types/index.ts": {
-    "mtime": 1785403373.5070066,
-    "ast_hash": "01526966e43ab96043c3dbed758c99ff",
+    "mtime": 1785405627.8463268,
+    "ast_hash": "d9b922b56d080e1b00de5ccab9624265",
     "semantic_hash": ""
   },
   "src/types/raf.ts": {
@@ -430,8 +430,8 @@
     "semantic_hash": "5c27369b226fcf2be8a6cfe52224e767"
   },
   "FEATURE_ROADMAP.md": {
-    "mtime": 1785405135.401774,
-    "ast_hash": "efe58d6cdbc2242fe18369f0b89763e8",
+    "mtime": 1785405706.1780758,
+    "ast_hash": "6f4627266d60b793964046477b6d6497",
     "semantic_hash": ""
   },
   "README.md": {
@@ -577,6 +577,26 @@
   "src/lib/contact/schema.ts": {
     "mtime": 1785405030.2463295,
     "ast_hash": "d92ec2636d6e0e170e70551e473f737b",
+    "semantic_hash": ""
+  },
+  "src/components/creative/scenes/project-progress.test.ts": {
+    "mtime": 1785405715.346413,
+    "ast_hash": "fc6d2f71b291f9ef4174dc8204e8ec01",
+    "semantic_hash": ""
+  },
+  "src/components/creative/scenes/project-progress.ts": {
+    "mtime": 1785405527.2958384,
+    "ast_hash": "ef9bf3ae7b720af5ada143433b35b0ef",
+    "semantic_hash": ""
+  },
+  "src/components/creative/sections/orbit-project.tsx": {
+    "mtime": 1785405581.6260405,
+    "ast_hash": "4f15289b8afe58f288a66e54e5ab9e70",
+    "semantic_hash": ""
+  },
+  "src/types/project.ts": {
+    "mtime": 1785405455.1416457,
+    "ast_hash": "cfaaa2a636870bc14d2200f56ec608e1",
     "semantic_hash": ""
   }
 }

@@ -1,6 +1,7 @@
 import type { Breakpoint } from "@/types/scroll";
 import type { ActId, SceneId } from "@/types/scene";
 import type { ProjectCaseStudy } from "@/types/project";
+import type { ProofStripContent } from "@/types/proof";
 
 export const BREAKPOINTS = {
   mobile: 0,
@@ -271,6 +272,98 @@ export const PROJECTS = [
 ] as const satisfies readonly ProjectCaseStudy[];
 
 export const ORBIT_PROJECT = PROJECTS[0];
+
+/** Act IV — measurable proof strip (Orbit evidence + site budgets). */
+export const PROOF: ProofStripContent = {
+  headline: "Measurable impact.",
+  support:
+    "Numbers that survive scrutiny — portfolio budgets and the Orbit case side by side.",
+  siteMetrics: [
+    {
+      id: "fps",
+      label: "Target FPS",
+      target: 120,
+      display: "60–120",
+      note: "Desktop sustained · 120 capable",
+    },
+    {
+      id: "lcp",
+      label: "LCP budget",
+      target: 2000,
+      display: "≤2.0s",
+      suffix: "",
+      note: "Brand text as LCP candidate",
+    },
+    {
+      id: "rerenders",
+      label: "Scroll re-renders",
+      target: 0,
+      display: "0",
+      note: "Refs + RAF — never setState on scroll",
+    },
+  ],
+  evidence: [
+    {
+      projectId: "orbit",
+      title: "Orbit — verified outcomes",
+      summary:
+        "Moving presence and sync off React recovered interaction latency without stripping the craft layer.",
+      metrics: [
+        {
+          id: "inp",
+          label: "INP",
+          target: 62,
+          display: "−62%",
+          prefix: "−",
+          suffix: "%",
+        },
+        {
+          id: "bundle",
+          label: "Bundle",
+          target: 180,
+          display: "−180KB",
+          prefix: "−",
+          suffix: "KB",
+        },
+        {
+          id: "sync",
+          label: "Sync lag",
+          target: 40,
+          display: "−40ms",
+          prefix: "−",
+          suffix: "ms",
+        },
+      ],
+      comparisons: [
+        {
+          id: "inp-wipe",
+          projectId: "orbit",
+          label: "Interaction latency",
+          beforeLabel: "Before",
+          afterLabel: "After",
+          beforeValue: "480ms INP",
+          afterValue: "180ms INP",
+          detail: "Shared RAF + predictive merge vs re-render gossip.",
+        },
+        {
+          id: "fps-wipe",
+          projectId: "orbit",
+          label: "Scroll while syncing",
+          beforeLabel: "Before",
+          afterLabel: "After",
+          beforeValue: "38–45 FPS",
+          afterValue: "58–60 FPS",
+          detail: "Mid-tier laptop, dual cursors + document edits.",
+        },
+      ],
+      links: [
+        { label: "Case chapters", href: "#orbit" },
+        { label: "Architecture", href: "#orbit" },
+      ],
+    },
+  ],
+  closing: "Proof is part of the brand — if the numbers hitch, the story breaks.",
+};
 
 export const ABOUT_CHAPTERS = [
   {

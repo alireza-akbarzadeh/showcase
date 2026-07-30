@@ -308,7 +308,7 @@ Use this as the project Kanban spine.
 - [x] **M3** Act I Hero cinematic shippable *(P0 vertical slice)*
 - [ ] **M4** Act II Craft visualizations shippable
 - [x] **M5** Act III ≥ 3 project scenes shippable *(Orbit immersive + 2 panels)*
-- [ ] **M6** Act IV Proof metrics live
+- [x] **M6** Act IV Proof metrics live *(Orbit evidence strip)*
 - [x] **M7** Act V Contact ritual shippable
 - [ ] **M8** Playground (optional) behind route / gate
 - [ ] **M9** Performance pass meets budgets
@@ -1464,7 +1464,7 @@ Act IV is not only a phase — it is a **content + interaction system** woven in
 - **Technical:** New scene id `proof` between projects and contact; update `SCENE_ORDER`.
 - **Dependencies:** Data model.
 - **Priority:** P0.
-- **Complexity:** M.
+- **Complexity:** M *(done)*.
 - **Performance:** Mostly DOM/SVG.
 
 ### Feature: Before / After Metrics
@@ -1474,7 +1474,7 @@ Act IV is not only a phase — it is a **content + interaction system** woven in
 - **Technical:** Static images + transform wipe.
 - **Dependencies:** Assets.
 - **Priority:** P1.
-- **Complexity:** M.
+- **Complexity:** M *(done — scroll-scrubbed wipe panels for Orbit)*.
 - **Performance:** Two images max per case.
 
 ### Feature: Case Study Data Model
@@ -1484,7 +1484,7 @@ Act IV is not only a phase — it is a **content + interaction system** woven in
 - **Technical:** Typed JSON/MDX: problem, approach, stack, metrics[], links[].
 - **Dependencies:** None.
 - **Priority:** P0.
-- **Complexity:** S.
+- **Complexity:** S *(done — `ProjectCaseStudy` + `ProofStripContent`)*.
 - **Performance:** Build-time.
 
 ### Feature: Live-ish GitHub Activity

@@ -41,6 +41,13 @@ export type {
 } from "./project";
 
 export type {
+  ProofMetric,
+  ProofComparison,
+  ProofEvidence,
+  ProofStripContent,
+} from "./proof";
+
+export type {
   AssetKind,
   AssetStatus,
   AssetDescriptor,

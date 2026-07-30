@@ -12,6 +12,7 @@ import { createProofScene } from "@/components/creative/scenes/proof-scene";
 import { createContactScene } from "@/components/creative/scenes/contact-scene";
 import { HeroSection } from "@/components/creative/sections/hero-section";
 import { OrbitProject } from "@/components/creative/sections/orbit-project";
+import { ProofSection } from "@/components/creative/sections/proof-section";
 import { ContactForm } from "@/components/creative/contact-form";
 import { Section } from "@/components/scroll/section";
 import {
@@ -54,7 +55,9 @@ export function SceneHost({ ready }: SceneHostProps) {
   const projectPanels = useRef<(HTMLElement | null)[]>([]);
 
   const proofRoot = useRef<HTMLDivElement>(null);
-  const proofStats = useRef<(HTMLLIElement | null)[]>([]);
+  const proofStats = useRef<(HTMLElement | null)[]>([]);
+  const proofComparisons = useRef<(HTMLElement | null)[]>([]);
+  const proofEvidence = useRef<HTMLDivElement | null>(null);
 
   const contactRoot = useRef<HTMLDivElement>(null);
   const heroSectionEl = useRef<HTMLElement | null>(null);
@@ -109,6 +112,11 @@ export function SceneHost({ ready }: SceneHostProps) {
         createProofScene(() => ({
           root: proofRoot.current,
           stats: proofStats.current.filter(Boolean) as HTMLElement[],
+          comparisons: proofComparisons.current.filter(Boolean) as HTMLElement[],
+          evidence: proofEvidence.current,
+          closing:
+            proofRoot.current?.querySelector<HTMLElement>("[data-proof-closing]") ??
+            null,
         })),
       ),
       manager.register(
@@ -380,45 +388,23 @@ export function SceneHost({ ready }: SceneHostProps) {
       {/* ACT IV — Proof */}
       <Section
         id="proof"
-        className="flex min-h-[100svh] items-center px-6 md:px-12 lg:px-20"
+        className="relative flex min-h-[120svh] items-center px-6 py-24 md:px-12 lg:px-20"
         aria-label={SCENE_LABELS.proof}
       >
-        <div ref={proofRoot} className="w-full will-change-transform">
-          <p className="font-mono text-[11px] tracking-[0.35em] text-[var(--accent)] uppercase">
-            Act IV · Proof
-          </p>
-          <h2 className="font-display mt-4 text-[clamp(2.25rem,6vw,4.75rem)] leading-[1.02] tracking-[-0.035em]">
-            Measurable impact.
-          </h2>
-          <ul className="mt-16 grid gap-10 sm:grid-cols-3">
-            {[
-              { label: "Target FPS", target: 120, suffix: "", display: "60–120" },
-              { label: "LCP budget (ms)", target: 2000, suffix: "", display: "≤2000" },
-              { label: "Scroll re-renders", target: 0, suffix: "", display: "0" },
-            ].map((item, i) => (
-              <li
-                key={item.label}
-                ref={(el) => {
-                  proofStats.current[i] = el;
-                }}
-                className="border-t border-[var(--border)] pt-6 will-change-transform"
-
-              >
-                <p className="font-mono text-[10px] tracking-[0.2em] text-[var(--muted)] uppercase">
-                  {item.label}
-                </p>
-                <p
-                  className="font-display mt-3 text-5xl tracking-[-0.04em] text-[var(--accent)] md:text-6xl"
-                  data-proof-value
-                  data-proof-target={item.target}
-                  data-proof-suffix={item.suffix}
-                >
-                  {item.display}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10"
+          style={{
+            background:
+              "radial-gradient(ellipse 55% 40% at 80% 20%, color-mix(in oklab, var(--accent) 10%, transparent), transparent 70%)",
+          }}
+        />
+        <ProofSection
+          ref={proofRoot}
+          statsRef={proofStats}
+          comparisonsRef={proofComparisons}
+          evidenceRef={proofEvidence}
+        />
       </Section>
 
       {/* ACT V — Contact */}
