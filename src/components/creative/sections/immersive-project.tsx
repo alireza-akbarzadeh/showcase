@@ -1,7 +1,8 @@
 "use client";
 
-import { forwardRef } from "react";
+import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
 import type { ProjectCaseStudy } from "@/types/project";
+import { getScrollManager } from "@/engine/scroll";
 import { cn } from "@/utils/cn";
 
 interface ImmersiveProjectProps {
@@ -16,6 +17,15 @@ interface ImmersiveProjectProps {
  */
 export const ImmersiveProject = forwardRef<HTMLElement, ImmersiveProjectProps>(
   function ImmersiveProject({ project, index, className }, ref) {
+    const localRef = useRef<HTMLElement | null>(null);
+    useImperativeHandle(ref, () => localRef.current as HTMLElement);
+
+    useEffect(() => {
+      const el = localRef.current;
+      if (!el) return;
+      return getScrollManager().registerSection(project.id, el);
+    }, [project.id]);
+
     const nodeMap = Object.fromEntries(
       project.architecture.nodes.map((n) => [n.id, n]),
     );
@@ -23,7 +33,7 @@ export const ImmersiveProject = forwardRef<HTMLElement, ImmersiveProjectProps>(
 
     return (
       <article
-        ref={ref}
+        ref={localRef}
         id={project.id}
         data-project={project.id}
         data-ip-root

@@ -10,7 +10,9 @@ export function titleForHash(hash: string): string {
   const project = PROJECTS.find((p) => p.id === id);
   if (project) return `${project.name} · ${SITE.name}`;
 
-  const act = ACTS.find((a) => a.id === id || a.scenes.includes(id as SceneId));
+  const act = ACTS.find(
+    (a) => a.id === id || (a.scenes as readonly string[]).includes(id),
+  );
   if (act) return `${act.label} · ${SITE.name}`;
 
   if (id in SCENE_LABELS) {

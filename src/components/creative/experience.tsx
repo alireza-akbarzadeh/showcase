@@ -10,6 +10,7 @@ import { ShortcutsOverlay } from "@/components/layout/shortcuts-overlay";
 import { CustomCursor } from "@/components/layout/custom-cursor";
 import { AchievementToasts } from "@/components/layout/achievement-toasts";
 import { DelightHooks } from "@/components/layout/delight-hooks";
+import { ActTransitionVeil } from "@/components/layout/act-transition-veil";
 import { ScrollRoot, ActIndicators } from "@/components/scroll";
 import { CanvasRoot } from "@/components/canvas";
 import { useKeyboardNavigation } from "@/hooks/use-keyboard-navigation";
@@ -47,6 +48,7 @@ export function Experience() {
           <SceneHost ready={ready} />
         </AppShell>
         <ActIndicators />
+        <ActTransitionVeil />
         <CustomCursor />
         <PerfOverlay />
         <ShortcutsOverlay />

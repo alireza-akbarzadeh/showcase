@@ -5,6 +5,7 @@ import { ACTS, SITE } from "@/constants";
 import { getScrollManager } from "@/engine/scroll";
 import { SoundToggle } from "@/components/layout/sound-toggle";
 import { MotionIntensityControl } from "@/providers/motion-provider";
+import { SignatureMotif } from "@/components/brand/signature-motif";
 
 export function SkipLink() {
   return (
@@ -23,8 +24,13 @@ export function Header() {
       <div className="flex items-center justify-between px-6 py-5 md:px-12">
         <Link
           href="#hero"
-          className="pointer-events-auto font-display text-sm tracking-[0.25em] text-white uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+          className="pointer-events-auto inline-flex items-center gap-2.5 font-display text-sm tracking-[0.25em] text-white uppercase focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+          onClick={(event) => {
+            event.preventDefault();
+            getScrollManager().scrollTo("#hero");
+          }}
         >
+          <SignatureMotif size="sm" animate={false} className="opacity-90" />
           {SITE.name}
         </Link>
         <nav
@@ -80,6 +86,13 @@ export function Footer() {
               className="text-[var(--signal)] underline-offset-4 hover:underline"
             >
               /playground
+            </Link>{" "}
+            ·{" "}
+            <Link
+              href="/resume"
+              className="text-[var(--signal)] underline-offset-4 hover:underline"
+            >
+              /resume
             </Link>{" "}
             ·{" "}
             <Link

@@ -1,21 +1,53 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { ACTS } from "@/constants";
+import { ACTS, PROJECTS, SCENE_ORDER } from "@/constants";
 import { trackActEnter } from "@/lib/analytics";
 import { unlockAchievement } from "@/lib/achievements";
+import { syncLocationChrome } from "@/lib/document-chrome";
 import { playSound } from "@/hooks/use-sound";
 import { useScroll } from "@/hooks/use-scroll";
 import { getScrollManager } from "@/engine/scroll";
 import { getMotionIntensity } from "@/lib/motion-intensity";
+import type { SectionProgress } from "@/types/scroll";
+
+function resolveHashId(
+  progress: number,
+  sections: ReadonlyMap<string, SectionProgress>,
+): string {
+  for (const project of PROJECTS) {
+    const section = sections.get(project.id);
+    if (section?.inView && section.progress > 0.05 && section.progress < 0.95) {
+      return project.id;
+    }
+  }
+
+  for (const id of SCENE_ORDER) {
+    const section = sections.get(id);
+    if (section?.inView && section.progress > 0.08 && section.progress < 0.92) {
+      return id;
+    }
+  }
+
+  for (let i = 0; i < ACTS.length; i += 1) {
+    const [start, end] = ACTS[i]!.range;
+    if (progress >= start && progress < end) {
+      return ACTS[i]!.scenes[0] as string;
+    }
+  }
+
+  return "hero";
+}
 
 /**
- * Scroll-driven delight + analytics + deep-link hydration.
+ * Scroll-driven delight + analytics + deep-link + title/hash chrome.
  */
 export function DelightHooks({ ready }: { ready: boolean }) {
   const actIndex = useRef(-1);
   const firstScroll = useRef(false);
   const deepLinked = useRef(false);
+  const lastHash = useRef("");
+  const titleThrottle = useRef(0);
 
   useScroll((snapshot) => {
     if (!ready) return;
@@ -42,16 +74,37 @@ export function DelightHooks({ ready }: { ready: boolean }) {
     const act = ACTS[next];
     if (act) trackActEnter(act.id);
 
+    const now = snapshot.timestamp;
+    if (now - titleThrottle.current > 180) {
+      titleThrottle.current = now;
+      const hashId = resolveHashId(snapshot.progress, snapshot.sections);
+      if (hashId !== lastHash.current) {
+        lastHash.current = hashId;
+        syncLocationChrome(hashId);
+      }
+    }
+
     if (actIndex.current === -1) {
       actIndex.current = next;
       return;
     }
 
     if (next !== actIndex.current) {
+      const from = actIndex.current;
       actIndex.current = next;
       if (getMotionIntensity() !== "off") {
         playSound("whoosh");
       }
+      window.dispatchEvent(
+        new CustomEvent("showcase:act-change", {
+          detail: {
+            from,
+            to: next,
+            direction: snapshot.direction || 1,
+            actId: act?.id,
+          },
+        }),
+      );
     }
   }, ready);
 
@@ -60,10 +113,11 @@ export function DelightHooks({ ready }: { ready: boolean }) {
     const hash = window.location.hash.replace(/^#/, "");
     if (!hash) return;
     deepLinked.current = true;
-    // Wait one frame so section bounds are registered.
     const id = window.requestAnimationFrame(() => {
       getScrollManager().refresh();
       getScrollManager().scrollTo(`#${hash}`, { immediate: true });
+      syncLocationChrome(hash);
+      lastHash.current = hash;
     });
     return () => cancelAnimationFrame(id);
   }, [ready]);

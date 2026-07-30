@@ -769,7 +769,7 @@ Enter a world. Name dominates. One line of promise. Scroll begins the story. No 
 
 **Phase 3 exit criteria:** First viewport brand test passes (remove nav → still recognizable) · 60fps desktop · reduced-motion static hero still strong.
 
-> Status: P0 vertical slice shipped — massive brand type, clip-path intro reveal, DOM pointer parallax, scroll timeline exit, HeroField lighting/velocity/pointer distortion with mobile particle off + soft unload past Act I. Remaining: signature motif (P2), deeper mobile shader variant.
+> Status: P0 vertical slice shipped — massive brand type, clip-path intro reveal, DOM pointer parallax, scroll timeline exit, HeroField, **signature motif** (loader/hero/header). Remaining optional: deeper mobile shader variant.
 
 ---
 
@@ -1799,7 +1799,7 @@ Phase0 Research
 - [x] `robots.txt` + `sitemap.xml`  
 - [x] JSON-LD Person / WebSite  
 - [x] Real text content crawlable (not only WebGL)  
-- [ ] Project subpaths or hash URLs with sensible titles if expanded  
+- [x] Project subpaths or hash URLs with sensible titles if expanded  
 - [x] Fast LCP element = brand text or optimized image  
 - [ ] Image `alt` meaningful *(when media assets land)*  
 - [x] `lang` attribute correct  
@@ -1822,7 +1822,7 @@ Phase0 Research
 ### Visual / Motion
 
 - [ ] No layout shift on font load  
-- [ ] Act transitions direction-aware  
+- [x] Act transitions direction-aware  
 - [ ] Reduced-motion screenshots approved  
 - [ ] DPR switching doesn’t flash violently  
 

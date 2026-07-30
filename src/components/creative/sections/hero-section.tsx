@@ -8,6 +8,7 @@ import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { damp } from "@/utils/math";
 import { setTransform } from "@/utils/performance";
 import { SITE } from "@/constants";
+import { SignatureMotif } from "@/components/brand/signature-motif";
 
 interface HeroSectionProps {
   ready: boolean;
@@ -185,6 +186,9 @@ export function HeroSection({
       />
 
       <div className="relative max-w-[min(100%,72rem)]">
+        <div className="mb-8 opacity-90 md:mb-10">
+          <SignatureMotif size="md" animate={ready && !reduced} />
+        </div>
         <p
           ref={metaRef}
           className="mb-6 font-mono text-[11px] leading-relaxed tracking-[0.28em] text-[var(--signal)] uppercase opacity-0 will-change-transform md:mb-8"

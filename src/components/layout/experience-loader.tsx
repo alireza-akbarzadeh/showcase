@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { ensureGsap } from "@/engine/animation";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { SITE } from "@/constants";
+import { SignatureMotif } from "@/components/brand/signature-motif";
 
 interface LoaderProps {
   onComplete: () => void;
@@ -97,6 +98,7 @@ export function ExperienceLoader({ onComplete }: LoaderProps) {
       aria-live="polite"
       aria-label="Loading experience"
     >
+      <SignatureMotif size="lg" className="mb-8" />
       <p
         ref={markRef}
         className="font-display text-4xl tracking-[-0.04em] text-[var(--foreground)] md:text-6xl"
