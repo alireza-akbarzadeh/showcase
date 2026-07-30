@@ -10,7 +10,14 @@ export interface PointerState {
   active: boolean;
 }
 
+export interface PointerClient {
+  clientX: number;
+  clientY: number;
+  active: boolean;
+}
+
 const state: PointerState = { x: 0, y: 0, active: false };
+const client: PointerClient = { clientX: 0, clientY: 0, active: false };
 
 let attached = false;
 let refCount = 0;
@@ -20,10 +27,17 @@ function onPointerMove(event: PointerEvent): void {
   state.x = (event.clientX / window.innerWidth) * 2 - 1;
   state.y = (event.clientY / window.innerHeight) * 2 - 1;
   state.active = true;
+  client.clientX = event.clientX;
+  client.clientY = event.clientY;
+  client.active = true;
 }
 
 export function getPointerState(): Readonly<PointerState> {
   return state;
+}
+
+export function getPointerClient(): Readonly<PointerClient> {
+  return client;
 }
 
 /** Retain the shared window listener while any consumer is mounted. */
@@ -41,6 +55,9 @@ export function retainPointerTracking(): () => void {
       state.x = 0;
       state.y = 0;
       state.active = false;
+      client.clientX = 0;
+      client.clientY = 0;
+      client.active = false;
     }
   };
 }

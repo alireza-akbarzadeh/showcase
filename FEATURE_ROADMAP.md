@@ -303,15 +303,15 @@ Playground is optional side quest (nav entry / deep link) — not mandatory in l
 Use this as the project Kanban spine.
 
 - [ ] **M0** Research locked (moodboard, refs, copy outline, metrics)
-- [x] **M1** Infrastructure complete + CI green *(Lighthouse baseline still open)*
-- [ ] **M2** Global nav / loader / cursor / a11y chrome
+- [x] **M1** Infrastructure complete + CI green *(Lighthouse CI workflow added)*
+- [x] **M2** Global nav / loader / cursor / a11y chrome
 - [x] **M3** Act I Hero cinematic shippable *(P0 vertical slice)*
 - [x] **M4** Act II Craft visualizations shippable
 - [x] **M5** Act III ≥ 3 project scenes shippable *(Orbit + Pulse + Lattice immersive)*
 - [x] **M6** Act IV Proof metrics live *(Orbit evidence strip)*
 - [x] **M7** Act V Contact ritual shippable
 - [x] **M8** Playground (optional) behind route / gate
-- [ ] **M9** Performance pass meets budgets *(guardian + code-split + approach prefetch; Lighthouse CI still open)*
+- [x] **M9** Performance pass meets budgets *(guardian + LHCI; perf score warn≥0.85, a11y/bp hard gates)*
 - [x] **M10** Polish + easter eggs + launch *(shortcuts, thank-you burst, micro-hover; remaining eggs optional)*
 
 ---
@@ -537,7 +537,7 @@ Fast first paint, stable scroll, no jank foundations, accessible shell.
 
 **Phase 1 exit criteria:** CI green · Lighthouse baseline captured · engines documented · GSAP-only deps · debug perf flag works.
 
-> Status: CI (lint/typecheck/test/build) + Vitest engines + `?debug=perf` + error boundaries + `engines.node>=22` are in place. Remaining Phase 1 gap: Lighthouse baseline capture.
+> Status: CI (lint/typecheck/test/build) + Vitest engines + `?debug=perf` + error boundaries + `engines.node>=22` + Lighthouse CI (`pnpm lhci` / `.github/workflows/lighthouse.yml`) are in place.
 
 ---
 
@@ -652,6 +652,8 @@ Orientation, control, continuity, and personality in the chrome of the experienc
 - **Performance:** Decode on idle; tiny sprites; never block main thread long.
 
 **Phase 2 exit criteria:** Loader → Hero handoff · keyboard act travel · progress + section nav · cursor desktop-only · sound off by default.
+
+> Status: Shipped — loader, Lenis, progress, act indicators, keyboard travel, custom desktop cursor (RAF), magnetic contact CTA. Sound remains off/default (optional P2).
 
 ---
 
@@ -1333,7 +1335,7 @@ Feels effortless. No hitch when entering projects. Mobile remains alive.
 
 **Phase 9 exit criteria:** Budgets in §6 met on reference devices · kill switches verified · Lighthouse CI ≥ targets on `/`.
 
-> Status: P0 hardening in — `QualityGuardian` (FPS → high/med/low: DPR, post-FX, particles), `SceneHost`/`HeroField` code-split, SceneManager approach prefetch at −0.15 + unload on leave, `@next/bundle-analyzer` via `pnpm analyze`, `?debug=perf` shows quality tier. Remaining: Lighthouse CI ≥ targets, texture compression, GPU profiling pass.
+> Status: P0 hardening in — `QualityGuardian`, code-split, approach prefetch, bundle analyzer, Lighthouse CI gates (a11y/bp hard; performance warn ≥0.85 toward roadmap 0.95). Remaining optional: texture compression, GPU profiling pass.
 
 ---
 

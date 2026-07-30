@@ -11,6 +11,7 @@ import {
 } from "react";
 import { submitContact } from "@/app/actions/contact";
 import { ThankYouBurst } from "@/components/creative/thank-you-burst";
+import { Magnetic } from "@/components/layout/magnetic";
 import { Button } from "@/components/ui/button";
 import { ensureGsap } from "@/engine/animation";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
@@ -313,14 +314,16 @@ export function ContactForm() {
             !reduced && "opacity-0",
           )}
         >
-          <Button
-            ref={submitRef}
-            type="submit"
-            disabled={status === "sending"}
-            className="w-fit will-change-transform"
-          >
-            {status === "sending" ? "Sending…" : "Send message"}
-          </Button>
+          <Magnetic className="w-fit">
+            <Button
+              ref={submitRef}
+              type="submit"
+              disabled={status === "sending"}
+              className="w-fit will-change-transform"
+            >
+              {status === "sending" ? "Sending…" : "Send message"}
+            </Button>
+          </Magnetic>
           {formError ? (
             <p className="text-sm text-red-400" role="alert">
               {formError}

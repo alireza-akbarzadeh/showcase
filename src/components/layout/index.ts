@@ -2,3 +2,6 @@ export { AppShell, Header, Footer, SkipLink } from "./app-shell";
 export { ErrorBoundary } from "./error-boundary";
 export { ExperienceLoader } from "./experience-loader";
 export { PerfOverlay } from "./perf-overlay";
+export { CustomCursor } from "./custom-cursor";
+export { Magnetic } from "./magnetic";
+export { ShortcutsOverlay } from "./shortcuts-overlay";

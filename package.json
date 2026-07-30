@@ -18,6 +18,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "analyze": "ANALYZE=true next build",
+    "lhci": "lhci autorun",
     "graphify:open": "open graphify-out/graph.html",
     "graphify:report": "open graphify-out/GRAPH_REPORT.md",
     "graphify:update": "$HOME/.local/bin/graphify update .",
@@ -44,6 +45,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@lhci/cli": "^0.15.1",
     "@next/bundle-analyzer": "^16.2.12",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^22.20.1",

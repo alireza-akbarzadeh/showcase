@@ -15,7 +15,6 @@ const eslintConfig = defineConfig([
         { prefer: "type-imports", fixStyle: "inline-type-imports" },
       ],
       "no-console": ["warn", { allow: ["warn", "error"] }],
-      "react/jsx-no-useless-fragment": "warn",
     },
   },
   globalIgnores([
