@@ -104,7 +104,7 @@ This roadmap defines what to build **on top of** that foundation.
 | Axis | Decision |
 |---|---|
 | Mode | Dark-first |
-| Accent | Dynamic CSS `--accent` (default electric mint) |
+| Accent | Dynamic CSS `--signal` (acid-lime) + `--accent` (warm amber) — Signal Lab |
 | Type | Display serif + geometric sans (already: Instrument Serif / Manrope) |
 | Atmosphere | Depth via lighting, grain, vignette — not purple glow clichés |
 | Layout | One composition per viewport; no dashboard chrome in heroes |
@@ -302,7 +302,7 @@ Playground is optional side quest (nav entry / deep link) — not mandatory in l
 
 Use this as the project Kanban spine.
 
-- [ ] **M0** Research locked (moodboard, refs, copy outline, metrics)
+- [x] **M0** Research locked (moodboard, refs, copy outline, metrics) *(Signal Lab design system locked)*
 - [x] **M1** Infrastructure complete + CI green *(Lighthouse CI workflow added)*
 - [x] **M2** Global nav / loader / cursor / a11y chrome
 - [x] **M3** Act I Hero cinematic shippable *(P0 vertical slice)*
