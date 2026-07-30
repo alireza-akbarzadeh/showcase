@@ -32,6 +32,15 @@ export type {
 } from "./scene";
 
 export type {
+  ProjectChapterId,
+  ProjectMetric,
+  ProjectChapter,
+  ProjectStackNode,
+  ProjectArchEdge,
+  ProjectCaseStudy,
+} from "./project";
+
+export type {
   AssetKind,
   AssetStatus,
   AssetDescriptor,

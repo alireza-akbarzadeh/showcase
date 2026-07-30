@@ -307,7 +307,7 @@ Use this as the project Kanban spine.
 - [ ] **M2** Global nav / loader / cursor / a11y chrome
 - [x] **M3** Act I Hero cinematic shippable *(P0 vertical slice)*
 - [ ] **M4** Act II Craft visualizations shippable
-- [ ] **M5** Act III ≥ 3 project scenes shippable
+- [x] **M5** Act III ≥ 3 project scenes shippable *(Orbit immersive + 2 panels)*
 - [ ] **M6** Act IV Proof metrics live
 - [x] **M7** Act V Contact ritual shippable
 - [ ] **M8** Playground (optional) behind route / gate
@@ -788,7 +788,7 @@ Scroll enters a project world → story → tech → proof snippets → exit to 
 - **Technical:** `ProjectSceneDefinition`: id, range, assets, timelines (desktop/mobile), chapters (`hook`, `problem`, `approach`, `impact`).
 - **Dependencies:** Scene manager, asset loader.
 - **Priority:** P0.
-- **Complexity:** M.
+- **Complexity:** M *(done — `ProjectCaseStudy` + Orbit)*.
 - **Performance:** Prefetch next project only.
 
 ### Feature: Card → Fullscreen Morph
@@ -798,7 +798,7 @@ Scroll enters a project world → story → tech → proof snippets → exit to 
 - **Technical:** Shared element via transforms (scale/position), FLIP with GSAP or manual rect interpolation — **no layout props**.
 - **Dependencies:** GSAP, scroll progress.
 - **Priority:** P0.
-- **Complexity:** L.
+- **Complexity:** L *(done — transform morph on Orbit stage)*.
 - **Performance:** Promote layers; avoid dual image decode.
 
 ### Feature: 3D Previews
@@ -828,7 +828,7 @@ Scroll enters a project world → story → tech → proof snippets → exit to 
 - **Technical:** ScrollTrigger pin **or** sticky sections + timeline progress.
 - **Dependencies:** GSAP ScrollTrigger optional.
 - **Priority:** P0.
-- **Complexity:** L.
+- **Complexity:** L *(done — progress-mapped chapters)*.
 - **Performance:** Pin sparingly (expensive); prefer progress mapping.
 
 ### Feature: Interactive Metrics
@@ -838,7 +838,7 @@ Scroll enters a project world → story → tech → proof snippets → exit to 
 - **Technical:** Timeline → textContent updates throttled (every 2–3 frames).
 - **Dependencies:** Timeline.
 - **Priority:** P1.
-- **Complexity:** S.
+- **Complexity:** S *(done)*.
 - **Performance:** Don’t React-render counters.
 
 ### Feature: Technology Visualization
@@ -882,6 +882,8 @@ Scroll enters a project world → story → tech → proof snippets → exit to 
 - **Performance:** Precompute paths.
 
 **Phase 4 exit criteria:** ≥ 3 immersive projects · morph works keyboard-accessible · assets unload · mobile alternate timelines.
+
+> Status: Exemplary **Orbit** end-to-end shipped — case-study contract, peek→immersion morph (transforms), chapter runway, architecture SVG draw, stack reveal, scrubbed metrics. Pulse/Lattice remain lighter panels. Remaining: deepen morph FLIP, 3D/video previews, expand Pulse/Lattice to full immersion.
 
 ---
 

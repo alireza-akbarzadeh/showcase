@@ -1,5 +1,6 @@
 import type { Breakpoint } from "@/types/scroll";
 import type { ActId, SceneId } from "@/types/scene";
+import type { ProjectCaseStudy } from "@/types/project";
 
 export const BREAKPOINTS = {
   mobile: 0,
@@ -124,6 +125,7 @@ export const PROJECTS = [
     tagline: "Realtime collaboration without the lag tax.",
     problem: "Multiplayer edits were dropping frames on mid-tier laptops.",
     approach: "Moved scroll and sync off React. Shared RAF. Predictive merge.",
+    immersive: true,
     metrics: [
       {
         label: "INP",
@@ -139,7 +141,74 @@ export const PROJECTS = [
         prefix: "−",
         suffix: "KB",
       },
+      {
+        label: "Sync lag",
+        display: "−40ms",
+        target: 40,
+        prefix: "−",
+        suffix: "ms",
+      },
     ],
+    chapters: [
+      {
+        id: "hook",
+        label: "Hook",
+        title: "Presence without the jank.",
+        body: "Orbit keeps collaborators in the same document — and on the same frame budget.",
+      },
+      {
+        id: "problem",
+        label: "Problem",
+        title: "React owned the scroll.",
+        body: "Every remote cursor update re-rendered the tree. Mid-tier machines paid sixty frames for gossip.",
+      },
+      {
+        id: "approach",
+        label: "Approach",
+        title: "One clock. Predictive merge.",
+        body: "Shared RAF, refs for presence, and optimistic ops that reconcile without layout thrash.",
+      },
+      {
+        id: "architecture",
+        label: "Architecture",
+        title: "Sync outside the render path.",
+        body: "Transport → CRDT → scene bus → DOM/WebGL writers. React only mounts the shell.",
+      },
+      {
+        id: "stack",
+        label: "Stack",
+        title: "Systems that stay quiet.",
+        body: "Each layer lights up in build order — edge ingress to infra telemetry.",
+      },
+      {
+        id: "impact",
+        label: "Impact",
+        title: "Numbers that survive scrutiny.",
+        body: "Interaction latency down, bundle leaner, sync lag cut — without killing the craft.",
+      },
+    ],
+    stack: [
+      { id: "ws", label: "WebSocket edge", layer: "edge" },
+      { id: "crdt", label: "CRDT merge", layer: "data" },
+      { id: "raf", label: "Shared RAF", layer: "app" },
+      { id: "r3f", label: "Optional R3F", layer: "app" },
+      { id: "otel", label: "OTel traces", layer: "infra" },
+    ],
+    architecture: {
+      nodes: [
+        { id: "client", label: "Client", x: 40, y: 110 },
+        { id: "raf", label: "RAF", x: 160, y: 40 },
+        { id: "bus", label: "Scene bus", x: 160, y: 110 },
+        { id: "crdt", label: "CRDT", x: 160, y: 180 },
+        { id: "edge", label: "Edge", x: 300, y: 110 },
+      ],
+      edges: [
+        { from: "client", to: "bus", label: "refs" },
+        { from: "raf", to: "bus", label: "tick" },
+        { from: "bus", to: "crdt", label: "ops" },
+        { from: "crdt", to: "edge", label: "sync" },
+      ],
+    },
   },
   {
     id: "pulse",
@@ -148,6 +217,7 @@ export const PROJECTS = [
     tagline: "Observability that stays at sixty frames.",
     problem: "Dashboards looked premium and felt sticky.",
     approach: "Canvas charts, virtualized streams, adaptive DPR.",
+    immersive: false,
     metrics: [
       {
         label: "LCP",
@@ -166,6 +236,9 @@ export const PROJECTS = [
         suffix: "+",
       },
     ],
+    chapters: [],
+    stack: [],
+    architecture: { nodes: [], edges: [] },
   },
   {
     id: "lattice",
@@ -174,6 +247,7 @@ export const PROJECTS = [
     tagline: "A design system that scales teams, not just tokens.",
     problem: "Eleven apps diverged into eleven visual languages.",
     approach: "Token architecture, documented motion language, enforced imports.",
+    immersive: false,
     metrics: [
       {
         label: "Tokens",
@@ -190,8 +264,13 @@ export const PROJECTS = [
         suffix: "",
       },
     ],
+    chapters: [],
+    stack: [],
+    architecture: { nodes: [], edges: [] },
   },
-] as const;
+] as const satisfies readonly ProjectCaseStudy[];
+
+export const ORBIT_PROJECT = PROJECTS[0];
 
 export const ABOUT_CHAPTERS = [
   {

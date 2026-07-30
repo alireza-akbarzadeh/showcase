@@ -11,10 +11,12 @@ import { createSkillsScene } from "@/components/creative/scenes/skills-scene";
 import { createProofScene } from "@/components/creative/scenes/proof-scene";
 import { createContactScene } from "@/components/creative/scenes/contact-scene";
 import { HeroSection } from "@/components/creative/sections/hero-section";
+import { OrbitProject } from "@/components/creative/sections/orbit-project";
 import { ContactForm } from "@/components/creative/contact-form";
 import { Section } from "@/components/scroll/section";
 import {
   ABOUT_CHAPTERS,
+  ORBIT_PROJECT,
   PROJECTS,
   SCENE_LABELS,
   SKILL_CLUSTERS,
@@ -48,6 +50,7 @@ export function SceneHost({ ready }: SceneHostProps) {
 
   const projectsRoot = useRef<HTMLDivElement>(null);
   const projectsHeading = useRef<HTMLDivElement>(null);
+  const orbitRoot = useRef<HTMLElement | null>(null);
   const projectPanels = useRef<(HTMLElement | null)[]>([]);
 
   const proofRoot = useRef<HTMLDivElement>(null);
@@ -98,6 +101,7 @@ export function SceneHost({ ready }: SceneHostProps) {
         createProjectsScene(() => ({
           root: projectsRoot.current,
           heading: projectsHeading.current,
+          orbit: orbitRoot.current,
           panels: projectPanels.current.filter(Boolean) as HTMLElement[],
         })),
       ),
@@ -122,6 +126,7 @@ export function SceneHost({ ready }: SceneHostProps) {
       skillsRoot.current,
       aboutRoot.current,
       projectsRoot.current,
+      orbitRoot.current,
       proofRoot.current,
       contactRoot.current,
     ].filter(Boolean) as HTMLElement[];
@@ -283,7 +288,6 @@ export function SceneHost({ ready }: SceneHostProps) {
           <div
             ref={projectsHeading}
             className="flex min-h-[50svh] flex-col justify-end pb-16 pt-32"
-
           >
             <p className="font-mono text-[11px] tracking-[0.35em] text-[var(--accent)] uppercase">
               Act III · Projects
@@ -291,29 +295,33 @@ export function SceneHost({ ready }: SceneHostProps) {
             <h2 className="font-display mt-4 text-[clamp(2.5rem,7vw,5rem)] leading-[0.98] tracking-[-0.04em]">
               Selected work
             </h2>
+            <p className="mt-5 max-w-lg text-lg text-[var(--muted)]">
+              Depth over quantity — one immersive case, then two focused studies.
+            </p>
           </div>
 
-          <div className="space-y-6 pb-24 md:space-y-10">
-            {PROJECTS.map((project, i) => (
+          <OrbitProject ref={orbitRoot} project={ORBIT_PROJECT} />
+
+          <div className="space-y-6 pb-24 pt-16 md:space-y-10">
+            {PROJECTS.filter((p) => !p.immersive).map((project, i) => (
               <article
                 key={project.id}
                 ref={(el) => {
                   projectPanels.current[i] = el;
                 }}
-                className="relative min-h-[85svh] overflow-hidden border-t border-[var(--border)] py-16 will-change-transform md:py-24"
-
+                className="relative min-h-[70svh] overflow-hidden border-t border-[var(--border)] py-16 will-change-transform md:py-20"
               >
                 <div
                   aria-hidden="true"
                   className="pointer-events-none absolute inset-0 -z-10 opacity-40"
                   style={{
-                    background: `radial-gradient(ellipse 70% 60% at ${i === 1 ? "20%" : "85%"} 30%, color-mix(in oklab, var(--accent) 16%, transparent), transparent 70%)`,
+                    background: `radial-gradient(ellipse 70% 60% at ${i === 0 ? "20%" : "85%"} 30%, color-mix(in oklab, var(--accent) 16%, transparent), transparent 70%)`,
                   }}
                 />
                 <p className="font-mono text-[10px] tracking-[0.3em] text-[var(--muted)] uppercase">
-                  0{i + 1} · {project.role}
+                  0{i + 2} · {project.role}
                 </p>
-                <h3 className="font-display mt-6 text-[clamp(3rem,10vw,7rem)] leading-[0.9] tracking-[-0.045em]">
+                <h3 className="font-display mt-6 text-[clamp(2.75rem,8vw,5.5rem)] leading-[0.9] tracking-[-0.045em]">
                   {project.name}
                 </h3>
                 <p className="mt-6 max-w-xl text-xl text-[var(--muted)] md:text-2xl">
@@ -357,8 +365,7 @@ export function SceneHost({ ready }: SceneHostProps) {
                         data-metric-suffix={metric.suffix}
                         data-metric-float={
                           "float" in metric && metric.float ? "true" : "false"
-                        }
-                      >
+                        }                      >
                         {metric.display}
                       </dd>
                     </div>

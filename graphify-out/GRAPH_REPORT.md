@@ -1,30 +1,30 @@
 # Graph Report - showcase  (2026-07-30)
 
 ## Corpus Check
-- 110 files · ~29,081 words
+- 114 files · ~30,943 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 669 nodes · 1410 edges · 42 communities (27 shown, 15 thin omitted)
+- 685 nodes · 1464 edges · 47 communities (33 shown, 14 thin omitted)
 - Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 57 edges (avg confidence: 0.77)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `03f5f469`
+- Built from commit: `5b8792fb`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- ScrollManager
+- types/index.ts
 - Showcase Portfolio Foundation
 - scene-host.tsx
 - factories.ts
-- hero-section.tsx
+- constants/index.ts
 - scripts
 - dependencies
-- scroll-provider.tsx
+- hooks/index.ts
 - compilerOptions
-- types/index.ts
+- ScrollManager
 - devDependencies
 - paths
 - components.json
@@ -41,32 +41,37 @@
 - eslint.config.mjs
 - next.config.ts
 - postcss.config.mjs
-- getScrollManager
+- experience.tsx
 - include
 - lib
 - graphify
 - graphify
 - package.json
-- timeline.ts
+- camera-rig.tsx
 - eslint-config-prettier
 - prettier
 - prettier-plugin-tailwindcss
 - raw-loader
 - tailwindcss
 - eslint-config-next
-- typescript
+- hero-section.tsx
+- observers/index.ts
+- hero-field.tsx
+- math.ts
+- intersection.ts
+- @types/node
 
 ## God Nodes (most connected - your core abstractions)
 1. `ScrollManager` - 27 edges
 2. `getScrollManager()` - 24 edges
-3. `compilerOptions` - 20 edges
-4. `RafScheduler` - 19 edges
-5. `setTransform()` - 19 edges
+3. `setTransform()` - 20 edges
+4. `compilerOptions` - 20 edges
+5. `RafScheduler` - 19 edges
 6. `ScrollSnapshot` - 18 edges
-7. `scripts` - 16 edges
-8. `easeOutCubic()` - 16 edges
-9. `createTimeline()` - 16 edges
-10. `keyframes()` - 16 edges
+7. `easeOutCubic()` - 17 edges
+8. `setOpacity()` - 17 edges
+9. `scripts` - 16 edges
+10. `createTimeline()` - 16 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Next.js (Project-Specific Breaking APIs)` --semantically_similar_to--> `Next.js 16 App Router`  [INFERRED] [semantically similar]
@@ -88,23 +93,27 @@
 - **Five-Act Narrative Arc** — feature_roadmap_act_i_introduction, feature_roadmap_act_ii_craft, feature_roadmap_act_iii_projects, feature_roadmap_act_iv_proof, feature_roadmap_act_v_contact [EXTRACTED 1.00]
 - **Shared Architecture Discipline (README + Roadmap)** — readme_one_raf, readme_scroll_outside_react, readme_gpu_props_only, feature_roadmap_react_never_owns_scroll, feature_roadmap_gpu_first, feature_roadmap_gsap_only [INFERRED 0.85]
 
-## Communities (42 total, 15 thin omitted)
+## Communities (47 total, 14 thin omitted)
+
+### Community 0 - "types/index.ts"
+Cohesion: 0.10
+Nodes (17): OrbitProject, OrbitProjectProps, createId(), RafScheduler, resetRafScheduler(), ProjectArchEdge, ProjectCaseStudy, ProjectChapter (+9 more)
 
 ### Community 1 - "Showcase Portfolio Foundation"
 Cohesion: 0.06
 Nodes (48): Next.js Dist Docs Guide, Next.js (Project-Specific Breaking APIs), Next.js Agent Rules, CLAUDE.md Agents Pointer, Act I — Introduction, Act II — Craft, Act III — Projects, Act IV — Proof (+40 more)
 
 ### Community 2 - "scene-host.tsx"
-Cohesion: 0.11
-Nodes (38): SceneHost(), SceneHostProps, createAboutScene(), createContactScene(), createHeroScene(), createIntroScene(), createProjectsScene(), createProofScene() (+30 more)
+Cohesion: 0.10
+Nodes (42): SceneHost(), SceneHostProps, createAboutScene(), createContactScene(), createHeroScene(), createIntroScene(), chapterLocal(), morphAmount() (+34 more)
 
 ### Community 3 - "factories.ts"
 Cohesion: 0.10
 Nodes (25): AssetOptions, font(), image(), loadFont(), loadImage(), loadModel(), loadTexture(), loadVideo() (+17 more)
 
-### Community 4 - "hero-section.tsx"
-Cohesion: 0.06
-Nodes (24): size, size, HeroSection(), HeroSectionProps, ExperienceLoader(), LoaderProps, SITE, ensureGsap() (+16 more)
+### Community 4 - "constants/index.ts"
+Cohesion: 0.13
+Nodes (10): size, size, ABOUT_CHAPTERS, RAF_PRIORITIES, SCENE_LABELS, SCROLL_DEFAULTS, SITE, SKILL_CLUSTERS (+2 more)
 
 ### Community 5 - "scripts"
 Cohesion: 0.12
@@ -114,21 +123,21 @@ Nodes (16): scripts, build, dev, format, format:check, graphify:mcp, graphify:op
 Cohesion: 0.06
 Nodes (35): class-variance-authority, clsx, gsap, lenis, lucide-react, next, dependencies, class-variance-authority (+27 more)
 
-### Community 7 - "scroll-provider.tsx"
-Cohesion: 0.08
-Nodes (37): body, display, jsonLd, metadata, mono, viewport, CanvasRoot(), R3FCanvas (+29 more)
+### Community 7 - "hooks/index.ts"
+Cohesion: 0.10
+Nodes (27): body, display, jsonLd, metadata, mono, viewport, useIsMobile(), useMediaQuery() (+19 more)
 
 ### Community 8 - "compilerOptions"
 Cohesion: 0.11
 Nodes (18): compilerOptions, allowJs, baseUrl, esModuleInterop, exactOptionalPropertyTypes, incremental, isolatedModules, jsx (+10 more)
 
-### Community 9 - "types/index.ts"
+### Community 9 - "ScrollManager"
 Cohesion: 0.07
-Nodes (35): getPerfFlag(), PerfOverlay(), subscribePerfFlag(), Section, SectionProps, SCROLL_DEFAULTS, resolveRange(), SceneManager (+27 more)
+Nodes (41): ScrollMesh(), getPerfFlag(), PerfOverlay(), subscribePerfFlag(), Section, SectionProps, getSceneManager(), resetSceneManager() (+33 more)
 
 ### Community 10 - "devDependencies"
 Cohesion: 0.13
-Nodes (15): eslint, devDependencies, eslint, @tailwindcss/postcss, @types/node, @types/react, @types/react-dom, @types/three (+7 more)
+Nodes (15): eslint, devDependencies, eslint, @tailwindcss/postcss, @types/react, @types/react-dom, @types/three, typescript (+7 more)
 
 ### Community 11 - "paths"
 Cohesion: 0.12
@@ -147,8 +156,8 @@ Cohesion: 0.20
 Nodes (9): *.frag, *.fs, *.glsl, RequestIdleCallbackDeadline, RequestIdleCallbackHandle, RequestIdleCallbackOptions, *.vert, *.vs (+1 more)
 
 ### Community 16 - "contact-form.tsx"
-Cohesion: 0.15
-Nodes (19): clientKey(), ContactActionResult, hits, rateLimited(), submitContact(), ContactForm(), Field(), Status (+11 more)
+Cohesion: 0.13
+Nodes (20): clientKey(), ContactActionResult, hits, rateLimited(), submitContact(), ContactForm(), Field(), Status (+12 more)
 
 ### Community 17 - "globe.svg"
 Cohesion: 0.33
@@ -170,9 +179,9 @@ Nodes (4): White fill #fff, Vercel logo triangle, Triangle path d="m577.3 0 577.
 Cohesion: 0.40
 Nodes (4): Browser window icon, Window frame, Gray fill #666, Title bar control dots
 
-### Community 27 - "getScrollManager"
-Cohesion: 0.07
-Nodes (39): CameraRig(), HeroField(), PARTICLE_POSITIONS, ScrollMesh(), Experience(), AppShell(), Footer(), Header() (+31 more)
+### Community 27 - "experience.tsx"
+Cohesion: 0.14
+Nodes (11): Experience(), AppShell(), Footer(), Header(), SkipLink(), ErrorBoundary, Props, State (+3 more)
 
 ### Community 28 - "include"
 Cohesion: 0.20
@@ -186,29 +195,49 @@ Nodes (4): dom, dom.iterable, esnext, lib
 Cohesion: 0.29
 Nodes (6): engines, node, name, packageManager, private, version
 
-### Community 33 - "timeline.ts"
-Cohesion: 0.24
-Nodes (8): EasingFn, lerp(), sampleTrack(), Timeline, TimelineDefinition, TimelineInstance, TimelineKeyframe, TimelineTrack
+### Community 33 - "camera-rig.tsx"
+Cohesion: 0.18
+Nodes (12): CameraRig(), CanvasRoot(), R3FCanvas, Effects, PostFX(), PERFORMANCE, CameraState, createCameraState() (+4 more)
+
+### Community 40 - "hero-section.tsx"
+Cohesion: 0.29
+Nodes (8): EmailLockup(), HeroSection(), HeroSectionProps, ExperienceLoader(), LoaderProps, ensureGsap(), useRaf(), useReducedMotion()
+
+### Community 42 - "observers/index.ts"
+Cohesion: 0.22
+Nodes (6): IdleTask, runWhenIdle(), schedulePrefetch(), observeResize(), ResizeHandler, SharedResizeObserver
+
+### Community 43 - "hero-field.tsx"
+Cohesion: 0.33
+Nodes (7): HeroField(), PARTICLE_POSITIONS, getPointerState(), onPointerMove(), PointerState, retainPointerTracking(), state
+
+### Community 44 - "math.ts"
+Cohesion: 0.53
+Nodes (7): approx(), clamp(), damp(), inverseLerp(), lerp(), mapRange(), mod()
+
+### Community 45 - "intersection.ts"
+Cohesion: 0.40
+Nodes (5): cacheKey(), IntersectionHandler, observeIntersection(), ObserveIntersectionOptions, observerCache
 
 ## Knowledge Gaps
 - **188 isolated node(s):** `${userHome}/.local/bin/graphify-mcp`, `${userHome}/.local/bin/graphify-mcp`, `semi`, `singleQuote`, `trailingComma` (+183 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **15 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **14 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `ScrollManager` connect `ScrollManager` to `types/index.ts`, `getScrollManager`, `scroll-provider.tsx`?**
+- **Why does `RafScheduler` connect `types/index.ts` to `ScrollManager`?**
   _High betweenness centrality (0.022) - this node is a cross-community bridge._
-- **Why does `ScrollSnapshot` connect `types/index.ts` to `ScrollManager`, `getScrollManager`?**
+- **Why does `ScrollSnapshot` connect `ScrollManager` to `types/index.ts`, `camera-rig.tsx`, `scene-host.tsx`, `hero-field.tsx`?**
   _High betweenness centrality (0.018) - this node is a cross-community bridge._
 - **What connects `${userHome}/.local/bin/graphify-mcp`, `${userHome}/.local/bin/graphify-mcp`, `semi` to the rest of the system?**
   _188 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `types/index.ts` be split into smaller, more focused modules?**
+  _Cohesion score 0.10241820768136557 - nodes in this community are weakly interconnected._
 - **Should `Showcase Portfolio Foundation` be split into smaller, more focused modules?**
   _Cohesion score 0.06028368794326241 - nodes in this community are weakly interconnected._
 - **Should `scene-host.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.10753945061367622 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.10272804774083547 - nodes in this community are weakly interconnected._
 - **Should `factories.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.10220673635307782 - nodes in this community are weakly interconnected._
-- **Should `hero-section.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.06236786469344609 - nodes in this community are weakly interconnected._
