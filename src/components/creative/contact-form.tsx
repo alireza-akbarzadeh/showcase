@@ -23,6 +23,8 @@ import {
   type ContactFieldName,
 } from "@/lib/contact/schema";
 import { SITE, SOCIALS } from "@/constants";
+import { unlockAchievement } from "@/lib/achievements";
+import { playSound } from "@/hooks/use-sound";
 import { cn } from "@/utils/cn";
 
 type Status = "idle" | "sending" | "sent" | "error";
@@ -186,6 +188,8 @@ export function ContactForm() {
       }
 
       setStatus("sent");
+      playSound("success");
+      unlockAchievement("contact-sent");
     } catch {
       setFormError("Something went wrong. Email me directly instead.");
       setStatus("error");

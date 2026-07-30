@@ -5,6 +5,7 @@ import { useEffect, useId, useRef, useState } from "react";
 const SHORTCUTS = [
   { keys: "1–5", action: "Jump to act" },
   { keys: "↑ ↓ / j k", action: "Prev / next scene" },
+  { keys: "M", action: "Toggle sound (off by default)" },
   { keys: "?", action: "Toggle this cheatsheet" },
   { keys: "~", action: "Toggle ?debug=perf overlay" },
   { keys: "Esc", action: "Close overlays" },

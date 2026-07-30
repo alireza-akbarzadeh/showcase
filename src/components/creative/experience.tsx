@@ -8,9 +8,12 @@ import { ErrorBoundary } from "@/components/layout/error-boundary";
 import { PerfOverlay } from "@/components/layout/perf-overlay";
 import { ShortcutsOverlay } from "@/components/layout/shortcuts-overlay";
 import { CustomCursor } from "@/components/layout/custom-cursor";
+import { AchievementToasts } from "@/components/layout/achievement-toasts";
+import { DelightHooks } from "@/components/layout/delight-hooks";
 import { ScrollRoot, ActIndicators } from "@/components/scroll";
 import { CanvasRoot } from "@/components/canvas";
 import { useKeyboardNavigation } from "@/hooks/use-keyboard-navigation";
+import { useSoundHotkey } from "@/hooks/use-sound";
 
 const HeroField = dynamic(
   () =>
@@ -29,6 +32,7 @@ export function Experience() {
   const onComplete = useCallback(() => setReady(true), []);
 
   useKeyboardNavigation(ready);
+  useSoundHotkey(ready);
 
   return (
     <>
@@ -46,6 +50,8 @@ export function Experience() {
         <CustomCursor />
         <PerfOverlay />
         <ShortcutsOverlay />
+        <AchievementToasts />
+        <DelightHooks ready={ready} />
       </ScrollRoot>
     </>
   );

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ACTS, SITE } from "@/constants";
 import { getScrollManager } from "@/engine/scroll";
+import { SoundToggle } from "@/components/layout/sound-toggle";
 
 export function SkipLink() {
   return (
@@ -27,7 +28,7 @@ export function Header() {
         </Link>
         <nav
           aria-label="Primary"
-          className="pointer-events-auto hidden lg:block"
+          className="pointer-events-auto hidden items-center gap-6 lg:flex"
         >
           <ul className="flex gap-6 text-xs tracking-[0.2em] text-white/80 uppercase">
             {ACTS.map((act) => {
@@ -56,6 +57,7 @@ export function Header() {
               </Link>
             </li>
           </ul>
+          <SoundToggle className="text-white/80" />
         </nav>
       </div>
     </header>
@@ -70,14 +72,14 @@ export function Footer() {
           © {new Date().getFullYear()} {SITE.name}. Five acts. One scroll.
         </p>
         <p className="text-sm text-[var(--muted)]">
-          Keys 1–5 jump acts ·{" "}
+          Keys 1–5 jump acts · M toggles sound ·{" "}
           <Link
             href="/playground"
             className="text-[var(--accent)] underline-offset-4 hover:underline"
           >
             /playground
           </Link>{" "}
-          · ?debug=perf for FPS · press ? for shortcuts
+          · press ? for shortcuts
         </p>
       </div>
     </footer>

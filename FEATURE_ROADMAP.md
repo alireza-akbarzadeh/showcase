@@ -312,7 +312,7 @@ Use this as the project Kanban spine.
 - [x] **M7** Act V Contact ritual shippable
 - [x] **M8** Playground (optional) behind route / gate
 - [x] **M9** Performance pass meets budgets *(guardian + LHCI; perf score warn≥0.85, a11y/bp hard gates)*
-- [x] **M10** Polish + easter eggs + launch *(shortcuts, thank-you burst, micro-hover; remaining eggs optional)*
+- [x] **M10** Polish + easter eggs + launch *(sound, achievements, Konami, 404)*
 
 ---
 
@@ -653,7 +653,7 @@ Orientation, control, continuity, and personality in the chrome of the experienc
 
 **Phase 2 exit criteria:** Loader → Hero handoff · keyboard act travel · progress + section nav · cursor desktop-only · sound off by default.
 
-> Status: Shipped — loader, Lenis, progress, act indicators, keyboard travel, custom desktop cursor (RAF), magnetic contact CTA. Sound remains off/default (optional P2).
+> Status: Shipped — loader, Lenis, progress, act indicators, keyboard travel, custom desktop cursor (RAF), magnetic contact CTA, sound system (off by default, `M` / header toggle).
 
 ---
 
@@ -1461,7 +1461,7 @@ Micro-joy, discovery, shareable moments — without harming clarity.
 
 **Phase 10 exit criteria:** Delight pass reviewed against “motion has purpose” · easter eggs documented · launch checklist green.
 
-> Status: Shipped — `?` shortcuts overlay, `~` toggles perf debug, button micro-hover, contact thank-you burst (High quality / reduced-motion off). Remaining optional: sound, achievements, Konami.
+> Status: Shipped — `?` shortcuts, `~` perf debug, micro-hover, thank-you burst, sound system, achievement toasts, Konami egg, branded 404. Delight layer complete for launch.
 
 ---
 

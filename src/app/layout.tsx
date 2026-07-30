@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, DM_Sans, JetBrains_Mono } from "next/font/google";
 import { AppProviders } from "@/providers";
-import { SITE } from "@/constants";
+import { SITE, SOCIALS } from "@/constants";
 import "@/styles/globals.css";
 
 /**
@@ -89,11 +89,25 @@ export const viewport: Viewport = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: SITE.author,
-  url: SITE.url,
-  jobTitle: "Creative Frontend Engineer",
-  description: SITE.description,
+  "@graph": [
+    {
+      "@type": "WebSite",
+      name: SITE.name,
+      url: SITE.url,
+      description: SITE.description,
+      author: { "@id": `${SITE.url}/#person` },
+    },
+    {
+      "@type": "Person",
+      "@id": `${SITE.url}/#person`,
+      name: SITE.author,
+      url: SITE.url,
+      jobTitle: "Creative Frontend Engineer",
+      description: SITE.description,
+      email: SITE.email,
+      sameAs: SOCIALS.map((s) => s.href),
+    },
+  ],
 };
 
 export default function RootLayout({

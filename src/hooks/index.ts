@@ -6,3 +6,9 @@ export { useMediaQuery, useBreakpoint, useIsMobile } from "./use-breakpoint";
 export { useTheme, useAccentColor, useSetThemeMode } from "./use-theme";
 export { useAsset } from "./use-asset";
 export { useKeyboardNavigation } from "./use-keyboard-navigation";
+export {
+  useSoundEnabled,
+  useSoundHotkey,
+  toggleSound,
+  playSound,
+} from "./use-sound";

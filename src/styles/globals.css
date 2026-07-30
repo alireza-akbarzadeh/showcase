@@ -96,3 +96,20 @@
     backface-visibility: hidden;
   }
 }
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+html[data-egg="konami"] {
+  --accent: #ff6bcb;
+  filter: hue-rotate(40deg) saturate(1.15);
+  transition: filter 0.4s ease;
+}

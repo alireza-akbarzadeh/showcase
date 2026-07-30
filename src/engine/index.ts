@@ -5,3 +5,4 @@ export * from "./assets";
 export * from "./observers";
 export * from "./render";
 export * from "./performance";
+export * from "./audio";

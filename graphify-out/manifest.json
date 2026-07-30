@@ -30,8 +30,8 @@
     "semantic_hash": "239f3ebf717465dc636818a1a619398d"
   },
   "src/app/layout.tsx": {
-    "mtime": 1785404028.2836757,
-    "ast_hash": "5497e9f02b8e7138d9ae15e36a47791b",
+    "mtime": 1785407992.1114028,
+    "ast_hash": "7741837c5442bb1679a3420b6e267e44",
     "semantic_hash": ""
   },
   "src/app/opengraph-image.tsx": {
@@ -140,13 +140,13 @@
     "semantic_hash": ""
   },
   "src/components/layout/app-shell.tsx": {
-    "mtime": 1785407196.219015,
-    "ast_hash": "5560cbf07d2543534658c16aa68f7cc7",
+    "mtime": 1785407953.4024327,
+    "ast_hash": "d563c116d196f5a917daed57050f2489",
     "semantic_hash": ""
   },
   "src/components/layout/index.ts": {
-    "mtime": 1785407579.4670403,
-    "ast_hash": "70455b6f881a5ef580cf0193b3d2aafe",
+    "mtime": 1785408026.6412644,
+    "ast_hash": "6e1573c8e71711d0f69eb5efd021083c",
     "semantic_hash": ""
   },
   "src/components/scroll/index.ts": {
@@ -225,8 +225,8 @@
     "semantic_hash": "8f7b0ada012c749352dc308275abe0a3"
   },
   "src/engine/index.ts": {
-    "mtime": 1785406932.1457753,
-    "ast_hash": "7f06cf981aa2919331b1f0ef9dfbe2cc",
+    "mtime": 1785407934.8571124,
+    "ast_hash": "5d14843cc65c2adb3457101d7139c118",
     "semantic_hash": ""
   },
   "src/engine/observers/idle.ts": {
@@ -290,8 +290,8 @@
     "semantic_hash": "4721176f1909f755dfd83736dd28ce55"
   },
   "src/hooks/index.ts": {
-    "mtime": 1785403373.1930594,
-    "ast_hash": "b402e364a7d645b9de357bd3d5ece242",
+    "mtime": 1785407937.4009078,
+    "ast_hash": "6f824ec018d9ec7872913ba3dfe7e4b0",
     "semantic_hash": ""
   },
   "src/hooks/use-asset.ts": {
@@ -430,8 +430,8 @@
     "semantic_hash": "5c27369b226fcf2be8a6cfe52224e767"
   },
   "FEATURE_ROADMAP.md": {
-    "mtime": 1785407588.2748616,
-    "ast_hash": "4b048c11c6d64939451f733074322cd8",
+    "mtime": 1785408025.93462,
+    "ast_hash": "9937d9cb3b8a49f6d97d1a6ed2be919d",
     "semantic_hash": ""
   },
   "README.md": {
@@ -480,13 +480,13 @@
     "semantic_hash": ""
   },
   "src/components/creative/contact-form.tsx": {
-    "mtime": 1785407563.840518,
-    "ast_hash": "b5eb303e06714fbe531a5c84575f4602",
+    "mtime": 1785407962.4600353,
+    "ast_hash": "8ff66cc2805dbba2cec9e450fbbc1bc8",
     "semantic_hash": ""
   },
   "src/components/creative/experience.tsx": {
-    "mtime": 1785407559.7450826,
-    "ast_hash": "53117eb739d5c98c4c2436e65fa783a2",
+    "mtime": 1785407942.70735,
+    "ast_hash": "4544575609d4900eea97a16283f6624a",
     "semantic_hash": ""
   },
   "src/components/creative/scenes/proof-scene.ts": {
@@ -670,8 +670,8 @@
     "semantic_hash": ""
   },
   "src/components/layout/shortcuts-overlay.tsx": {
-    "mtime": 1785407233.6536756,
-    "ast_hash": "9ccffcfca5c35bbca2b85b0495bfc592",
+    "mtime": 1785407986.621904,
+    "ast_hash": "97062ad8b6c178fbe6a382e8482966e2",
     "semantic_hash": ""
   },
   "src/components/playground/experiments.ts": {
@@ -690,8 +690,8 @@
     "semantic_hash": ""
   },
   "src/components/playground/playground-shell.tsx": {
-    "mtime": 1785407181.6758726,
-    "ast_hash": "aab238735073b7e0887951464ac5ed18",
+    "mtime": 1785407979.940889,
+    "ast_hash": "b2e2250eea0522caf38aa6b1e841a773",
     "semantic_hash": ""
   },
   "lighthouserc.cjs": {
@@ -712,6 +712,51 @@
   ".github/workflows/lighthouse.yml": {
     "mtime": 1785407425.479354,
     "ast_hash": "0cf1bafed43ebd4ee9fbfe8aec8892fb",
+    "semantic_hash": ""
+  },
+  "src/app/not-found.tsx": {
+    "mtime": 1785407983.4452906,
+    "ast_hash": "8752b7c8158e0498236185e9f63b96b7",
+    "semantic_hash": ""
+  },
+  "src/components/layout/achievement-toasts.tsx": {
+    "mtime": 1785407896.1485868,
+    "ast_hash": "61d655716786516fb9d919e1c3c147b2",
+    "semantic_hash": ""
+  },
+  "src/components/layout/delight-hooks.tsx": {
+    "mtime": 1785407899.7368124,
+    "ast_hash": "532f8c588e548ee8dcebdfad0dae351b",
+    "semantic_hash": ""
+  },
+  "src/components/layout/sound-toggle.tsx": {
+    "mtime": 1785407900.0941124,
+    "ast_hash": "6ccc4f699c7d204a9cf021d42b942420",
+    "semantic_hash": ""
+  },
+  "src/engine/audio/index.ts": {
+    "mtime": 1785407875.6018102,
+    "ast_hash": "3501bc5bf53f3b6f906ef7a9cb30bb41",
+    "semantic_hash": ""
+  },
+  "src/engine/audio/sound-system.ts": {
+    "mtime": 1785407866.9699893,
+    "ast_hash": "05bd28eb6959be3a5c4c6950a53868f5",
+    "semantic_hash": ""
+  },
+  "src/hooks/use-sound.ts": {
+    "mtime": 1785408017.1347368,
+    "ast_hash": "bc60d4623e18727ec5435581c2893c42",
+    "semantic_hash": ""
+  },
+  "src/lib/achievements.test.ts": {
+    "mtime": 1785408042.3036184,
+    "ast_hash": "61d86a114f224f064e659e70ba841d26",
+    "semantic_hash": ""
+  },
+  "src/lib/achievements.ts": {
+    "mtime": 1785407880.1793876,
+    "ast_hash": "4e50bb212133a5738822a464729dbe7a",
     "semantic_hash": ""
   }
 }

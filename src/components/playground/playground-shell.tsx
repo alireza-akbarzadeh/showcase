@@ -2,13 +2,16 @@
 
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   EXPERIMENTS,
   FPS_COST_LABEL,
   type ExperimentId,
 } from "@/components/playground/experiments";
+import { AchievementToasts } from "@/components/layout/achievement-toasts";
+import { SoundToggle } from "@/components/layout/sound-toggle";
 import { SITE } from "@/constants";
+import { unlockAchievement } from "@/lib/achievements";
 import { cn } from "@/utils/cn";
 
 const WaveFieldExperiment = dynamic(
@@ -42,6 +45,10 @@ export function PlaygroundShell() {
     [active],
   );
 
+  useEffect(() => {
+    unlockAchievement("playground");
+  }, []);
+
   return (
     <div className="relative min-h-svh">
       <header className="border-b border-[var(--border)] px-6 py-5 md:px-12">
@@ -52,9 +59,12 @@ export function PlaygroundShell() {
           >
             {SITE.name}
           </Link>
-          <p className="font-mono text-[10px] tracking-[0.3em] text-[var(--accent)] uppercase">
-            Lab · Playground
-          </p>
+          <div className="flex items-center gap-6">
+            <SoundToggle />
+            <p className="font-mono text-[10px] tracking-[0.3em] text-[var(--accent)] uppercase">
+              Lab · Playground
+            </p>
+          </div>
         </div>
       </header>
 
@@ -114,6 +124,7 @@ export function PlaygroundShell() {
           {active === "sort-scrub" ? <SortScrubExperiment /> : null}
         </section>
       </div>
+      <AchievementToasts />
     </div>
   );
 }

@@ -5,3 +5,6 @@ export { PerfOverlay } from "./perf-overlay";
 export { CustomCursor } from "./custom-cursor";
 export { Magnetic } from "./magnetic";
 export { ShortcutsOverlay } from "./shortcuts-overlay";
+export { SoundToggle } from "./sound-toggle";
+export { AchievementToasts } from "./achievement-toasts";
+export { DelightHooks } from "./delight-hooks";
