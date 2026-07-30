@@ -12,11 +12,11 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-[var(--accent)] text-[var(--accent-foreground)] hover:opacity-90 focus-visible:outline-[var(--accent)]",
+          "bg-[var(--signal)] text-[var(--signal-foreground)] hover:opacity-90 focus-visible:outline-[var(--signal)]",
         ghost:
-          "bg-transparent text-[var(--foreground)] hover:opacity-70 focus-visible:outline-[var(--accent)]",
+          "bg-transparent text-[var(--foreground)] hover:opacity-70 focus-visible:outline-[var(--signal)]",
         outline:
-          "border border-[var(--border)] bg-transparent text-[var(--foreground)] hover:border-[var(--accent)] focus-visible:outline-[var(--accent)]",
+          "border border-[var(--border)] bg-transparent text-[var(--foreground)] hover:border-[var(--signal)] focus-visible:outline-[var(--signal)]",
       },
       size: {
         default: "h-11 px-6",

@@ -122,11 +122,11 @@ export function CustomCursor() {
     >
       <div
         ref={ringRef}
-        className="absolute top-0 left-0 h-10 w-10 rounded-full border border-[var(--accent)] transition-[width,height,border-color] duration-200 group-data-[mode=hover]:h-14 group-data-[mode=hover]:w-14 group-data-[mode=text]:h-6 group-data-[mode=text]:w-6 group-data-[mode=text]:border-[var(--muted)]"
+        className="absolute top-0 left-0 h-10 w-10 rounded-full border border-[var(--signal)] transition-[width,height,border-color] duration-200 group-data-[mode=hover]:h-14 group-data-[mode=hover]:w-14 group-data-[mode=text]:h-6 group-data-[mode=text]:w-6 group-data-[mode=text]:border-[var(--muted)]"
       />
       <div
         ref={dotRef}
-        className="absolute top-0 left-0 h-1.5 w-1.5 rounded-full bg-[var(--accent)]"
+        className="absolute top-0 left-0 h-1.5 w-1.5 rounded-full bg-[var(--signal)]"
       />
     </div>
   );

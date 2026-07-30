@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Sora, JetBrains_Mono } from "next/font/google";
 import { AppProviders } from "@/providers";
 import { SITE, SOCIALS } from "@/constants";
 import "@/styles/globals.css";
@@ -8,15 +8,15 @@ import "@/styles/globals.css";
  * Next font vars use *-family names so Tailwind @theme tokens
  * (`--font-display`) do not circular-reference themselves.
  */
-const display = Fraunces({
+const display = Bricolage_Grotesque({
   variable: "--font-display-family",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const body = DM_Sans({
-  variable: "--font-body-family",
+const sans = Sora({
+  variable: "--font-sans-family",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
@@ -79,8 +79,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#050607" },
-    { media: "(prefers-color-scheme: light)", color: "#f4f7f5" },
+    { media: "(prefers-color-scheme: dark)", color: "#1a1d24" },
+    { media: "(prefers-color-scheme: light)", color: "#f5f6f8" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -120,10 +120,10 @@ export default function RootLayout({
       lang="en"
       data-theme="dark"
       data-motion="full"
-      className={`${display.variable} ${body.variable} ${mono.variable} h-full antialiased`}
+      className={`dark ${display.variable} ${sans.variable} ${mono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className={`${body.className} min-h-full`}>
+      <body className={`${sans.className} min-h-full`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

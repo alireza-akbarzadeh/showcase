@@ -172,7 +172,7 @@ export function HeroSection({
         className="pointer-events-none absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(ellipse 70% 50% at 78% 42%, color-mix(in oklab, var(--accent) 16%, transparent), transparent 68%), radial-gradient(ellipse 50% 40% at 12% 85%, color-mix(in oklab, var(--accent) 6%, transparent), transparent 70%), linear-gradient(180deg, transparent 35%, var(--background) 100%)",
+            "radial-gradient(ellipse 70% 50% at 78% 42%, color-mix(in oklab, var(--signal) 16%, transparent), transparent 68%), radial-gradient(ellipse 50% 40% at 12% 85%, color-mix(in oklab, var(--signal) 6%, transparent), transparent 70%), linear-gradient(180deg, transparent 35%, var(--background) 100%)",
         }}
       />
       <div
@@ -187,7 +187,7 @@ export function HeroSection({
       <div className="relative max-w-[min(100%,72rem)]">
         <p
           ref={metaRef}
-          className="mb-6 font-mono text-[11px] leading-relaxed tracking-[0.28em] text-[var(--accent)] uppercase opacity-0 will-change-transform md:mb-8"
+          className="mb-6 font-mono text-[11px] leading-relaxed tracking-[0.28em] text-[var(--signal)] uppercase opacity-0 will-change-transform md:mb-8"
         >
           {SITE.author}
         </p>
@@ -208,17 +208,17 @@ export function HeroSection({
 
         <div
           ref={lineRef}
-          className="mt-8 h-px w-28 origin-left scale-x-0 bg-[var(--accent)] will-change-transform md:mt-10 md:w-40"
+          className="mt-8 h-px w-28 origin-left scale-x-0 bg-[var(--signal)] will-change-transform md:mt-10 md:w-40"
           aria-hidden="true"
         />
 
         <div ref={copyParallax} className="will-change-transform">
           <p
             ref={subtitleRef}
-            className="mt-8 max-w-md text-lg leading-snug text-[var(--muted)] opacity-0 will-change-transform md:mt-10 md:max-w-lg md:text-xl"
+            className="mt-8 max-w-md text-lg leading-snug text-[var(--muted-foreground)] opacity-0 will-change-transform md:mt-10 md:max-w-lg md:text-xl"
           >
             I build software differently.
-            <span className="mt-2 block text-base text-[var(--muted)]/80 md:text-lg">
+            <span className="mt-2 block text-base text-[var(--muted-foreground)]/80 md:text-lg">
               Scroll is the story.
             </span>
           </p>
@@ -226,10 +226,10 @@ export function HeroSection({
 
         <p
           ref={cueRef}
-          className="mt-14 flex items-center gap-3 font-mono text-[10px] tracking-[0.35em] text-[var(--muted)] uppercase opacity-0 will-change-transform md:mt-16"
+          className="mt-14 flex items-center gap-3 font-mono text-[10px] tracking-[0.35em] text-[var(--muted-foreground)] uppercase opacity-0 will-change-transform md:mt-16"
         >
           <span
-            className="inline-block h-10 w-px origin-top bg-[var(--accent)]"
+            className="inline-block h-10 w-px origin-top bg-[var(--signal)]"
             aria-hidden="true"
           />
           Scroll to begin

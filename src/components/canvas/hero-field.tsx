@@ -142,8 +142,8 @@ export function HeroField() {
       <mesh ref={core}>
         <icosahedronGeometry args={[1.15, 1]} />
         <meshStandardMaterial
-          color="#3dff9a"
-          emissive="#0a3d28"
+          color="#b8ff2e"
+          emissive="#1a4d28"
           emissiveIntensity={0.55}
           roughness={0.18}
           metalness={0.72}
@@ -153,7 +153,7 @@ export function HeroField() {
 
       <mesh ref={ring}>
         <torusGeometry args={[1.45, 0.012, 8, 128]} />
-        <meshBasicMaterial color="#3dff9a" transparent opacity={0.5} />
+        <meshBasicMaterial color="#b8ff2e" transparent opacity={0.5} />
       </mesh>
 
       <mesh ref={grid} position={[0, -2.2, -1]}>
@@ -167,7 +167,7 @@ export function HeroField() {
             uProgress: { value: 0 },
             uVelocity: { value: 0 },
             uPointer: { value: new THREE.Vector2(0, 0) },
-            uAccent: { value: new THREE.Color("#3dff9a") },
+            uAccent: { value: new THREE.Color("#b8ff2e") },
           }}
           vertexShader={`
             varying vec2 vUv;
@@ -211,7 +211,7 @@ export function HeroField() {
           />
         </bufferGeometry>
         <pointsMaterial
-          color="#3dff9a"
+          color="#b8ff2e"
           size={0.035}
           transparent
           opacity={0.55}
@@ -224,7 +224,7 @@ export function HeroField() {
         ref={keyLight}
         position={[2.5, 2, 3]}
         intensity={1.8}
-        color="#3dff9a"
+        color="#b8ff2e"
       />
       <pointLight
         ref={fillLight}

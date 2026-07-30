@@ -45,13 +45,13 @@ export function AchievementToasts() {
             "animate-[toast-in_0.35s_ease-out]",
           )}
         >
-          <p className="font-mono text-[10px] tracking-[0.3em] text-[var(--accent)] uppercase">
+          <p className="font-mono text-[10px] tracking-[0.3em] text-[var(--signal)] uppercase">
             Unlocked
           </p>
           <p className="font-display mt-1 text-lg tracking-[-0.02em]">
             {toast.achievement.title}
           </p>
-          <p className="mt-1 text-sm text-[var(--muted)]">{toast.achievement.blurb}</p>
+          <p className="mt-1 text-sm text-[var(--muted-foreground)]">{toast.achievement.blurb}</p>
         </div>
       ))}
     </div>

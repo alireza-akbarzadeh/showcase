@@ -10,7 +10,7 @@ export function SkipLink() {
   return (
     <a
       href="#main"
-      className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-[var(--accent)] focus:px-4 focus:py-2 focus:text-[var(--accent-foreground)]"
+      className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-[var(--signal)] focus:px-4 focus:py-2 focus:text-[var(--signal-foreground)]"
     >
       Skip to content
     </a>
@@ -70,21 +70,21 @@ export function Footer() {
     <footer className="border-t border-[var(--border)] px-6 py-10 md:px-12">
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div className="space-y-3">
-          <p className="text-sm text-[var(--muted)]">
+          <p className="text-sm text-[var(--muted-foreground)]">
             © {new Date().getFullYear()} {SITE.name}. Five acts. One scroll.
           </p>
-          <p className="text-sm text-[var(--muted)]">
+          <p className="text-sm text-[var(--muted-foreground)]">
             Keys 1–5 jump acts · M toggles sound ·{" "}
             <Link
               href="/playground"
-              className="text-[var(--accent)] underline-offset-4 hover:underline"
+              className="text-[var(--signal)] underline-offset-4 hover:underline"
             >
               /playground
             </Link>{" "}
             ·{" "}
             <Link
               href="/privacy"
-              className="text-[var(--accent)] underline-offset-4 hover:underline"
+              className="text-[var(--signal)] underline-offset-4 hover:underline"
             >
               Privacy
             </Link>{" "}

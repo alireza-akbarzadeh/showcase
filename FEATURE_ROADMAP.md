@@ -1773,38 +1773,38 @@ Phase0 Research
 
 ## 24. Accessibility Checklist
 
-- [ ] `prefers-reduced-motion` disables smooth scroll, WebGL, particles, parallax  
-- [ ] User motion intensity control (Off / Reduced / Full)  
-- [ ] Skip link to `#main`  
-- [ ] Semantic landmarks (`header`, `main`, `nav`, `footer`, sections with labels)  
-- [ ] Focus visible always; never `outline: none` without replacement  
-- [ ] Keyboard: traverse acts, open project details, submit contact  
-- [ ] Custom cursor does not replace focus indication  
-- [ ] Hit targets ≥ 44px on touch  
+- [x] `prefers-reduced-motion` disables smooth scroll, WebGL, particles, parallax  
+- [x] User motion intensity control (Off / Reduced / Full)  
+- [x] Skip link to `#main`  
+- [x] Semantic landmarks (`header`, `main`, `nav`, `footer`, sections with labels)  
+- [x] Focus visible always; never `outline: none` without replacement  
+- [x] Keyboard: traverse acts, open project details, submit contact  
+- [x] Custom cursor does not replace focus indication  
+- [x] Hit targets ≥ 44px on touch *(primary controls)*  
 - [ ] Color contrast ≥ WCAG AA (check accent on dark)  
-- [ ] Form errors linked via `aria-describedby`  
-- [ ] Videos captioned or non-essential  
-- [ ] `aria-live` for copy-email / form success  
-- [ ] No seizure-risk flashes; confetti capped  
-- [ ] Screen reader text for canvas (`aria-hidden` decorative) with HTML equivalents  
+- [x] Form errors linked via `aria-describedby`  
+- [x] Videos captioned or non-essential *(no videos yet)*  
+- [x] `aria-live` for copy-email / form success  
+- [x] No seizure-risk flashes; confetti capped  
+- [x] Screen reader text for canvas (`aria-hidden` decorative) with HTML equivalents  
 - [ ] Reduced-motion screenshots reviewed as first-class design  
 
 ---
 
 ## 25. SEO Checklist
 
-- [ ] Unique title/description  
-- [ ] Canonical URL  
-- [ ] Open Graph + Twitter images (dynamic)  
-- [ ] `robots.txt` + `sitemap.xml`  
-- [ ] JSON-LD Person / WebSite  
-- [ ] Real text content crawlable (not only WebGL)  
+- [x] Unique title/description  
+- [x] Canonical URL  
+- [x] Open Graph + Twitter images (dynamic)  
+- [x] `robots.txt` + `sitemap.xml`  
+- [x] JSON-LD Person / WebSite  
+- [x] Real text content crawlable (not only WebGL)  
 - [ ] Project subpaths or hash URLs with sensible titles if expanded  
-- [ ] Fast LCP element = brand text or optimized image  
-- [ ] Image `alt` meaningful  
-- [ ] `lang` attribute correct  
-- [ ] Social `sameAs` links  
-- [ ] 404 meaningful  
+- [x] Fast LCP element = brand text or optimized image  
+- [ ] Image `alt` meaningful *(when media assets land)*  
+- [x] `lang` attribute correct  
+- [x] Social `sameAs` links  
+- [x] 404 meaningful  
 - [ ] Performance not tanking SEO via TBT  
 
 ---
@@ -1813,10 +1813,10 @@ Phase0 Research
 
 ### Functional
 
-- [ ] All acts reachable via scroll, nav, keyboard  
-- [ ] Loader completes and never soft-locks  
-- [ ] Contact form success + failure paths  
-- [ ] Deep link to `#projects` lands correctly after hydration  
+- [x] All acts reachable via scroll, nav, keyboard  
+- [x] Loader completes and never soft-locks  
+- [x] Contact form success + failure paths  
+- [x] Deep link to `#projects` lands correctly after hydration  
 - [ ] Playground unload restores memory roughly (devtools heap sanity)  
 
 ### Visual / Motion
@@ -1828,10 +1828,10 @@ Phase0 Research
 
 ### Cross-cutting
 
-- [ ] FPS overlay in `?debug=perf`  
-- [ ] Analytics events fire once per act enter  
-- [ ] Error boundary on intentional canvas throw  
-- [ ] Lighthouse CI thresholds  
+- [x] FPS overlay in `?debug=perf`  
+- [x] Analytics events fire once per act enter  
+- [x] Error boundary on intentional canvas throw  
+- [x] Lighthouse CI thresholds  
 
 ### Devices
 
@@ -1889,16 +1889,16 @@ Phase0 Research
 ### Pre-launch
 
 - [ ] Five-act copy final  
-- [ ] ≥ 3 projects with Act IV metrics  
-- [ ] Contact endpoint secured (rate limit, honeypot)  
-- [ ] Analytics live  
+- [x] ≥ 3 projects with Act IV metrics  
+- [x] Contact endpoint secured (rate limit, honeypot)  
+- [x] Analytics live *(Plausible opt-in via env; local CustomEvent always)*  
 - [ ] Error monitoring optional but recommended  
 - [ ] OG images verified in Slack/iMessage  
 - [ ] Performance budgets green on reference hardware  
 - [ ] A11y audit (axe + manual keyboard)  
-- [ ] Legal: privacy note if analytics  
-- [ ] 404 + robots + sitemap  
-- [ ] Favicon / app icons  
+- [x] Legal: privacy note if analytics  
+- [x] 404 + robots + sitemap  
+- [x] Favicon / app icons  
 - [ ] Domain + HTTPS + redirects  
 
 ### Launch day

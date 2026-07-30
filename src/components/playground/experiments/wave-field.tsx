@@ -96,7 +96,7 @@ export function WaveFieldExperiment() {
   return (
     <div className="flex h-full flex-col gap-4">
       <div className="flex flex-wrap items-center gap-3">
-        <label className="font-mono text-[10px] tracking-[0.25em] text-[var(--muted)] uppercase">
+        <label className="font-mono text-[10px] tracking-[0.25em] text-[var(--muted-foreground)] uppercase">
           Seed
           <input
             type="number"
@@ -108,14 +108,14 @@ export function WaveFieldExperiment() {
         <button
           type="button"
           onClick={() => setSeed((s) => (s * 1664525 + 1013904223) >>> 0)}
-          className="border border-[var(--border)] px-3 py-1 font-mono text-[10px] tracking-[0.2em] text-[var(--accent)] uppercase transition-colors hover:border-[var(--accent)]"
+          className="border border-[var(--border)] px-3 py-1 font-mono text-[10px] tracking-[0.2em] text-[var(--signal)] uppercase transition-colors hover:border-[var(--signal)]"
         >
           Reseed
         </button>
         <button
           type="button"
           onClick={exportPng}
-          className="border border-[var(--border)] px-3 py-1 font-mono text-[10px] tracking-[0.2em] text-[var(--muted)] uppercase transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+          className="border border-[var(--border)] px-3 py-1 font-mono text-[10px] tracking-[0.2em] text-[var(--muted-foreground)] uppercase transition-colors hover:border-[var(--signal)] hover:text-[var(--signal)]"
         >
           Export PNG
         </button>

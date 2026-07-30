@@ -62,7 +62,7 @@ export function PerfOverlay() {
 
   return (
     <div
-      className="pointer-events-none fixed bottom-4 left-4 z-[90] rounded border border-[var(--border)] bg-black/70 px-3 py-2 font-mono text-xs text-[var(--accent)] backdrop-blur-sm"
+      className="pointer-events-none fixed bottom-4 left-4 z-[90] rounded border border-[var(--border)] bg-black/70 px-3 py-2 font-mono text-xs text-[var(--signal)] backdrop-blur-sm"
       aria-hidden="true"
     >
       <div>

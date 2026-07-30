@@ -1,26 +1,99 @@
+/*
+ * Design system — "Signal Lab"
+ * Deep ink canvas, acid-lime signal accent, warm amber secondary.
+ * All colors in oklch. Prefer tokens — avoid hardcoded colors in components.
+ */
+
 :root,
+.dark,
 [data-theme="dark"] {
   color-scheme: dark;
-  --background: #050607;
-  --foreground: #f2f4f3;
-  --muted: #9aa39e;
-  --accent: #3dff9a;
-  --accent-foreground: #04110a;
-  --border: #1c2420;
-  --ring: #3dff9a;
-  --surface: #0a0d0c;
-  --surface-elevated: #111615;
+  --radius: 0.5rem;
+
+  --background: oklch(0.16 0.014 250);
+  --foreground: oklch(0.96 0.006 250);
+  --surface: oklch(0.2 0.016 250);
+  --surface-raised: oklch(0.245 0.018 250);
+  /* Compat alias used by existing chrome */
+  --surface-elevated: var(--surface-raised);
+  --card: oklch(0.2 0.016 250);
+  --card-foreground: oklch(0.96 0.006 250);
+  --popover: oklch(0.2 0.016 250);
+  --popover-foreground: oklch(0.96 0.006 250);
+
+  --primary: oklch(0.88 0.21 128);
+  --primary-foreground: oklch(0.18 0.03 128);
+  --signal: oklch(0.88 0.21 128);
+  --signal-foreground: oklch(0.18 0.03 128);
+
+  --secondary: oklch(0.26 0.02 250);
+  --secondary-foreground: oklch(0.96 0.006 250);
+  --muted: oklch(0.26 0.018 250);
+  --muted-foreground: oklch(0.68 0.015 250);
+  --accent: oklch(0.8 0.15 68);
+  --accent-foreground: oklch(0.18 0.03 68);
+  --destructive: oklch(0.62 0.21 25);
+  --destructive-foreground: oklch(0.97 0.01 25);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.88 0.21 128);
+
+  --gradient-signal: linear-gradient(
+    135deg,
+    var(--signal),
+    oklch(0.86 0.16 168) 55%,
+    var(--signal)
+  );
+  --gradient-veil: radial-gradient(
+    120% 80% at 50% 0%,
+    oklch(0.88 0.21 128 / 14%),
+    transparent 60%
+  );
+  --shadow-lift: 0 24px 60px -28px oklch(0 0 0 / 80%);
+  --shadow-signal:
+    0 0 0 1px oklch(0.88 0.21 128 / 25%),
+    0 20px 60px -24px oklch(0.88 0.21 128 / 35%);
+  --ease-signal: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Approximate hex for WebGL / canvas (oklch 0.88 0.21 128) */
+  --signal-hex: #b8ff2e;
+  --accent-hex: #e8a84a;
 }
 
 [data-theme="light"] {
   color-scheme: light;
-  --background: #f4f7f5;
-  --foreground: #0b1210;
-  --muted: #5b675f;
-  --accent: #0f8f55;
-  --accent-foreground: #f4fff8;
-  --border: #d5ddd8;
-  --ring: #0f8f55;
-  --surface: #eef2f0;
-  --surface-elevated: #ffffff;
+  --background: oklch(0.97 0.006 250);
+  --foreground: oklch(0.18 0.014 250);
+  --surface: oklch(0.94 0.008 250);
+  --surface-raised: oklch(1 0 0);
+  --surface-elevated: var(--surface-raised);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.014 250);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.014 250);
+
+  --primary: oklch(0.55 0.18 128);
+  --primary-foreground: oklch(0.98 0.02 128);
+  --signal: oklch(0.55 0.18 128);
+  --signal-foreground: oklch(0.98 0.02 128);
+
+  --secondary: oklch(0.92 0.01 250);
+  --secondary-foreground: oklch(0.22 0.014 250);
+  --muted: oklch(0.92 0.01 250);
+  --muted-foreground: oklch(0.45 0.015 250);
+  --accent: oklch(0.72 0.14 68);
+  --accent-foreground: oklch(0.18 0.03 68);
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(0.98 0.01 25);
+  --border: oklch(0.18 0.014 250 / 12%);
+  --input: oklch(0.18 0.014 250 / 14%);
+  --ring: oklch(0.55 0.18 128);
+
+  --gradient-veil: radial-gradient(
+    120% 80% at 50% 0%,
+    oklch(0.55 0.18 128 / 10%),
+    transparent 60%
+  );
+  --signal-hex: #5aad00;
+  --accent-hex: #c4841a;
 }

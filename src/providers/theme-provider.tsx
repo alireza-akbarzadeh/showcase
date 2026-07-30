@@ -10,9 +10,10 @@ import {
 import { ThemeContext } from "@/providers/theme-context";
 import type { ThemeMode } from "@/types/assets";
 
-const ACCENT_KEY = "showcase-accent";
+const SIGNAL_KEY = "showcase-signal";
 const MODE_KEY = "showcase-theme";
-const DEFAULT_ACCENT = "#3dff9a";
+/** Acid-lime signal — matches --signal-hex in themes.css */
+const DEFAULT_SIGNAL = "#b8ff2e";
 const THEME_EVENT = "showcase-theme";
 
 function getSystemMode(): "dark" | "light" {
@@ -30,7 +31,12 @@ function subscribeSystemMode(onStoreChange: () => void): () => void {
 
 function subscribeTheme(onStoreChange: () => void): () => void {
   const onStorage = (event: StorageEvent) => {
-    if (event.key === MODE_KEY || event.key === ACCENT_KEY || event.key === null) {
+    if (
+      event.key === MODE_KEY ||
+      event.key === SIGNAL_KEY ||
+      event.key === "showcase-accent" ||
+      event.key === null
+    ) {
       onStoreChange();
     }
   };
@@ -50,8 +56,12 @@ function readMode(): ThemeMode {
   return "dark";
 }
 
-function readAccent(): string {
-  return localStorage.getItem(ACCENT_KEY) ?? DEFAULT_ACCENT;
+function readSignal(): string {
+  return (
+    localStorage.getItem(SIGNAL_KEY) ??
+    localStorage.getItem("showcase-accent") ??
+    DEFAULT_SIGNAL
+  );
 }
 
 function emitThemeChange(): void {
@@ -66,8 +76,8 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   );
   const accent = useSyncExternalStore(
     subscribeTheme,
-    readAccent,
-    (): string => DEFAULT_ACCENT,
+    readSignal,
+    (): string => DEFAULT_SIGNAL,
   );
   const system = useSyncExternalStore(
     subscribeSystemMode,
@@ -80,8 +90,12 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const root = document.documentElement;
     root.dataset.theme = resolved;
-    root.style.setProperty("--accent", accent);
-    root.style.setProperty("--accent-foreground", "#04110a");
+    root.classList.toggle("dark", resolved === "dark");
+    // Custom signal override — brand lime, not amber accent
+    root.style.setProperty("--signal", accent);
+    root.style.setProperty("--primary", accent);
+    root.style.setProperty("--ring", accent);
+    root.style.setProperty("--signal-hex", accent);
   }, [resolved, accent]);
 
   const setMode = useCallback((next: ThemeMode) => {
@@ -90,7 +104,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const setAccent = useCallback((next: string) => {
-    localStorage.setItem(ACCENT_KEY, next);
+    localStorage.setItem(SIGNAL_KEY, next);
     emitThemeChange();
   }, []);
 

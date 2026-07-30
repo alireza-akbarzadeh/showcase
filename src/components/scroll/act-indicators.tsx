@@ -51,7 +51,7 @@ export function ActIndicators() {
               type="button"
               className={cn(
                 "pointer-events-auto group flex items-center gap-3 text-left",
-                "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)]",
+                "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--signal)]",
               )}
               aria-label={act.label}
               onClick={() => {
@@ -62,10 +62,10 @@ export function ActIndicators() {
               <span
                 className={cn(
                   "h-1.5 w-1.5 rounded-full bg-[var(--muted)] transition-transform duration-300",
-                  "group-data-[active=true]:scale-150 group-data-[active=true]:bg-[var(--accent)]",
+                  "group-data-[active=true]:scale-150 group-data-[active=true]:bg-[var(--signal)]",
                 )}
               />
-              <span className="font-mono text-[10px] tracking-[0.2em] text-[var(--muted)] uppercase opacity-0 transition-opacity group-hover:opacity-100 group-data-[active=true]:opacity-100 group-data-[active=true]:text-[var(--foreground)]">
+              <span className="font-mono text-[10px] tracking-[0.2em] text-[var(--muted-foreground)] uppercase opacity-0 transition-opacity group-hover:opacity-100 group-data-[active=true]:opacity-100 group-data-[active=true]:text-[var(--foreground)]">
                 {act.short}
               </span>
             </button>

@@ -35,7 +35,7 @@ export function SortScrubExperiment() {
   return (
     <div className="flex h-full flex-col gap-6">
       <div>
-        <label className="font-mono text-[10px] tracking-[0.25em] text-[var(--muted)] uppercase">
+        <label className="font-mono text-[10px] tracking-[0.25em] text-[var(--muted-foreground)] uppercase">
           Step {step} / {frames.length - 1}
         </label>
         <input
@@ -44,7 +44,7 @@ export function SortScrubExperiment() {
           max={frames.length - 1}
           value={step}
           onChange={(e) => setStep(Number(e.target.value))}
-          className="mt-3 w-full accent-[var(--accent)]"
+          className="mt-3 w-full accent-[var(--signal)]"
           aria-label="Sort progress"
         />
       </div>
@@ -57,10 +57,10 @@ export function SortScrubExperiment() {
         {current.map((value, i) => (
           <div key={`${i}-${value}`} className="flex flex-1 flex-col items-center gap-2">
             <div
-              className="w-full max-w-10 bg-[var(--accent)] transition-[height] duration-150"
+              className="w-full max-w-10 bg-[var(--signal)] transition-[height] duration-150"
               style={{ height: `${(value / max) * 240}px` }}
             />
-            <span className="font-mono text-[10px] text-[var(--muted)]">{value}</span>
+            <span className="font-mono text-[10px] text-[var(--muted-foreground)]">{value}</span>
           </div>
         ))}
       </div>
@@ -69,14 +69,14 @@ export function SortScrubExperiment() {
         <button
           type="button"
           onClick={() => setStep(0)}
-          className="border border-[var(--border)] px-3 py-1 font-mono text-[10px] tracking-[0.2em] text-[var(--muted)] uppercase hover:border-[var(--accent)] hover:text-[var(--accent)]"
+          className="border border-[var(--border)] px-3 py-1 font-mono text-[10px] tracking-[0.2em] text-[var(--muted-foreground)] uppercase hover:border-[var(--signal)] hover:text-[var(--signal)]"
         >
           Reset
         </button>
         <button
           type="button"
           onClick={() => setStep((s) => Math.min(s + 1, frames.length - 1))}
-          className="border border-[var(--border)] px-3 py-1 font-mono text-[10px] tracking-[0.2em] text-[var(--accent)] uppercase hover:border-[var(--accent)]"
+          className="border border-[var(--border)] px-3 py-1 font-mono text-[10px] tracking-[0.2em] text-[var(--signal)] uppercase hover:border-[var(--signal)]"
         >
           Step
         </button>

@@ -41,7 +41,7 @@ export const ImmersiveProject = forwardRef<HTMLElement, ImmersiveProjectProps>(
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 -z-10"
             style={{
-              background: `radial-gradient(ellipse 65% 55% at ${accentSide} 35%, color-mix(in oklab, var(--accent) 18%, transparent), transparent 70%), linear-gradient(180deg, transparent 50%, var(--background) 100%)`,
+              background: `radial-gradient(ellipse 65% 55% at ${accentSide} 35%, color-mix(in oklab, var(--signal) 18%, transparent), transparent 70%), linear-gradient(180deg, transparent 50%, var(--background) 100%)`,
             }}
           />
 
@@ -49,7 +49,7 @@ export const ImmersiveProject = forwardRef<HTMLElement, ImmersiveProjectProps>(
             <div>
               <p
                 data-ip-meta
-                className="font-mono text-[10px] tracking-[0.3em] text-[var(--muted)] uppercase will-change-transform"
+                className="font-mono text-[10px] tracking-[0.3em] text-[var(--muted-foreground)] uppercase will-change-transform"
               >
                 0{index + 1} · {project.role}
               </p>
@@ -61,13 +61,13 @@ export const ImmersiveProject = forwardRef<HTMLElement, ImmersiveProjectProps>(
               </h3>
               <p
                 data-ip-tagline
-                className="mt-6 max-w-xl text-xl text-[var(--muted)] will-change-transform md:text-2xl"
+                className="mt-6 max-w-xl text-xl text-[var(--muted-foreground)] will-change-transform md:text-2xl"
               >
                 {project.tagline}
               </p>
               <div
                 data-ip-rule
-                className="mt-8 h-px w-28 origin-left bg-[var(--accent)] will-change-transform"
+                className="mt-8 h-px w-28 origin-left bg-[var(--signal)] will-change-transform"
                 aria-hidden="true"
               />
             </div>
@@ -83,12 +83,12 @@ export const ImmersiveProject = forwardRef<HTMLElement, ImmersiveProjectProps>(
                   {Array.from({ length: 6 }).map((_, i) => (
                     <div
                       key={i}
-                      className="border border-[var(--border)] bg-[color-mix(in_oklab,var(--accent)_8%,transparent)]"
+                      className="border border-[var(--border)] bg-[color-mix(in_oklab,var(--signal)_8%,transparent)]"
                       style={{ opacity: 0.35 + ((i + index) % 3) * 0.15 }}
                     />
                   ))}
                 </div>
-                <div className="absolute right-4 bottom-4 left-4 h-1.5 origin-left bg-[var(--accent)] opacity-70" />
+                <div className="absolute right-4 bottom-4 left-4 h-1.5 origin-left bg-[var(--signal)] opacity-70" />
               </div>
             </div>
           </div>
@@ -101,13 +101,13 @@ export const ImmersiveProject = forwardRef<HTMLElement, ImmersiveProjectProps>(
               data-ip-chapter={chapter.id}
               className="max-w-2xl will-change-transform"
             >
-              <p className="font-mono text-[10px] tracking-[0.28em] text-[var(--accent)] uppercase">
+              <p className="font-mono text-[10px] tracking-[0.28em] text-[var(--signal)] uppercase">
                 {chapter.label}
               </p>
               <h4 className="font-display mt-4 text-[clamp(1.75rem,4vw,3rem)] leading-[1.05] tracking-[-0.03em]">
                 {chapter.title}
               </h4>
-              <p className="mt-4 text-lg text-[var(--muted)] md:text-xl">
+              <p className="mt-4 text-lg text-[var(--muted-foreground)] md:text-xl">
                 {chapter.body}
               </p>
             </div>
@@ -119,7 +119,7 @@ export const ImmersiveProject = forwardRef<HTMLElement, ImmersiveProjectProps>(
               className="max-w-3xl will-change-transform"
               aria-label={`${project.name} architecture diagram`}
             >
-              <p className="font-mono text-[10px] tracking-[0.28em] text-[var(--accent)] uppercase">
+              <p className="font-mono text-[10px] tracking-[0.28em] text-[var(--signal)] uppercase">
                 Diagram
               </p>
               <svg
@@ -141,7 +141,7 @@ export const ImmersiveProject = forwardRef<HTMLElement, ImmersiveProjectProps>(
                       y1={a.y}
                       x2={b.x}
                       y2={b.y}
-                      stroke="var(--accent)"
+                      stroke="var(--signal)"
                       strokeWidth="1.5"
                       strokeDasharray={length}
                       strokeDashoffset={length}
@@ -187,7 +187,7 @@ export const ImmersiveProject = forwardRef<HTMLElement, ImmersiveProjectProps>(
                   data-stack-index={i}
                   className="border border-[var(--border)] px-4 py-4 will-change-transform"
                 >
-                  <p className="font-mono text-[10px] tracking-[0.22em] text-[var(--accent)] uppercase">
+                  <p className="font-mono text-[10px] tracking-[0.22em] text-[var(--signal)] uppercase">
                     {node.layer}
                   </p>
                   <p className="mt-2 text-lg text-[var(--foreground)]">
@@ -204,11 +204,11 @@ export const ImmersiveProject = forwardRef<HTMLElement, ImmersiveProjectProps>(
           >
             {project.metrics.map((metric) => (
               <div key={metric.label}>
-                <dt className="font-mono text-[10px] tracking-[0.2em] text-[var(--muted)] uppercase">
+                <dt className="font-mono text-[10px] tracking-[0.2em] text-[var(--muted-foreground)] uppercase">
                   {metric.label}
                 </dt>
                 <dd
-                  className="font-display mt-2 text-5xl tracking-[-0.03em] text-[var(--accent)] md:text-6xl"
+                  className="font-display mt-2 text-5xl tracking-[-0.03em] text-[var(--signal)] md:text-6xl"
                   data-metric-value
                   data-metric-target={
                     metric.divisor

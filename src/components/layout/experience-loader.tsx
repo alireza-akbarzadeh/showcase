@@ -106,7 +106,7 @@ export function ExperienceLoader({ onComplete }: LoaderProps) {
       <div className="mt-10 h-px w-40 overflow-hidden bg-[var(--border)]">
         <div
           ref={barRef}
-          className="h-full w-full origin-left bg-[var(--accent)] will-change-transform"
+          className="h-full w-full origin-left bg-[var(--signal)] will-change-transform"
         />
       </div>
       <span className="sr-only">Loading</span>

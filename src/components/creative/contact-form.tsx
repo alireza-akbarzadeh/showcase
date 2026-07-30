@@ -206,7 +206,7 @@ export function ContactForm() {
         aria-live="polite"
       >
         <ThankYouBurst active />
-        <p className="font-mono text-[11px] tracking-[0.3em] text-[var(--accent)] uppercase">
+        <p className="font-mono text-[11px] tracking-[0.3em] text-[var(--signal)] uppercase">
           Sent
         </p>
         <h3 className="font-display mt-4 text-4xl tracking-[-0.03em] md:text-5xl">
@@ -214,10 +214,10 @@ export function ContactForm() {
         </h3>
         <div
           data-thank-mark
-          className="mt-6 h-px w-24 origin-left bg-[var(--accent)]"
+          className="mt-6 h-px w-24 origin-left bg-[var(--signal)]"
           aria-hidden="true"
         />
-        <p className="mt-6 text-lg text-[var(--muted)]">
+        <p className="mt-6 text-lg text-[var(--muted-foreground)]">
           Thanks — I&apos;ll reply soon. Press{" "}
           <kbd className="rounded border border-[var(--border)] px-1.5 py-0.5 font-mono text-xs">
             1
@@ -231,7 +231,7 @@ export function ContactForm() {
         <div className="mt-8 flex flex-wrap gap-4">
           <a
             href={`mailto:${SITE.email}`}
-            className="text-sm text-[var(--accent)] underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)]"
+            className="text-sm text-[var(--signal)] underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--signal)]"
           >
             {SITE.email}
           </a>
@@ -239,7 +239,7 @@ export function ContactForm() {
             href={SITE.calendarUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-[var(--muted)] underline-offset-4 hover:text-[var(--foreground)] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)]"
+            className="text-sm text-[var(--muted-foreground)] underline-offset-4 hover:text-[var(--foreground)] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--signal)]"
           >
             Book a call
           </a>
@@ -349,7 +349,7 @@ export function ContactForm() {
           data-contact-reveal={reduced ? undefined : true}
           className={cn(!reduced && "opacity-0")}
         >
-          <p className="font-mono text-[10px] tracking-[0.28em] text-[var(--muted)] uppercase">
+          <p className="font-mono text-[10px] tracking-[0.28em] text-[var(--muted-foreground)] uppercase">
             Elsewhere
           </p>
           <ul className="mt-4 flex flex-col gap-3">
@@ -359,9 +359,9 @@ export function ContactForm() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-baseline gap-3 text-[var(--muted)] transition-colors hover:text-[var(--foreground)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)]"
+                  className="group inline-flex items-baseline gap-3 text-[var(--muted-foreground)] transition-colors hover:text-[var(--foreground)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--signal)]"
                 >
-                  <span className="font-mono text-[10px] tracking-[0.2em] text-[var(--accent)] uppercase opacity-70 group-hover:opacity-100">
+                  <span className="font-mono text-[10px] tracking-[0.2em] text-[var(--signal)] uppercase opacity-70 group-hover:opacity-100">
                     {social.id}
                   </span>
                   <span className="text-lg">{social.label}</span>
@@ -379,14 +379,14 @@ export function ContactForm() {
             href={SITE.calendarUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 border border-[var(--border)] px-4 py-3 text-sm text-[var(--foreground)] transition-colors hover:border-[var(--accent)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)]"
+            className="inline-flex items-center gap-2 border border-[var(--border)] px-4 py-3 text-sm text-[var(--foreground)] transition-colors hover:border-[var(--signal)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--signal)]"
           >
             Book a call
-            <span aria-hidden="true" className="text-[var(--accent)]">
+            <span aria-hidden="true" className="text-[var(--signal)]">
               →
             </span>
           </a>
-          <p className="mt-3 max-w-[20rem] text-sm text-[var(--muted)]">
+          <p className="mt-3 max-w-[20rem] text-sm text-[var(--muted-foreground)]">
             Prefer a live conversation? Grab a slot — no embed until you ask.
           </p>
         </div>
@@ -397,13 +397,13 @@ export function ContactForm() {
 
 function AvailabilityBadge() {
   return (
-    <p className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] px-3 py-1.5 font-mono text-[10px] tracking-[0.2em] text-[var(--accent)] uppercase">
+    <p className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] px-3 py-1.5 font-mono text-[10px] tracking-[0.2em] text-[var(--signal)] uppercase">
       <span
         className="relative flex h-1.5 w-1.5"
         aria-hidden="true"
       >
-        <span className="absolute inset-0 animate-ping rounded-full bg-[var(--accent)] opacity-40" />
-        <span className="relative h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
+        <span className="absolute inset-0 animate-ping rounded-full bg-[var(--signal)] opacity-40" />
+        <span className="relative h-1.5 w-1.5 rounded-full bg-[var(--signal)]" />
       </span>
       {SITE.availability}
     </p>
@@ -456,7 +456,7 @@ function EmailLockup({
         onClick={onCopy}
         onMouseEnter={scramble}
         onFocus={scramble}
-        className="text-left font-display text-2xl tracking-[-0.02em] text-[var(--accent)] underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)] md:text-3xl"
+        className="text-left font-display text-2xl tracking-[-0.02em] text-[var(--signal)] underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--signal)] md:text-3xl"
         aria-label={`Copy email ${email}`}
       >
         {display}
@@ -464,7 +464,7 @@ function EmailLockup({
       <span className="sr-only" aria-live="polite">
         {copied ? "Email copied to clipboard" : ""}
       </span>
-      <p className="mt-2 text-sm text-[var(--muted)]">
+      <p className="mt-2 text-sm text-[var(--muted-foreground)]">
         {copied ? "Copied." : "Click to copy"}
       </p>
     </div>
@@ -493,13 +493,13 @@ function Field({
   const describedBy = error ? `${id}-error` : undefined;
   const className = cn(
     "mt-2 w-full border border-[var(--border)] bg-transparent px-4 py-3 text-[var(--foreground)] transition-[border-color] duration-200",
-    "placeholder:text-[var(--muted)] focus-visible:border-[var(--accent)] focus-visible:outline-none",
+    "placeholder:text-[var(--muted-foreground)] focus-visible:border-[var(--signal)] focus-visible:outline-none",
     error && "border-red-400/70",
   );
 
   return (
     <div>
-      <label htmlFor={id} className="text-sm text-[var(--muted)]">
+      <label htmlFor={id} className="text-sm text-[var(--muted-foreground)]">
         {label}
       </label>
       {as === "textarea" ? (

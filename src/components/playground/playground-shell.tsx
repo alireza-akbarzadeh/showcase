@@ -32,7 +32,7 @@ const SortScrubExperiment = dynamic(
 
 function ExperimentFallback() {
   return (
-    <div className="flex min-h-[420px] items-center justify-center border border-[var(--border)] font-mono text-xs tracking-[0.2em] text-[var(--muted)] uppercase">
+    <div className="flex min-h-[420px] items-center justify-center border border-[var(--border)] font-mono text-xs tracking-[0.2em] text-[var(--muted-foreground)] uppercase">
       Loading experiment…
     </div>
   );
@@ -61,7 +61,7 @@ export function PlaygroundShell() {
           </Link>
           <div className="flex items-center gap-6">
             <SoundToggle />
-            <p className="font-mono text-[10px] tracking-[0.3em] text-[var(--accent)] uppercase">
+            <p className="font-mono text-[10px] tracking-[0.3em] text-[var(--signal)] uppercase">
               Lab · Playground
             </p>
           </div>
@@ -73,7 +73,7 @@ export function PlaygroundShell() {
           <h1 className="font-display text-3xl tracking-[-0.03em] md:text-4xl">
             Playground
           </h1>
-          <p className="mt-3 text-sm text-[var(--muted)]">
+          <p className="mt-3 text-sm text-[var(--muted-foreground)]">
             Side quests. Code-split. Never on the main scroll path.
           </p>
 
@@ -88,12 +88,12 @@ export function PlaygroundShell() {
                     className={cn(
                       "w-full border-l-2 px-3 py-3 text-left transition-colors",
                       selected
-                        ? "border-[var(--accent)] bg-[color-mix(in_oklab,var(--accent)_8%,transparent)]"
+                        ? "border-[var(--signal)] bg-[color-mix(in_oklab,var(--signal)_8%,transparent)]"
                         : "border-transparent hover:border-[var(--border)]",
                     )}
                     aria-current={selected ? "true" : undefined}
                   >
-                    <span className="block font-mono text-[10px] tracking-[0.2em] text-[var(--muted)] uppercase">
+                    <span className="block font-mono text-[10px] tracking-[0.2em] text-[var(--muted-foreground)] uppercase">
                       {FPS_COST_LABEL[exp.fpsCost]} · {exp.fpsCost}
                     </span>
                     <span className="mt-1 block text-sm text-[var(--foreground)]">
@@ -108,7 +108,7 @@ export function PlaygroundShell() {
 
         <section aria-labelledby="experiment-title">
           <div className="mb-6">
-            <p className="font-mono text-[10px] tracking-[0.3em] text-[var(--accent)] uppercase">
+            <p className="font-mono text-[10px] tracking-[0.3em] text-[var(--signal)] uppercase">
               {meta.tags.join(" · ")}
             </p>
             <h2
@@ -117,7 +117,7 @@ export function PlaygroundShell() {
             >
               {meta.title}
             </h2>
-            <p className="mt-2 max-w-xl text-[var(--muted)]">{meta.blurb}</p>
+            <p className="mt-2 max-w-xl text-[var(--muted-foreground)]">{meta.blurb}</p>
           </div>
 
           {active === "wave-field" ? <WaveFieldExperiment /> : null}

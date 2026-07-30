@@ -17,9 +17,9 @@ export default function TwitterImage() {
           justifyContent: "flex-end",
           padding: 72,
           background:
-            "linear-gradient(145deg, #050607 0%, #0d1a14 55%, #04110a 100%)",
-          color: "#f2f4f3",
-          fontFamily: "Georgia, serif",
+            "linear-gradient(145deg, #14171e 0%, #1a2420 55%, #0c120e 100%)",
+          color: "#f4f5f7",
+          fontFamily: "ui-sans-serif, system-ui, sans-serif",
         }}
       >
         <div
@@ -27,11 +27,11 @@ export default function TwitterImage() {
             fontSize: 28,
             letterSpacing: "0.35em",
             textTransform: "uppercase",
-            color: "#3dff9a",
+            color: "#b8ff2e",
             marginBottom: 24,
           }}
         >
-          Portfolio
+          Signal Lab
         </div>
         <div
           style={{ fontSize: 96, lineHeight: 0.95, letterSpacing: "-0.04em" }}
@@ -42,7 +42,7 @@ export default function TwitterImage() {
           style={{
             marginTop: 28,
             fontSize: 28,
-            color: "#9aa39e",
+            color: "#9aa8b8",
             maxWidth: 720,
             fontFamily: "ui-sans-serif, system-ui, sans-serif",
           }}

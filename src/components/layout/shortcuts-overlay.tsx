@@ -85,7 +85,7 @@ export function ShortcutsOverlay() {
       >
         <div className="flex items-start justify-between gap-4">
           <div>
-            <p className="font-mono text-[10px] tracking-[0.3em] text-[var(--accent)] uppercase">
+            <p className="font-mono text-[10px] tracking-[0.3em] text-[var(--signal)] uppercase">
               Shortcuts
             </p>
             <h2 id={titleId} className="font-display mt-2 text-2xl tracking-[-0.03em]">
@@ -96,7 +96,7 @@ export function ShortcutsOverlay() {
             ref={closeRef}
             type="button"
             onClick={() => setOpen(false)}
-            className="font-mono text-xs tracking-[0.2em] text-[var(--muted)] uppercase hover:text-[var(--foreground)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+            className="font-mono text-xs tracking-[0.2em] text-[var(--muted-foreground)] uppercase hover:text-[var(--foreground)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
           >
             Esc
           </button>
@@ -108,18 +108,18 @@ export function ShortcutsOverlay() {
               key={row.keys}
               className="flex items-baseline justify-between gap-4 border-b border-[var(--border)] pb-3"
             >
-              <kbd className="font-mono text-xs text-[var(--accent)]">{row.keys}</kbd>
-              <span className="text-sm text-[var(--muted)]">{row.action}</span>
+              <kbd className="font-mono text-xs text-[var(--signal)]">{row.keys}</kbd>
+              <span className="text-sm text-[var(--muted-foreground)]">{row.action}</span>
             </li>
           ))}
         </ul>
 
-        <p className="mt-6 text-sm text-[var(--muted)]">
-          Lab lives at{" "}
-          <a href="/playground" className="text-[var(--accent)] underline-offset-4 hover:underline">
+        <p className="mt-6 text-sm text-[var(--muted-foreground)]">
+          Lab at{" "}
+          <a href="/playground" className="text-[var(--signal)] underline-offset-4 hover:underline">
             /playground
           </a>
-          .
+          . Motion intensity lives in the footer.
         </p>
       </div>
     </div>

@@ -1649,14 +1649,80 @@
       "norm_label": "submitcontact()"
     },
     {
+      "label": "apple-icon.tsx",
+      "file_type": "code",
+      "source_file": "src/app/apple-icon.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_app_apple_icon",
+      "community": 66,
+      "community_name": "apple-icon.tsx",
+      "norm_label": "apple-icon.tsx"
+    },
+    {
+      "label": "size",
+      "file_type": "code",
+      "source_file": "src/app/apple-icon.tsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "src_app_apple_icon_size",
+      "community": 66,
+      "community_name": "apple-icon.tsx",
+      "norm_label": "size"
+    },
+    {
+      "label": "AppleIcon()",
+      "file_type": "code",
+      "source_file": "src/app/apple-icon.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "src_app_apple_icon_appleicon",
+      "community": 66,
+      "community_name": "apple-icon.tsx",
+      "norm_label": "appleicon()"
+    },
+    {
+      "label": "icon.tsx",
+      "file_type": "code",
+      "source_file": "src/app/icon.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_app_icon",
+      "community": 67,
+      "community_name": "icon.tsx",
+      "norm_label": "icon.tsx"
+    },
+    {
+      "label": "size",
+      "file_type": "code",
+      "source_file": "src/app/icon.tsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "src_app_icon_size",
+      "community": 67,
+      "community_name": "icon.tsx",
+      "norm_label": "size"
+    },
+    {
+      "label": "Icon()",
+      "file_type": "code",
+      "source_file": "src/app/icon.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "src_app_icon_icon",
+      "community": 67,
+      "community_name": "icon.tsx",
+      "norm_label": "icon()"
+    },
+    {
       "label": "layout.tsx",
       "file_type": "code",
       "source_file": "src/app/layout.tsx",
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app_layout",
-      "community": 37,
-      "community_name": "constants/index.ts",
+      "community": 60,
+      "community_name": "layout.tsx",
       "norm_label": "layout.tsx"
     },
     {
@@ -1666,8 +1732,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_app_layout_display",
-      "community": 37,
-      "community_name": "constants/index.ts",
+      "community": 60,
+      "community_name": "layout.tsx",
       "norm_label": "display"
     },
     {
@@ -1677,8 +1743,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_app_layout_body",
-      "community": 37,
-      "community_name": "constants/index.ts",
+      "community": 60,
+      "community_name": "layout.tsx",
       "norm_label": "body"
     },
     {
@@ -1688,8 +1754,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_app_layout_mono",
-      "community": 37,
-      "community_name": "constants/index.ts",
+      "community": 60,
+      "community_name": "layout.tsx",
       "norm_label": "mono"
     },
     {
@@ -1699,8 +1765,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "src_app_layout_metadata",
-      "community": 37,
-      "community_name": "constants/index.ts",
+      "community": 60,
+      "community_name": "layout.tsx",
       "norm_label": "metadata"
     },
     {
@@ -1710,8 +1776,8 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "src_app_layout_viewport",
-      "community": 37,
-      "community_name": "constants/index.ts",
+      "community": 60,
+      "community_name": "layout.tsx",
       "norm_label": "viewport"
     },
     {
@@ -1721,8 +1787,8 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "src_app_layout_jsonld",
-      "community": 37,
-      "community_name": "constants/index.ts",
+      "community": 60,
+      "community_name": "layout.tsx",
       "norm_label": "jsonld"
     },
     {
@@ -1732,8 +1798,8 @@
       "source_location": "L113",
       "_origin": "ast",
       "id": "src_app_layout_rootlayout",
-      "community": 37,
-      "community_name": "constants/index.ts",
+      "community": 60,
+      "community_name": "layout.tsx",
       "norm_label": "rootlayout()"
     },
     {
@@ -1765,8 +1831,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app_opengraph_image",
-      "community": 37,
-      "community_name": "constants/index.ts",
+      "community": 68,
+      "community_name": "opengraph-image.tsx",
       "norm_label": "opengraph-image.tsx"
     },
     {
@@ -1776,8 +1842,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_app_opengraph_image_size",
-      "community": 37,
-      "community_name": "constants/index.ts",
+      "community": 68,
+      "community_name": "opengraph-image.tsx",
       "norm_label": "size"
     },
     {
@@ -1787,8 +1853,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_app_opengraph_image_opengraphimage",
-      "community": 37,
-      "community_name": "constants/index.ts",
+      "community": 68,
+      "community_name": "opengraph-image.tsx",
       "norm_label": "opengraphimage()"
     },
     {
@@ -1847,6 +1913,39 @@
       "norm_label": "playgroundpage()"
     },
     {
+      "label": "privacy/page.tsx",
+      "file_type": "code",
+      "source_file": "src/app/privacy/page.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_app_privacy_page",
+      "community": 69,
+      "community_name": "privacy/page.tsx",
+      "norm_label": "privacy/page.tsx"
+    },
+    {
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "src/app/privacy/page.tsx",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "src_app_privacy_page_metadata",
+      "community": 69,
+      "community_name": "privacy/page.tsx",
+      "norm_label": "metadata"
+    },
+    {
+      "label": "PrivacyPage()",
+      "file_type": "code",
+      "source_file": "src/app/privacy/page.tsx",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "src_app_privacy_page_privacypage",
+      "community": 69,
+      "community_name": "privacy/page.tsx",
+      "norm_label": "privacypage()"
+    },
+    {
       "label": "robots.ts",
       "file_type": "code",
       "source_file": "src/app/robots.ts",
@@ -1897,8 +1996,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app_twitter_image",
-      "community": 37,
-      "community_name": "constants/index.ts",
+      "community": 70,
+      "community_name": "twitter-image.tsx",
       "norm_label": "twitter-image.tsx"
     },
     {
@@ -1908,8 +2007,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_app_twitter_image_size",
-      "community": 37,
-      "community_name": "constants/index.ts",
+      "community": 70,
+      "community_name": "twitter-image.tsx",
       "norm_label": "size"
     },
     {
@@ -1919,8 +2018,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_app_twitter_image_twitterimage",
-      "community": 37,
-      "community_name": "constants/index.ts",
+      "community": 70,
+      "community_name": "twitter-image.tsx",
       "norm_label": "twitterimage()"
     },
     {
@@ -1974,8 +2073,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_canvas_camera_rig",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 55,
+      "community_name": "camera-rig.tsx",
       "norm_label": "camera-rig.tsx"
     },
     {
@@ -1985,8 +2084,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_components_canvas_camera_rig_camerarig",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 55,
+      "community_name": "camera-rig.tsx",
       "norm_label": "camerarig()"
     },
     {
@@ -1996,8 +2095,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_canvas_canvas_root",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 55,
+      "community_name": "camera-rig.tsx",
       "norm_label": "canvas-root.tsx"
     },
     {
@@ -2007,8 +2106,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_components_canvas_canvas_root_r3fcanvas",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 55,
+      "community_name": "camera-rig.tsx",
       "norm_label": "r3fcanvas"
     },
     {
@@ -2018,8 +2117,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_components_canvas_canvas_root_canvasroot",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 55,
+      "community_name": "camera-rig.tsx",
       "norm_label": "canvasroot()"
     },
     {
@@ -2084,8 +2183,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_canvas_index",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 55,
+      "community_name": "camera-rig.tsx",
       "norm_label": "canvas/index.ts"
     },
     {
@@ -2095,8 +2194,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_canvas_post_fx",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 55,
+      "community_name": "camera-rig.tsx",
       "norm_label": "post-fx.tsx"
     },
     {
@@ -2106,8 +2205,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_components_canvas_post_fx_effects",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 55,
+      "community_name": "camera-rig.tsx",
       "norm_label": "effects"
     },
     {
@@ -2117,8 +2216,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_components_canvas_post_fx_postfx",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 55,
+      "community_name": "camera-rig.tsx",
       "norm_label": "postfx()"
     },
     {
@@ -2128,8 +2227,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_canvas_r3f_canvas",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 55,
+      "community_name": "camera-rig.tsx",
       "norm_label": "r3f-canvas.tsx"
     },
     {
@@ -2139,8 +2238,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_components_canvas_r3f_canvas_r3fcanvas",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 55,
+      "community_name": "camera-rig.tsx",
       "norm_label": "r3fcanvas()"
     },
     {
@@ -2151,7 +2250,7 @@
       "_origin": "ast",
       "id": "src_components_canvas_scroll_mesh",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "scroll-mesh.tsx"
     },
     {
@@ -2162,7 +2261,7 @@
       "_origin": "ast",
       "id": "src_components_canvas_scroll_mesh_scrollmesh",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "scrollmesh()"
     },
     {
@@ -2194,8 +2293,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "src_components_creative_contact_form_contactform",
-      "community": 16,
-      "community_name": "contact-form.tsx",
+      "community": 46,
+      "community_name": "cn",
       "norm_label": "contactform()"
     },
     {
@@ -2216,8 +2315,8 @@
       "source_location": "L413",
       "_origin": "ast",
       "id": "src_components_creative_contact_form_emaillockup",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 16,
+      "community_name": "contact-form.tsx",
       "norm_label": "emaillockup()"
     },
     {
@@ -2227,8 +2326,8 @@
       "source_location": "L474",
       "_origin": "ast",
       "id": "src_components_creative_contact_form_field",
-      "community": 16,
-      "community_name": "contact-form.tsx",
+      "community": 46,
+      "community_name": "cn",
       "norm_label": "field()"
     },
     {
@@ -2590,8 +2689,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_creative_sections_hero_section",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 59,
+      "community_name": "useReducedMotion",
       "norm_label": "hero-section.tsx"
     },
     {
@@ -2601,8 +2700,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_components_creative_sections_hero_section_herosectionprops",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 59,
+      "community_name": "useReducedMotion",
       "norm_label": "herosectionprops"
     },
     {
@@ -2612,8 +2711,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_components_creative_sections_hero_section_herosection",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 59,
+      "community_name": "useReducedMotion",
       "norm_label": "herosection()"
     },
     {
@@ -2623,8 +2722,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_creative_sections_immersive_project",
-      "community": 46,
-      "community_name": "cn",
+      "community": 63,
+      "community_name": "immersive-project.tsx",
       "norm_label": "immersive-project.tsx"
     },
     {
@@ -2634,8 +2733,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_components_creative_sections_immersive_project_immersiveprojectprops",
-      "community": 48,
-      "community_name": "types/index.ts",
+      "community": 63,
+      "community_name": "immersive-project.tsx",
       "norm_label": "immersiveprojectprops"
     },
     {
@@ -2645,8 +2744,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "src_components_creative_sections_immersive_project_immersiveproject",
-      "community": 46,
-      "community_name": "cn",
+      "community": 63,
+      "community_name": "immersive-project.tsx",
       "norm_label": "immersiveproject"
     },
     {
@@ -2656,8 +2755,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_creative_sections_orbit_project",
-      "community": 46,
-      "community_name": "cn",
+      "community": 63,
+      "community_name": "immersive-project.tsx",
       "norm_label": "orbit-project.tsx"
     },
     {
@@ -2733,8 +2832,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_creative_thank_you_burst",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 64,
+      "community_name": "getQualityGuardian",
       "norm_label": "thank-you-burst.tsx"
     },
     {
@@ -2744,8 +2843,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_components_creative_thank_you_burst_particle",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 64,
+      "community_name": "getQualityGuardian",
       "norm_label": "particle"
     },
     {
@@ -2755,8 +2854,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "src_components_creative_thank_you_burst_thankyouburst",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 64,
+      "community_name": "getQualityGuardian",
       "norm_label": "thankyouburst()"
     },
     {
@@ -2807,7 +2906,7 @@
       "label": "SkipLink()",
       "file_type": "code",
       "source_file": "src/components/layout/app-shell.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "_origin": "ast",
       "id": "src_components_layout_app_shell_skiplink",
       "community": 27,
@@ -2818,7 +2917,7 @@
       "label": "Header()",
       "file_type": "code",
       "source_file": "src/components/layout/app-shell.tsx",
-      "source_location": "L19",
+      "source_location": "L20",
       "_origin": "ast",
       "id": "src_components_layout_app_shell_header",
       "community": 27,
@@ -2829,7 +2928,7 @@
       "label": "Footer()",
       "file_type": "code",
       "source_file": "src/components/layout/app-shell.tsx",
-      "source_location": "L67",
+      "source_location": "L68",
       "_origin": "ast",
       "id": "src_components_layout_app_shell_footer",
       "community": 27,
@@ -2840,7 +2939,7 @@
       "label": "AppShell()",
       "file_type": "code",
       "source_file": "src/components/layout/app-shell.tsx",
-      "source_location": "L89",
+      "source_location": "L100",
       "_origin": "ast",
       "id": "src_components_layout_app_shell_appshell",
       "community": 27,
@@ -2888,18 +2987,18 @@
       "_origin": "ast",
       "id": "src_components_layout_delight_hooks",
       "community": 52,
-      "community_name": "use-sound.ts",
+      "community_name": "delight-hooks.tsx",
       "norm_label": "delight-hooks.tsx"
     },
     {
       "label": "DelightHooks()",
       "file_type": "code",
       "source_file": "src/components/layout/delight-hooks.tsx",
-      "source_location": "L13",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "src_components_layout_delight_hooks_delighthooks",
       "community": 52,
-      "community_name": "use-sound.ts",
+      "community_name": "delight-hooks.tsx",
       "norm_label": "delighthooks()"
     },
     {
@@ -2986,8 +3085,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_layout_experience_loader",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 59,
+      "community_name": "useReducedMotion",
       "norm_label": "experience-loader.tsx"
     },
     {
@@ -2997,8 +3096,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_components_layout_experience_loader_loaderprops",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 59,
+      "community_name": "useReducedMotion",
       "norm_label": "loaderprops"
     },
     {
@@ -3008,8 +3107,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_components_layout_experience_loader_experienceloader",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 59,
+      "community_name": "useReducedMotion",
       "norm_label": "experienceloader()"
     },
     {
@@ -3063,8 +3162,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_layout_perf_overlay",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 4,
+      "community_name": "hooks/index.ts",
       "norm_label": "perf-overlay.tsx"
     },
     {
@@ -3074,8 +3173,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_components_layout_perf_overlay_subscribeperfflag",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 4,
+      "community_name": "hooks/index.ts",
       "norm_label": "subscribeperfflag()"
     },
     {
@@ -3085,8 +3184,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_components_layout_perf_overlay_getperfflag",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 4,
+      "community_name": "hooks/index.ts",
       "norm_label": "getperfflag()"
     },
     {
@@ -3096,8 +3195,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "src_components_layout_perf_overlay_perfoverlay",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 4,
+      "community_name": "hooks/index.ts",
       "norm_label": "perfoverlay()"
     },
     {
@@ -3140,8 +3239,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_layout_sound_toggle",
-      "community": 52,
-      "community_name": "use-sound.ts",
+      "community": 50,
+      "community_name": "playground-shell.tsx",
       "norm_label": "sound-toggle.tsx"
     },
     {
@@ -3151,8 +3250,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_components_layout_sound_toggle_soundtoggle",
-      "community": 52,
-      "community_name": "use-sound.ts",
+      "community": 50,
+      "community_name": "playground-shell.tsx",
       "norm_label": "soundtoggle()"
     },
     {
@@ -3350,7 +3449,7 @@
       "_origin": "ast",
       "id": "src_components_scroll_act_indicators",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "act-indicators.tsx"
     },
     {
@@ -3361,7 +3460,7 @@
       "_origin": "ast",
       "id": "src_components_scroll_act_indicators_actindicators",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "actindicators()"
     },
     {
@@ -3372,7 +3471,7 @@
       "_origin": "ast",
       "id": "src_components_scroll_index",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "components/scroll/index.ts"
     },
     {
@@ -3383,7 +3482,7 @@
       "_origin": "ast",
       "id": "src_components_scroll_scroll_progress",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "scroll-progress.tsx"
     },
     {
@@ -3394,7 +3493,7 @@
       "_origin": "ast",
       "id": "src_components_scroll_scroll_progress_scrollprogress",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "scrollprogress()"
     },
     {
@@ -3405,7 +3504,7 @@
       "_origin": "ast",
       "id": "src_components_scroll_scroll_root",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "scroll-root.tsx"
     },
     {
@@ -3416,7 +3515,7 @@
       "_origin": "ast",
       "id": "src_components_scroll_scroll_root_scrollroot",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "scrollroot()"
     },
     {
@@ -3427,7 +3526,7 @@
       "_origin": "ast",
       "id": "src_components_scroll_section",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "section.tsx"
     },
     {
@@ -3438,7 +3537,7 @@
       "_origin": "ast",
       "id": "src_components_scroll_section_sectionprops",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "sectionprops"
     },
     {
@@ -3449,7 +3548,7 @@
       "_origin": "ast",
       "id": "src_components_scroll_section_section",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "section"
     },
     {
@@ -3459,8 +3558,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_ui_button",
-      "community": 55,
-      "community_name": "button.tsx",
+      "community": 46,
+      "community_name": "cn",
       "norm_label": "button.tsx"
     },
     {
@@ -3470,8 +3569,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_components_ui_button_buttonvariants",
-      "community": 55,
-      "community_name": "button.tsx",
+      "community": 46,
+      "community_name": "cn",
       "norm_label": "buttonvariants"
     },
     {
@@ -3481,8 +3580,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "src_components_ui_button_buttonprops",
-      "community": 55,
-      "community_name": "button.tsx",
+      "community": 46,
+      "community_name": "cn",
       "norm_label": "buttonprops"
     },
     {
@@ -3492,8 +3591,8 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "src_components_ui_button_button",
-      "community": 55,
-      "community_name": "button.tsx",
+      "community": 46,
+      "community_name": "cn",
       "norm_label": "button"
     },
     {
@@ -3503,8 +3602,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_ui_index",
-      "community": 55,
-      "community_name": "button.tsx",
+      "community": 46,
+      "community_name": "cn",
       "norm_label": "ui/index.ts"
     },
     {
@@ -3558,8 +3657,8 @@
       "source_location": "L94",
       "_origin": "ast",
       "id": "src_constants_index_scroll_defaults",
-      "community": 37,
-      "community_name": "constants/index.ts",
+      "community": 4,
+      "community_name": "hooks/index.ts",
       "norm_label": "scroll_defaults"
     },
     {
@@ -3570,7 +3669,7 @@
       "_origin": "ast",
       "id": "src_constants_index_performance",
       "community": 7,
-      "community_name": "scroll-provider.tsx",
+      "community_name": "quality-guardian.ts",
       "norm_label": "performance"
     },
     {
@@ -3580,8 +3679,8 @@
       "source_location": "L118",
       "_origin": "ast",
       "id": "src_constants_index_site",
-      "community": 37,
-      "community_name": "constants/index.ts",
+      "community": 59,
+      "community_name": "useReducedMotion",
       "norm_label": "site"
     },
     {
@@ -3591,8 +3690,8 @@
       "source_location": "L133",
       "_origin": "ast",
       "id": "src_constants_index_socials",
-      "community": 37,
-      "community_name": "constants/index.ts",
+      "community": 60,
+      "community_name": "layout.tsx",
       "norm_label": "socials"
     },
     {
@@ -3811,8 +3910,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_engine_animation_gsap",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 59,
+      "community_name": "useReducedMotion",
       "norm_label": "gsap.ts"
     },
     {
@@ -3822,8 +3921,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_engine_animation_gsap_ensuregsap",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 59,
+      "community_name": "useReducedMotion",
       "norm_label": "ensuregsap()"
     },
     {
@@ -4020,8 +4119,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_engine_animation_timeline",
-      "community": 53,
-      "community_name": "scene.ts",
+      "community": 2,
+      "community_name": "scene-host.tsx",
       "norm_label": "timeline.ts"
     },
     {
@@ -4031,8 +4130,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_engine_animation_timeline_lerp",
-      "community": 53,
-      "community_name": "scene.ts",
+      "community": 2,
+      "community_name": "scene-host.tsx",
       "norm_label": "lerp()"
     },
     {
@@ -4042,8 +4141,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_engine_animation_timeline_sampletrack",
-      "community": 53,
-      "community_name": "scene.ts",
+      "community": 2,
+      "community_name": "scene-host.tsx",
       "norm_label": "sampletrack()"
     },
     {
@@ -4053,8 +4152,8 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "src_engine_animation_timeline_timeline",
-      "community": 53,
-      "community_name": "scene.ts",
+      "community": 2,
+      "community_name": "scene-host.tsx",
       "norm_label": "timeline"
     },
     {
@@ -4064,8 +4163,8 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "src_engine_animation_timeline_timeline_constructor",
-      "community": 53,
-      "community_name": "scene.ts",
+      "community": 2,
+      "community_name": "scene-host.tsx",
       "norm_label": ".constructor()"
     },
     {
@@ -4075,8 +4174,8 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "src_engine_animation_timeline_timeline_setprogress",
-      "community": 53,
-      "community_name": "scene.ts",
+      "community": 2,
+      "community_name": "scene-host.tsx",
       "norm_label": ".setprogress()"
     },
     {
@@ -4086,8 +4185,8 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "src_engine_animation_timeline_timeline_getvalue",
-      "community": 53,
-      "community_name": "scene.ts",
+      "community": 2,
+      "community_name": "scene-host.tsx",
       "norm_label": ".getvalue()"
     },
     {
@@ -4097,8 +4196,8 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "src_engine_animation_timeline_timeline_destroy",
-      "community": 53,
-      "community_name": "scene.ts",
+      "community": 2,
+      "community_name": "scene-host.tsx",
       "norm_label": ".destroy()"
     },
     {
@@ -4648,7 +4747,7 @@
       "_origin": "ast",
       "id": "src_engine_audio_sound_system_getsoundsystem",
       "community": 52,
-      "community_name": "use-sound.ts",
+      "community_name": "delight-hooks.tsx",
       "norm_label": "getsoundsystem()"
     },
     {
@@ -4680,8 +4779,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_engine_observers_idle",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 65,
+      "community_name": "idle.ts",
       "norm_label": "idle.ts"
     },
     {
@@ -4691,8 +4790,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_engine_observers_idle_idletask",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 65,
+      "community_name": "idle.ts",
       "norm_label": "idletask"
     },
     {
@@ -4702,8 +4801,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_engine_observers_idle_runwhenidle",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 65,
+      "community_name": "idle.ts",
       "norm_label": "runwhenidle()"
     },
     {
@@ -4713,8 +4812,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_engine_observers_idle_scheduleprefetch",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 65,
+      "community_name": "idle.ts",
       "norm_label": "scheduleprefetch()"
     },
     {
@@ -4967,7 +5066,7 @@
       "_origin": "ast",
       "id": "src_engine_performance_index",
       "community": 7,
-      "community_name": "scroll-provider.tsx",
+      "community_name": "quality-guardian.ts",
       "norm_label": "performance/index.ts"
     },
     {
@@ -4978,7 +5077,7 @@
       "_origin": "ast",
       "id": "src_engine_performance_quality_guardian_test",
       "community": 7,
-      "community_name": "scroll-provider.tsx",
+      "community_name": "quality-guardian.ts",
       "norm_label": "quality-guardian.test.ts"
     },
     {
@@ -4989,7 +5088,7 @@
       "_origin": "ast",
       "id": "src_engine_performance_quality_guardian",
       "community": 7,
-      "community_name": "scroll-provider.tsx",
+      "community_name": "quality-guardian.ts",
       "norm_label": "quality-guardian.ts"
     },
     {
@@ -5000,7 +5099,7 @@
       "_origin": "ast",
       "id": "src_engine_performance_quality_guardian_tier_order",
       "community": 7,
-      "community_name": "scroll-provider.tsx",
+      "community_name": "quality-guardian.ts",
       "norm_label": "tier_order"
     },
     {
@@ -5011,7 +5110,7 @@
       "_origin": "ast",
       "id": "src_engine_performance_quality_guardian_flagsfor",
       "community": 7,
-      "community_name": "scroll-provider.tsx",
+      "community_name": "quality-guardian.ts",
       "norm_label": "flagsfor()"
     },
     {
@@ -5022,7 +5121,7 @@
       "_origin": "ast",
       "id": "src_engine_performance_quality_guardian_qualityguardian",
       "community": 7,
-      "community_name": "scroll-provider.tsx",
+      "community_name": "quality-guardian.ts",
       "norm_label": "qualityguardian"
     },
     {
@@ -5033,7 +5132,7 @@
       "_origin": "ast",
       "id": "src_engine_performance_quality_guardian_qualityguardian_start",
       "community": 7,
-      "community_name": "scroll-provider.tsx",
+      "community_name": "quality-guardian.ts",
       "norm_label": ".start()"
     },
     {
@@ -5044,7 +5143,7 @@
       "_origin": "ast",
       "id": "src_engine_performance_quality_guardian_qualityguardian_stop",
       "community": 7,
-      "community_name": "scroll-provider.tsx",
+      "community_name": "quality-guardian.ts",
       "norm_label": ".stop()"
     },
     {
@@ -5055,7 +5154,7 @@
       "_origin": "ast",
       "id": "src_engine_performance_quality_guardian_qualityguardian_destroy",
       "community": 7,
-      "community_name": "scroll-provider.tsx",
+      "community_name": "quality-guardian.ts",
       "norm_label": ".destroy()"
     },
     {
@@ -5066,7 +5165,7 @@
       "_origin": "ast",
       "id": "src_engine_performance_quality_guardian_qualityguardian_getflags",
       "community": 7,
-      "community_name": "scroll-provider.tsx",
+      "community_name": "quality-guardian.ts",
       "norm_label": ".getflags()"
     },
     {
@@ -5077,7 +5176,7 @@
       "_origin": "ast",
       "id": "src_engine_performance_quality_guardian_qualityguardian_gettier",
       "community": 7,
-      "community_name": "scroll-provider.tsx",
+      "community_name": "quality-guardian.ts",
       "norm_label": ".gettier()"
     },
     {
@@ -5088,7 +5187,7 @@
       "_origin": "ast",
       "id": "src_engine_performance_quality_guardian_qualityguardian_settier",
       "community": 7,
-      "community_name": "scroll-provider.tsx",
+      "community_name": "quality-guardian.ts",
       "norm_label": ".settier()"
     },
     {
@@ -5099,7 +5198,7 @@
       "_origin": "ast",
       "id": "src_engine_performance_quality_guardian_qualityguardian_subscribe",
       "community": 7,
-      "community_name": "scroll-provider.tsx",
+      "community_name": "quality-guardian.ts",
       "norm_label": ".subscribe()"
     },
     {
@@ -5110,7 +5209,7 @@
       "_origin": "ast",
       "id": "src_engine_performance_quality_guardian_qualityguardian_sample",
       "community": 7,
-      "community_name": "scroll-provider.tsx",
+      "community_name": "quality-guardian.ts",
       "norm_label": ".sample()"
     },
     {
@@ -5121,7 +5220,7 @@
       "_origin": "ast",
       "id": "src_engine_performance_quality_guardian_qualityguardian_shouldforcelow",
       "community": 7,
-      "community_name": "scroll-provider.tsx",
+      "community_name": "quality-guardian.ts",
       "norm_label": ".shouldforcelow()"
     },
     {
@@ -5131,8 +5230,8 @@
       "source_location": "L175",
       "_origin": "ast",
       "id": "src_engine_performance_quality_guardian_getqualityguardian",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 64,
+      "community_name": "getQualityGuardian",
       "norm_label": "getqualityguardian()"
     },
     {
@@ -5143,7 +5242,7 @@
       "_origin": "ast",
       "id": "src_engine_performance_quality_guardian_resetqualityguardian",
       "community": 7,
-      "community_name": "scroll-provider.tsx",
+      "community_name": "quality-guardian.ts",
       "norm_label": "resetqualityguardian()"
     },
     {
@@ -5153,8 +5252,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_engine_render_camera",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 55,
+      "community_name": "camera-rig.tsx",
       "norm_label": "camera.ts"
     },
     {
@@ -5164,8 +5263,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_engine_render_camera_camerastate",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 55,
+      "community_name": "camera-rig.tsx",
       "norm_label": "camerastate"
     },
     {
@@ -5175,8 +5274,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_engine_render_camera_createcamerastate",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 55,
+      "community_name": "camera-rig.tsx",
       "norm_label": "createcamerastate()"
     },
     {
@@ -5186,8 +5285,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "src_engine_render_camera_dampcamera",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 55,
+      "community_name": "camera-rig.tsx",
       "norm_label": "dampcamera()"
     },
     {
@@ -5197,8 +5296,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_engine_render_index",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 55,
+      "community_name": "camera-rig.tsx",
       "norm_label": "render/index.ts"
     },
     {
@@ -5208,8 +5307,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_engine_render_renderer",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 55,
+      "community_name": "camera-rig.tsx",
       "norm_label": "renderer.ts"
     },
     {
@@ -5219,8 +5318,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_engine_render_renderer_rendererconfig",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 55,
+      "community_name": "camera-rig.tsx",
       "norm_label": "rendererconfig"
     },
     {
@@ -5230,8 +5329,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_engine_render_renderer_createrendererconfig",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 55,
+      "community_name": "camera-rig.tsx",
       "norm_label": "createrendererconfig()"
     },
     {
@@ -5473,7 +5572,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_breakpoints_test",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "breakpoints.test.ts"
     },
     {
@@ -5484,7 +5583,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_breakpoints",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "breakpoints.ts"
     },
     {
@@ -5495,7 +5594,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_breakpoints_getbreakpoint",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "getbreakpoint()"
     },
     {
@@ -5506,7 +5605,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_breakpoints_getviewportsize",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "getviewportsize()"
     },
     {
@@ -5516,8 +5615,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_engine_scroll_breakpoints_prefersreducedmotion",
-      "community": 4,
-      "community_name": "ScrollManager",
+      "community": 59,
+      "community_name": "useReducedMotion",
       "norm_label": "prefersreducedmotion()"
     },
     {
@@ -5528,7 +5627,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_index",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "engine/scroll/index.ts"
     },
     {
@@ -5539,7 +5638,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "scroll-manager.ts"
     },
     {
@@ -5550,7 +5649,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager_emptysections",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "emptysections()"
     },
     {
@@ -5561,7 +5660,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager_createinitialsnapshot",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "createinitialsnapshot()"
     },
     {
@@ -5572,7 +5671,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager_scrollmanager",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "scrollmanager"
     },
     {
@@ -5583,7 +5682,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager_scrollmanager_constructor",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": ".constructor()"
     },
     {
@@ -5594,7 +5693,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager_scrollmanager_start",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": ".start()"
     },
     {
@@ -5605,7 +5704,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager_scrollmanager_stop",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": ".stop()"
     },
     {
@@ -5616,7 +5715,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager_scrollmanager_destroy",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": ".destroy()"
     },
     {
@@ -5627,7 +5726,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager_scrollmanager_getsnapshot",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": ".getsnapshot()"
     },
     {
@@ -5638,7 +5737,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager_scrollmanager_subscribe",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": ".subscribe()"
     },
     {
@@ -5649,7 +5748,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager_scrollmanager_scrollto",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": ".scrollto()"
     },
     {
@@ -5660,7 +5759,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager_scrollmanager_registersection",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": ".registersection()"
     },
     {
@@ -5671,7 +5770,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager_scrollmanager_refresh",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": ".refresh()"
     },
     {
@@ -5682,7 +5781,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager_scrollmanager_resize",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": ".resize()"
     },
     {
@@ -5693,7 +5792,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager_scrollmanager_onframe",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": ".onframe()"
     },
     {
@@ -5704,7 +5803,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager_scrollmanager_onlenisscroll",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": ".onlenisscroll()"
     },
     {
@@ -5715,7 +5814,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager_scrollmanager_computesnapshot",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": ".computesnapshot()"
     },
     {
@@ -5726,7 +5825,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager_scrollmanager_computesectionprogress",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": ".computesectionprogress()"
     },
     {
@@ -5737,7 +5836,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager_scrollmanager_measuresection",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": ".measuresection()"
     },
     {
@@ -5748,7 +5847,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager_scrollmanager_publish",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": ".publish()"
     },
     {
@@ -5759,7 +5858,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager_scrollmanager_bindresize",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": ".bindresize()"
     },
     {
@@ -5770,7 +5869,7 @@
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager_scrollmanager_bindreducedmotion",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": ".bindreducedmotion()"
     },
     {
@@ -5781,29 +5880,51 @@
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager_scrollmanager_mediahandler",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": ".mediahandler()"
+    },
+    {
+      "label": ".setSmoothEnabled()",
+      "file_type": "code",
+      "source_file": "src/engine/scroll/scroll-manager.ts",
+      "source_location": "L294",
+      "_origin": "ast",
+      "id": "src_engine_scroll_scroll_manager_scrollmanager_setsmoothenabled",
+      "community": 4,
+      "community_name": "hooks/index.ts",
+      "norm_label": ".setsmoothenabled()"
+    },
+    {
+      "label": ".rebuildLenis()",
+      "file_type": "code",
+      "source_file": "src/engine/scroll/scroll-manager.ts",
+      "source_location": "L304",
+      "_origin": "ast",
+      "id": "src_engine_scroll_scroll_manager_scrollmanager_rebuildlenis",
+      "community": 4,
+      "community_name": "hooks/index.ts",
+      "norm_label": ".rebuildlenis()"
     },
     {
       "label": "getScrollManager()",
       "file_type": "code",
       "source_file": "src/engine/scroll/scroll-manager.ts",
-      "source_location": "L310",
+      "source_location": "L326",
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager_getscrollmanager",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "getscrollmanager()"
     },
     {
       "label": "resetScrollManager()",
       "file_type": "code",
       "source_file": "src/engine/scroll/scroll-manager.ts",
-      "source_location": "L317",
+      "source_location": "L333",
       "_origin": "ast",
       "id": "src_engine_scroll_scroll_manager_resetscrollmanager",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "resetscrollmanager()"
     },
     {
@@ -5814,7 +5935,7 @@
       "_origin": "ast",
       "id": "src_hooks_index",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "hooks/index.ts"
     },
     {
@@ -5847,7 +5968,7 @@
       "_origin": "ast",
       "id": "src_hooks_use_breakpoint",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "use-breakpoint.ts"
     },
     {
@@ -5858,7 +5979,7 @@
       "_origin": "ast",
       "id": "src_hooks_use_breakpoint_usemediaquery",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "usemediaquery()"
     },
     {
@@ -5869,7 +5990,7 @@
       "_origin": "ast",
       "id": "src_hooks_use_breakpoint_usebreakpoint",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "usebreakpoint()"
     },
     {
@@ -5880,7 +6001,7 @@
       "_origin": "ast",
       "id": "src_hooks_use_breakpoint_useismobile",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "useismobile()"
     },
     {
@@ -5890,8 +6011,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hooks_use_keyboard_navigation",
-      "community": 27,
-      "community_name": "experience.tsx",
+      "community": 4,
+      "community_name": "hooks/index.ts",
       "norm_label": "use-keyboard-navigation.ts"
     },
     {
@@ -5901,9 +6022,42 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_hooks_use_keyboard_navigation_usekeyboardnavigation",
-      "community": 27,
-      "community_name": "experience.tsx",
+      "community": 4,
+      "community_name": "hooks/index.ts",
       "norm_label": "usekeyboardnavigation()"
+    },
+    {
+      "label": "use-motion-intensity.ts",
+      "file_type": "code",
+      "source_file": "src/hooks/use-motion-intensity.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_hooks_use_motion_intensity",
+      "community": 53,
+      "community_name": "scroll-provider.tsx",
+      "norm_label": "use-motion-intensity.ts"
+    },
+    {
+      "label": "useMotionIntensity()",
+      "file_type": "code",
+      "source_file": "src/hooks/use-motion-intensity.ts",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "src_hooks_use_motion_intensity_usemotionintensity",
+      "community": 53,
+      "community_name": "scroll-provider.tsx",
+      "norm_label": "usemotionintensity()"
+    },
+    {
+      "label": "useMotionRestricted()",
+      "file_type": "code",
+      "source_file": "src/hooks/use-motion-intensity.ts",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "src_hooks_use_motion_intensity_usemotionrestricted",
+      "community": 53,
+      "community_name": "scroll-provider.tsx",
+      "norm_label": "usemotionrestricted()"
     },
     {
       "label": "use-raf.ts",
@@ -5912,8 +6066,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hooks_use_raf",
-      "community": 54,
-      "community_name": "scheduler/raf.ts",
+      "community": 59,
+      "community_name": "useReducedMotion",
       "norm_label": "use-raf.ts"
     },
     {
@@ -5923,8 +6077,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "src_hooks_use_raf_useraf",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 59,
+      "community_name": "useReducedMotion",
       "norm_label": "useraf()"
     },
     {
@@ -5934,19 +6088,19 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hooks_use_reduced_motion",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 59,
+      "community_name": "useReducedMotion",
       "norm_label": "use-reduced-motion.ts"
     },
     {
       "label": "useReducedMotion()",
       "file_type": "code",
       "source_file": "src/hooks/use-reduced-motion.ts",
-      "source_location": "L6",
+      "source_location": "L14",
       "_origin": "ast",
       "id": "src_hooks_use_reduced_motion_usereducedmotion",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 59,
+      "community_name": "useReducedMotion",
       "norm_label": "usereducedmotion()"
     },
     {
@@ -5957,7 +6111,7 @@
       "_origin": "ast",
       "id": "src_hooks_use_scroll",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "use-scroll.ts"
     },
     {
@@ -5968,7 +6122,7 @@
       "_origin": "ast",
       "id": "src_hooks_use_scroll_usescroll",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "usescroll()"
     },
     {
@@ -5979,7 +6133,7 @@
       "_origin": "ast",
       "id": "src_hooks_use_scroll_usescrollsnapshot",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "usescrollsnapshot()"
     },
     {
@@ -5990,7 +6144,7 @@
       "_origin": "ast",
       "id": "src_hooks_use_scroll_usescrollprogress",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "usescrollprogress()"
     },
     {
@@ -6001,7 +6155,7 @@
       "_origin": "ast",
       "id": "src_hooks_use_section_progress",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "use-section-progress.ts"
     },
     {
@@ -6012,7 +6166,7 @@
       "_origin": "ast",
       "id": "src_hooks_use_section_progress_usesectionprogress",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "usesectionprogress()"
     },
     {
@@ -6023,7 +6177,7 @@
       "_origin": "ast",
       "id": "src_hooks_use_sound",
       "community": 52,
-      "community_name": "use-sound.ts",
+      "community_name": "delight-hooks.tsx",
       "norm_label": "use-sound.ts"
     },
     {
@@ -6034,7 +6188,7 @@
       "_origin": "ast",
       "id": "src_hooks_use_sound_subscribe",
       "community": 52,
-      "community_name": "use-sound.ts",
+      "community_name": "delight-hooks.tsx",
       "norm_label": "subscribe()"
     },
     {
@@ -6045,7 +6199,7 @@
       "_origin": "ast",
       "id": "src_hooks_use_sound_getsnapshot",
       "community": 52,
-      "community_name": "use-sound.ts",
+      "community_name": "delight-hooks.tsx",
       "norm_label": "getsnapshot()"
     },
     {
@@ -6056,7 +6210,7 @@
       "_origin": "ast",
       "id": "src_hooks_use_sound_getserversnapshot",
       "community": 52,
-      "community_name": "use-sound.ts",
+      "community_name": "delight-hooks.tsx",
       "norm_label": "getserversnapshot()"
     },
     {
@@ -6067,7 +6221,7 @@
       "_origin": "ast",
       "id": "src_hooks_use_sound_usesoundenabled",
       "community": 52,
-      "community_name": "use-sound.ts",
+      "community_name": "delight-hooks.tsx",
       "norm_label": "usesoundenabled()"
     },
     {
@@ -6078,7 +6232,7 @@
       "_origin": "ast",
       "id": "src_hooks_use_sound_togglesound",
       "community": 52,
-      "community_name": "use-sound.ts",
+      "community_name": "delight-hooks.tsx",
       "norm_label": "togglesound()"
     },
     {
@@ -6089,7 +6243,7 @@
       "_origin": "ast",
       "id": "src_hooks_use_sound_playsound",
       "community": 52,
-      "community_name": "use-sound.ts",
+      "community_name": "delight-hooks.tsx",
       "norm_label": "playsound()"
     },
     {
@@ -6110,8 +6264,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hooks_use_theme",
-      "community": 4,
-      "community_name": "ScrollManager",
+      "community": 53,
+      "community_name": "scroll-provider.tsx",
       "norm_label": "use-theme.ts"
     },
     {
@@ -6121,8 +6275,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_hooks_use_theme_usetheme",
-      "community": 4,
-      "community_name": "ScrollManager",
+      "community": 53,
+      "community_name": "scroll-provider.tsx",
       "norm_label": "usetheme()"
     },
     {
@@ -6132,8 +6286,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_hooks_use_theme_useaccentcolor",
-      "community": 4,
-      "community_name": "ScrollManager",
+      "community": 53,
+      "community_name": "scroll-provider.tsx",
       "norm_label": "useaccentcolor()"
     },
     {
@@ -6143,8 +6297,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_hooks_use_theme_usesetthememode",
-      "community": 4,
-      "community_name": "ScrollManager",
+      "community": 53,
+      "community_name": "scroll-provider.tsx",
       "norm_label": "usesetthememode()"
     },
     {
@@ -6286,8 +6440,8 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "src_lib_achievements_unlockachievement",
-      "community": 52,
-      "community_name": "use-sound.ts",
+      "community": 50,
+      "community_name": "playground-shell.tsx",
       "norm_label": "unlockachievement()"
     },
     {
@@ -6300,6 +6454,94 @@
       "community": 51,
       "community_name": "achievements.ts",
       "norm_label": "subscribeachievements()"
+    },
+    {
+      "label": "analytics.test.ts",
+      "file_type": "code",
+      "source_file": "src/lib/analytics.test.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_lib_analytics_test",
+      "community": 62,
+      "community_name": "analytics.ts",
+      "norm_label": "analytics.test.ts"
+    },
+    {
+      "label": "analytics.ts",
+      "file_type": "code",
+      "source_file": "src/lib/analytics.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_lib_analytics",
+      "community": 62,
+      "community_name": "analytics.ts",
+      "norm_label": "analytics.ts"
+    },
+    {
+      "label": "AnalyticsPayload",
+      "file_type": "code",
+      "source_file": "src/lib/analytics.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_lib_analytics_analyticspayload",
+      "community": 62,
+      "community_name": "analytics.ts",
+      "norm_label": "analyticspayload"
+    },
+    {
+      "label": "firedActs",
+      "file_type": "code",
+      "source_file": "src/lib/analytics.ts",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "src_lib_analytics_firedacts",
+      "community": 62,
+      "community_name": "analytics.ts",
+      "norm_label": "firedacts"
+    },
+    {
+      "label": "plausibleDomain()",
+      "file_type": "code",
+      "source_file": "src/lib/analytics.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "src_lib_analytics_plausibledomain",
+      "community": 62,
+      "community_name": "analytics.ts",
+      "norm_label": "plausibledomain()"
+    },
+    {
+      "label": "trackEvent()",
+      "file_type": "code",
+      "source_file": "src/lib/analytics.ts",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "src_lib_analytics_trackevent",
+      "community": 62,
+      "community_name": "analytics.ts",
+      "norm_label": "trackevent()"
+    },
+    {
+      "label": "trackActEnter()",
+      "file_type": "code",
+      "source_file": "src/lib/analytics.ts",
+      "source_location": "L48",
+      "_origin": "ast",
+      "id": "src_lib_analytics_trackactenter",
+      "community": 62,
+      "community_name": "analytics.ts",
+      "norm_label": "trackactenter()"
+    },
+    {
+      "label": "resetAnalyticsSession()",
+      "file_type": "code",
+      "source_file": "src/lib/analytics.ts",
+      "source_location": "L54",
+      "_origin": "ast",
+      "id": "src_lib_analytics_resetanalyticssession",
+      "community": 62,
+      "community_name": "analytics.ts",
+      "norm_label": "resetanalyticssession()"
     },
     {
       "label": "schema.test.ts",
@@ -6401,13 +6643,178 @@
       "norm_label": "fielderrorsfromzod()"
     },
     {
+      "label": "motion-intensity.test.ts",
+      "file_type": "code",
+      "source_file": "src/lib/motion-intensity.test.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_lib_motion_intensity_test",
+      "community": 71,
+      "community_name": "motion-intensity.test.ts",
+      "norm_label": "motion-intensity.test.ts"
+    },
+    {
+      "label": "memory",
+      "file_type": "code",
+      "source_file": "src/lib/motion-intensity.test.ts",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "src_lib_motion_intensity_test_memory",
+      "community": 71,
+      "community_name": "motion-intensity.test.ts",
+      "norm_label": "memory"
+    },
+    {
+      "label": "storage",
+      "file_type": "code",
+      "source_file": "src/lib/motion-intensity.test.ts",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "src_lib_motion_intensity_test_storage",
+      "community": 71,
+      "community_name": "motion-intensity.test.ts",
+      "norm_label": "storage"
+    },
+    {
+      "label": "motion-intensity.ts",
+      "file_type": "code",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_lib_motion_intensity",
+      "community": 53,
+      "community_name": "scroll-provider.tsx",
+      "norm_label": "motion-intensity.ts"
+    },
+    {
+      "label": "MotionIntensity",
+      "file_type": "code",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_lib_motion_intensity_motionintensity",
+      "community": 53,
+      "community_name": "scroll-provider.tsx",
+      "norm_label": "motionintensity"
+    },
+    {
+      "label": "Listener",
+      "file_type": "code",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "src_lib_motion_intensity_listener",
+      "community": 53,
+      "community_name": "scroll-provider.tsx",
+      "norm_label": "listener"
+    },
+    {
+      "label": "readStored()",
+      "file_type": "code",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "src_lib_motion_intensity_readstored",
+      "community": 53,
+      "community_name": "scroll-provider.tsx",
+      "norm_label": "readstored()"
+    },
+    {
+      "label": "osPrefersReduced()",
+      "file_type": "code",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "src_lib_motion_intensity_osprefersreduced",
+      "community": 53,
+      "community_name": "scroll-provider.tsx",
+      "norm_label": "osprefersreduced()"
+    },
+    {
+      "label": "resolveMotionIntensity()",
+      "file_type": "code",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "src_lib_motion_intensity_resolvemotionintensity",
+      "community": 53,
+      "community_name": "scroll-provider.tsx",
+      "norm_label": "resolvemotionintensity()"
+    },
+    {
+      "label": "listeners",
+      "file_type": "code",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "src_lib_motion_intensity_listeners",
+      "community": 53,
+      "community_name": "scroll-provider.tsx",
+      "norm_label": "listeners"
+    },
+    {
+      "label": "getMotionIntensity()",
+      "file_type": "code",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "src_lib_motion_intensity_getmotionintensity",
+      "community": 53,
+      "community_name": "scroll-provider.tsx",
+      "norm_label": "getmotionintensity()"
+    },
+    {
+      "label": "isMotionRestricted()",
+      "file_type": "code",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L42",
+      "_origin": "ast",
+      "id": "src_lib_motion_intensity_ismotionrestricted",
+      "community": 59,
+      "community_name": "useReducedMotion",
+      "norm_label": "ismotionrestricted()"
+    },
+    {
+      "label": "setMotionIntensity()",
+      "file_type": "code",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L46",
+      "_origin": "ast",
+      "id": "src_lib_motion_intensity_setmotionintensity",
+      "community": 53,
+      "community_name": "scroll-provider.tsx",
+      "norm_label": "setmotionintensity()"
+    },
+    {
+      "label": "subscribeMotionIntensity()",
+      "file_type": "code",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L59",
+      "_origin": "ast",
+      "id": "src_lib_motion_intensity_subscribemotionintensity",
+      "community": 53,
+      "community_name": "scroll-provider.tsx",
+      "norm_label": "subscribemotionintensity()"
+    },
+    {
+      "label": "syncMotionFromOs()",
+      "file_type": "code",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L68",
+      "_origin": "ast",
+      "id": "src_lib_motion_intensity_syncmotionfromos",
+      "community": 53,
+      "community_name": "scroll-provider.tsx",
+      "norm_label": "syncmotionfromos()"
+    },
+    {
       "label": "app-providers.tsx",
       "file_type": "code",
       "source_file": "src/providers/app-providers.tsx",
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_providers_app_providers",
-      "community": 7,
+      "community": 53,
       "community_name": "scroll-provider.tsx",
       "norm_label": "app-providers.tsx"
     },
@@ -6418,7 +6825,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_providers_app_providers_appproviders",
-      "community": 7,
+      "community": 53,
       "community_name": "scroll-provider.tsx",
       "norm_label": "appproviders()"
     },
@@ -6430,7 +6837,7 @@
       "_origin": "ast",
       "id": "src_providers_canvas_provider",
       "community": 7,
-      "community_name": "scroll-provider.tsx",
+      "community_name": "quality-guardian.ts",
       "norm_label": "canvas-provider.tsx"
     },
     {
@@ -6441,7 +6848,7 @@
       "_origin": "ast",
       "id": "src_providers_canvas_provider_canvascontextvalue",
       "community": 7,
-      "community_name": "scroll-provider.tsx",
+      "community_name": "quality-guardian.ts",
       "norm_label": "canvascontextvalue"
     },
     {
@@ -6452,7 +6859,7 @@
       "_origin": "ast",
       "id": "src_providers_canvas_provider_canvascontext",
       "community": 7,
-      "community_name": "scroll-provider.tsx",
+      "community_name": "quality-guardian.ts",
       "norm_label": "canvascontext"
     },
     {
@@ -6462,7 +6869,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "src_providers_canvas_provider_canvasprovider",
-      "community": 7,
+      "community": 53,
       "community_name": "scroll-provider.tsx",
       "norm_label": "canvasprovider()"
     },
@@ -6473,8 +6880,8 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "src_providers_canvas_provider_usecanvas",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 55,
+      "community_name": "camera-rig.tsx",
       "norm_label": "usecanvas()"
     },
     {
@@ -6484,7 +6891,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_providers_index",
-      "community": 7,
+      "community": 53,
       "community_name": "scroll-provider.tsx",
       "norm_label": "providers/index.ts"
     },
@@ -6495,20 +6902,53 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_providers_motion_provider",
-      "community": 7,
+      "community": 53,
       "community_name": "scroll-provider.tsx",
       "norm_label": "motion-provider.tsx"
+    },
+    {
+      "label": "OPTIONS",
+      "file_type": "code",
+      "source_file": "src/providers/motion-provider.tsx",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "src_providers_motion_provider_options",
+      "community": 53,
+      "community_name": "scroll-provider.tsx",
+      "norm_label": "options"
+    },
+    {
+      "label": "useIntensity()",
+      "file_type": "code",
+      "source_file": "src/providers/motion-provider.tsx",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "src_providers_motion_provider_useintensity",
+      "community": 53,
+      "community_name": "scroll-provider.tsx",
+      "norm_label": "useintensity()"
     },
     {
       "label": "MotionProvider()",
       "file_type": "code",
       "source_file": "src/providers/motion-provider.tsx",
-      "source_location": "L9",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "src_providers_motion_provider_motionprovider",
-      "community": 7,
+      "community": 53,
       "community_name": "scroll-provider.tsx",
       "norm_label": "motionprovider()"
+    },
+    {
+      "label": "MotionIntensityControl()",
+      "file_type": "code",
+      "source_file": "src/providers/motion-provider.tsx",
+      "source_location": "L51",
+      "_origin": "ast",
+      "id": "src_providers_motion_provider_motionintensitycontrol",
+      "community": 53,
+      "community_name": "scroll-provider.tsx",
+      "norm_label": "motionintensitycontrol()"
     },
     {
       "label": "scroll-provider.tsx",
@@ -6517,7 +6957,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_providers_scroll_provider",
-      "community": 7,
+      "community": 53,
       "community_name": "scroll-provider.tsx",
       "norm_label": "scroll-provider.tsx"
     },
@@ -6525,10 +6965,10 @@
       "label": "ScrollContextValue",
       "file_type": "code",
       "source_file": "src/providers/scroll-provider.tsx",
-      "source_location": "L23",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "src_providers_scroll_provider_scrollcontextvalue",
-      "community": 7,
+      "community": 53,
       "community_name": "scroll-provider.tsx",
       "norm_label": "scrollcontextvalue"
     },
@@ -6536,10 +6976,10 @@
       "label": "ScrollContext",
       "file_type": "code",
       "source_file": "src/providers/scroll-provider.tsx",
-      "source_location": "L28",
+      "source_location": "L29",
       "_origin": "ast",
       "id": "src_providers_scroll_provider_scrollcontext",
-      "community": 7,
+      "community": 53,
       "community_name": "scroll-provider.tsx",
       "norm_label": "scrollcontext"
     },
@@ -6547,10 +6987,10 @@
       "label": "ScrollProvider()",
       "file_type": "code",
       "source_file": "src/providers/scroll-provider.tsx",
-      "source_location": "L34",
+      "source_location": "L35",
       "_origin": "ast",
       "id": "src_providers_scroll_provider_scrollprovider",
-      "community": 7,
+      "community": 53,
       "community_name": "scroll-provider.tsx",
       "norm_label": "scrollprovider()"
     },
@@ -6558,10 +6998,10 @@
       "label": "useScrollEngine()",
       "file_type": "code",
       "source_file": "src/providers/scroll-provider.tsx",
-      "source_location": "L66",
+      "source_location": "L68",
       "_origin": "ast",
       "id": "src_providers_scroll_provider_usescrollengine",
-      "community": 7,
+      "community": 53,
       "community_name": "scroll-provider.tsx",
       "norm_label": "usescrollengine()"
     },
@@ -6572,7 +7012,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_providers_theme_context",
-      "community": 7,
+      "community": 53,
       "community_name": "scroll-provider.tsx",
       "norm_label": "theme-context.ts"
     },
@@ -6583,7 +7023,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_providers_theme_context_themecontextvalue",
-      "community": 7,
+      "community": 53,
       "community_name": "scroll-provider.tsx",
       "norm_label": "themecontextvalue"
     },
@@ -6594,7 +7034,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_providers_theme_context_themecontext",
-      "community": 7,
+      "community": 53,
       "community_name": "scroll-provider.tsx",
       "norm_label": "themecontext"
     },
@@ -6605,7 +7045,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_providers_theme_provider",
-      "community": 7,
+      "community": 53,
       "community_name": "scroll-provider.tsx",
       "norm_label": "theme-provider.tsx"
     },
@@ -6616,7 +7056,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "src_providers_theme_provider_getsystemmode",
-      "community": 7,
+      "community": 53,
       "community_name": "scroll-provider.tsx",
       "norm_label": "getsystemmode()"
     },
@@ -6627,7 +7067,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "src_providers_theme_provider_subscribesystemmode",
-      "community": 7,
+      "community": 53,
       "community_name": "scroll-provider.tsx",
       "norm_label": "subscribesystemmode()"
     },
@@ -6638,7 +7078,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "src_providers_theme_provider_subscribetheme",
-      "community": 7,
+      "community": 53,
       "community_name": "scroll-provider.tsx",
       "norm_label": "subscribetheme()"
     },
@@ -6649,7 +7089,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "src_providers_theme_provider_readmode",
-      "community": 7,
+      "community": 53,
       "community_name": "scroll-provider.tsx",
       "norm_label": "readmode()"
     },
@@ -6660,7 +7100,7 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "src_providers_theme_provider_readaccent",
-      "community": 7,
+      "community": 53,
       "community_name": "scroll-provider.tsx",
       "norm_label": "readaccent()"
     },
@@ -6671,7 +7111,7 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "src_providers_theme_provider_emitthemechange",
-      "community": 7,
+      "community": 53,
       "community_name": "scroll-provider.tsx",
       "norm_label": "emitthemechange()"
     },
@@ -6682,7 +7122,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "src_providers_theme_provider_themeprovider",
-      "community": 7,
+      "community": 53,
       "community_name": "scroll-provider.tsx",
       "norm_label": "themeprovider()"
     },
@@ -6759,7 +7199,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "src_types_assets_thememode",
-      "community": 7,
+      "community": 53,
       "community_name": "scroll-provider.tsx",
       "norm_label": "thememode"
     },
@@ -7045,8 +7485,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "src_types_project_projectcasestudy",
-      "community": 48,
-      "community_name": "types/index.ts",
+      "community": 63,
+      "community_name": "immersive-project.tsx",
       "norm_label": "projectcasestudy"
     },
     {
@@ -7112,7 +7552,7 @@
       "_origin": "ast",
       "id": "src_types_quality",
       "community": 7,
-      "community_name": "scroll-provider.tsx",
+      "community_name": "quality-guardian.ts",
       "norm_label": "quality.ts"
     },
     {
@@ -7123,7 +7563,7 @@
       "_origin": "ast",
       "id": "src_types_quality_qualitytier",
       "community": 7,
-      "community_name": "scroll-provider.tsx",
+      "community_name": "quality-guardian.ts",
       "norm_label": "qualitytier"
     },
     {
@@ -7134,7 +7574,7 @@
       "_origin": "ast",
       "id": "src_types_quality_qualityflags",
       "community": 7,
-      "community_name": "scroll-provider.tsx",
+      "community_name": "quality-guardian.ts",
       "norm_label": "qualityflags"
     },
     {
@@ -7145,7 +7585,7 @@
       "_origin": "ast",
       "id": "src_types_quality_qualitylistener",
       "community": 7,
-      "community_name": "scroll-provider.tsx",
+      "community_name": "quality-guardian.ts",
       "norm_label": "qualitylistener"
     },
     {
@@ -7232,8 +7672,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_types_scene",
-      "community": 53,
-      "community_name": "scene.ts",
+      "community": 2,
+      "community_name": "scene-host.tsx",
       "norm_label": "scene.ts"
     },
     {
@@ -7254,8 +7694,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "src_types_scene_actid",
-      "community": 37,
-      "community_name": "constants/index.ts",
+      "community": 48,
+      "community_name": "types/index.ts",
       "norm_label": "actid"
     },
     {
@@ -7265,8 +7705,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "src_types_scene_scenerange",
-      "community": 48,
-      "community_name": "types/index.ts",
+      "community": 2,
+      "community_name": "scene-host.tsx",
       "norm_label": "scenerange"
     },
     {
@@ -7298,8 +7738,8 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "src_types_scene_timelinekeyframe",
-      "community": 53,
-      "community_name": "scene.ts",
+      "community": 2,
+      "community_name": "scene-host.tsx",
       "norm_label": "timelinekeyframe"
     },
     {
@@ -7309,8 +7749,8 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "src_types_scene_timelinetrack",
-      "community": 53,
-      "community_name": "scene.ts",
+      "community": 2,
+      "community_name": "scene-host.tsx",
       "norm_label": "timelinetrack"
     },
     {
@@ -7320,8 +7760,8 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "src_types_scene_timelinedefinition",
-      "community": 53,
-      "community_name": "scene.ts",
+      "community": 2,
+      "community_name": "scene-host.tsx",
       "norm_label": "timelinedefinition"
     },
     {
@@ -7331,8 +7771,8 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "src_types_scene_timelineinstance",
-      "community": 53,
-      "community_name": "scene.ts",
+      "community": 2,
+      "community_name": "scene-host.tsx",
       "norm_label": "timelineinstance"
     },
     {
@@ -7343,7 +7783,7 @@
       "_origin": "ast",
       "id": "src_types_scroll",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "scroll.ts"
     },
     {
@@ -7354,7 +7794,7 @@
       "_origin": "ast",
       "id": "src_types_scroll_scrolldirection",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "scrolldirection"
     },
     {
@@ -7364,8 +7804,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_types_scroll_breakpoint",
-      "community": 4,
-      "community_name": "ScrollManager",
+      "community": 48,
+      "community_name": "types/index.ts",
       "norm_label": "breakpoint"
     },
     {
@@ -7376,7 +7816,7 @@
       "_origin": "ast",
       "id": "src_types_scroll_viewportsize",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "viewportsize"
     },
     {
@@ -7387,7 +7827,7 @@
       "_origin": "ast",
       "id": "src_types_scroll_sectionbounds",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "sectionbounds"
     },
     {
@@ -7398,7 +7838,7 @@
       "_origin": "ast",
       "id": "src_types_scroll_sectionprogress",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "sectionprogress"
     },
     {
@@ -7420,7 +7860,7 @@
       "_origin": "ast",
       "id": "src_types_scroll_scrolllistener",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "scrolllistener"
     },
     {
@@ -7431,7 +7871,7 @@
       "_origin": "ast",
       "id": "src_types_scroll_scrollmanageroptions",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "scrollmanageroptions"
     },
     {
@@ -7442,7 +7882,7 @@
       "_origin": "ast",
       "id": "src_types_scroll_scrollmanagerapi",
       "community": 4,
-      "community_name": "ScrollManager",
+      "community_name": "hooks/index.ts",
       "norm_label": "scrollmanagerapi"
     },
     {
@@ -7474,8 +7914,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_index",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 61,
+      "community_name": "math.ts",
       "norm_label": "utils/index.ts"
     },
     {
@@ -7485,8 +7925,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_math_test",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 61,
+      "community_name": "math.ts",
       "norm_label": "math.test.ts"
     },
     {
@@ -7496,8 +7936,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_math",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 61,
+      "community_name": "math.ts",
       "norm_label": "math.ts"
     },
     {
@@ -7507,8 +7947,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_utils_math_clamp",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 61,
+      "community_name": "math.ts",
       "norm_label": "clamp()"
     },
     {
@@ -7518,8 +7958,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_utils_math_lerp",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 61,
+      "community_name": "math.ts",
       "norm_label": "lerp()"
     },
     {
@@ -7529,8 +7969,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_utils_math_inverselerp",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 61,
+      "community_name": "math.ts",
       "norm_label": "inverselerp()"
     },
     {
@@ -7540,8 +7980,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_utils_math_maprange",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 61,
+      "community_name": "math.ts",
       "norm_label": "maprange()"
     },
     {
@@ -7562,8 +8002,8 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "src_utils_math_mod",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 61,
+      "community_name": "math.ts",
       "norm_label": "mod()"
     },
     {
@@ -7573,8 +8013,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "src_utils_math_approx",
-      "community": 42,
-      "community_name": "getRafScheduler",
+      "community": 61,
+      "community_name": "math.ts",
       "norm_label": "approx()"
     },
     {
@@ -8277,8 +8717,8 @@
       "source_location": "L234",
       "_origin": "ast",
       "id": "src_components_creative_sections_immersive_project_orbitproject",
-      "community": 46,
-      "community_name": "cn",
+      "community": 63,
+      "community_name": "immersive-project.tsx",
       "norm_label": "orbitproject"
     },
     {
@@ -10972,6 +11412,50 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/app/apple-icon.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_apple_icon",
+      "target": "src_app_apple_icon_appleicon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/apple-icon.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_apple_icon",
+      "target": "src_app_apple_icon_size",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/icon.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_icon",
+      "target": "src_app_icon_icon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/icon.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_icon",
+      "target": "src_app_icon_size",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/app/layout.tsx",
       "source_location": "L18",
       "weight": 1.0,
@@ -11266,6 +11750,52 @@
       "_origin": "ast",
       "source": "src_app_playground_page",
       "target": "src_components_playground_playground_shell_playgroundshell",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/privacy/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_privacy_page",
+      "target": "src_app_privacy_page_metadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/privacy/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_privacy_page",
+      "target": "src_app_privacy_page_privacypage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/privacy/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_privacy_page",
+      "target": "src_constants_index",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/privacy/page.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_app_privacy_page",
+      "target": "src_constants_index_site",
       "confidence_score": 1.0
     },
     {
@@ -16691,7 +17221,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/app-shell.tsx",
-      "source_location": "L89",
+      "source_location": "L100",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_app_shell",
@@ -16702,7 +17232,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/app-shell.tsx",
-      "source_location": "L67",
+      "source_location": "L68",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_app_shell",
@@ -16713,7 +17243,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/app-shell.tsx",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_app_shell",
@@ -16724,7 +17254,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/app-shell.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_app_shell",
@@ -16804,6 +17334,30 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/app-shell.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_layout_app_shell",
+      "target": "src_providers_motion_provider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/app-shell.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_layout_app_shell",
+      "target": "src_providers_motion_provider_motionintensitycontrol",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "re_exports",
       "context": "export",
       "confidence": "EXTRACTED",
@@ -16833,7 +17387,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/layout/app-shell.tsx",
-      "source_location": "L43",
+      "source_location": "L44",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_app_shell_header",
@@ -17093,7 +17647,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/delight-hooks.tsx",
-      "source_location": "L13",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_delight_hooks",
@@ -17117,7 +17671,31 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/delight-hooks.tsx",
-      "source_location": "L7",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_layout_delight_hooks",
+      "target": "src_engine_scroll_index",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/delight-hooks.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_layout_delight_hooks",
+      "target": "src_engine_scroll_scroll_manager_getscrollmanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/delight-hooks.tsx",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_delight_hooks",
@@ -17129,7 +17707,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/delight-hooks.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_delight_hooks",
@@ -17141,7 +17719,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/delight-hooks.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_delight_hooks",
@@ -17153,7 +17731,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/delight-hooks.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_delight_hooks",
@@ -17165,7 +17743,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/delight-hooks.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_delight_hooks",
@@ -17177,11 +17755,59 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/layout/delight-hooks.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_delight_hooks",
       "target": "src_lib_achievements_unlockachievement",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/delight-hooks.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_layout_delight_hooks",
+      "target": "src_lib_analytics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/delight-hooks.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_layout_delight_hooks",
+      "target": "src_lib_analytics_trackactenter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/delight-hooks.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_layout_delight_hooks",
+      "target": "src_lib_motion_intensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/delight-hooks.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_layout_delight_hooks",
+      "target": "src_lib_motion_intensity_getmotionintensity",
       "confidence_score": 1.0
     },
     {
@@ -17202,7 +17828,19 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/layout/delight-hooks.tsx",
-      "source_location": "L17",
+      "source_location": "L65",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_layout_delight_hooks_delighthooks",
+      "target": "src_engine_scroll_scroll_manager_getscrollmanager"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/layout/delight-hooks.tsx",
+      "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_delight_hooks_delighthooks",
@@ -17214,7 +17852,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/layout/delight-hooks.tsx",
-      "source_location": "L46",
+      "source_location": "L53",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_delight_hooks_delighthooks",
@@ -17226,11 +17864,35 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/layout/delight-hooks.tsx",
-      "source_location": "L22",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_layout_delight_hooks_delighthooks",
       "target": "src_lib_achievements_unlockachievement"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/layout/delight-hooks.tsx",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_layout_delight_hooks_delighthooks",
+      "target": "src_lib_analytics_trackactenter"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/layout/delight-hooks.tsx",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_layout_delight_hooks_delighthooks",
+      "target": "src_lib_motion_intensity_getmotionintensity"
     },
     {
       "relation": "re_exports",
@@ -20021,7 +20683,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/providers/scroll-provider.tsx",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_providers_scroll_provider_scrollprovider",
@@ -20486,7 +21148,7 @@
       "context": "field",
       "confidence": "EXTRACTED",
       "source_file": "src/providers/scroll-provider.tsx",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_providers_scroll_provider_scrollcontextvalue",
@@ -20859,7 +21521,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/providers/scroll-provider.tsx",
-      "source_location": "L56",
+      "source_location": "L58",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_providers_scroll_provider_scrollprovider",
@@ -20883,7 +21545,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/providers/scroll-provider.tsx",
-      "source_location": "L48",
+      "source_location": "L50",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_providers_scroll_provider_scrollprovider",
@@ -24168,7 +24830,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/providers/scroll-provider.tsx",
-      "source_location": "L39",
+      "source_location": "L41",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_providers_scroll_provider_scrollprovider",
@@ -24476,7 +25138,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/hooks/use-reduced-motion.ts",
-      "source_location": "L4",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hooks_use_reduced_motion",
@@ -24489,7 +25151,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/hooks/use-reduced-motion.ts",
-      "source_location": "L11",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hooks_use_reduced_motion_usereducedmotion",
@@ -24572,7 +25234,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/hooks/use-reduced-motion.ts",
-      "source_location": "L4",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hooks_use_reduced_motion",
@@ -24600,6 +25262,18 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hooks_use_section_progress",
+      "target": "src_engine_scroll_index",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/providers/motion-provider.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_motion_provider",
       "target": "src_engine_scroll_index",
       "confidence_score": 1.0
     },
@@ -24641,7 +25315,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/engine/scroll/scroll-manager.ts",
-      "source_location": "L310",
+      "source_location": "L326",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_engine_scroll_scroll_manager",
@@ -24652,7 +25326,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/engine/scroll/scroll-manager.ts",
-      "source_location": "L317",
+      "source_location": "L333",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_engine_scroll_scroll_manager",
@@ -24938,6 +25612,17 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/engine/scroll/scroll-manager.ts",
+      "source_location": "L304",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_engine_scroll_scroll_manager_scrollmanager",
+      "target": "src_engine_scroll_scroll_manager_scrollmanager_rebuildlenis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/engine/scroll/scroll-manager.ts",
       "source_location": "L163",
       "weight": 1.0,
       "_origin": "ast",
@@ -24976,6 +25661,17 @@
       "_origin": "ast",
       "source": "src_engine_scroll_scroll_manager_scrollmanager",
       "target": "src_engine_scroll_scroll_manager_scrollmanager_scrollto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/engine/scroll/scroll-manager.ts",
+      "source_location": "L294",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_engine_scroll_scroll_manager_scrollmanager",
+      "target": "src_engine_scroll_scroll_manager_scrollmanager_setsmoothenabled",
       "confidence_score": 1.0
     },
     {
@@ -25076,7 +25772,7 @@
       "context": "field",
       "confidence": "EXTRACTED",
       "source_file": "src/providers/scroll-provider.tsx",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_providers_scroll_provider_scrollcontextvalue",
@@ -25148,7 +25844,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/engine/scroll/scroll-manager.ts",
-      "source_location": "L318",
+      "source_location": "L334",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_engine_scroll_scroll_manager_resetscrollmanager",
@@ -25292,7 +25988,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/engine/scroll/scroll-manager.ts",
-      "source_location": "L302",
+      "source_location": "L288",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_engine_scroll_scroll_manager_scrollmanager_bindreducedmotion",
@@ -25328,10 +26024,22 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/engine/scroll/scroll-manager.ts",
-      "source_location": "L302",
+      "source_location": "L288",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_engine_scroll_scroll_manager_scrollmanager_mediahandler",
+      "target": "src_engine_scroll_scroll_manager_scrollmanager_computesnapshot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/engine/scroll/scroll-manager.ts",
+      "source_location": "L301",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_engine_scroll_scroll_manager_scrollmanager_setsmoothenabled",
       "target": "src_engine_scroll_scroll_manager_scrollmanager_computesnapshot",
       "confidence_score": 1.0
     },
@@ -25352,7 +26060,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/engine/scroll/scroll-manager.ts",
-      "source_location": "L302",
+      "source_location": "L288",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_engine_scroll_scroll_manager_scrollmanager_bindreducedmotion",
@@ -25364,7 +26072,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/engine/scroll/scroll-manager.ts",
-      "source_location": "L302",
+      "source_location": "L288",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_engine_scroll_scroll_manager_scrollmanager_mediahandler",
@@ -25381,6 +26089,54 @@
       "_origin": "ast",
       "source": "src_engine_scroll_scroll_manager_scrollmanager_publish",
       "target": "src_types_scroll_scrollsnapshot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/engine/scroll/scroll-manager.ts",
+      "source_location": "L301",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_engine_scroll_scroll_manager_scrollmanager_setsmoothenabled",
+      "target": "src_engine_scroll_scroll_manager_scrollmanager_publish",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/engine/scroll/scroll-manager.ts",
+      "source_location": "L287",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_engine_scroll_scroll_manager_scrollmanager_bindreducedmotion",
+      "target": "src_engine_scroll_scroll_manager_scrollmanager_rebuildlenis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/engine/scroll/scroll-manager.ts",
+      "source_location": "L287",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_engine_scroll_scroll_manager_scrollmanager_mediahandler",
+      "target": "src_engine_scroll_scroll_manager_scrollmanager_rebuildlenis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/engine/scroll/scroll-manager.ts",
+      "source_location": "L296",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_engine_scroll_scroll_manager_scrollmanager_setsmoothenabled",
+      "target": "src_engine_scroll_scroll_manager_scrollmanager_rebuildlenis",
       "confidence_score": 1.0
     },
     {
@@ -25483,6 +26239,30 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/providers/motion-provider.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_motion_provider",
+      "target": "src_engine_scroll_scroll_manager_getscrollmanager",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/providers/motion-provider.tsx",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_motion_provider_motionprovider",
+      "target": "src_engine_scroll_scroll_manager_getscrollmanager"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "src/providers/scroll-provider.tsx",
       "source_location": "L11",
       "weight": 1.0,
@@ -25497,7 +26277,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/providers/scroll-provider.tsx",
-      "source_location": "L37",
+      "source_location": "L38",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_providers_scroll_provider_scrollprovider",
@@ -25521,7 +26301,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/providers/scroll-provider.tsx",
-      "source_location": "L49",
+      "source_location": "L51",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_providers_scroll_provider_scrollprovider",
@@ -25621,6 +26401,42 @@
       "_origin": "ast",
       "source": "src_hooks_index",
       "target": "src_hooks_use_keyboard_navigation_usekeyboardnavigation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "re_exports",
+      "context": "export",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/index.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hooks_index",
+      "target": "src_hooks_use_motion_intensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "re_exports",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/index.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hooks_index",
+      "target": "src_hooks_use_motion_intensity_usemotionintensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "re_exports",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/index.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hooks_index",
+      "target": "src_hooks_use_motion_intensity_usemotionrestricted",
       "confidence_score": 1.0
     },
     {
@@ -25981,6 +26797,112 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/hooks/use-motion-intensity.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hooks_use_motion_intensity",
+      "target": "src_hooks_use_motion_intensity_usemotionintensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/use-motion-intensity.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hooks_use_motion_intensity",
+      "target": "src_hooks_use_motion_intensity_usemotionrestricted",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/use-motion-intensity.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hooks_use_motion_intensity",
+      "target": "src_lib_motion_intensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/use-motion-intensity.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hooks_use_motion_intensity",
+      "target": "src_lib_motion_intensity_getmotionintensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/use-motion-intensity.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hooks_use_motion_intensity",
+      "target": "src_lib_motion_intensity_motionintensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/use-motion-intensity.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hooks_use_motion_intensity",
+      "target": "src_lib_motion_intensity_subscribemotionintensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/hooks/use-motion-intensity.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hooks_use_motion_intensity_usemotionintensity",
+      "target": "src_lib_motion_intensity_getmotionintensity"
+    },
+    {
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/hooks/use-motion-intensity.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hooks_use_motion_intensity_usemotionintensity",
+      "target": "src_lib_motion_intensity_subscribemotionintensity"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/use-motion-intensity.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hooks_use_motion_intensity_usemotionrestricted",
+      "target": "src_hooks_use_motion_intensity_usemotionintensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/hooks/use-raf.ts",
       "source_location": "L11",
       "weight": 1.0,
@@ -26029,7 +26951,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hooks/use-reduced-motion.ts",
-      "source_location": "L6",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_hooks_use_reduced_motion",
@@ -26040,24 +26962,36 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/providers/motion-provider.tsx",
+      "source_file": "src/hooks/use-reduced-motion.ts",
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_providers_motion_provider",
-      "target": "src_hooks_use_reduced_motion",
+      "source": "src_hooks_use_reduced_motion",
+      "target": "src_lib_motion_intensity",
       "confidence_score": 1.0
     },
     {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/providers/motion-provider.tsx",
+      "source_file": "src/hooks/use-reduced-motion.ts",
       "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_providers_motion_provider",
-      "target": "src_hooks_use_reduced_motion_usereducedmotion",
+      "source": "src_hooks_use_reduced_motion",
+      "target": "src_lib_motion_intensity_ismotionrestricted",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/use-reduced-motion.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hooks_use_reduced_motion",
+      "target": "src_lib_motion_intensity_subscribemotionintensity",
       "confidence_score": 1.0
     },
     {
@@ -26065,12 +26999,24 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "src/providers/motion-provider.tsx",
-      "source_location": "L10",
+      "source_file": "src/hooks/use-reduced-motion.ts",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "src_providers_motion_provider_motionprovider",
-      "target": "src_hooks_use_reduced_motion_usereducedmotion"
+      "source": "src_hooks_use_reduced_motion_usereducedmotion",
+      "target": "src_lib_motion_intensity_ismotionrestricted"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/hooks/use-reduced-motion.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_hooks_use_reduced_motion_usereducedmotion",
+      "target": "src_lib_motion_intensity_subscribemotionintensity"
     },
     {
       "relation": "contains",
@@ -26567,6 +27513,132 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/lib/analytics.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_analytics_test",
+      "target": "src_lib_analytics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/analytics.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_analytics_test",
+      "target": "src_lib_analytics_resetanalyticssession",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/analytics.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_analytics_test",
+      "target": "src_lib_analytics_trackactenter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/analytics.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_analytics",
+      "target": "src_lib_analytics_analyticspayload",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/analytics.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_analytics",
+      "target": "src_lib_analytics_firedacts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/analytics.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_analytics",
+      "target": "src_lib_analytics_plausibledomain",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/analytics.ts",
+      "source_location": "L54",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_analytics",
+      "target": "src_lib_analytics_resetanalyticssession",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/analytics.ts",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_analytics",
+      "target": "src_lib_analytics_trackactenter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/analytics.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_analytics",
+      "target": "src_lib_analytics_trackevent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/analytics.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_analytics_trackevent",
+      "target": "src_lib_analytics_plausibledomain",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/analytics.ts",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_analytics_trackactenter",
+      "target": "src_lib_analytics_trackevent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "src/lib/contact/schema.test.ts",
       "source_location": "L2",
       "weight": 1.0,
@@ -26687,6 +27759,341 @@
       "source": "src_lib_contact_schema",
       "target": "src_lib_contact_schema_fielderrorsfromzod",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/motion-intensity.test.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_motion_intensity_test",
+      "target": "src_lib_motion_intensity_test_memory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/motion-intensity.test.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_motion_intensity_test",
+      "target": "src_lib_motion_intensity_test_storage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_motion_intensity",
+      "target": "src_lib_motion_intensity_getmotionintensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_motion_intensity",
+      "target": "src_lib_motion_intensity_ismotionrestricted",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_motion_intensity",
+      "target": "src_lib_motion_intensity_listener",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_motion_intensity",
+      "target": "src_lib_motion_intensity_listeners",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_motion_intensity",
+      "target": "src_lib_motion_intensity_motionintensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_motion_intensity",
+      "target": "src_lib_motion_intensity_osprefersreduced",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_motion_intensity",
+      "target": "src_lib_motion_intensity_readstored",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_motion_intensity",
+      "target": "src_lib_motion_intensity_resolvemotionintensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_motion_intensity",
+      "target": "src_lib_motion_intensity_setmotionintensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L59",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_motion_intensity",
+      "target": "src_lib_motion_intensity_subscribemotionintensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L68",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_motion_intensity",
+      "target": "src_lib_motion_intensity_syncmotionfromos",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/providers/motion-provider.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_motion_provider",
+      "target": "src_lib_motion_intensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/providers/scroll-provider.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_scroll_provider",
+      "target": "src_lib_motion_intensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/providers/motion-provider.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_motion_provider",
+      "target": "src_lib_motion_intensity_motionintensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L69",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_motion_intensity_syncmotionfromos",
+      "target": "src_lib_motion_intensity_readstored",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_motion_intensity_resolvemotionintensity",
+      "target": "src_lib_motion_intensity_osprefersreduced",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/motion-intensity.ts",
+      "source_location": "L70",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_lib_motion_intensity_syncmotionfromos",
+      "target": "src_lib_motion_intensity_osprefersreduced",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/providers/motion-provider.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_motion_provider",
+      "target": "src_lib_motion_intensity_getmotionintensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/providers/motion-provider.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_motion_provider_useintensity",
+      "target": "src_lib_motion_intensity_getmotionintensity"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/providers/scroll-provider.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_scroll_provider",
+      "target": "src_lib_motion_intensity_getmotionintensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/providers/scroll-provider.tsx",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_scroll_provider_scrollprovider",
+      "target": "src_lib_motion_intensity_getmotionintensity"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/providers/motion-provider.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_motion_provider",
+      "target": "src_lib_motion_intensity_setmotionintensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/providers/motion-provider.tsx",
+      "source_location": "L75",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_motion_provider_motionintensitycontrol",
+      "target": "src_lib_motion_intensity_setmotionintensity"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/providers/motion-provider.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_motion_provider",
+      "target": "src_lib_motion_intensity_subscribemotionintensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/providers/motion-provider.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_motion_provider_useintensity",
+      "target": "src_lib_motion_intensity_subscribemotionintensity"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/providers/motion-provider.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_motion_provider",
+      "target": "src_lib_motion_intensity_syncmotionfromos",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/providers/motion-provider.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_motion_provider_motionprovider",
+      "target": "src_lib_motion_intensity_syncmotionfromos"
     },
     {
       "relation": "contains",
@@ -26956,6 +28363,18 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_providers_index",
+      "target": "src_providers_motion_provider_motionintensitycontrol",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "re_exports",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "src/providers/index.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_index",
       "target": "src_providers_motion_provider_motionprovider",
       "confidence_score": 1.0
     },
@@ -27059,7 +28478,18 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/providers/motion-provider.tsx",
-      "source_location": "L9",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_motion_provider",
+      "target": "src_providers_motion_provider_motionintensitycontrol",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/providers/motion-provider.tsx",
+      "source_location": "L32",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_providers_motion_provider",
@@ -27069,8 +28499,90 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/providers/motion-provider.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_motion_provider",
+      "target": "src_providers_motion_provider_options",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/providers/motion-provider.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_motion_provider",
+      "target": "src_providers_motion_provider_useintensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/providers/motion-provider.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_motion_provider",
+      "target": "src_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/providers/motion-provider.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_motion_provider",
+      "target": "src_utils_cn_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/providers/motion-provider.tsx",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_motion_provider_motionintensitycontrol",
+      "target": "src_providers_motion_provider_useintensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/providers/motion-provider.tsx",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_motion_provider_motionprovider",
+      "target": "src_providers_motion_provider_useintensity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/providers/motion-provider.tsx",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_providers_motion_provider_motionintensitycontrol",
+      "target": "src_utils_cn_cn"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/providers/scroll-provider.tsx",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_providers_scroll_provider",
@@ -27081,7 +28593,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/providers/scroll-provider.tsx",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_providers_scroll_provider",
@@ -27092,7 +28604,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/providers/scroll-provider.tsx",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_providers_scroll_provider",
@@ -27103,7 +28615,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/providers/scroll-provider.tsx",
-      "source_location": "L66",
+      "source_location": "L68",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_providers_scroll_provider",
@@ -30673,5 +32185,5 @@
       "weight": 1.0
     }
   ],
-  "built_at_commit": "6669802184b5c8186f8d60a64565c52c17f0df06"
+  "built_at_commit": "bd974ac5a28159e1a6302d9dc3890c4dcedfa4ed"
 }

@@ -42,13 +42,13 @@ export function SkillsSection({
 
   return (
     <div ref={rootRef} className="w-full will-change-transform">
-      <p className="font-mono text-[11px] tracking-[0.35em] text-[var(--accent)] uppercase">
+      <p className="font-mono text-[11px] tracking-[0.35em] text-[var(--signal)] uppercase">
         Act II · Craft
       </p>
       <h2 className="font-display mt-4 max-w-3xl text-[clamp(2.25rem,6vw,4.75rem)] leading-[1.02] tracking-[-0.035em]">
         How I think in systems.
       </h2>
-      <p className="mt-5 max-w-xl text-lg text-[var(--muted)]">
+      <p className="mt-5 max-w-xl text-lg text-[var(--muted-foreground)]">
         Skills as a connected ecosystem — focus a node, watch the stack assemble.
       </p>
 
@@ -58,7 +58,7 @@ export function SkillsSection({
           data-skills-graph
           className="relative border border-[var(--border)] will-change-transform"
         >
-          <p className="border-b border-[var(--border)] px-4 py-3 font-mono text-[10px] tracking-[0.22em] text-[var(--muted)] uppercase">
+          <p className="border-b border-[var(--border)] px-4 py-3 font-mono text-[10px] tracking-[0.22em] text-[var(--muted-foreground)] uppercase">
             Knowledge graph
           </p>
           <svg
@@ -85,7 +85,7 @@ export function SkillsSection({
                   y1={y1}
                   x2={x2}
                   y2={y2}
-                  stroke="var(--accent)"
+                  stroke="var(--signal)"
                   strokeWidth="1.25"
                   strokeDasharray={len}
                   strokeDashoffset={len}
@@ -107,7 +107,7 @@ export function SkillsSection({
                   <circle
                     r={selected ? 28 : 22}
                     fill="var(--background)"
-                    stroke={selected ? "var(--accent)" : "var(--border)"}
+                    stroke={selected ? "var(--signal)" : "var(--border)"}
                     strokeWidth={selected ? 2 : 1.25}
                   />
                   <foreignObject x={-48} y={-12} width={96} height={24}>
@@ -121,8 +121,8 @@ export function SkillsSection({
                       className={cn(
                         "w-full text-center font-mono text-[10px] tracking-[0.08em] uppercase outline-none",
                         selected
-                          ? "text-[var(--accent)]"
-                          : "text-[var(--muted)] hover:text-[var(--foreground)]",
+                          ? "text-[var(--signal)]"
+                          : "text-[var(--muted-foreground)] hover:text-[var(--foreground)]",
                       )}
                     >
                       {node.label}
@@ -140,7 +140,7 @@ export function SkillsSection({
           className="border border-[var(--border)] px-5 py-6 will-change-transform"
           aria-live="polite"
         >
-          <p className="font-mono text-[10px] tracking-[0.22em] text-[var(--accent)] uppercase">
+          <p className="font-mono text-[10px] tracking-[0.22em] text-[var(--signal)] uppercase">
             {active
               ? SKILL_CLUSTERS.find((c) => c.id === active.clusterId)?.label
               : "Cluster"}
@@ -148,10 +148,10 @@ export function SkillsSection({
           <h3 className="font-display mt-3 text-3xl tracking-[-0.02em]">
             {active?.label ?? "Select a node"}
           </h3>
-          <p className="mt-4 text-[var(--muted)]">
+          <p className="mt-4 text-[var(--muted-foreground)]">
             {active?.how ?? "Focus a node in the graph to see how I use it."}
           </p>
-          <p className="mt-6 text-sm text-[var(--muted)]">
+          <p className="mt-6 text-sm text-[var(--muted-foreground)]">
             Keyboard: Tab through nodes · scroll focuses clusters.
           </p>
         </aside>
@@ -169,10 +169,10 @@ export function SkillsSection({
             data-stack-index={i}
             className="border border-[var(--border)] px-4 py-5 will-change-transform"
           >
-            <p className="font-mono text-[10px] tracking-[0.22em] text-[var(--accent)] uppercase">
+            <p className="font-mono text-[10px] tracking-[0.22em] text-[var(--signal)] uppercase">
               {layer.label}
             </p>
-            <ul className="mt-4 space-y-2 text-[var(--muted)]">
+            <ul className="mt-4 space-y-2 text-[var(--muted-foreground)]">
               {layer.items.map((item) => (
                 <li key={item} className="text-base text-[var(--foreground)]">
                   {item}
@@ -193,14 +193,14 @@ export function SkillsSection({
             data-skills-cluster={cluster.id}
             className="relative border-t border-[var(--border)] py-8 pr-6 will-change-transform md:min-h-[260px]"
           >
-            <span className="font-mono text-[10px] tracking-[0.25em] text-[var(--muted)]">
+            <span className="font-mono text-[10px] tracking-[0.25em] text-[var(--muted-foreground)]">
               0{i + 1}
             </span>
             <h3 className="font-display mt-4 text-3xl tracking-[-0.02em]">
               {cluster.label}
             </h3>
-            <p className="mt-3 text-sm text-[var(--muted)]">{cluster.focus}</p>
-            <ul className="mt-6 space-y-2.5 text-[var(--muted)]">
+            <p className="mt-3 text-sm text-[var(--muted-foreground)]">{cluster.focus}</p>
+            <ul className="mt-6 space-y-2.5 text-[var(--muted-foreground)]">
               {cluster.skills.map((skill) => (
                 <li key={skill} className="text-base md:text-lg">
                   {skill}
@@ -212,7 +212,7 @@ export function SkillsSection({
                 ref={(el) => {
                   connectorsRef.current[i] = el;
                 }}
-                className="pointer-events-none absolute top-8 right-0 hidden h-px w-8 origin-left bg-[var(--accent)] lg:block"
+                className="pointer-events-none absolute top-8 right-0 hidden h-px w-8 origin-left bg-[var(--signal)] lg:block"
                 aria-hidden="true"
               />
             ) : null}

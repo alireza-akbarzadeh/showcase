@@ -174,7 +174,7 @@ export function SceneHost({ ready }: SceneHostProps) {
         <div ref={introRoot} className="max-w-4xl will-change-transform">
           <p
             ref={introAccent}
-            className="font-mono text-[11px] tracking-[0.35em] text-[var(--accent)] uppercase"
+            className="font-mono text-[11px] tracking-[0.35em] text-[var(--signal)] uppercase"
 
           >
             Act I · The interface
@@ -238,13 +238,13 @@ export function SceneHost({ ready }: SceneHostProps) {
             ref={projectsHeading}
             className="flex min-h-[50svh] flex-col justify-end pb-16 pt-32"
           >
-            <p className="font-mono text-[11px] tracking-[0.35em] text-[var(--accent)] uppercase">
+            <p className="font-mono text-[11px] tracking-[0.35em] text-[var(--signal)] uppercase">
               Act III · Projects
             </p>
             <h2 className="font-display mt-4 text-[clamp(2.5rem,7vw,5rem)] leading-[0.98] tracking-[-0.04em]">
               Selected work
             </h2>
-            <p className="mt-5 max-w-lg text-lg text-[var(--muted)]">
+            <p className="mt-5 max-w-lg text-lg text-[var(--muted-foreground)]">
               Depth over quantity — three immersive case studies, scrubbed by scroll.
             </p>
           </div>
@@ -275,7 +275,7 @@ export function SceneHost({ ready }: SceneHostProps) {
           className="pointer-events-none absolute inset-0 -z-10"
           style={{
             background:
-              "radial-gradient(ellipse 55% 40% at 80% 20%, color-mix(in oklab, var(--accent) 10%, transparent), transparent 70%)",
+              "radial-gradient(ellipse 55% 40% at 80% 20%, color-mix(in oklab, var(--signal) 10%, transparent), transparent 70%)",
           }}
         />
         <ProofSection
@@ -297,11 +297,11 @@ export function SceneHost({ ready }: SceneHostProps) {
           className="pointer-events-none absolute inset-0 -z-10"
           style={{
             background:
-              "radial-gradient(ellipse 60% 45% at 20% 80%, color-mix(in oklab, var(--accent) 10%, transparent), transparent 70%), linear-gradient(180deg, transparent 0%, var(--background) 100%)",
+              "radial-gradient(ellipse 60% 45% at 20% 80%, color-mix(in oklab, var(--signal) 10%, transparent), transparent 70%), linear-gradient(180deg, transparent 0%, var(--background) 100%)",
           }}
         />
         <div ref={contactRoot} className="w-full will-change-transform">
-          <p className="font-mono text-[11px] tracking-[0.35em] text-[var(--accent)] uppercase">
+          <p className="font-mono text-[11px] tracking-[0.35em] text-[var(--signal)] uppercase">
             Act V · Contact
           </p>
           <h2 className="font-display mt-4 max-w-4xl text-[clamp(2.75rem,8vw,6rem)] leading-[0.92] tracking-[-0.045em]">
@@ -309,7 +309,7 @@ export function SceneHost({ ready }: SceneHostProps) {
             <br />
             something alive.
           </h2>
-          <p className="mt-6 max-w-xl text-lg text-[var(--muted)]">
+          <p className="mt-6 max-w-xl text-lg text-[var(--muted-foreground)]">
             Journey&apos;s end — reach out with a project, a role, or a question
             worth answering carefully.
           </p>

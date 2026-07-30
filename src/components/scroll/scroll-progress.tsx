@@ -33,7 +33,7 @@ export function ScrollProgress({ className }: { className?: string }) {
     >
       <div
         ref={barRef}
-        className="h-full w-full origin-left bg-[var(--accent)] will-change-transform"
+        className="h-full w-full origin-left bg-[var(--signal)] will-change-transform"
       />
     </div>
   );

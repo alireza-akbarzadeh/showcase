@@ -19,6 +19,7 @@ import {
   type SceneManager,
 } from "@/engine/animation";
 import { getRafScheduler } from "@/engine/scheduler";
+import { getMotionIntensity } from "@/lib/motion-intensity";
 
 interface ScrollContextValue {
   getScroll: () => ScrollManager;
@@ -36,6 +37,7 @@ export function ScrollProvider({ children }: { children: ReactNode }) {
     ensureGsap();
     const scroll = getScrollManager();
     scroll.start();
+    scroll.setSmoothEnabled(getMotionIntensity() === "full");
     getRafScheduler().resume();
 
     // Force a layout pass so section bounds are correct after paint.

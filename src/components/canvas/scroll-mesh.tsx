@@ -34,7 +34,7 @@ export function ScrollMesh() {
     <mesh ref={mesh}>
       <icosahedronGeometry args={geometryArgs} />
       <meshStandardMaterial
-        color="#3dff9a"
+        color="#b8ff2e"
         roughness={0.25}
         metalness={0.55}
         wireframe

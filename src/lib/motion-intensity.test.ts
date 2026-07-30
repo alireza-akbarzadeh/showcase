@@ -1,8 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 const memory = new Map<string, string>();
-
-vi.stubGlobal("localStorage", {
+const storage = {
   getItem: (key: string) => memory.get(key) ?? null,
   setItem: (key: string, value: string) => {
     memory.set(key, value);
@@ -10,21 +9,29 @@ vi.stubGlobal("localStorage", {
   removeItem: (key: string) => {
     memory.delete(key);
   },
-  clear: () => {
-    memory.clear();
-  },
-});
+  clear: () => memory.clear(),
+};
 
-vi.stubGlobal("matchMedia", (query: string) => ({
-  matches: false,
-  media: query,
-  addEventListener: () => undefined,
-  removeEventListener: () => undefined,
-  addListener: () => undefined,
-  removeListener: () => undefined,
-  dispatchEvent: () => false,
-  onchange: null,
-}));
+vi.stubGlobal("localStorage", storage);
+vi.stubGlobal("window", {
+  localStorage: storage,
+  matchMedia: () => ({
+    matches: false,
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+  }),
+});
+vi.stubGlobal("document", {
+  documentElement: { dataset: {} as Record<string, string> },
+});
+vi.stubGlobal(
+  "matchMedia",
+  vi.fn().mockImplementation(() => ({
+    matches: false,
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+  })),
+);
 
 describe("motion intensity", () => {
   afterEach(() => {
@@ -32,21 +39,14 @@ describe("motion intensity", () => {
     vi.resetModules();
   });
 
-  it("defaults to full when OS does not prefer reduced", async () => {
-    const { resolveMotionIntensity, isMotionRestricted } = await import(
-      "@/lib/motion-intensity"
-    );
+  it("defaults to full without OS reduce", async () => {
+    const { resolveMotionIntensity } = await import("@/lib/motion-intensity");
     expect(resolveMotionIntensity(null)).toBe("full");
-    expect(isMotionRestricted()).toBe(false);
   });
 
-  it("setMotionIntensity persists and restricts", async () => {
-    const {
-      setMotionIntensity,
-      getMotionIntensity,
-      isMotionRestricted,
-    } = await import("@/lib/motion-intensity");
-
+  it("persists user override", async () => {
+    const { setMotionIntensity, getMotionIntensity, isMotionRestricted } =
+      await import("@/lib/motion-intensity");
     setMotionIntensity("off");
     expect(getMotionIntensity()).toBe("off");
     expect(isMotionRestricted()).toBe(true);

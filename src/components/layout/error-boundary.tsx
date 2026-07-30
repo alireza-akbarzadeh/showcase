@@ -32,7 +32,7 @@ export class ErrorBoundary extends Component<Props, State> {
         this.props.fallback ?? (
           <div
             role="alert"
-            className="border border-[var(--border)] bg-[var(--surface)] px-6 py-8 text-[var(--muted)]"
+            className="border border-[var(--border)] bg-[var(--surface)] px-6 py-8 text-[var(--muted-foreground)]"
           >
             Something failed to render. The rest of the experience continues.
           </div>

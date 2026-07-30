@@ -57,7 +57,7 @@ export function MotionIntensityControl({ className }: { className?: string }) {
       role="group"
       aria-label="Motion intensity"
     >
-      <span className="font-mono text-[10px] tracking-[0.2em] text-[var(--muted)] uppercase">
+      <span className="font-mono text-[10px] tracking-[0.2em] text-[var(--muted-foreground)] uppercase">
         Motion
       </span>
       <div className="flex gap-1">
@@ -69,8 +69,8 @@ export function MotionIntensityControl({ className }: { className?: string }) {
             className={cn(
               "min-h-9 border px-2.5 py-1 font-mono text-[10px] tracking-[0.15em] uppercase transition-colors",
               intensity === opt.id
-                ? "border-[var(--accent)] text-[var(--accent)]"
-                : "border-[var(--border)] text-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--accent)]",
+                ? "border-[var(--signal)] text-[var(--signal)]"
+                : "border-[var(--border)] text-[var(--muted-foreground)] hover:border-[var(--signal)] hover:text-[var(--signal)]",
             )}
             onClick={() => setMotionIntensity(opt.id)}
           >
