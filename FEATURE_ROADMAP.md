@@ -305,7 +305,7 @@ Use this as the project Kanban spine.
 - [ ] **M0** Research locked (moodboard, refs, copy outline, metrics)
 - [x] **M1** Infrastructure complete + CI green *(Lighthouse baseline still open)*
 - [ ] **M2** Global nav / loader / cursor / a11y chrome
-- [ ] **M3** Act I Hero cinematic shippable
+- [x] **M3** Act I Hero cinematic shippable *(P0 vertical slice)*
 - [ ] **M4** Act II Craft visualizations shippable
 - [ ] **M5** Act III ≥ 3 project scenes shippable
 - [ ] **M6** Act IV Proof metrics live
@@ -672,7 +672,7 @@ Enter a world. Name dominates. One line of promise. Scroll begins the story. No 
 - **Technical:** Display font; timeline y/opacity on scroll; split-text optional via GSAP.
 - **Dependencies:** Timeline, fonts.
 - **Priority:** P0.
-- **Complexity:** M.
+- **Complexity:** M *(done)*.
 - **Performance:** Avoid per-glyph DOM if mobile; use word splits max.
 
 ### Feature: 3D Background
@@ -682,7 +682,7 @@ Enter a world. Name dominates. One line of promise. Scroll begins the story. No 
 - **Technical:** R3F scene object; scroll → camera/uniform; pointer parallax dampened.
 - **Dependencies:** Canvas, scroll.
 - **Priority:** P0.
-- **Complexity:** L.
+- **Complexity:** L *(done — HeroField vertical slice)*.
 - **Performance:** Low poly; bake where possible; pause when hero not near.
 
 ### Feature: Shader Distortion
@@ -742,7 +742,7 @@ Enter a world. Name dominates. One line of promise. Scroll begins the story. No 
 - **Technical:** Damp parallax offsets in RAF.
 - **Dependencies:** RAF.
 - **Priority:** P1.
-- **Complexity:** S.
+- **Complexity:** S *(done)*.
 - **Performance:** Disable on touch.
 
 ### Feature: Intro Reveal
@@ -752,7 +752,7 @@ Enter a world. Name dominates. One line of promise. Scroll begins the story. No 
 - **Technical:** GSAP timeline once; then scroll timelines take over.
 - **Dependencies:** Loader completion event.
 - **Priority:** P0.
-- **Complexity:** M.
+- **Complexity:** M *(done)*.
 - **Performance:** One-shot; kill timeline after.
 
 ### Feature: Signature Animation
@@ -766,6 +766,8 @@ Enter a world. Name dominates. One line of promise. Scroll begins the story. No 
 - **Performance:** SVG not canvas unless needed.
 
 **Phase 3 exit criteria:** First viewport brand test passes (remove nav → still recognizable) · 60fps desktop · reduced-motion static hero still strong.
+
+> Status: P0 vertical slice shipped — massive brand type, clip-path intro reveal, DOM pointer parallax, scroll timeline exit, HeroField lighting/velocity/pointer distortion with mobile particle off + soft unload past Act I. Remaining: signature motif (P2), deeper mobile shader variant.
 
 ---
 

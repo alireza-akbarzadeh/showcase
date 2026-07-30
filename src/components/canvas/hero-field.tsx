@@ -3,7 +3,9 @@
 import { useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
+import { getPointerState, retainPointerTracking } from "@/engine/observers";
 import { useScroll } from "@/hooks/use-scroll";
+import { damp } from "@/utils/math";
 import type { ScrollSnapshot } from "@/types/scroll";
 
 const PARTICLE_COUNT = 180;
@@ -26,7 +28,7 @@ const PARTICLE_POSITIONS = (() => {
 
 /**
  * Act I world — grid plane, core mesh, sparse particles.
- * All motion via uniforms / transforms in useFrame — no React state.
+ * Motion via uniforms / transforms in useFrame — no React state.
  */
 export function HeroField() {
   const group = useRef<THREE.Group>(null);
@@ -34,22 +36,17 @@ export function HeroField() {
   const ring = useRef<THREE.Mesh>(null);
   const grid = useRef<THREE.Mesh>(null);
   const particles = useRef<THREE.Points>(null);
+  const keyLight = useRef<THREE.PointLight>(null);
+  const fillLight = useRef<THREE.PointLight>(null);
   const scrollRef = useRef<ScrollSnapshot | null>(null);
-  const pointer = useRef({ x: 0, y: 0 });
   const material = useRef<THREE.ShaderMaterial | null>(null);
+  const smoothed = useRef({ x: 0, y: 0 });
 
   useScroll((snapshot) => {
     scrollRef.current = snapshot;
   });
 
-  useEffect(() => {
-    const onMove = (event: PointerEvent) => {
-      pointer.current.x = (event.clientX / window.innerWidth) * 2 - 1;
-      pointer.current.y = (event.clientY / window.innerHeight) * 2 - 1;
-    };
-    window.addEventListener("pointermove", onMove, { passive: true });
-    return () => window.removeEventListener("pointermove", onMove);
-  }, []);
+  useEffect(() => retainPointerTracking(), []);
 
   useFrame((state, delta) => {
     const g = group.current;
@@ -63,34 +60,73 @@ export function HeroField() {
     const progress = s?.progress ?? 0;
     const velocity = Math.min(Math.abs(s?.velocity ?? 0), 3);
     const heroProgress = Math.min(Math.max(progress / 0.16, 0), 1);
+    const nearHero = progress < 0.28;
+    const mobile = s?.breakpoint === "mobile";
     const t = state.clock.elapsedTime;
 
-    g.position.x += (pointer.current.x * 0.45 - g.position.x) * 0.05;
-    g.position.y += (-pointer.current.y * 0.25 - g.position.y) * 0.05;
-    g.rotation.y += delta * (0.08 + velocity * 0.04);
+    // Soft unload past Act I — keep in tree but dim / freeze cost
+    const presence = nearHero ? 1 : Math.max(0, 1 - (progress - 0.28) / 0.12);
+    g.visible = presence > 0.02;
+    if (!g.visible) return;
 
-    c.rotation.x = t * 0.18 + heroProgress * 0.8;
-    c.rotation.y = t * 0.22;
-    const scale = 1 + Math.sin(t * 0.7) * 0.03 + heroProgress * 0.35;
+    const pointer = getPointerState();
+    smoothed.current.x = damp(smoothed.current.x, pointer.x, 5, delta);
+    smoothed.current.y = damp(smoothed.current.y, pointer.y, 5, delta);
+    const px = smoothed.current.x;
+    const py = smoothed.current.y;
+
+    g.position.x += (1.55 + px * 0.55 - g.position.x) * 0.06;
+    g.position.y += (0.1 - py * 0.3 - g.position.y) * 0.06;
+    g.rotation.y += delta * (0.07 + velocity * 0.035);
+    g.scale.setScalar(0.92 + presence * 0.08);
+
+    c.rotation.x = t * 0.18 + heroProgress * 0.85;
+    c.rotation.y = t * 0.22 + px * 0.15;
+    const scale = 1 + Math.sin(t * 0.7) * 0.03 + heroProgress * 0.4;
     c.scale.setScalar(scale);
-    c.position.z = -heroProgress * 1.2;
+    c.position.z = -heroProgress * 1.35;
+
+    const coreMat = c.material;
+    if (coreMat instanceof THREE.MeshStandardMaterial) {
+      coreMat.emissiveIntensity = 0.4 + heroProgress * 0.55 + velocity * 0.08;
+    }
 
     r.rotation.x = Math.PI / 2.2;
-    r.rotation.z = t * 0.3 + heroProgress;
-    r.scale.setScalar(1.55 + heroProgress * 1.1);
+    r.rotation.z = t * 0.3 + heroProgress + px * 0.2;
+    r.scale.setScalar(1.55 + heroProgress * 1.15);
+
+    if (keyLight.current) {
+      keyLight.current.intensity = (1.4 + heroProgress * 1.1) * presence;
+      keyLight.current.position.set(2.2 + px * 0.8, 2 + py * 0.4, 3);
+    }
+    if (fillLight.current) {
+      fillLight.current.intensity = (0.45 + heroProgress * 0.35) * presence;
+      fillLight.current.position.set(-3 - px * 0.5, -1, 2);
+    }
 
     if (gr && material.current) {
       const uniforms = material.current.uniforms;
       if (uniforms.uTime) uniforms.uTime.value = t;
       if (uniforms.uProgress) uniforms.uProgress.value = heroProgress;
       if (uniforms.uVelocity) uniforms.uVelocity.value = velocity;
+      if (uniforms.uPointer) {
+        (uniforms.uPointer.value as THREE.Vector2).set(px, py);
+      }
       gr.rotation.x = -Math.PI / 2.4;
-      gr.position.y = -2.2 + heroProgress * 0.4;
+      gr.position.y = -2.2 + heroProgress * 0.45;
+      material.current.opacity = presence;
     }
 
     if (pts) {
-      pts.rotation.y = t * 0.02;
-      pts.position.y = -heroProgress * 0.5;
+      pts.visible = !mobile && presence > 0.2;
+      if (pts.visible) {
+        pts.rotation.y = t * 0.02 + px * 0.05;
+        pts.position.y = -heroProgress * 0.55;
+        const ptsMat = pts.material;
+        if (ptsMat instanceof THREE.PointsMaterial) {
+          ptsMat.opacity = 0.55 * presence;
+        }
+      }
     }
   });
 
@@ -123,6 +159,7 @@ export function HeroField() {
             uTime: { value: 0 },
             uProgress: { value: 0 },
             uVelocity: { value: 0 },
+            uPointer: { value: new THREE.Vector2(0, 0) },
             uAccent: { value: new THREE.Color("#3dff9a") },
           }}
           vertexShader={`
@@ -130,12 +167,14 @@ export function HeroField() {
             uniform float uTime;
             uniform float uProgress;
             uniform float uVelocity;
+            uniform vec2 uPointer;
             void main() {
               vUv = uv;
               vec3 pos = position;
               float wave = sin(pos.x * 2.0 + uTime * 0.6) * 0.08;
               wave += sin(pos.y * 1.5 - uTime * 0.4) * 0.05;
-              pos.z += wave * (0.4 + uProgress) + uVelocity * 0.03;
+              float cursor = exp(-length(uv - (uPointer * 0.5 + 0.5)) * 4.0);
+              pos.z += wave * (0.4 + uProgress) + uVelocity * 0.04 + cursor * 0.22;
               gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
             }
           `}
@@ -143,12 +182,14 @@ export function HeroField() {
             varying vec2 vUv;
             uniform vec3 uAccent;
             uniform float uProgress;
+            uniform float uVelocity;
             void main() {
               float gridX = abs(fract(vUv.x * 24.0) - 0.5);
               float gridY = abs(fract(vUv.y * 24.0) - 0.5);
               float line = 1.0 - smoothstep(0.0, 0.04, min(gridX, gridY));
               float fade = smoothstep(0.0, 0.2, vUv.y) * (1.0 - smoothstep(0.55, 1.0, vUv.y));
-              float alpha = line * fade * (0.18 + uProgress * 0.35);
+              float pulse = 0.18 + uProgress * 0.35 + uVelocity * 0.04;
+              float alpha = line * fade * pulse;
               gl_FragColor = vec4(uAccent, alpha);
             }
           `}
@@ -172,8 +213,18 @@ export function HeroField() {
         />
       </points>
 
-      <pointLight position={[2.5, 2, 3]} intensity={1.8} color="#3dff9a" />
-      <pointLight position={[-3, -1, 2]} intensity={0.6} color="#7ad4ff" />
+      <pointLight
+        ref={keyLight}
+        position={[2.5, 2, 3]}
+        intensity={1.8}
+        color="#3dff9a"
+      />
+      <pointLight
+        ref={fillLight}
+        position={[-3, -1, 2]}
+        intensity={0.6}
+        color="#7ad4ff"
+      />
     </group>
   );
 }

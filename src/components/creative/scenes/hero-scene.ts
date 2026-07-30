@@ -1,6 +1,10 @@
 import type { SceneDefinition } from "@/types/scene";
 import { createTimeline, keyframes } from "@/engine/animation";
-import { easeOutCubic, easeInOutCubic, easeOutExpo } from "@/engine/animation/easings";
+import {
+  easeOutCubic,
+  easeInOutCubic,
+  easeOutExpo,
+} from "@/engine/animation/easings";
 import { setOpacity, setTransform } from "@/utils/performance";
 
 export function createHeroScene(
@@ -17,27 +21,39 @@ export function createHeroScene(
     tracks: [
       {
         id: "titleY",
-        keyframes: keyframes([0, 0], [0.55, -32, easeOutCubic], [1, -120, easeOutExpo]),
+        keyframes: keyframes(
+          [0, 0],
+          [0.4, -18, easeOutCubic],
+          [1, -140, easeOutExpo],
+        ),
       },
       {
         id: "titleScale",
-        keyframes: keyframes([0, 1], [1, 0.94, easeInOutCubic]),
+        keyframes: keyframes([0, 1], [0.55, 0.98], [1, 0.9, easeInOutCubic]),
       },
       {
         id: "titleOpacity",
-        keyframes: keyframes([0, 1], [0.75, 0.7], [1, 0.15]),
+        keyframes: keyframes([0, 1], [0.65, 0.85], [1, 0.12]),
       },
       {
         id: "subtitleY",
-        keyframes: keyframes([0, 0], [1, -56, easeOutCubic]),
+        keyframes: keyframes([0, 0], [1, -72, easeOutCubic]),
+      },
+      {
+        id: "subtitleOpacity",
+        keyframes: keyframes([0, 1], [0.55, 0.7], [1, 0.1]),
       },
       {
         id: "lineScale",
-        keyframes: keyframes([0, 1], [1, 0.25, easeInOutCubic]),
+        keyframes: keyframes([0, 1], [0.7, 0.55], [1, 0.15, easeInOutCubic]),
       },
       {
         id: "cueOpacity",
-        keyframes: keyframes([0, 1], [0.45, 0.5], [0.8, 0]),
+        keyframes: keyframes([0, 1], [0.35, 0.55], [0.65, 0]),
+      },
+      {
+        id: "metaOpacity",
+        keyframes: keyframes([0, 1], [0.5, 0.55], [0.85, 0]),
       },
     ],
   });
@@ -50,30 +66,38 @@ export function createHeroScene(
       const values = timeline.setProgress(ctx.progress);
       const { title, subtitle, line, cue, meta } = getElements();
       const mobile = ctx.scroll.breakpoint === "mobile";
-      const yMul = mobile ? 0.55 : 1;
+      const yMul = mobile ? 0.5 : 1;
 
       if (title) {
         setTransform(title, {
           y: (values.get("titleY") ?? 0) * yMul,
           scale: values.get("titleScale") ?? 1,
         });
-        setOpacity(title, Math.max(0.15, values.get("titleOpacity") ?? 1));
+        setOpacity(title, Math.max(0.08, values.get("titleOpacity") ?? 1));
       }
       if (subtitle) {
         setTransform(subtitle, {
           y: (values.get("subtitleY") ?? 0) * yMul,
         });
-        setOpacity(subtitle, Math.max(0.2, 1 - ctx.progress * 0.75));
+        setOpacity(
+          subtitle,
+          Math.max(0.08, values.get("subtitleOpacity") ?? 1),
+        );
       }
       if (line) {
-        setTransform(line, { scaleX: values.get("lineScale") ?? 1, scaleY: 1 });
+        setTransform(line, {
+          scaleX: values.get("lineScale") ?? 1,
+          scaleY: 1,
+        });
+        setOpacity(line, Math.max(0.1, 1 - ctx.progress * 1.1));
       }
       if (cue) {
         setOpacity(cue, values.get("cueOpacity") ?? 1);
-        setTransform(cue, { y: ctx.progress * 24 });
+        setTransform(cue, { y: ctx.progress * 28 });
       }
       if (meta) {
-        setOpacity(meta, Math.max(0.2, 1 - ctx.progress * 1.2));
+        setOpacity(meta, values.get("metaOpacity") ?? 1);
+        setTransform(meta, { y: ctx.progress * -12 });
       }
     },
     onDestroy: () => timeline.destroy(),
