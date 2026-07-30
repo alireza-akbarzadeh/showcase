@@ -12,3 +12,7 @@ export {
   toggleSound,
   playSound,
 } from "./use-sound";
+export {
+  useMotionIntensity,
+  useMotionRestricted,
+} from "./use-motion-intensity";

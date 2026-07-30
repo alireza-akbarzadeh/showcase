@@ -282,26 +282,42 @@ export class ScrollManager implements ScrollManagerApi {
   private bindReducedMotion(): void {
     this.mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     this.mediaHandler = () => {
+      // OS change only; MotionProvider may override via setSmoothEnabled.
       const reduced = this.mediaQuery?.matches ?? false;
-      if (this.lenis) {
-        // Recreate with updated smoothing when preference changes.
-        this.lenis.destroy();
-        this.lenis = new Lenis({
-          wrapper: this.options.wrapper,
-          content: this.options.content,
-          lerp: reduced ? 1 : (this.options.lerp ?? SCROLL_DEFAULTS.lerp),
-          smoothWheel: reduced
-            ? false
-            : (this.options.smoothWheel ?? SCROLL_DEFAULTS.smoothWheel),
-          syncTouch: this.options.syncTouch ?? SCROLL_DEFAULTS.syncTouch,
-          infinite: this.options.infinite ?? false,
-          autoRaf: false,
-        });
-        this.lenis.on("scroll", this.onLenisScroll);
-      }
+      this.rebuildLenis(reduced);
       this.publish(this.computeSnapshot(performance.now()));
     };
     this.mediaQuery.addEventListener("change", this.mediaHandler);
+  }
+
+  /** Toggle Lenis smoothing — called from MotionProvider. */
+  setSmoothEnabled(enabled: boolean): void {
+    if (!this.started || typeof window === "undefined") return;
+    this.rebuildLenis(!enabled);
+    this.snapshot = {
+      ...this.snapshot,
+      reducedMotion: !enabled,
+    };
+    this.publish(this.computeSnapshot(performance.now()));
+  }
+
+  private rebuildLenis(reduced: boolean): void {
+    if (!this.lenis) return;
+    const y = this.lenis.scroll;
+    this.lenis.destroy();
+    this.lenis = new Lenis({
+      wrapper: this.options.wrapper,
+      content: this.options.content,
+      lerp: reduced ? 1 : (this.options.lerp ?? SCROLL_DEFAULTS.lerp),
+      smoothWheel: reduced
+        ? false
+        : (this.options.smoothWheel ?? SCROLL_DEFAULTS.smoothWheel),
+      syncTouch: this.options.syncTouch ?? SCROLL_DEFAULTS.syncTouch,
+      infinite: this.options.infinite ?? false,
+      autoRaf: false,
+    });
+    this.lenis.on("scroll", this.onLenisScroll);
+    this.lenis.scrollTo(y, { immediate: true });
   }
 }
 

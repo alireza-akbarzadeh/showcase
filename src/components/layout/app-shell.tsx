@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ACTS, SITE } from "@/constants";
 import { getScrollManager } from "@/engine/scroll";
 import { SoundToggle } from "@/components/layout/sound-toggle";
+import { MotionIntensityControl } from "@/providers/motion-provider";
 
 export function SkipLink() {
   return (
@@ -67,20 +68,30 @@ export function Header() {
 export function Footer() {
   return (
     <footer className="border-t border-[var(--border)] px-6 py-10 md:px-12">
-      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-        <p className="text-sm text-[var(--muted)]">
-          © {new Date().getFullYear()} {SITE.name}. Five acts. One scroll.
-        </p>
-        <p className="text-sm text-[var(--muted)]">
-          Keys 1–5 jump acts · M toggles sound ·{" "}
-          <Link
-            href="/playground"
-            className="text-[var(--accent)] underline-offset-4 hover:underline"
-          >
-            /playground
-          </Link>{" "}
-          · press ? for shortcuts
-        </p>
+      <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div className="space-y-3">
+          <p className="text-sm text-[var(--muted)]">
+            © {new Date().getFullYear()} {SITE.name}. Five acts. One scroll.
+          </p>
+          <p className="text-sm text-[var(--muted)]">
+            Keys 1–5 jump acts · M toggles sound ·{" "}
+            <Link
+              href="/playground"
+              className="text-[var(--accent)] underline-offset-4 hover:underline"
+            >
+              /playground
+            </Link>{" "}
+            ·{" "}
+            <Link
+              href="/privacy"
+              className="text-[var(--accent)] underline-offset-4 hover:underline"
+            >
+              Privacy
+            </Link>{" "}
+            · press ? for shortcuts
+          </p>
+        </div>
+        <MotionIntensityControl />
       </div>
     </footer>
   );

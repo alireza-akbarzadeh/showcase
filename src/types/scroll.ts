@@ -74,4 +74,5 @@ export interface ScrollManagerApi {
   readonly stop: () => void;
   readonly destroy: () => void;
   readonly resize: () => void;
+  readonly setSmoothEnabled: (enabled: boolean) => void;
 }
