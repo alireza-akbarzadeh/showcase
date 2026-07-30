@@ -17,6 +17,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
+    "analyze": "ANALYZE=true next build",
     "graphify:open": "open graphify-out/graph.html",
     "graphify:report": "open graphify-out/GRAPH_REPORT.md",
     "graphify:update": "$HOME/.local/bin/graphify update .",
@@ -43,6 +44,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^16.2.12",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^22.20.1",
     "@types/react": "^19",

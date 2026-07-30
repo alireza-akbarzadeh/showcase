@@ -1,4 +1,9 @@
 import type { NextConfig } from "next";
+import bundleAnalyzer from "@next/bundle-analyzer";
+
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -9,6 +14,8 @@ const nextConfig: NextConfig = {
       "@radix-ui/react-slot",
       "gsap",
       "three",
+      "@react-three/drei",
+      "@react-three/fiber",
     ],
   },
   images: {
@@ -40,4 +47,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withBundleAnalyzer(nextConfig);

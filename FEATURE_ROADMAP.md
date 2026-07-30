@@ -307,11 +307,11 @@ Use this as the project Kanban spine.
 - [ ] **M2** Global nav / loader / cursor / a11y chrome
 - [x] **M3** Act I Hero cinematic shippable *(P0 vertical slice)*
 - [x] **M4** Act II Craft visualizations shippable
-- [x] **M5** Act III ≥ 3 project scenes shippable *(Orbit immersive + 2 panels)*
+- [x] **M5** Act III ≥ 3 project scenes shippable *(Orbit + Pulse + Lattice immersive)*
 - [x] **M6** Act IV Proof metrics live *(Orbit evidence strip)*
 - [x] **M7** Act V Contact ritual shippable
 - [ ] **M8** Playground (optional) behind route / gate
-- [ ] **M9** Performance pass meets budgets
+- [ ] **M9** Performance pass meets budgets *(guardian + code-split + approach prefetch; Lighthouse CI still open)*
 - [ ] **M10** Polish + easter eggs + launch
 
 ---
@@ -883,7 +883,7 @@ Scroll enters a project world → story → tech → proof snippets → exit to 
 
 **Phase 4 exit criteria:** ≥ 3 immersive projects · morph works keyboard-accessible · assets unload · mobile alternate timelines.
 
-> Status: Exemplary **Orbit** end-to-end shipped — case-study contract, peek→immersion morph (transforms), chapter runway, architecture SVG draw, stack reveal, scrubbed metrics. Pulse/Lattice remain lighter panels. Remaining: deepen morph FLIP, 3D/video previews, expand Pulse/Lattice to full immersion.
+> Status: **3 immersive projects** shipped (Orbit, Pulse, Lattice) via shared `ImmersiveProject` + `createProjectsScene` multi-panel driver. Peek→immersion morph, chapter runway, architecture SVG draw, stack reveal, scrubbed metrics. Remaining polish: deepen morph FLIP, 3D/video previews, asset unload hooks.
 
 ---
 
@@ -1330,6 +1330,8 @@ Feels effortless. No hitch when entering projects. Mobile remains alive.
 - **Performance:** Process.
 
 **Phase 9 exit criteria:** Budgets in §6 met on reference devices · kill switches verified · Lighthouse CI ≥ targets on `/`.
+
+> Status: P0 hardening in — `QualityGuardian` (FPS → high/med/low: DPR, post-FX, particles), `SceneHost`/`HeroField` code-split, SceneManager approach prefetch at −0.15 + unload on leave, `@next/bundle-analyzer` via `pnpm analyze`, `?debug=perf` shows quality tier. Remaining: Lighthouse CI ≥ targets, texture compression, GPU profiling pass.
 
 ---
 

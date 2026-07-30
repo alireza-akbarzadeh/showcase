@@ -1,3 +1,4 @@
+import { PERFORMANCE } from "@/constants";
 import { getRafScheduler } from "@/engine/scheduler";
 import { getScrollManager } from "@/engine/scroll";
 import type { RafFrame } from "@/types/raf";
@@ -23,6 +24,23 @@ function resolveRange(
   return { start, end };
 }
 
+/** Unclamped approach progress — negative means approaching, >1 means past. */
+function approachProgress(
+  id: SceneId,
+  scroll: ScrollSnapshot,
+  definition: SceneDefinition,
+): number {
+  void id;
+  const { start, end } = resolveRange(
+    definition.range.start,
+    definition.range.end,
+    definition.range.normalized,
+    scroll,
+  );
+  const range = Math.max(end - start, 1);
+  return (scroll.y - start) / range;
+}
+
 function sectionProgress(
   id: SceneId,
   scroll: ScrollSnapshot,
@@ -31,14 +49,7 @@ function sectionProgress(
   const section = scroll.sections.get(id);
   if (section) return section.progress;
 
-  const { start, end } = resolveRange(
-    definition.range.start,
-    definition.range.end,
-    definition.range.normalized,
-    scroll,
-  );
-  const range = Math.max(end - start, 1);
-  return Math.min(Math.max((scroll.y - start) / range, 0), 1);
+  return Math.min(Math.max(approachProgress(id, scroll, definition), 0), 1);
 }
 
 /**
@@ -49,6 +60,7 @@ export class SceneManager {
   private readonly scenes = new Map<SceneId, SceneDefinition>();
   private readonly entered = new Set<SceneId>();
   private readonly active = new Set<SceneId>();
+  private readonly prefetched = new Set<SceneId>();
   private rafId: string | null = null;
   private unsubscribeScroll: (() => void) | null = null;
   private lastScroll: ScrollSnapshot | null = null;
@@ -66,7 +78,7 @@ export class SceneManager {
   unregister(id: SceneId): void {
     const scene = this.scenes.get(id);
     if (!scene) return;
-    if (this.entered.has(id)) {
+    if (this.entered.has(id) || this.prefetched.has(id)) {
       scene.onLeave?.(this.buildContext(scene, 0, false, false));
       scene.unload?.();
     }
@@ -74,6 +86,7 @@ export class SceneManager {
     this.scenes.delete(id);
     this.entered.delete(id);
     this.active.delete(id);
+    this.prefetched.delete(id);
   }
 
   get(id: SceneId): SceneDefinition | undefined {
@@ -115,24 +128,39 @@ export class SceneManager {
 
   private evaluateScenes(scroll: ScrollSnapshot, frame: RafFrame | null): void {
     for (const scene of this.scenes.values()) {
+      const approach = approachProgress(scene.id, scroll, scene);
       const progress = sectionProgress(scene.id, scroll, scene);
       const inRange = progress > 0 && progress < 1;
       const near =
-        progress >= -0.15 && progress <= 1.15
-          ? true
-          : scroll.sections.get(scene.id)?.inView ?? false;
+        approach >= PERFORMANCE.assetApproach && approach <= 1.15;
+      const far = approach < PERFORMANCE.assetApproach || approach > 1.2;
 
       const wasEntered = this.entered.has(scene.id);
-      const isActive = inRange || (scroll.sections.get(scene.id)?.inView ?? false);
+      const isActive =
+        inRange || (scroll.sections.get(scene.id)?.inView ?? false);
+
+      // Just-in-time bytes: prefetch when approaching, before enter.
+      if (near && !this.prefetched.has(scene.id)) {
+        this.prefetched.add(scene.id);
+        void scene.prefetch?.();
+      }
 
       if (isActive && !wasEntered) {
         this.entered.add(scene.id);
-        void scene.prefetch?.();
-        scene.onEnter?.(this.buildContext(scene, progress, true, true, scroll, frame));
-      } else if (!isActive && wasEntered && !near) {
+        if (!this.prefetched.has(scene.id)) {
+          this.prefetched.add(scene.id);
+          void scene.prefetch?.();
+        }
+        scene.onEnter?.(
+          this.buildContext(scene, progress, true, true, scroll, frame),
+        );
+      } else if (!isActive && wasEntered && far) {
         this.entered.delete(scene.id);
         this.active.delete(scene.id);
-        scene.onLeave?.(this.buildContext(scene, progress, false, false, scroll, frame));
+        this.prefetched.delete(scene.id);
+        scene.onLeave?.(
+          this.buildContext(scene, progress, false, false, scroll, frame),
+        );
         scene.unload?.();
       }
 

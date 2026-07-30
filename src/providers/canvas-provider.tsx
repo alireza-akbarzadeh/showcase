@@ -3,16 +3,20 @@
 import {
   createContext,
   useContext,
+  useEffect,
   useMemo,
   useState,
   type ReactNode,
 } from "react";
+import { getQualityGuardian } from "@/engine/performance";
+import type { QualityFlags } from "@/types/quality";
 
 interface CanvasContextValue {
   ready: boolean;
   setReady: (ready: boolean) => void;
   enabled: boolean;
   setEnabled: (enabled: boolean) => void;
+  quality: QualityFlags;
 }
 
 const CanvasContext = createContext<CanvasContextValue | null>(null);
@@ -26,10 +30,19 @@ export function CanvasProvider({
 }) {
   const [ready, setReady] = useState(false);
   const [enabled, setEnabled] = useState(initiallyEnabled);
+  const [quality, setQuality] = useState<QualityFlags>(() =>
+    getQualityGuardian().getFlags(),
+  );
+
+  useEffect(() => {
+    const guardian = getQualityGuardian();
+    guardian.start();
+    return guardian.subscribe(setQuality);
+  }, []);
 
   const value = useMemo(
-    () => ({ ready, setReady, enabled, setEnabled }),
-    [ready, enabled],
+    () => ({ ready, setReady, enabled, setEnabled, quality }),
+    [ready, enabled, quality],
   );
 
   return (

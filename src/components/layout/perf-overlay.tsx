@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useSyncExternalStore } from "react";
 import { getRafScheduler } from "@/engine/scheduler";
+import { getQualityGuardian } from "@/engine/performance";
 import { getScrollManager } from "@/engine/scroll";
 import { useScroll } from "@/hooks/use-scroll";
 
@@ -24,6 +25,7 @@ export function PerfOverlay() {
     () => false,
   );
   const fpsRef = useRef<HTMLSpanElement>(null);
+  const qualityRef = useRef<HTMLSpanElement>(null);
   const scrollRef = useRef<HTMLSpanElement>(null);
   const actRef = useRef<HTMLSpanElement>(null);
   const frameAccum = useRef(0);
@@ -36,6 +38,9 @@ export function PerfOverlay() {
         if (frameAccum.current % 6 !== 0) return;
         if (fpsRef.current) {
           fpsRef.current.textContent = frame.fps.toFixed(0);
+        }
+        if (qualityRef.current) {
+          qualityRef.current.textContent = getQualityGuardian().getTier();
         }
       },
       { priority: "idle", label: "perf-overlay", id: "perf-overlay" },
@@ -62,6 +67,9 @@ export function PerfOverlay() {
     >
       <div>
         FPS <span ref={fpsRef}>—</span>
+      </div>
+      <div>
+        Quality <span ref={qualityRef}>—</span>
       </div>
       <div>
         Scroll <span ref={scrollRef}>—</span>

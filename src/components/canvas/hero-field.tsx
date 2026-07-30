@@ -3,12 +3,14 @@
 import { useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
+import { getQualityGuardian } from "@/engine/performance";
 import { getPointerState, retainPointerTracking } from "@/engine/observers";
 import { useScroll } from "@/hooks/use-scroll";
 import { damp } from "@/utils/math";
 import type { ScrollSnapshot } from "@/types/scroll";
 
 const PARTICLE_COUNT = 180;
+const PARTICLE_COUNT_MED = 90;
 
 /** Seeded once at module load — avoids impure render + ref-during-render. */
 const PARTICLE_POSITIONS = (() => {
@@ -57,12 +59,14 @@ export function HeroField() {
     const s = scrollRef.current;
     if (!g || !c || !r) return;
 
+    const quality = getQualityGuardian().getFlags();
     const progress = s?.progress ?? 0;
     const velocity = Math.min(Math.abs(s?.velocity ?? 0), 3);
     const heroProgress = Math.min(Math.max(progress / 0.16, 0), 1);
     const nearHero = progress < 0.28;
     const mobile = s?.breakpoint === "mobile";
     const t = state.clock.elapsedTime;
+    const velocityFx = quality.simplifyShaders ? 0 : velocity;
 
     // Soft unload past Act I — keep in tree but dim / freeze cost
     const presence = nearHero ? 1 : Math.max(0, 1 - (progress - 0.28) / 0.12);
@@ -77,7 +81,7 @@ export function HeroField() {
 
     g.position.x += (1.55 + px * 0.55 - g.position.x) * 0.06;
     g.position.y += (0.1 - py * 0.3 - g.position.y) * 0.06;
-    g.rotation.y += delta * (0.07 + velocity * 0.035);
+    g.rotation.y += delta * (0.07 + velocityFx * 0.035);
     g.scale.setScalar(0.92 + presence * 0.08);
 
     c.rotation.x = t * 0.18 + heroProgress * 0.85;
@@ -88,7 +92,7 @@ export function HeroField() {
 
     const coreMat = c.material;
     if (coreMat instanceof THREE.MeshStandardMaterial) {
-      coreMat.emissiveIntensity = 0.4 + heroProgress * 0.55 + velocity * 0.08;
+      coreMat.emissiveIntensity = 0.4 + heroProgress * 0.55 + velocityFx * 0.08;
     }
 
     r.rotation.x = Math.PI / 2.2;
@@ -108,7 +112,7 @@ export function HeroField() {
       const uniforms = material.current.uniforms;
       if (uniforms.uTime) uniforms.uTime.value = t;
       if (uniforms.uProgress) uniforms.uProgress.value = heroProgress;
-      if (uniforms.uVelocity) uniforms.uVelocity.value = velocity;
+      if (uniforms.uVelocity) uniforms.uVelocity.value = velocityFx;
       if (uniforms.uPointer) {
         (uniforms.uPointer.value as THREE.Vector2).set(px, py);
       }
@@ -118,7 +122,7 @@ export function HeroField() {
     }
 
     if (pts) {
-      pts.visible = !mobile && presence > 0.2;
+      pts.visible = !mobile && presence > 0.2 && quality.particles;
       if (pts.visible) {
         pts.rotation.y = t * 0.02 + px * 0.05;
         pts.position.y = -heroProgress * 0.55;
@@ -126,6 +130,9 @@ export function HeroField() {
         if (ptsMat instanceof THREE.PointsMaterial) {
           ptsMat.opacity = 0.55 * presence;
         }
+        const drawCount =
+          quality.tier === "medium" ? PARTICLE_COUNT_MED : PARTICLE_COUNT;
+        pts.geometry.setDrawRange(0, drawCount);
       }
     }
   });

@@ -12,7 +12,7 @@ const R3FCanvas = dynamic(
 );
 
 export function CanvasRoot({ children }: { children?: ReactNode }) {
-  const { enabled, setReady } = useCanvas();
+  const { enabled, setReady, quality } = useCanvas();
   const reduced = useReducedMotion();
 
   useEffect(() => {
@@ -21,14 +21,21 @@ export function CanvasRoot({ children }: { children?: ReactNode }) {
 
   if (!enabled || reduced) return null;
 
-  const config = createRendererConfig();
+  const config = createRendererConfig({
+    antialias: quality.antialias,
+    dpr: [1, quality.dprMax],
+  });
 
   return (
     <div
       className="pointer-events-none fixed inset-0 z-0"
       aria-hidden="true"
     >
-      <R3FCanvas config={config} onReady={() => setReady(true)}>
+      <R3FCanvas
+        config={config}
+        postFx={quality.postFx}
+        onReady={() => setReady(true)}
+      >
         {children}
       </R3FCanvas>
     </div>

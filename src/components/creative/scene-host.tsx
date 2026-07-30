@@ -11,13 +11,13 @@ import { createSkillsScene } from "@/components/creative/scenes/skills-scene";
 import { createProofScene } from "@/components/creative/scenes/proof-scene";
 import { createContactScene } from "@/components/creative/scenes/contact-scene";
 import { HeroSection } from "@/components/creative/sections/hero-section";
-import { OrbitProject } from "@/components/creative/sections/orbit-project";
+import { ImmersiveProject } from "@/components/creative/sections/immersive-project";
 import { ProofSection } from "@/components/creative/sections/proof-section";
 import { SkillsSection } from "@/components/creative/sections/skills-section";
 import { AboutSection } from "@/components/creative/sections/about-section";
 import { ContactForm } from "@/components/creative/contact-form";
 import { Section } from "@/components/scroll/section";
-import { ORBIT_PROJECT, PROJECTS, SCENE_LABELS } from "@/constants";
+import { PROJECTS, SCENE_LABELS } from "@/constants";
 import { willChange, clearWillChange } from "@/utils/performance";
 
 interface SceneHostProps {
@@ -50,8 +50,7 @@ export function SceneHost({ ready }: SceneHostProps) {
 
   const projectsRoot = useRef<HTMLDivElement>(null);
   const projectsHeading = useRef<HTMLDivElement>(null);
-  const orbitRoot = useRef<HTMLElement | null>(null);
-  const projectPanels = useRef<(HTMLElement | null)[]>([]);
+  const immersiveRoots = useRef<(HTMLElement | null)[]>([]);
 
   const proofRoot = useRef<HTMLDivElement>(null);
   const proofStats = useRef<(HTMLElement | null)[]>([]);
@@ -113,8 +112,7 @@ export function SceneHost({ ready }: SceneHostProps) {
         createProjectsScene(() => ({
           root: projectsRoot.current,
           heading: projectsHeading.current,
-          orbit: orbitRoot.current,
-          panels: projectPanels.current.filter(Boolean) as HTMLElement[],
+          immersives: immersiveRoots.current.filter(Boolean) as HTMLElement[],
         })),
       ),
       manager.register(
@@ -143,7 +141,6 @@ export function SceneHost({ ready }: SceneHostProps) {
       skillsRoot.current,
       aboutRoot.current,
       projectsRoot.current,
-      orbitRoot.current,
       proofRoot.current,
       contactRoot.current,
     ].filter(Boolean) as HTMLElement[];
@@ -248,82 +245,20 @@ export function SceneHost({ ready }: SceneHostProps) {
               Selected work
             </h2>
             <p className="mt-5 max-w-lg text-lg text-[var(--muted)]">
-              Depth over quantity — one immersive case, then two focused studies.
+              Depth over quantity — three immersive case studies, scrubbed by scroll.
             </p>
           </div>
 
-          <OrbitProject ref={orbitRoot} project={ORBIT_PROJECT} />
-
-          <div className="space-y-6 pb-24 pt-16 md:space-y-10">
-            {PROJECTS.filter((p) => !p.immersive).map((project, i) => (
-              <article
+          <div className="pb-24">
+            {PROJECTS.map((project, i) => (
+              <ImmersiveProject
                 key={project.id}
+                project={project}
+                index={i}
                 ref={(el) => {
-                  projectPanels.current[i] = el;
+                  immersiveRoots.current[i] = el;
                 }}
-                className="relative min-h-[70svh] overflow-hidden border-t border-[var(--border)] py-16 will-change-transform md:py-20"
-              >
-                <div
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 -z-10 opacity-40"
-                  style={{
-                    background: `radial-gradient(ellipse 70% 60% at ${i === 0 ? "20%" : "85%"} 30%, color-mix(in oklab, var(--accent) 16%, transparent), transparent 70%)`,
-                  }}
-                />
-                <p className="font-mono text-[10px] tracking-[0.3em] text-[var(--muted)] uppercase">
-                  0{i + 2} · {project.role}
-                </p>
-                <h3 className="font-display mt-6 text-[clamp(2.75rem,8vw,5.5rem)] leading-[0.9] tracking-[-0.045em]">
-                  {project.name}
-                </h3>
-                <p className="mt-6 max-w-xl text-xl text-[var(--muted)] md:text-2xl">
-                  {project.tagline}
-                </p>
-
-                <div className="mt-12 grid max-w-3xl gap-8 md:grid-cols-2">
-                  <div>
-                    <p className="font-mono text-[10px] tracking-[0.25em] text-[var(--accent)] uppercase">
-                      Problem
-                    </p>
-                    <p className="mt-3 text-[var(--foreground)]">
-                      {project.problem}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="font-mono text-[10px] tracking-[0.25em] text-[var(--accent)] uppercase">
-                      Approach
-                    </p>
-                    <p className="mt-3 text-[var(--foreground)]">
-                      {project.approach}
-                    </p>
-                  </div>
-                </div>
-
-                <dl className="mt-14 flex flex-wrap gap-10">
-                  {project.metrics.map((metric) => (
-                    <div key={metric.label}>
-                      <dt className="font-mono text-[10px] tracking-[0.2em] text-[var(--muted)] uppercase">
-                        {metric.label}
-                      </dt>
-                      <dd
-                        className="font-display mt-2 text-4xl tracking-[-0.03em] text-[var(--accent)] md:text-5xl"
-                        data-metric-value
-                        data-metric-target={
-                          "divisor" in metric && metric.divisor
-                            ? metric.target / metric.divisor
-                            : metric.target
-                        }
-                        data-metric-prefix={metric.prefix}
-                        data-metric-suffix={metric.suffix}
-                        data-metric-float={
-                          "float" in metric && metric.float ? "true" : "false"
-                        }                      >
-                        {metric.display}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-              </article>
+              />
             ))}
           </div>
         </div>

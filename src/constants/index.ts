@@ -101,9 +101,18 @@ export const SCROLL_DEFAULTS = {
 export const PERFORMANCE = {
   targetFps: 120,
   maxDeltaMs: 64,
+  /** FPS below this for qualityDegradeMs → drop from high → medium. */
   lowFpsThreshold: 45,
+  /** FPS below this for qualityDegradeMs → drop to low. */
+  criticalFpsThreshold: 30,
+  /** FPS at/above this for qualityRecoverMs → bump one tier. */
+  recoverFpsThreshold: 50,
+  qualityDegradeMs: 2000,
+  qualityRecoverMs: 3000,
   dprMax: 2,
   dprMin: 1,
+  /** Prefetch when section approach progress exceeds this (unclamped). */
+  assetApproach: -0.15,
 } as const;
 
 export const SITE = {
@@ -226,7 +235,7 @@ export const PROJECTS = [
     tagline: "Observability that stays at sixty frames.",
     problem: "Dashboards looked premium and felt sticky.",
     approach: "Canvas charts, virtualized streams, adaptive DPR.",
-    immersive: false,
+    immersive: true,
     metrics: [
       {
         label: "LCP",
@@ -244,10 +253,74 @@ export const PROJECTS = [
         prefix: "",
         suffix: "+",
       },
+      {
+        label: "Rows",
+        display: "50k+",
+        target: 50,
+        prefix: "",
+        suffix: "k+",
+      },
     ],
-    chapters: [],
-    stack: [],
-    architecture: { nodes: [], edges: [] },
+    chapters: [
+      {
+        id: "hook",
+        label: "Hook",
+        title: "Signals without the stutter.",
+        body: "Pulse turns live telemetry into a calm instrument panel — dense data, steady frames.",
+      },
+      {
+        id: "problem",
+        label: "Problem",
+        title: "DOM charts hit a wall.",
+        body: "Thousands of SVG nodes updated every tick. The UI looked expensive and felt worse.",
+      },
+      {
+        id: "approach",
+        label: "Approach",
+        title: "Canvas first. Virtualize the rest.",
+        body: "Streams into Offscreen-friendly canvases, windowed tables, DPR that backs off under load.",
+      },
+      {
+        id: "architecture",
+        label: "Architecture",
+        title: "Ingest → buffer → paint.",
+        body: "Workers normalize samples; the main thread only composites what is on screen.",
+      },
+      {
+        id: "stack",
+        label: "Stack",
+        title: "Observability as a product surface.",
+        body: "From edge ingest to GPU paint — each layer earns its place in the frame budget.",
+      },
+      {
+        id: "impact",
+        label: "Impact",
+        title: "Dense, still smooth.",
+        body: "LCP under budget, sustained FPS with 50k+ live rows in the viewport window.",
+      },
+    ],
+    stack: [
+      { id: "ingest", label: "Stream ingest", layer: "edge" },
+      { id: "buffer", label: "Ring buffer", layer: "data" },
+      { id: "canvas", label: "Canvas charts", layer: "app" },
+      { id: "virt", label: "Virtualized table", layer: "app" },
+      { id: "dpr", label: "Adaptive DPR", layer: "infra" },
+    ],
+    architecture: {
+      nodes: [
+        { id: "edge", label: "Ingest", x: 40, y: 110 },
+        { id: "worker", label: "Worker", x: 140, y: 60 },
+        { id: "buffer", label: "Buffer", x: 140, y: 160 },
+        { id: "paint", label: "Paint", x: 260, y: 110 },
+        { id: "ui", label: "UI", x: 340, y: 110 },
+      ],
+      edges: [
+        { from: "edge", to: "worker" },
+        { from: "worker", to: "buffer" },
+        { from: "buffer", to: "paint" },
+        { from: "paint", to: "ui" },
+      ],
+    },
   },
   {
     id: "lattice",
@@ -256,7 +329,7 @@ export const PROJECTS = [
     tagline: "A design system that scales teams, not just tokens.",
     problem: "Eleven apps diverged into eleven visual languages.",
     approach: "Token architecture, documented motion language, enforced imports.",
-    immersive: false,
+    immersive: true,
     metrics: [
       {
         label: "Tokens",
@@ -272,10 +345,74 @@ export const PROJECTS = [
         prefix: "",
         suffix: "",
       },
+      {
+        label: "Drift",
+        display: "−70%",
+        target: 70,
+        prefix: "−",
+        suffix: "%",
+      },
     ],
-    chapters: [],
-    stack: [],
-    architecture: { nodes: [], edges: [] },
+    chapters: [
+      {
+        id: "hook",
+        label: "Hook",
+        title: "One language. Eleven products.",
+        body: "Lattice is the shared grammar — type, color, motion — that keeps a fleet coherent.",
+      },
+      {
+        id: "problem",
+        label: "Problem",
+        title: "Tokens without enforcement.",
+        body: "Figma said one thing, code said another. Reviews became archaeology.",
+      },
+      {
+        id: "approach",
+        label: "Approach",
+        title: "Contracts at the import boundary.",
+        body: "Typed tokens, linted imports, motion presets documented next to components.",
+      },
+      {
+        id: "architecture",
+        label: "Architecture",
+        title: "Tokens → primitives → patterns.",
+        body: "A layered kit where apps consume patterns, never raw hex or orphan easings.",
+      },
+      {
+        id: "stack",
+        label: "Stack",
+        title: "System as product.",
+        body: "Docs, packages, and CI gates — the boring parts that make craft scale.",
+      },
+      {
+        id: "impact",
+        label: "Impact",
+        title: "Less drift. Faster ships.",
+        body: "240+ tokens across 11 apps with visual drift cut by roughly seventy percent.",
+      },
+    ],
+    stack: [
+      { id: "tokens", label: "Design tokens", layer: "data" },
+      { id: "primitives", label: "Primitives", layer: "app" },
+      { id: "patterns", label: "Patterns", layer: "app" },
+      { id: "lint", label: "Import lint", layer: "infra" },
+      { id: "docs", label: "Living docs", layer: "edge" },
+    ],
+    architecture: {
+      nodes: [
+        { id: "figma", label: "Figma", x: 40, y: 80 },
+        { id: "tokens", label: "Tokens", x: 140, y: 110 },
+        { id: "kit", label: "Kit", x: 240, y: 110 },
+        { id: "apps", label: "Apps", x: 340, y: 70 },
+        { id: "ci", label: "CI", x: 340, y: 150 },
+      ],
+      edges: [
+        { from: "figma", to: "tokens" },
+        { from: "tokens", to: "kit" },
+        { from: "kit", to: "apps" },
+        { from: "kit", to: "ci" },
+      ],
+    },
   },
 ] as const satisfies readonly ProjectCaseStudy[];
 

@@ -9,10 +9,12 @@ import { PostFX } from "@/components/canvas/post-fx";
 export function R3FCanvas({
   children,
   config,
+  postFx = true,
   onReady,
 }: {
   children?: ReactNode;
   config: RendererConfig;
+  postFx?: boolean;
   onReady?: () => void;
 }) {
   return (
@@ -25,7 +27,9 @@ export function R3FCanvas({
       }}
       flat={config.flat}
       linear={config.linear}
-      eventSource={typeof document !== "undefined" ? document.documentElement : undefined}
+      eventSource={
+        typeof document !== "undefined" ? document.documentElement : undefined
+      }
       eventPrefix="client"
       onCreated={() => onReady?.()}
       style={{ width: "100%", height: "100%" }}
@@ -34,7 +38,7 @@ export function R3FCanvas({
       <ambientLight intensity={0.4} />
       <directionalLight position={[4, 6, 2]} intensity={1.2} />
       {children}
-      <PostFX />
+      {postFx ? <PostFX /> : null}
     </Canvas>
   );
 }

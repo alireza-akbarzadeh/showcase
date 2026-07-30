@@ -12,8 +12,7 @@ export function createProjectsScene(
   getElements: () => {
     root: HTMLElement | null;
     heading: HTMLElement | null;
-    orbit: HTMLElement | null;
-    panels: HTMLElement[];
+    immersives: HTMLElement[];
   },
 ): SceneDefinition {
   const timeline = createTimeline({
@@ -21,11 +20,11 @@ export function createProjectsScene(
     tracks: [
       {
         id: "headingY",
-        keyframes: keyframes([0, 40], [0.12, 0, easeOutCubic]),
+        keyframes: keyframes([0, 40], [0.08, 0, easeOutCubic]),
       },
       {
         id: "headingOpacity",
-        keyframes: keyframes([0, 1], [0.18, 1], [0.28, 0.15]),
+        keyframes: keyframes([0, 1], [0.1, 1], [0.18, 0.12]),
       },
     ],
   });
@@ -34,12 +33,12 @@ export function createProjectsScene(
 
   return {
     id: "projects",
-    range: { start: 0.42, end: 0.8, normalized: true },
+    range: { start: 0.4, end: 0.78, normalized: true },
     label: "Projects",
     onProgress: (ctx) => {
       frameCounter += 1;
       const values = timeline.setProgress(ctx.progress);
-      const { heading, orbit, panels } = getElements();
+      const { heading, immersives } = getElements();
       const mobile = ctx.scroll.breakpoint === "mobile";
 
       if (heading) {
@@ -47,59 +46,50 @@ export function createProjectsScene(
         setOpacity(heading, values.get("headingOpacity") ?? 1);
       }
 
-      if (orbit) {
-        driveOrbit(orbit, ctx.progress, mobile, frameCounter);
-      }
-
-      // Secondary projects (Pulse / Lattice) — lighter enter
-      const count = Math.max(panels.length, 1);
-      panels.forEach((panel, i) => {
-        const start = 0.72 + (i / count) * 0.12;
-        const end = Math.min(start + 0.18, 1);
+      const count = Math.max(immersives.length, 1);
+      immersives.forEach((root, i) => {
+        const start = 0.06 + (i / count) * 0.88;
+        const end = start + 0.88 / count;
         const local = chapterLocal(ctx.progress, start, end);
-        const enter = easeOutCubic(Math.min(local / 0.45, 1));
-        setTransform(panel, {
-          y: (1 - enter) * (mobile ? 28 : 48),
-          scale: 0.97 + enter * 0.03,
-        });
-        setOpacity(panel, 0.25 + enter * 0.75);
-
-        if (!shouldUpdateMetric(frameCounter, 3)) return;
-        const metrics = panel.querySelectorAll<HTMLElement>("[data-metric-value]");
-        metrics.forEach((metric) => writeMetric(metric, local));
+        driveImmersive(root, local, mobile, frameCounter);
       });
+    },
+    prefetch: () => {
+      // Reserved for project media / KTX2 when case-study assets land.
+    },
+    unload: () => {
+      frameCounter = 0;
+      const { immersives } = getElements();
+      for (const root of immersives) {
+        root.querySelectorAll<SVGPathElement>("[data-ip-edge]").forEach((path) => {
+          path.style.strokeDashoffset = path.getTotalLength().toString();
+        });
+      }
     },
     onDestroy: () => timeline.destroy(),
   };
 }
 
-function driveOrbit(
+function driveImmersive(
   root: HTMLElement,
-  sectionProgress: number,
+  local: number,
   mobile: boolean,
   frame: number,
 ): void {
-  // Orbit occupies most of the projects range after the heading.
-  const local = chapterLocal(sectionProgress, 0.08, 0.78);
   const morph = morphAmount(local);
   const yMul = mobile ? 0.55 : 1;
 
-  const stage = root.querySelector<HTMLElement>("[data-orbit-stage]");
-  const title = root.querySelector<HTMLElement>("[data-orbit-title]");
-  const tagline = root.querySelector<HTMLElement>("[data-orbit-tagline]");
-  const meta = root.querySelector<HTMLElement>("[data-orbit-meta]");
-  const rule = root.querySelector<HTMLElement>("[data-orbit-rule]");
-  const device = root.querySelector<HTMLElement>("[data-orbit-device]");
+  const stage = root.querySelector<HTMLElement>("[data-ip-stage]");
+  const title = root.querySelector<HTMLElement>("[data-ip-title]");
+  const tagline = root.querySelector<HTMLElement>("[data-ip-tagline]");
+  const meta = root.querySelector<HTMLElement>("[data-ip-meta]");
+  const rule = root.querySelector<HTMLElement>("[data-ip-rule]");
+  const device = root.querySelector<HTMLElement>("[data-ip-device]");
 
   if (stage) {
-    // Peek → full: scale up from slight inset feel via scale only
     const scale = 0.92 + (1 - morph) * 0.08;
-    setTransform(stage, {
-      scale,
-      y: morph * 24 * yMul,
-    });
+    setTransform(stage, { scale, y: morph * 24 * yMul });
   }
-
   if (title) {
     setTransform(title, {
       y: morph * 18 * yMul,
@@ -110,9 +100,7 @@ function driveOrbit(
     setOpacity(tagline, 0.35 + (1 - morph) * 0.65);
     setTransform(tagline, { y: morph * 12 });
   }
-  if (meta) {
-    setOpacity(meta, 0.4 + (1 - morph) * 0.6);
-  }
+  if (meta) setOpacity(meta, 0.4 + (1 - morph) * 0.6);
   if (rule) {
     setTransform(rule, { scaleX: 0.35 + (1 - morph) * 0.65, scaleY: 1 });
   }
@@ -126,8 +114,7 @@ function driveOrbit(
     setOpacity(device, 0.45 + (1 - morph) * 0.55);
   }
 
-  // Chapters stagger through the middle of the runway
-  const chapters = root.querySelectorAll<HTMLElement>("[data-orbit-chapter]");
+  const chapters = root.querySelectorAll<HTMLElement>("[data-ip-chapter]");
   chapters.forEach((chapter, i) => {
     const start = 0.18 + i * 0.08;
     const end = start + 0.14;
@@ -140,28 +127,23 @@ function driveOrbit(
     setOpacity(chapter, Math.max(0.15, enter * (1 - exit * 0.35)));
   });
 
-  // Architecture edges draw
-  const arch = root.querySelector<HTMLElement>("[data-orbit-arch]");
+  const arch = root.querySelector<HTMLElement>("[data-ip-arch]");
   if (arch) {
     const a = chapterLocal(local, 0.52, 0.68);
     setOpacity(arch, Math.max(0.2, a));
     setTransform(arch, { y: (1 - easeOutCubic(a)) * 28 });
-    const edges = arch.querySelectorAll<SVGLineElement>("[data-orbit-edge]");
-    edges.forEach((edge, i) => {
+    arch.querySelectorAll<SVGLineElement>("[data-ip-edge]").forEach((edge, i) => {
       const len = Number(edge.getAttribute("stroke-dasharray") ?? 100);
       const e = chapterLocal(a, i * 0.12, 0.45 + i * 0.12);
       edge.style.strokeDashoffset = String(len * (1 - easeOutCubic(e)));
     });
-    const nodes = arch.querySelectorAll<SVGGElement>("[data-orbit-node]");
-    nodes.forEach((node, i) => {
+    arch.querySelectorAll<SVGGElement>("[data-ip-node]").forEach((node, i) => {
       const n = chapterLocal(a, 0.05 + i * 0.08, 0.5 + i * 0.08);
       node.style.opacity = String(0.25 + easeOutCubic(n) * 0.75);
     });
   }
 
-  // Stack lights up in order
-  const stackNodes = root.querySelectorAll<HTMLElement>("[data-orbit-stack-node]");
-  stackNodes.forEach((node, i) => {
+  root.querySelectorAll<HTMLElement>("[data-ip-stack-node]").forEach((node, i) => {
     const start = 0.6 + i * 0.035;
     const s = chapterLocal(local, start, start + 0.1);
     const enter = easeOutCubic(s);
@@ -169,8 +151,7 @@ function driveOrbit(
     setOpacity(node, 0.2 + enter * 0.8);
   });
 
-  // Impact metrics scrub
-  const impact = root.querySelector<HTMLElement>("[data-orbit-impact]");
+  const impact = root.querySelector<HTMLElement>("[data-ip-impact]");
   if (impact) {
     const m = chapterLocal(local, 0.78, 0.95);
     setOpacity(impact, Math.max(0.2, m));
