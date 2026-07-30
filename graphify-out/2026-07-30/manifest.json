@@ -120,8 +120,8 @@
     "semantic_hash": ""
   },
   "src/components/creative/scenes/hero-scene.ts": {
-    "mtime": 1785404168.9436638,
-    "ast_hash": "7882663d6edfb0602578efcfb8ba0c4c",
+    "mtime": 1785404751.820075,
+    "ast_hash": "75badc92b1f7396fe5ae67e61c3c473c",
     "semantic_hash": ""
   },
   "src/components/creative/scenes/intro-scene.ts": {
@@ -235,9 +235,9 @@
     "semantic_hash": "8680f52801d01bb9cc82e57be72b0f90"
   },
   "src/engine/observers/index.ts": {
-    "mtime": 1785401406.3631086,
-    "ast_hash": "79325513c00257a7cbe52d08fee1f5db",
-    "semantic_hash": "79325513c00257a7cbe52d08fee1f5db"
+    "mtime": 1785404739.778687,
+    "ast_hash": "810cd2eb45ffac04fb525dd36ed06e02",
+    "semantic_hash": ""
   },
   "src/engine/observers/intersection.ts": {
     "mtime": 1785401402.6782773,
@@ -430,8 +430,8 @@
     "semantic_hash": "5c27369b226fcf2be8a6cfe52224e767"
   },
   "FEATURE_ROADMAP.md": {
-    "mtime": 1785404581.5856798,
-    "ast_hash": "6d5667a4360a5a5ed34a57bae8b8b306",
+    "mtime": 1785404819.6338322,
+    "ast_hash": "0b1639b09db0b74b98ae6756005b3747",
     "semantic_hash": ""
   },
   "README.md": {
@@ -475,8 +475,8 @@
     "semantic_hash": ""
   },
   "src/components/canvas/hero-field.tsx": {
-    "mtime": 1785404399.933992,
-    "ast_hash": "a5a56531ec5fc1d5c4ff281f2bb55099",
+    "mtime": 1785404803.8720102,
+    "ast_hash": "371909cc024b99f0ab54d9ae3a836e38",
     "semantic_hash": ""
   },
   "src/components/creative/contact-form.tsx": {
@@ -495,8 +495,8 @@
     "semantic_hash": ""
   },
   "src/components/creative/sections/hero-section.tsx": {
-    "mtime": 1785404079.3125143,
-    "ast_hash": "fe2da87c25318df3d7e8f323ce768e0b",
+    "mtime": 1785404843.887251,
+    "ast_hash": "d0572eee20cfee56f1160b8064a130eb",
     "semantic_hash": ""
   },
   "src/components/layout/error-boundary.tsx": {
@@ -552,6 +552,16 @@
   ".github/workflows/ci.yml": {
     "mtime": 1785404270.0758252,
     "ast_hash": "4f0278253e95d3128e4ed1f868980655",
+    "semantic_hash": ""
+  },
+  "src/engine/observers/pointer.test.ts": {
+    "mtime": 1785404844.310073,
+    "ast_hash": "532182612d6a9103d6db2eea9ebc753d",
+    "semantic_hash": ""
+  },
+  "src/engine/observers/pointer.ts": {
+    "mtime": 1785404715.4201057,
+    "ast_hash": "eac253fea265e0d6fa2969f3ee79e24f",
     "semantic_hash": ""
   }
 }

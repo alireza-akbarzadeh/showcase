@@ -417,18 +417,30 @@ export function SceneHost({ ready }: SceneHostProps) {
       {/* ACT V — Contact */}
       <Section
         id="contact"
-        className="flex min-h-[100svh] items-end px-6 pb-24 md:px-12 lg:px-20"
+        className="relative flex min-h-[100svh] items-end px-6 pb-24 md:px-12 lg:px-20"
         aria-label={SCENE_LABELS.contact}
       >
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10"
+          style={{
+            background:
+              "radial-gradient(ellipse 60% 45% at 20% 80%, color-mix(in oklab, var(--accent) 10%, transparent), transparent 70%), linear-gradient(180deg, transparent 0%, var(--background) 100%)",
+          }}
+        />
         <div ref={contactRoot} className="w-full will-change-transform">
           <p className="font-mono text-[11px] tracking-[0.35em] text-[var(--accent)] uppercase">
             Act V · Contact
           </p>
-          <h2 className="font-display mt-4 text-[clamp(2.75rem,8vw,6rem)] leading-[0.92] tracking-[-0.045em]">
+          <h2 className="font-display mt-4 max-w-4xl text-[clamp(2.75rem,8vw,6rem)] leading-[0.92] tracking-[-0.045em]">
             Let&apos;s build
             <br />
             something alive.
           </h2>
+          <p className="mt-6 max-w-xl text-lg text-[var(--muted)]">
+            Journey&apos;s end — reach out with a project, a role, or a question
+            worth answering carefully.
+          </p>
           <div className="mt-14">
             <ContactForm />
           </div>

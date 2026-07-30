@@ -309,7 +309,7 @@ Use this as the project Kanban spine.
 - [ ] **M4** Act II Craft visualizations shippable
 - [ ] **M5** Act III ≥ 3 project scenes shippable
 - [ ] **M6** Act IV Proof metrics live
-- [ ] **M7** Act V Contact ritual shippable
+- [x] **M7** Act V Contact ritual shippable
 - [ ] **M8** Playground (optional) behind route / gate
 - [ ] **M9** Performance pass meets budgets
 - [ ] **M10** Polish + easter eggs + launch
@@ -1154,7 +1154,7 @@ Calm, confident close. Clear availability. Form that feels crafted. Thank-you is
 - **Technical:** Controlled React form OK; motion GSAP; Radix labels.
 - **Dependencies:** GSAP, a11y.
 - **Priority:** P0.
-- **Complexity:** M.
+- **Complexity:** M *(done)*.
 - **Performance:** No per-keystroke animation.
 
 ### Feature: Live Validation
@@ -1164,7 +1164,7 @@ Calm, confident close. Clear availability. Form that feels crafted. Thank-you is
 - **Technical:** Zod schema; accessible error text.
 - **Dependencies:** Zod.
 - **Priority:** P0.
-- **Complexity:** S.
+- **Complexity:** S *(done)*.
 - **Performance:** Tiny.
 
 ### Feature: Interactive Send Animation
@@ -1174,7 +1174,7 @@ Calm, confident close. Clear availability. Form that feels crafted. Thank-you is
 - **Technical:** GSAP timeline; disable double-submit.
 - **Dependencies:** GSAP.
 - **Priority:** P1.
-- **Complexity:** M.
+- **Complexity:** M *(done — submit pulse + thank-you)*.
 - **Performance:** One-shot GPU transforms.
 
 ### Feature: Social Links
@@ -1184,7 +1184,7 @@ Calm, confident close. Clear availability. Form that feels crafted. Thank-you is
 - **Technical:** Semantic list; `rel` attributes.
 - **Dependencies:** None.
 - **Priority:** P0.
-- **Complexity:** S.
+- **Complexity:** S *(done)*.
 - **Performance:** Inline SVG.
 
 ### Feature: Availability Status
@@ -1194,7 +1194,7 @@ Calm, confident close. Clear availability. Form that feels crafted. Thank-you is
 - **Technical:** Constant or CMS flag; color token.
 - **Dependencies:** Theme.
 - **Priority:** P1.
-- **Complexity:** S.
+- **Complexity:** S *(done)*.
 - **Performance:** None.
 
 ### Feature: Calendar Integration
@@ -1204,7 +1204,7 @@ Calm, confident close. Clear availability. Form that feels crafted. Thank-you is
 - **Technical:** Prefer deep link first; embed lazy on click.
 - **Dependencies:** External service.
 - **Priority:** P2.
-- **Complexity:** S.
+- **Complexity:** S *(done — deep link)*.
 - **Performance:** No eager embed.
 
 ### Feature: Email Animation
@@ -1214,7 +1214,7 @@ Calm, confident close. Clear availability. Form that feels crafted. Thank-you is
 - **Technical:** GSAP + clipboard API; aria-live confirmation.
 - **Dependencies:** GSAP.
 - **Priority:** P2.
-- **Complexity:** S.
+- **Complexity:** S *(done)*.
 - **Performance:** Trivial.
 
 ### Feature: Thank-You Experience
@@ -1224,10 +1224,12 @@ Calm, confident close. Clear availability. Form that feels crafted. Thank-you is
 - **Technical:** State swap; confetti optional (Phase 10).
 - **Dependencies:** Form success.
 - **Priority:** P1.
-- **Complexity:** S.
+- **Complexity:** S *(done)*.
 - **Performance:** Lightweight DOM.
 
 **Phase 8 exit criteria:** Form works without JS polish path · keyboard complete · spam protection (honeypot + server action).
+
+> Status: Shipped — Zod schema, `submitContact` server action (honeypot + rate limit), blur validation, GSAP reveal/send/thank-you, socials, availability badge, email scramble+copy, calendar deep link.
 
 ---
 

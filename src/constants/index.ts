@@ -107,6 +107,8 @@ export const SITE = {
   author: "Alireza Akbarzadeh",
   email: "hello@example.com",
   availability: "Available for select projects",
+  /** Deep link first — embed lazily only if needed later. */
+  calendarUrl: "https://cal.com/",
 } as const;
 
 export const SOCIALS = [
