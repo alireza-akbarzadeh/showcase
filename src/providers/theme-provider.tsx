@@ -4,7 +4,7 @@ import {
   useCallback,
   useEffect,
   useMemo,
-  useState,
+  useSyncExternalStore,
   type ReactNode,
 } from "react";
 import { ThemeContext } from "@/providers/theme-context";
@@ -13,6 +13,7 @@ import type { ThemeMode } from "@/types/assets";
 const ACCENT_KEY = "showcase-accent";
 const MODE_KEY = "showcase-theme";
 const DEFAULT_ACCENT = "#3dff9a";
+const THEME_EVENT = "showcase-theme";
 
 function getSystemMode(): "dark" | "light" {
   if (typeof window === "undefined") return "dark";
@@ -21,23 +22,58 @@ function getSystemMode(): "dark" | "light" {
     : "dark";
 }
 
+function subscribeSystemMode(onStoreChange: () => void): () => void {
+  const mq = window.matchMedia("(prefers-color-scheme: light)");
+  mq.addEventListener("change", onStoreChange);
+  return () => mq.removeEventListener("change", onStoreChange);
+}
+
+function subscribeTheme(onStoreChange: () => void): () => void {
+  const onStorage = (event: StorageEvent) => {
+    if (event.key === MODE_KEY || event.key === ACCENT_KEY || event.key === null) {
+      onStoreChange();
+    }
+  };
+  window.addEventListener("storage", onStorage);
+  window.addEventListener(THEME_EVENT, onStoreChange);
+  return () => {
+    window.removeEventListener("storage", onStorage);
+    window.removeEventListener(THEME_EVENT, onStoreChange);
+  };
+}
+
+function readMode(): ThemeMode {
+  const stored = localStorage.getItem(MODE_KEY);
+  if (stored === "dark" || stored === "light" || stored === "system") {
+    return stored;
+  }
+  return "dark";
+}
+
+function readAccent(): string {
+  return localStorage.getItem(ACCENT_KEY) ?? DEFAULT_ACCENT;
+}
+
+function emitThemeChange(): void {
+  window.dispatchEvent(new Event(THEME_EVENT));
+}
+
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [mode, setModeState] = useState<ThemeMode>("dark");
-  const [accent, setAccentState] = useState(DEFAULT_ACCENT);
-  const [system, setSystem] = useState<"dark" | "light">("dark");
-
-  useEffect(() => {
-    const storedMode = localStorage.getItem(MODE_KEY) as ThemeMode | null;
-    const storedAccent = localStorage.getItem(ACCENT_KEY);
-    if (storedMode) setModeState(storedMode);
-    if (storedAccent) setAccentState(storedAccent);
-    setSystem(getSystemMode());
-
-    const mq = window.matchMedia("(prefers-color-scheme: light)");
-    const onChange = () => setSystem(getSystemMode());
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
-  }, []);
+  const mode = useSyncExternalStore(
+    subscribeTheme,
+    readMode,
+    (): ThemeMode => "dark",
+  );
+  const accent = useSyncExternalStore(
+    subscribeTheme,
+    readAccent,
+    (): string => DEFAULT_ACCENT,
+  );
+  const system = useSyncExternalStore(
+    subscribeSystemMode,
+    getSystemMode,
+    (): "dark" | "light" => "dark",
+  );
 
   const resolved = mode === "system" ? system : mode;
 
@@ -49,13 +85,13 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   }, [resolved, accent]);
 
   const setMode = useCallback((next: ThemeMode) => {
-    setModeState(next);
     localStorage.setItem(MODE_KEY, next);
+    emitThemeChange();
   }, []);
 
   const setAccent = useCallback((next: string) => {
-    setAccentState(next);
     localStorage.setItem(ACCENT_KEY, next);
+    emitThemeChange();
   }, []);
 
   const value = useMemo(

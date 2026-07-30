@@ -1,24 +1,32 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useSyncExternalStore } from "react";
 import { getRafScheduler } from "@/engine/scheduler";
 import { getScrollManager } from "@/engine/scroll";
 import { useScroll } from "@/hooks/use-scroll";
+
+function subscribePerfFlag(onStoreChange: () => void): () => void {
+  window.addEventListener("popstate", onStoreChange);
+  return () => window.removeEventListener("popstate", onStoreChange);
+}
+
+function getPerfFlag(): boolean {
+  return new URLSearchParams(window.location.search).get("debug") === "perf";
+}
 
 /**
  * `?debug=perf` overlay — updates via DOM text, low frequency.
  */
 export function PerfOverlay() {
-  const [enabled, setEnabled] = useState(false);
+  const enabled = useSyncExternalStore(
+    subscribePerfFlag,
+    getPerfFlag,
+    () => false,
+  );
   const fpsRef = useRef<HTMLSpanElement>(null);
   const scrollRef = useRef<HTMLSpanElement>(null);
   const actRef = useRef<HTMLSpanElement>(null);
   const frameAccum = useRef(0);
-
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    setEnabled(params.get("debug") === "perf");
-  }, []);
 
   useEffect(() => {
     if (!enabled) return;

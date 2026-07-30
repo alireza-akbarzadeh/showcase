@@ -14,7 +14,9 @@ export function useSectionProgress(
 ): React.RefObject<HTMLElement | null> {
   const ref = useRef<HTMLElement | null>(null);
   const onProgressRef = useRef(onProgress);
-  onProgressRef.current = onProgress;
+  useEffect(() => {
+    onProgressRef.current = onProgress;
+  });
 
   useEffect(() => {
     const el = ref.current;

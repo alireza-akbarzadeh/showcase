@@ -13,7 +13,9 @@ export function useRaf(
   options: { priority?: RafPriority; label?: string; enabled?: boolean } = {},
 ): void {
   const callbackRef = useRef(callback);
-  callbackRef.current = callback;
+  useEffect(() => {
+    callbackRef.current = callback;
+  });
 
   const { priority = "normal", label, enabled = true } = options;
 

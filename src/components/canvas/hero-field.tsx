@@ -8,6 +8,22 @@ import type { ScrollSnapshot } from "@/types/scroll";
 
 const PARTICLE_COUNT = 180;
 
+/** Seeded once at module load — avoids impure render + ref-during-render. */
+const PARTICLE_POSITIONS = (() => {
+  const arr = new Float32Array(PARTICLE_COUNT * 3);
+  let seed = 0x1a2b3c4d;
+  const next = () => {
+    seed = (seed * 1664525 + 1013904223) >>> 0;
+    return seed / 0xffffffff;
+  };
+  for (let i = 0; i < PARTICLE_COUNT; i += 1) {
+    arr[i * 3] = (next() - 0.5) * 14;
+    arr[i * 3 + 1] = (next() - 0.5) * 8;
+    arr[i * 3 + 2] = (next() - 0.5) * 10 - 2;
+  }
+  return arr;
+})();
+
 /**
  * Act I world — grid plane, core mesh, sparse particles.
  * All motion via uniforms / transforms in useFrame — no React state.
@@ -21,17 +37,6 @@ export function HeroField() {
   const scrollRef = useRef<ScrollSnapshot | null>(null);
   const pointer = useRef({ x: 0, y: 0 });
   const material = useRef<THREE.ShaderMaterial | null>(null);
-
-  const particlePositions = useRef<Float32Array | null>(null);
-  if (!particlePositions.current) {
-    const arr = new Float32Array(PARTICLE_COUNT * 3);
-    for (let i = 0; i < PARTICLE_COUNT; i += 1) {
-      arr[i * 3] = (Math.random() - 0.5) * 14;
-      arr[i * 3 + 1] = (Math.random() - 0.5) * 8;
-      arr[i * 3 + 2] = (Math.random() - 0.5) * 10 - 2;
-    }
-    particlePositions.current = arr;
-  }
 
   useScroll((snapshot) => {
     scrollRef.current = snapshot;
@@ -154,7 +159,7 @@ export function HeroField() {
         <bufferGeometry>
           <bufferAttribute
             attach="attributes-position"
-            args={[particlePositions.current, 3]}
+            args={[PARTICLE_POSITIONS, 3]}
           />
         </bufferGeometry>
         <pointsMaterial

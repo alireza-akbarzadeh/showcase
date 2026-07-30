@@ -156,7 +156,7 @@ export function SceneHost({ ready }: SceneHostProps) {
           <p
             ref={introAccent}
             className="font-mono text-[11px] tracking-[0.35em] text-[var(--accent)] uppercase"
-            style={{ opacity: 0 }}
+
           >
             Act I · The interface
           </p>
@@ -172,7 +172,7 @@ export function SceneHost({ ready }: SceneHostProps) {
                   introLines.current[i] = el;
                 }}
                 className="font-display text-[clamp(1.75rem,5vw,3.75rem)] leading-[1.08] tracking-[-0.03em] text-[var(--foreground)] will-change-transform"
-                style={{ opacity: 0 }}
+
               >
                 {text}
               </p>
@@ -203,7 +203,7 @@ export function SceneHost({ ready }: SceneHostProps) {
                   skillClusters.current[i] = el;
                 }}
                 className="relative border-t border-[var(--border)] py-8 pr-6 will-change-transform md:min-h-[280px]"
-                style={{ opacity: 0 }}
+
               >
                 <span className="font-mono text-[10px] tracking-[0.25em] text-[var(--muted)]">
                   0{i + 1}
@@ -224,7 +224,7 @@ export function SceneHost({ ready }: SceneHostProps) {
                       skillConnectors.current[i] = el;
                     }}
                     className="pointer-events-none absolute top-8 right-0 hidden h-px w-8 origin-left bg-[var(--accent)] lg:block"
-                    style={{ opacity: 0, transform: "scaleX(0)" }}
+
                     aria-hidden="true"
                   />
                 ) : null}
@@ -254,7 +254,7 @@ export function SceneHost({ ready }: SceneHostProps) {
                   aboutChapters.current[i] = el;
                 }}
                 className="grid gap-4 border-t border-[var(--border)] pt-8 will-change-transform md:grid-cols-[80px_1fr]"
-                style={{ opacity: 0 }}
+
               >
                 <span className="font-mono text-sm text-[var(--accent)]">
                   {chapter.year}
@@ -283,7 +283,7 @@ export function SceneHost({ ready }: SceneHostProps) {
           <div
             ref={projectsHeading}
             className="flex min-h-[50svh] flex-col justify-end pb-16 pt-32"
-            style={{ opacity: 0 }}
+
           >
             <p className="font-mono text-[11px] tracking-[0.35em] text-[var(--accent)] uppercase">
               Act III · Projects
@@ -301,7 +301,7 @@ export function SceneHost({ ready }: SceneHostProps) {
                   projectPanels.current[i] = el;
                 }}
                 className="relative min-h-[85svh] overflow-hidden border-t border-[var(--border)] py-16 will-change-transform md:py-24"
-                style={{ opacity: 0 }}
+
               >
                 <div
                   aria-hidden="true"
@@ -395,7 +395,7 @@ export function SceneHost({ ready }: SceneHostProps) {
                   proofStats.current[i] = el;
                 }}
                 className="border-t border-[var(--border)] pt-6 will-change-transform"
-                style={{ opacity: 0 }}
+
               >
                 <p className="font-mono text-[10px] tracking-[0.2em] text-[var(--muted)] uppercase">
                   {item.label}

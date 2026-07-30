@@ -1,25 +1,31 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Serif, Manrope, JetBrains_Mono } from "next/font/google";
+import { Fraunces, DM_Sans, JetBrains_Mono } from "next/font/google";
 import { AppProviders } from "@/providers";
 import { SITE } from "@/constants";
 import "@/styles/globals.css";
 
-const display = Instrument_Serif({
-  variable: "--font-display",
+/**
+ * Next font vars use *-family names so Tailwind @theme tokens
+ * (`--font-display`) do not circular-reference themselves.
+ */
+const display = Fraunces({
+  variable: "--font-display-family",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
-const body = Manrope({
-  variable: "--font-body",
+const body = DM_Sans({
+  variable: "--font-body-family",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
 const mono = JetBrains_Mono({
-  variable: "--font-mono",
+  variable: "--font-mono-family",
   subsets: ["latin"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
@@ -103,7 +109,7 @@ export default function RootLayout({
       className={`${display.variable} ${body.variable} ${mono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full">
+      <body className={`${body.className} min-h-full`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

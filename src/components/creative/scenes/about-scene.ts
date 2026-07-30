@@ -14,11 +14,7 @@ export function createAboutScene(
     tracks: [
       {
         id: "x",
-        keyframes: keyframes([0, -48], [0.35, 0, easeOutCubic], [1, 24]),
-      },
-      {
-        id: "fade",
-        keyframes: keyframes([0, 0], [0.2, 1], [0.85, 1], [1, 0]),
+        keyframes: keyframes([0, -24], [0.35, 0, easeOutCubic], [1, 16]),
       },
     ],
   });
@@ -32,14 +28,13 @@ export function createAboutScene(
       const { root, chapters } = getElements();
       if (root) {
         setTransform(root, { x: values.get("x") ?? 0 });
-        setOpacity(root, values.get("fade") ?? 1);
       }
       chapters.forEach((el, i) => {
-        const start = 0.15 + i * 0.2;
+        const start = 0.1 + i * 0.18;
         const local = Math.min(Math.max((ctx.progress - start) / 0.3, 0), 1);
         const t = easeInOutCubic(local);
-        setOpacity(el, t);
-        setTransform(el, { y: (1 - t) * 32 });
+        setOpacity(el, Math.max(0.55, t));
+        setTransform(el, { y: (1 - t) * 20 });
       });
     },
     onDestroy: () => timeline.destroy(),

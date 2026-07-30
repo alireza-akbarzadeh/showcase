@@ -17,31 +17,27 @@ export function createHeroScene(
     tracks: [
       {
         id: "titleY",
-        keyframes: keyframes([0, 0], [0.55, -40, easeOutCubic], [1, -160, easeOutExpo]),
+        keyframes: keyframes([0, 0], [0.55, -32, easeOutCubic], [1, -120, easeOutExpo]),
       },
       {
         id: "titleScale",
-        keyframes: keyframes([0, 1], [1, 0.92, easeInOutCubic]),
+        keyframes: keyframes([0, 1], [1, 0.94, easeInOutCubic]),
       },
       {
         id: "titleOpacity",
-        keyframes: keyframes([0, 1], [0.65, 0.55], [1, 0]),
+        keyframes: keyframes([0, 1], [0.75, 0.7], [1, 0.15]),
       },
       {
         id: "subtitleY",
-        keyframes: keyframes([0, 0], [1, -80, easeOutCubic]),
-      },
-      {
-        id: "subtitleOpacity",
-        keyframes: keyframes([0, 1], [0.5, 0.7], [1, 0]),
+        keyframes: keyframes([0, 0], [1, -56, easeOutCubic]),
       },
       {
         id: "lineScale",
-        keyframes: keyframes([0, 1], [1, 0.2, easeInOutCubic]),
+        keyframes: keyframes([0, 1], [1, 0.25, easeInOutCubic]),
       },
       {
         id: "cueOpacity",
-        keyframes: keyframes([0, 1], [0.35, 0.4], [0.7, 0]),
+        keyframes: keyframes([0, 1], [0.45, 0.5], [0.8, 0]),
       },
     ],
   });
@@ -61,24 +57,23 @@ export function createHeroScene(
           y: (values.get("titleY") ?? 0) * yMul,
           scale: values.get("titleScale") ?? 1,
         });
-        setOpacity(title, values.get("titleOpacity") ?? 1);
+        setOpacity(title, Math.max(0.15, values.get("titleOpacity") ?? 1));
       }
       if (subtitle) {
         setTransform(subtitle, {
           y: (values.get("subtitleY") ?? 0) * yMul,
         });
-        setOpacity(subtitle, values.get("subtitleOpacity") ?? 1);
+        setOpacity(subtitle, Math.max(0.2, 1 - ctx.progress * 0.75));
       }
       if (line) {
         setTransform(line, { scaleX: values.get("lineScale") ?? 1, scaleY: 1 });
-        setOpacity(line, 1 - ctx.progress * 0.9);
       }
       if (cue) {
         setOpacity(cue, values.get("cueOpacity") ?? 1);
-        setTransform(cue, { y: ctx.progress * 30 });
+        setTransform(cue, { y: ctx.progress * 24 });
       }
       if (meta) {
-        setOpacity(meta, Math.max(0, 1 - ctx.progress * 1.4));
+        setOpacity(meta, Math.max(0.2, 1 - ctx.progress * 1.2));
       }
     },
     onDestroy: () => timeline.destroy(),

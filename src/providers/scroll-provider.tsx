@@ -5,43 +5,55 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useRef,
   type ReactNode,
 } from "react";
 import { ensureGsap } from "@/engine/animation";
-import { getScrollManager, resetScrollManager } from "@/engine/scroll";
-import { getSceneManager, resetSceneManager } from "@/engine/animation";
+import {
+  getScrollManager,
+  resetScrollManager,
+  type ScrollManager,
+} from "@/engine/scroll";
+import {
+  getSceneManager,
+  resetSceneManager,
+  type SceneManager,
+} from "@/engine/animation";
 import { getRafScheduler } from "@/engine/scheduler";
-import type { ScrollManager } from "@/engine/scroll";
-import type { SceneManager } from "@/engine/animation";
 
 interface ScrollContextValue {
-  scroll: ScrollManager;
-  scenes: SceneManager;
+  getScroll: () => ScrollManager;
+  getScenes: () => SceneManager;
 }
 
 const ScrollContext = createContext<ScrollContextValue | null>(null);
 
+/**
+ * Owns Lenis lifecycle. Re-fetches singletons inside the effect so React
+ * Strict Mode remounts do not hold a destroyed ScrollManager instance.
+ */
 export function ScrollProvider({ children }: { children: ReactNode }) {
-  const scrollRef = useRef(getScrollManager());
-  const scenesRef = useRef(getSceneManager());
-
   useEffect(() => {
     ensureGsap();
-    const scroll = scrollRef.current;
+    const scroll = getScrollManager();
     scroll.start();
     getRafScheduler().resume();
 
+    // Force a layout pass so section bounds are correct after paint.
+    const raf = requestAnimationFrame(() => {
+      scroll.refresh();
+    });
+
     return () => {
+      cancelAnimationFrame(raf);
       resetSceneManager();
       resetScrollManager();
     };
   }, []);
 
-  const value = useMemo(
+  const value = useMemo<ScrollContextValue>(
     () => ({
-      scroll: scrollRef.current,
-      scenes: scenesRef.current,
+      getScroll: () => getScrollManager(),
+      getScenes: () => getSceneManager(),
     }),
     [],
   );

@@ -15,11 +15,7 @@ export function createIntroScene(
     tracks: [
       {
         id: "rise",
-        keyframes: keyframes([0, 80], [0.35, 0, easeOutCubic], [1, -50]),
-      },
-      {
-        id: "fade",
-        keyframes: keyframes([0, 0], [0.2, 1], [0.75, 1], [1, 0]),
+        keyframes: keyframes([0, 40], [0.35, 0, easeOutCubic], [1, -36]),
       },
     ],
   });
@@ -33,18 +29,18 @@ export function createIntroScene(
       const { root, lines, accent } = getElements();
       if (root) {
         setTransform(root, { y: values.get("rise") ?? 0 });
-        setOpacity(root, values.get("fade") ?? 0);
       }
       if (accent) {
-        setOpacity(accent, Math.min(1, ctx.progress * 3));
+        setOpacity(accent, 0.55 + Math.min(1, ctx.progress * 2) * 0.45);
       }
-      // Stagger lines by progress windows
       lines.forEach((line, i) => {
-        const start = 0.15 + i * 0.18;
-        const local = Math.min(Math.max((ctx.progress - start) / 0.25, 0), 1);
+        const start = 0.1 + i * 0.18;
+        const local = Math.min(Math.max((ctx.progress - start) / 0.28, 0), 1);
         const eased = easeInOutCubic(local);
-        setOpacity(line, eased);
-        setTransform(line, { y: (1 - eased) * 28, x: (1 - eased) * -12 });
+        // Keep readable: floor opacity at 0.35 once section is near
+        const floor = ctx.scroll.sections.get("intro")?.inView ? 0.45 : 0.25;
+        setOpacity(line, Math.max(floor, 0.35 + eased * 0.65));
+        setTransform(line, { y: (1 - eased) * 18, x: (1 - eased) * -8 });
       });
     },
     onDestroy: () => timeline.destroy(),

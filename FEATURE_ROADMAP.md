@@ -303,7 +303,7 @@ Playground is optional side quest (nav entry / deep link) — not mandatory in l
 Use this as the project Kanban spine.
 
 - [ ] **M0** Research locked (moodboard, refs, copy outline, metrics)
-- [ ] **M1** Infrastructure complete + CI green + Lighthouse baseline
+- [x] **M1** Infrastructure complete + CI green *(Lighthouse baseline still open)*
 - [ ] **M2** Global nav / loader / cursor / a11y chrome
 - [ ] **M3** Act I Hero cinematic shippable
 - [ ] **M4** Act II Craft visualizations shippable
@@ -399,10 +399,10 @@ Fast first paint, stable scroll, no jank foundations, accessible shell.
 
 - **Purpose:** Reproducible builds and DX.
 - **UX:** Instant local `pnpm dev`.
-- **Technical:** Scripts (`dev`, `build`, `lint`, `typecheck`, `format`), Engines field, CI (lint + typecheck + build).
+- **Technical:** Scripts (`dev`, `build`, `lint`, `typecheck`, `test`, `format`), Engines field, CI (lint + typecheck + test + build).
 - **Dependencies:** pnpm, Node 22+.
 - **Priority:** P0.
-- **Complexity:** S.
+- **Complexity:** S *(done)*.
 - **Performance:** Turbopack for dev; production build gates regressions.
 
 ### Feature: Folder Architecture Freeze
@@ -502,7 +502,7 @@ Fast first paint, stable scroll, no jank foundations, accessible shell.
 - **Technical:** Hook into RAF FPS; PerformanceObserver for long tasks; overlay component.
 - **Dependencies:** RAF scheduler.
 - **Priority:** P1.
-- **Complexity:** M.
+- **Complexity:** M *(done)*.
 - **Performance:** Debug overlay must not tank FPS (sample, don’t spam DOM).
 
 ### Feature: Analytics
@@ -522,7 +522,7 @@ Fast first paint, stable scroll, no jank foundations, accessible shell.
 - **Technical:** Route + canvas boundaries; log to console/Sentry.
 - **Dependencies:** Optional Sentry.
 - **Priority:** P1.
-- **Complexity:** S.
+- **Complexity:** S *(done)*.
 - **Performance:** Fail closed on WebGL → DOM-only mode.
 
 ### Feature: Testing Setup
@@ -532,7 +532,7 @@ Fast first paint, stable scroll, no jank foundations, accessible shell.
 - **Technical:** Vitest for timeline/math/scroll pure logic; Playwright smoke; axe checks.
 - **Dependencies:** CI.
 - **Priority:** P1.
-- **Complexity:** M.
+- **Complexity:** M *(Vitest + CI done; Playwright/axe deferred)*.
 - **Performance:** Tests assert no layout thrash patterns where possible.
 
 **Phase 1 exit criteria:** CI green · Lighthouse baseline captured · engines documented · GSAP-only deps · debug perf flag works.

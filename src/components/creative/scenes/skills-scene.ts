@@ -15,11 +15,7 @@ export function createSkillsScene(
     tracks: [
       {
         id: "y",
-        keyframes: keyframes([0, 60], [0.3, 0, easeOutCubic], [1, -40]),
-      },
-      {
-        id: "fade",
-        keyframes: keyframes([0, 0], [0.15, 1], [0.85, 1], [1, 0]),
+        keyframes: keyframes([0, 36], [0.3, 0, easeOutCubic], [1, -28]),
       },
     ],
   });
@@ -37,25 +33,24 @@ export function createSkillsScene(
         setTransform(root, {
           y: (values.get("y") ?? 0) * (mobile ? 0.4 : 1),
         });
-        setOpacity(root, values.get("fade") ?? 1);
       }
 
       clusters.forEach((el, i) => {
-        const start = 0.12 + i * 0.14;
+        const start = 0.08 + i * 0.12;
         const local = Math.min(Math.max((ctx.progress - start) / 0.28, 0), 1);
         const t = easeInOutCubic(local);
-        setOpacity(el, t);
+        setOpacity(el, Math.max(0.5, t));
         setTransform(el, {
-          y: (1 - t) * 40,
-          scale: 0.94 + t * 0.06,
+          y: (1 - t) * 24,
+          scale: 0.97 + t * 0.03,
         });
       });
 
       connectors.forEach((el, i) => {
-        const start = 0.25 + i * 0.12;
+        const start = 0.2 + i * 0.12;
         const local = Math.min(Math.max((ctx.progress - start) / 0.3, 0), 1);
         setTransform(el, { scaleX: easeOutCubic(local), scaleY: 1 });
-        setOpacity(el, local);
+        setOpacity(el, Math.max(0.15, local));
       });
     },
     onDestroy: () => timeline.destroy(),

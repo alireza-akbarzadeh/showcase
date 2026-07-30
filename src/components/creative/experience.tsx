@@ -27,12 +27,8 @@ export function Experience() {
           </CanvasRoot>
         </ErrorBoundary>
         <AppShell>
-          <div
-            className={ready ? "opacity-100" : "opacity-0"}
-            style={{ transition: ready ? "opacity 0.4s ease" : undefined }}
-          >
-            <SceneHost ready={ready} />
-          </div>
+          {/* Content is always mounted and visible — loader only overlays */}
+          <SceneHost ready={ready} />
         </AppShell>
         <ActIndicators />
         <PerfOverlay />

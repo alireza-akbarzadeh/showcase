@@ -10,7 +10,7 @@ interface LoaderProps {
 }
 
 /**
- * Brand boot experience — one-shot GSAP outro, then unmount.
+ * Brand boot — always completes (failsafe), even if GSAP fails.
  */
 export function ExperienceLoader({ onComplete }: LoaderProps) {
   const reduced = useReducedMotion();
@@ -18,15 +18,23 @@ export function ExperienceLoader({ onComplete }: LoaderProps) {
   const barRef = useRef<HTMLDivElement>(null);
   const markRef = useRef<HTMLParagraphElement>(null);
   const [done, setDone] = useState(false);
+  const finished = useRef(false);
 
   useEffect(() => {
-    if (done) return;
+    if (finished.current) return;
+
+    const finish = () => {
+      if (finished.current) return;
+      finished.current = true;
+      setDone(true);
+      onComplete();
+    };
+
+    const failsafe = window.setTimeout(finish, 2200);
 
     if (reduced) {
-      const t = window.setTimeout(() => {
-        setDone(true);
-        onComplete();
-      }, 200);
+      window.clearTimeout(failsafe);
+      const t = window.setTimeout(finish, 150);
       return () => window.clearTimeout(t);
     }
 
@@ -34,47 +42,50 @@ export function ExperienceLoader({ onComplete }: LoaderProps) {
     const bar = barRef.current;
     const mark = markRef.current;
     const root = rootRef.current;
-    if (!bar || !mark || !root) return;
+    if (!bar || !mark || !root) {
+      return () => window.clearTimeout(failsafe);
+    }
 
     bar.style.transformOrigin = "left center";
     gsap.set(bar, { scaleX: 0 });
 
     const tl = gsap.timeline({
       onComplete: () => {
-        setDone(true);
-        onComplete();
+        window.clearTimeout(failsafe);
+        finish();
       },
     });
 
     tl.to(bar, {
       scaleX: 1,
-      duration: 1.1,
+      duration: 0.9,
       ease: "power3.inOut",
     })
       .to(
         mark,
         {
-          y: -24,
+          y: -20,
           opacity: 0,
-          duration: 0.45,
+          duration: 0.35,
           ease: "power2.in",
         },
-        "-=0.15",
+        "-=0.1",
       )
       .to(
         root,
         {
           opacity: 0,
-          duration: 0.4,
+          duration: 0.35,
           ease: "power2.inOut",
         },
-        "-=0.1",
+        "-=0.05",
       );
 
     return () => {
+      window.clearTimeout(failsafe);
       tl.kill();
     };
-  }, [reduced, onComplete, done]);
+  }, [reduced, onComplete]);
 
   if (done) return null;
 

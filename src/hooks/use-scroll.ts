@@ -13,7 +13,9 @@ export function useScroll(
   enabled = true,
 ): void {
   const listenerRef = useRef(listener);
-  listenerRef.current = listener;
+  useEffect(() => {
+    listenerRef.current = listener;
+  });
 
   useEffect(() => {
     if (!enabled) return;

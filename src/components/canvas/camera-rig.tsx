@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useThree } from "@react-three/fiber";
 import type { PerspectiveCamera } from "three";
 import { useRaf } from "@/hooks/use-raf";
@@ -14,9 +14,14 @@ import type { ScrollSnapshot } from "@/types/scroll";
  */
 export function CameraRig() {
   const camera = useThree((s) => s.camera) as PerspectiveCamera;
+  const cameraRef = useRef(camera);
   const current = useRef<CameraState>(createCameraState());
   const target = useRef<CameraState>(createCameraState({ z: 5, y: 0 }));
   const scrollRef = useRef<ScrollSnapshot | null>(null);
+
+  useEffect(() => {
+    cameraRef.current = camera;
+  }, [camera]);
 
   useScroll((snapshot) => {
     scrollRef.current = snapshot;
@@ -32,6 +37,7 @@ export function CameraRig() {
 
   useRaf(
     (frame) => {
+      const cam = cameraRef.current;
       current.current = dampCamera(
         current.current,
         target.current,
@@ -39,11 +45,11 @@ export function CameraRig() {
         frame.deltaSeconds,
       );
       const c = current.current;
-      camera.position.set(c.x, c.y, c.z);
-      camera.lookAt(c.lookX, c.lookY, c.lookZ);
-      if (camera.isPerspectiveCamera) {
-        camera.fov = c.fov;
-        camera.updateProjectionMatrix();
+      cam.position.set(c.x, c.y, c.z);
+      cam.lookAt(c.lookX, c.lookY, c.lookZ);
+      if (cam.isPerspectiveCamera) {
+        cam.fov = c.fov;
+        cam.updateProjectionMatrix();
       }
     },
     { priority: "high", label: "camera-rig" },

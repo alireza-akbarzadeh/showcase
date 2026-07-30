@@ -44,8 +44,11 @@ pnpm dev
 pnpm build
 pnpm lint
 pnpm typecheck
+pnpm test
 pnpm format
 ```
+
+Requires **Node 22+** (`engines` in `package.json`). CI runs lint → typecheck → test → build on every PR.
 
 ## Extending a scene
 

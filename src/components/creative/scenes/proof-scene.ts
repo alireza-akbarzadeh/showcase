@@ -14,11 +14,7 @@ export function createProofScene(
     tracks: [
       {
         id: "y",
-        keyframes: keyframes([0, 48], [0.3, 0, easeOutCubic], [1, -24]),
-      },
-      {
-        id: "fade",
-        keyframes: keyframes([0, 0], [0.15, 1], [0.85, 1], [1, 0.3]),
+        keyframes: keyframes([0, 28], [0.3, 0, easeOutCubic], [1, -16]),
       },
     ],
   });
@@ -32,20 +28,22 @@ export function createProofScene(
       const { root, stats } = getElements();
       if (root) {
         setTransform(root, { y: values.get("y") ?? 0 });
-        setOpacity(root, values.get("fade") ?? 1);
       }
       stats.forEach((el, i) => {
-        const start = 0.1 + i * 0.18;
+        const start = 0.08 + i * 0.15;
         const local = Math.min(Math.max((ctx.progress - start) / 0.35, 0), 1);
         const t = easeInOutCubic(local);
-        setOpacity(el, t);
-        setTransform(el, { y: (1 - t) * 36, scale: 0.95 + t * 0.05 });
+        setOpacity(el, Math.max(0.6, t));
+        setTransform(el, { y: (1 - t) * 20, scale: 0.97 + t * 0.03 });
 
         const valueEl = el.querySelector<HTMLElement>("[data-proof-value]");
         if (valueEl) {
           const target = Number(valueEl.dataset.proofTarget ?? 0);
           const suffix = valueEl.dataset.proofSuffix ?? "";
-          valueEl.textContent = `${Math.round(target * t)}${suffix}`;
+          // Keep static display strings for non-numeric showcases
+          if (target > 0) {
+            valueEl.textContent = `${Math.round(target * Math.max(0.15, t))}${suffix}`;
+          }
         }
       });
     },
