@@ -306,7 +306,7 @@ Use this as the project Kanban spine.
 - [x] **M1** Infrastructure complete + CI green *(Lighthouse baseline still open)*
 - [ ] **M2** Global nav / loader / cursor / a11y chrome
 - [x] **M3** Act I Hero cinematic shippable *(P0 vertical slice)*
-- [ ] **M4** Act II Craft visualizations shippable
+- [x] **M4** Act II Craft visualizations shippable
 - [x] **M5** Act III ≥ 3 project scenes shippable *(Orbit immersive + 2 panels)*
 - [x] **M6** Act IV Proof metrics live *(Orbit evidence strip)*
 - [x] **M7** Act V Contact ritual shippable
@@ -904,7 +904,7 @@ Explore a knowledge ecosystem; understand depth and relationships.
 - **Technical:** Force layout precomputed or light simulation paused when offscreen; canvas/WebGL.
 - **Dependencies:** RAF, scene.
 - **Priority:** P0.
-- **Complexity:** L.
+- **Complexity:** L *(done — prebaked SVG)*.
 - **Performance:** Prebake positions for mobile; simulate only desktop if needed.
 
 ### Feature: Interactive Tech Ecosystem
@@ -914,7 +914,7 @@ Explore a knowledge ecosystem; understand depth and relationships.
 - **Technical:** Selection state in React OK (discrete); motion via GSAP.
 - **Dependencies:** A11y focus management.
 - **Priority:** P1.
-- **Complexity:** M.
+- **Complexity:** M *(done — focus/click detail panel)*.
 - **Performance:** Panel mount lazy.
 
 ### Feature: 3D Network
@@ -954,10 +954,12 @@ Explore a knowledge ecosystem; understand depth and relationships.
 - **Technical:** DOM layers with transform staging.
 - **Dependencies:** Scene progress.
 - **Priority:** P1.
-- **Complexity:** M.
+- **Complexity:** M *(done — TECH_STACK_LAYERS)*.
 - **Performance:** No blur animations on mobile.
 
 **Phase 5 exit criteria:** Graph readable keyboard-only · recruiter can list top 5 skills in 20s · mobile non-WebGL fallback.
+
+> Status: Shipped — prebaked SVG knowledge graph, focusable nodes + detail panel, stack layers assemble on scroll, cluster focus by progress. No WebGL required.
 
 ---
 
@@ -978,7 +980,7 @@ A short personal film via scroll: origin → principles → workflow → now.
 - **Technical:** Pinned or progress-mapped chapters.
 - **Dependencies:** Scroll, assets.
 - **Priority:** P0.
-- **Complexity:** M.
+- **Complexity:** M *(done — principle chapters)*.
 - **Performance:** Limit image weights; AVIF/WebP.
 
 ### Feature: Career Journey
@@ -988,7 +990,7 @@ A short personal film via scroll: origin → principles → workflow → now.
 - **Technical:** Data-driven content module.
 - **Dependencies:** Content MD/JSON.
 - **Priority:** P0.
-- **Complexity:** S.
+- **Complexity:** S *(done — CAREER_JOURNEY rail)*.
 - **Performance:** Static content.
 
 ### Feature: Interactive Map
@@ -1042,6 +1044,8 @@ A short personal film via scroll: origin → principles → workflow → now.
 - **Performance:** Single optimized image.
 
 **Phase 6 exit criteria:** About readable without motion · tone matches Act I brand · no resume PDF dump as the only path (PDF optional download).
+
+> Status: Shipped — principle chapters + career journey scrub rail (achievement + lesson per stop). Map/fun facts deferred.
 
 ---
 

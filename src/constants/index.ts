@@ -2,6 +2,14 @@ import type { Breakpoint } from "@/types/scroll";
 import type { ActId, SceneId } from "@/types/scene";
 import type { ProjectCaseStudy } from "@/types/project";
 import type { ProofStripContent } from "@/types/proof";
+import type {
+  AboutChapter,
+  CareerStop,
+  SkillCluster,
+  SkillEdge,
+  SkillNode,
+  StackLayer,
+} from "@/types/craft";
 
 export const BREAKPOINTS = {
   mobile: 0,
@@ -381,28 +389,117 @@ export const ABOUT_CHAPTERS = [
     title: "Ship the feeling",
     body: "Performance is part of the brand. If it hitchs, the story breaks.",
   },
-] as const;
+] as const satisfies readonly AboutChapter[];
 
+export const CAREER_JOURNEY = [
+  {
+    id: "origin",
+    year: "2018",
+    role: "Frontend engineer",
+    place: "Product studios",
+    achievement: "Shipped scroll-heavy marketing sites that stayed above 50 FPS on mid phones.",
+    lesson: "Motion without a frame budget is decoration.",
+  },
+  {
+    id: "systems",
+    year: "2021",
+    role: "Creative technologist",
+    place: "Realtime / collab products",
+    achievement: "Moved presence sync off React — recovered INP without killing craft.",
+    lesson: "React mounts shells; engines own frames.",
+  },
+  {
+    id: "now",
+    year: "Now",
+    role: "Lead creative engineer",
+    place: "Select projects",
+    achievement: "Building living systems where architecture is part of the brand.",
+    lesson: "Proof beats pitch decks.",
+  },
+] as const satisfies readonly CareerStop[];
 
 export const SKILL_CLUSTERS = [
   {
     id: "frontend",
     label: "Frontend",
     skills: ["React", "Next.js", "TypeScript", "GSAP", "R3F"],
+    focus: "Interfaces that stay calm under scroll and concurrency.",
   },
   {
     id: "systems",
     label: "Systems",
     skills: ["Scroll engines", "RAF schedulers", "Asset pipelines"],
+    focus: "One clock, predictable progress, aggressive unload.",
   },
   {
     id: "design",
     label: "Design",
     skills: ["Motion language", "Typography", "Design systems"],
+    focus: "Type and motion as hierarchy — not ornament.",
   },
   {
     id: "craft",
     label: "Craft",
     skills: ["Shaders", "Performance", "Accessibility"],
+    focus: "Spectacle that survives reduced motion and mid-tier GPUs.",
   },
-] as const;
+] as const satisfies readonly SkillCluster[];
+
+/** Prebaked knowledge graph — no runtime force layout. */
+export const SKILL_NODES = [
+  { id: "react", label: "React", clusterId: "frontend", how: "Shells and discrete UI — never the scroll frame.", x: 0.18, y: 0.28 },
+  { id: "next", label: "Next.js", clusterId: "frontend", how: "RSC for content; client islands for engines.", x: 0.32, y: 0.18 },
+  { id: "ts", label: "TypeScript", clusterId: "frontend", how: "Contracts for scenes, assets, and proof data.", x: 0.22, y: 0.48 },
+  { id: "gsap", label: "GSAP", clusterId: "frontend", how: "One-shot reveals and UI tweens — not the scroll SoT.", x: 0.38, y: 0.38 },
+  { id: "r3f", label: "R3F", clusterId: "frontend", how: "Shared canvas behind DOM; kill on reduced motion.", x: 0.48, y: 0.22 },
+  { id: "scroll", label: "Scroll", clusterId: "systems", how: "Lenis + snapshot SoT; sections register bounds.", x: 0.58, y: 0.42 },
+  { id: "raf", label: "RAF", clusterId: "systems", how: "Single scheduler; priorities for camera vs idle.", x: 0.68, y: 0.28 },
+  { id: "assets", label: "Assets", clusterId: "systems", how: "Prefetch near, unload on leave.", x: 0.72, y: 0.52 },
+  { id: "motion", label: "Motion", clusterId: "design", how: "Easing tokens and purpose-built timelines.", x: 0.42, y: 0.62 },
+  { id: "type", label: "Type", clusterId: "design", how: "Display serif + geometric sans as brand signal.", x: 0.28, y: 0.72 },
+  { id: "ds", label: "Systems UI", clusterId: "design", how: "Tokens and import boundaries over component soup.", x: 0.52, y: 0.78 },
+  { id: "shaders", label: "Shaders", clusterId: "craft", how: "Uniforms from scroll velocity — mobile variants.", x: 0.78, y: 0.68 },
+  { id: "perf", label: "Perf", clusterId: "craft", how: "Budgets, kill switches, ?debug=perf overlay.", x: 0.88, y: 0.48 },
+  { id: "a11y", label: "A11y", clusterId: "craft", how: "Keyboard acts, reduced motion, real HTML copy.", x: 0.82, y: 0.32 },
+] as const satisfies readonly SkillNode[];
+
+export const SKILL_EDGES = [
+  { from: "react", to: "next" },
+  { from: "react", to: "ts" },
+  { from: "next", to: "gsap" },
+  { from: "gsap", to: "motion" },
+  { from: "r3f", to: "raf" },
+  { from: "r3f", to: "shaders" },
+  { from: "scroll", to: "raf" },
+  { from: "raf", to: "assets" },
+  { from: "scroll", to: "motion" },
+  { from: "ts", to: "ds" },
+  { from: "type", to: "motion" },
+  { from: "perf", to: "raf" },
+  { from: "a11y", to: "scroll" },
+  { from: "shaders", to: "perf" },
+] as const satisfies readonly SkillEdge[];
+
+export const TECH_STACK_LAYERS = [
+  {
+    id: "edge",
+    label: "Edge",
+    items: ["CDN", "WebSocket", "Feature flags"],
+  },
+  {
+    id: "app",
+    label: "App",
+    items: ["Next.js", "Scene host", "GSAP reveals"],
+  },
+  {
+    id: "runtime",
+    label: "Runtime",
+    items: ["RAF scheduler", "Scroll SoT", "Timelines"],
+  },
+  {
+    id: "gpu",
+    label: "GPU",
+    items: ["R3F canvas", "Shader variants", "Adaptive DPR"],
+  },
+] as const satisfies readonly StackLayer[];
+

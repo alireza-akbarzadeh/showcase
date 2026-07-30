@@ -13,15 +13,11 @@ import { createContactScene } from "@/components/creative/scenes/contact-scene";
 import { HeroSection } from "@/components/creative/sections/hero-section";
 import { OrbitProject } from "@/components/creative/sections/orbit-project";
 import { ProofSection } from "@/components/creative/sections/proof-section";
+import { SkillsSection } from "@/components/creative/sections/skills-section";
+import { AboutSection } from "@/components/creative/sections/about-section";
 import { ContactForm } from "@/components/creative/contact-form";
 import { Section } from "@/components/scroll/section";
-import {
-  ABOUT_CHAPTERS,
-  ORBIT_PROJECT,
-  PROJECTS,
-  SCENE_LABELS,
-  SKILL_CLUSTERS,
-} from "@/constants";
+import { ORBIT_PROJECT, PROJECTS, SCENE_LABELS } from "@/constants";
 import { willChange, clearWillChange } from "@/utils/performance";
 
 interface SceneHostProps {
@@ -43,11 +39,14 @@ export function SceneHost({ ready }: SceneHostProps) {
   const introLines = useRef<(HTMLParagraphElement | null)[]>([]);
 
   const skillsRoot = useRef<HTMLDivElement>(null);
-  const skillClusters = useRef<(HTMLLIElement | null)[]>([]);
-  const skillConnectors = useRef<(HTMLDivElement | null)[]>([]);
+  const skillClusters = useRef<(HTMLElement | null)[]>([]);
+  const skillConnectors = useRef<(HTMLElement | null)[]>([]);
+  const skillsGraph = useRef<HTMLDivElement>(null);
+  const skillsStack = useRef<HTMLUListElement>(null);
 
   const aboutRoot = useRef<HTMLDivElement>(null);
-  const aboutChapters = useRef<(HTMLLIElement | null)[]>([]);
+  const aboutChapters = useRef<(HTMLElement | null)[]>([]);
+  const aboutCareer = useRef<HTMLDivElement | null>(null);
 
   const projectsRoot = useRef<HTMLDivElement>(null);
   const projectsHeading = useRef<HTMLDivElement>(null);
@@ -92,12 +91,22 @@ export function SceneHost({ ready }: SceneHostProps) {
           root: skillsRoot.current,
           clusters: skillClusters.current.filter(Boolean) as HTMLElement[],
           connectors: skillConnectors.current.filter(Boolean) as HTMLElement[],
+          graph: skillsGraph.current,
+          stack: skillsStack.current,
+          detail:
+            skillsRoot.current?.querySelector<HTMLElement>("[data-skills-detail]") ??
+            null,
         })),
       ),
       manager.register(
         createAboutScene(() => ({
           root: aboutRoot.current,
           chapters: aboutChapters.current.filter(Boolean) as HTMLElement[],
+          career: aboutCareer.current,
+          careerTrack:
+            aboutCareer.current?.querySelector<HTMLElement>(
+              "[data-about-career-track]",
+            ) ?? null,
         })),
       ),
       manager.register(
@@ -197,93 +206,28 @@ export function SceneHost({ ready }: SceneHostProps) {
       {/* ACT II — Craft */}
       <Section
         id="skills"
-        className="relative flex min-h-[120svh] items-center px-6 md:px-12 lg:px-20"
+        className="relative flex min-h-[160svh] items-center px-6 py-24 md:px-12 lg:px-20"
         aria-label={SCENE_LABELS.skills}
       >
-        <div ref={skillsRoot} className="w-full will-change-transform">
-          <p className="font-mono text-[11px] tracking-[0.35em] text-[var(--accent)] uppercase">
-            Act II · Craft
-          </p>
-          <h2 className="font-display mt-4 max-w-3xl text-[clamp(2.25rem,6vw,4.75rem)] leading-[1.02] tracking-[-0.035em]">
-            How I think in systems.
-          </h2>
-
-          <ul className="relative mt-16 grid gap-0 md:grid-cols-2 lg:grid-cols-4">
-            {SKILL_CLUSTERS.map((cluster, i) => (
-              <li
-                key={cluster.id}
-                ref={(el) => {
-                  skillClusters.current[i] = el;
-                }}
-                className="relative border-t border-[var(--border)] py-8 pr-6 will-change-transform md:min-h-[280px]"
-
-              >
-                <span className="font-mono text-[10px] tracking-[0.25em] text-[var(--muted)]">
-                  0{i + 1}
-                </span>
-                <h3 className="font-display mt-4 text-3xl tracking-[-0.02em]">
-                  {cluster.label}
-                </h3>
-                <ul className="mt-6 space-y-2.5 text-[var(--muted)]">
-                  {cluster.skills.map((skill) => (
-                    <li key={skill} className="text-base md:text-lg">
-                      {skill}
-                    </li>
-                  ))}
-                </ul>
-                {i < SKILL_CLUSTERS.length - 1 ? (
-                  <div
-                    ref={(el) => {
-                      skillConnectors.current[i] = el;
-                    }}
-                    className="pointer-events-none absolute top-8 right-0 hidden h-px w-8 origin-left bg-[var(--accent)] lg:block"
-
-                    aria-hidden="true"
-                  />
-                ) : null}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <SkillsSection
+          rootRef={skillsRoot}
+          clustersRef={skillClusters}
+          connectorsRef={skillConnectors}
+          graphRef={skillsGraph}
+          stackRef={skillsStack}
+        />
       </Section>
 
       <Section
         id="about"
-        className="relative flex min-h-[110svh] items-center px-6 md:px-12 lg:px-20"
+        className="relative flex min-h-[130svh] items-center px-6 py-24 md:px-12 lg:px-20"
         aria-label={SCENE_LABELS.about}
       >
-        <div ref={aboutRoot} className="w-full max-w-4xl will-change-transform">
-          <p className="text-sm tracking-[0.3em] text-[var(--accent)] uppercase">
-            Principles
-          </p>
-          <h2 className="font-display mt-4 text-[clamp(2.25rem,6vw,4.5rem)] leading-[1.02] tracking-[-0.035em]">
-            Built for sixty frames.
-          </h2>
-          <ol className="mt-14 space-y-10">
-            {ABOUT_CHAPTERS.map((chapter, i) => (
-              <li
-                key={chapter.year}
-                ref={(el) => {
-                  aboutChapters.current[i] = el;
-                }}
-                className="grid gap-4 border-t border-[var(--border)] pt-8 will-change-transform md:grid-cols-[80px_1fr]"
-
-              >
-                <span className="font-mono text-sm text-[var(--accent)]">
-                  {chapter.year}
-                </span>
-                <div>
-                  <h3 className="font-display text-2xl tracking-[-0.02em] md:text-3xl">
-                    {chapter.title}
-                  </h3>
-                  <p className="mt-3 max-w-xl text-lg text-[var(--muted)]">
-                    {chapter.body}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </div>
+        <AboutSection
+          rootRef={aboutRoot}
+          chaptersRef={aboutChapters}
+          careerRef={aboutCareer}
+        />
       </Section>
 
       {/* ACT III — Projects */}

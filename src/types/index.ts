@@ -48,6 +48,15 @@ export type {
 } from "./proof";
 
 export type {
+  SkillNode,
+  SkillEdge,
+  SkillCluster,
+  StackLayer,
+  CareerStop,
+  AboutChapter,
+} from "./craft";
+
+export type {
   AssetKind,
   AssetStatus,
   AssetDescriptor,

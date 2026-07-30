@@ -105,13 +105,13 @@
     "semantic_hash": ""
   },
   "src/components/creative/scene-host.tsx": {
-    "mtime": 1785406009.052616,
-    "ast_hash": "34ae025c67731854b5fde547f631cbc5",
+    "mtime": 1785406311.0126548,
+    "ast_hash": "8f05d014d170c4a2e091124fcc0be422",
     "semantic_hash": ""
   },
   "src/components/creative/scenes/about-scene.ts": {
-    "mtime": 1785404143.1114743,
-    "ast_hash": "6f03876009080049f7a8d658e6d243f6",
+    "mtime": 1785406254.255938,
+    "ast_hash": "e133dde9d65da7f77b7d8a49b2fceb5d",
     "semantic_hash": ""
   },
   "src/components/creative/scenes/contact-scene.ts": {
@@ -135,8 +135,8 @@
     "semantic_hash": ""
   },
   "src/components/creative/scenes/skills-scene.ts": {
-    "mtime": 1785404134.8019345,
-    "ast_hash": "feaa0a55fff788617e5f1d20dafcc7a8",
+    "mtime": 1785406253.9009414,
+    "ast_hash": "31934a4dbdb84057c15ecdb6d7d1d9ba",
     "semantic_hash": ""
   },
   "src/components/layout/app-shell.tsx": {
@@ -180,8 +180,8 @@
     "semantic_hash": "f6ee71b29e1f11ba178565ef1790f6d6"
   },
   "src/constants/index.ts": {
-    "mtime": 1785405928.841453,
-    "ast_hash": "9929960b877d08a6078acc83d750b4ae",
+    "mtime": 1785406174.2724261,
+    "ast_hash": "7240916e56849b9fa07eb145e418c821",
     "semantic_hash": ""
   },
   "src/engine/animation/easings.ts": {
@@ -375,8 +375,8 @@
     "semantic_hash": "2b1ce3fb034cda0a1796d40e030fa01d"
   },
   "src/types/index.ts": {
-    "mtime": 1785405864.9446063,
-    "ast_hash": "c066a08adab507d7a9dcb8fd35d8eac8",
+    "mtime": 1785406173.2461567,
+    "ast_hash": "d0f7f79ab864a7011d4c4a28c84a2a8a",
     "semantic_hash": ""
   },
   "src/types/raf.ts": {
@@ -430,8 +430,8 @@
     "semantic_hash": "5c27369b226fcf2be8a6cfe52224e767"
   },
   "FEATURE_ROADMAP.md": {
-    "mtime": 1785405992.9728394,
-    "ast_hash": "4df480dd96b34776ae8159d54105ec5d",
+    "mtime": 1785406353.0384724,
+    "ast_hash": "0bab7ad1553d703d5f95aaba196cf158",
     "semantic_hash": ""
   },
   "README.md": {
@@ -612,6 +612,26 @@
   "src/types/proof.ts": {
     "mtime": 1785405861.652584,
     "ast_hash": "e64dbd9e4501f1515155d762cee13983",
+    "semantic_hash": ""
+  },
+  "src/components/creative/sections/about-section.tsx": {
+    "mtime": 1785406303.120403,
+    "ast_hash": "9e9b847d7c2f90fa47311c8fd8f866ac",
+    "semantic_hash": ""
+  },
+  "src/components/creative/sections/skills-section.tsx": {
+    "mtime": 1785406230.826709,
+    "ast_hash": "6132be5f1a174fb77da371ae8aa998a7",
+    "semantic_hash": ""
+  },
+  "src/constants/craft.test.ts": {
+    "mtime": 1785406311.0203912,
+    "ast_hash": "82b4cfafb33cc559873968a018044390",
+    "semantic_hash": ""
+  },
+  "src/types/craft.ts": {
+    "mtime": 1785406145.9358456,
+    "ast_hash": "994258159bb58a9782a66519e528db29",
     "semantic_hash": ""
   }
 }
