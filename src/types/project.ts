@@ -42,6 +42,14 @@ export interface ProjectCaseStudy {
   readonly tagline: string;
   readonly problem: string;
   readonly approach: string;
+  /** One-line outcome for the sticky stage summary. */
+  readonly outcome: string;
+  readonly year: string;
+  readonly links: {
+    readonly live?: string;
+    readonly repo?: string;
+    readonly caseStudy?: string;
+  };
   readonly metrics: readonly ProjectMetric[];
   readonly chapters: readonly ProjectChapter[];
   readonly stack: readonly ProjectStackNode[];

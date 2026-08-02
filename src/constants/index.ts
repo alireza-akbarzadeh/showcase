@@ -146,6 +146,12 @@ export const PROJECTS = [
     tagline: "Realtime collaboration without the lag tax.",
     problem: "Multiplayer edits were dropping frames on mid-tier laptops.",
     approach: "Moved scroll and sync off React. Shared RAF. Predictive merge.",
+    outcome: "−62% INP · −180KB bundle · −40ms sync lag",
+    year: "2025",
+    links: {
+      live: "https://example.com/orbit",
+      repo: "https://github.com/alireza-akbarzadeh/orbit",
+    },
     immersive: true,
     metrics: [
       {
@@ -238,6 +244,12 @@ export const PROJECTS = [
     tagline: "Observability that stays at sixty frames.",
     problem: "Dashboards looked premium and felt sticky.",
     approach: "Canvas charts, virtualized streams, adaptive DPR.",
+    outcome: "1.4s LCP · 60+ FPS · 50k+ live rows",
+    year: "2024",
+    links: {
+      live: "https://example.com/pulse",
+      repo: "https://github.com/alireza-akbarzadeh/pulse",
+    },
     immersive: true,
     metrics: [
       {
@@ -332,6 +344,12 @@ export const PROJECTS = [
     tagline: "A design system that scales teams, not just tokens.",
     problem: "Eleven apps diverged into eleven visual languages.",
     approach: "Token architecture, documented motion language, enforced imports.",
+    outcome: "240+ tokens · 11 apps · −70% visual drift",
+    year: "2024",
+    links: {
+      live: "https://example.com/lattice",
+      repo: "https://github.com/alireza-akbarzadeh/lattice",
+    },
     immersive: true,
     metrics: [
       {

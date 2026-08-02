@@ -14,6 +14,7 @@ interface ImmersiveProjectProps {
 /**
  * Act III immersive project runway.
  * Animation owned by createProjectsScene (transforms / stroke / textContent).
+ * Content stays readable at rest — motion enhances, it does not gate details.
  */
 export const ImmersiveProject = forwardRef<HTMLElement, ImmersiveProjectProps>(
   function ImmersiveProject({ project, index, className }, ref) {
@@ -30,6 +31,7 @@ export const ImmersiveProject = forwardRef<HTMLElement, ImmersiveProjectProps>(
       project.architecture.nodes.map((n) => [n.id, n]),
     );
     const accentSide = index % 2 === 0 ? "85%" : "15%";
+    const heroMetric = project.metrics[0];
 
     return (
       <article
@@ -38,7 +40,7 @@ export const ImmersiveProject = forwardRef<HTMLElement, ImmersiveProjectProps>(
         data-project={project.id}
         data-ip-root
         className={cn(
-          "relative min-h-[260svh] overflow-hidden border-t border-[var(--border)]",
+          "relative min-h-[220svh] overflow-hidden border-t border-[var(--border)]",
           className,
         )}
         aria-label={`${project.name} case study`}
@@ -61,7 +63,7 @@ export const ImmersiveProject = forwardRef<HTMLElement, ImmersiveProjectProps>(
                 data-ip-meta
                 className="font-mono text-[10px] tracking-[0.3em] text-[var(--muted-foreground)] uppercase will-change-transform"
               >
-                0{index + 1} · {project.role}
+                0{index + 1} · {project.year} · {project.role}
               </p>
               <h3
                 data-ip-title
@@ -80,6 +82,65 @@ export const ImmersiveProject = forwardRef<HTMLElement, ImmersiveProjectProps>(
                 className="mt-8 h-px w-28 origin-left bg-[var(--signal)] will-change-transform"
                 aria-hidden="true"
               />
+
+              <dl className="mt-8 grid max-w-xl gap-4 sm:grid-cols-2">
+                <div>
+                  <dt className="font-mono text-[10px] tracking-[0.22em] text-[var(--signal)] uppercase">
+                    Problem
+                  </dt>
+                  <dd className="mt-2 text-sm leading-relaxed text-[var(--foreground)] md:text-base">
+                    {project.problem}
+                  </dd>
+                </div>
+                <div>
+                  <dt className="font-mono text-[10px] tracking-[0.22em] text-[var(--signal)] uppercase">
+                    Outcome
+                  </dt>
+                  <dd className="mt-2 text-sm leading-relaxed text-[var(--foreground)] md:text-base">
+                    {project.outcome}
+                  </dd>
+                </div>
+              </dl>
+
+              <ul className="mt-6 flex flex-wrap gap-2" aria-label="Stack highlights">
+                {project.stack.slice(0, 4).map((node) => (
+                  <li
+                    key={node.id}
+                    className="border border-[var(--border)] px-2.5 py-1 font-mono text-[10px] tracking-[0.14em] text-[var(--muted-foreground)] uppercase"
+                  >
+                    {node.label}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                {project.links.live ? (
+                  <a
+                    href={project.links.live}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex min-h-11 items-center border border-[var(--signal)] bg-[color-mix(in_oklab,var(--signal)_12%,transparent)] px-4 font-mono text-[10px] tracking-[0.22em] text-[var(--signal)] uppercase transition-colors hover:bg-[color-mix(in_oklab,var(--signal)_22%,transparent)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--signal)]"
+                  >
+                    View live
+                  </a>
+                ) : null}
+                {project.links.repo ? (
+                  <a
+                    href={project.links.repo}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex min-h-11 items-center border border-[var(--border)] px-4 font-mono text-[10px] tracking-[0.22em] text-[var(--muted-foreground)] uppercase transition-colors hover:border-[var(--signal)] hover:text-[var(--signal)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--signal)]"
+                  >
+                    Source
+                  </a>
+                ) : null}
+                <a
+                  href={`#${project.id}-details`}
+                  className="inline-flex min-h-11 items-center px-2 font-mono text-[10px] tracking-[0.22em] text-[var(--muted-foreground)] uppercase underline-offset-4 hover:text-[var(--signal)] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--signal)]"
+                >
+                  Case study ↓
+                </a>
+              </div>
             </div>
 
             <div
@@ -87,24 +148,42 @@ export const ImmersiveProject = forwardRef<HTMLElement, ImmersiveProjectProps>(
               className="relative mx-auto aspect-[4/3] w-full max-w-md will-change-transform lg:mx-0 lg:justify-self-end"
               aria-hidden="true"
             >
-              <div className="absolute inset-0 border border-[var(--border)] bg-[color-mix(in_oklab,var(--surface)_80%,transparent)]">
-                <div className="absolute inset-x-0 top-0 h-8 border-b border-[var(--border)]" />
-                <div className="absolute inset-4 top-12 grid grid-cols-3 gap-2">
-                  {Array.from({ length: 6 }).map((_, i) => (
-                    <div
-                      key={i}
-                      className="border border-[var(--border)] bg-[color-mix(in_oklab,var(--signal)_8%,transparent)]"
-                      style={{ opacity: 0.35 + ((i + index) % 3) * 0.15 }}
-                    />
-                  ))}
+              <div className="absolute inset-0 border border-[var(--border)] bg-[color-mix(in_oklab,var(--surface)_88%,transparent)]">
+                <div className="absolute inset-x-0 top-0 flex h-10 items-center justify-between border-b border-[var(--border)] px-4">
+                  <span className="font-mono text-[10px] tracking-[0.2em] text-[var(--muted-foreground)] uppercase">
+                    {project.name}
+                  </span>
+                  <span className="font-mono text-[10px] text-[var(--signal)]">
+                    {project.year}
+                  </span>
                 </div>
-                <div className="absolute right-4 bottom-4 left-4 h-1.5 origin-left bg-[var(--signal)] opacity-70" />
+                <div className="absolute inset-4 top-14 flex flex-col justify-between">
+                  <div>
+                    <p className="font-display text-3xl tracking-[-0.03em] text-[var(--foreground)] md:text-4xl">
+                      {heroMetric?.display ?? project.name}
+                    </p>
+                    <p className="mt-2 font-mono text-[10px] tracking-[0.2em] text-[var(--muted-foreground)] uppercase">
+                      {heroMetric?.label ?? "Impact"}
+                    </p>
+                  </div>
+                  <p className="max-w-[18ch] text-sm leading-snug text-[var(--muted-foreground)]">
+                    {project.approach}
+                  </p>
+                  <div className="h-1.5 origin-left bg-[var(--signal)] opacity-80" />
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="relative space-y-28 px-0 pb-32 md:space-y-36">
+        <div
+          id={`${project.id}-details`}
+          className="relative space-y-24 px-0 pb-28 pt-8 md:space-y-32"
+        >
+          <p className="font-mono text-[10px] tracking-[0.28em] text-[var(--muted-foreground)] uppercase">
+            Case study · {project.name}
+          </p>
+
           {project.chapters.map((chapter) => (
             <div
               key={chapter.id}
@@ -173,7 +252,7 @@ export const ImmersiveProject = forwardRef<HTMLElement, ImmersiveProjectProps>(
                       x={node.x}
                       y={node.y + 36}
                       textAnchor="middle"
-                      className="fill-[var(--muted)]"
+                      className="fill-[var(--muted-foreground)]"
                       fontSize="10"
                       fontFamily="var(--font-mono-family), monospace"
                     >

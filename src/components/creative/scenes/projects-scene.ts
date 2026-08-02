@@ -24,7 +24,7 @@ export function createProjectsScene(
       },
       {
         id: "headingOpacity",
-        keyframes: keyframes([0, 1], [0.1, 1], [0.18, 0.12]),
+        keyframes: keyframes([0, 1], [0.1, 1], [0.22, 0.55]),
       },
     ],
   });
@@ -97,10 +97,10 @@ function driveImmersive(
     });
   }
   if (tagline) {
-    setOpacity(tagline, 0.35 + (1 - morph) * 0.65);
+    setOpacity(tagline, 0.85 + (1 - morph) * 0.15);
     setTransform(tagline, { y: morph * 12 });
   }
-  if (meta) setOpacity(meta, 0.4 + (1 - morph) * 0.6);
+  if (meta) setOpacity(meta, 0.85 + (1 - morph) * 0.15);
   if (rule) {
     setTransform(rule, { scaleX: 0.35 + (1 - morph) * 0.65, scaleY: 1 });
   }
@@ -111,7 +111,7 @@ function driveImmersive(
       scale: 0.88 + (1 - morph) * 0.12,
       rotateY: morph * (mobile ? 0 : -8),
     });
-    setOpacity(device, 0.45 + (1 - morph) * 0.55);
+    setOpacity(device, 0.75 + (1 - morph) * 0.25);
   }
 
   const chapters = root.querySelectorAll<HTMLElement>("[data-ip-chapter]");
@@ -122,16 +122,17 @@ function driveImmersive(
     const enter = easeOutCubic(Math.min(c / 0.4, 1));
     const exit = c > 0.75 ? easeInOutCubic((c - 0.75) / 0.25) : 0;
     setTransform(chapter, {
-      y: (1 - enter) * 36 * yMul + exit * -20,
+      y: (1 - enter) * 28 * yMul + exit * -12,
     });
-    setOpacity(chapter, Math.max(0.15, enter * (1 - exit * 0.35)));
+    // Keep case-study copy readable — never ghost portfolio details.
+    setOpacity(chapter, Math.max(0.88, enter * (1 - exit * 0.12)));
   });
 
   const arch = root.querySelector<HTMLElement>("[data-ip-arch]");
   if (arch) {
     const a = chapterLocal(local, 0.52, 0.68);
-    setOpacity(arch, Math.max(0.2, a));
-    setTransform(arch, { y: (1 - easeOutCubic(a)) * 28 });
+    setOpacity(arch, Math.max(0.85, a));
+    setTransform(arch, { y: (1 - easeOutCubic(a)) * 20 });
     arch.querySelectorAll<SVGLineElement>("[data-ip-edge]").forEach((edge, i) => {
       const len = Number(edge.getAttribute("stroke-dasharray") ?? 100);
       const e = chapterLocal(a, i * 0.12, 0.45 + i * 0.12);
@@ -139,7 +140,7 @@ function driveImmersive(
     });
     arch.querySelectorAll<SVGGElement>("[data-ip-node]").forEach((node, i) => {
       const n = chapterLocal(a, 0.05 + i * 0.08, 0.5 + i * 0.08);
-      node.style.opacity = String(0.25 + easeOutCubic(n) * 0.75);
+      node.style.opacity = String(0.55 + easeOutCubic(n) * 0.45);
     });
   }
 
@@ -147,15 +148,15 @@ function driveImmersive(
     const start = 0.6 + i * 0.035;
     const s = chapterLocal(local, start, start + 0.1);
     const enter = easeOutCubic(s);
-    setTransform(node, { y: (1 - enter) * 20, scale: 0.96 + enter * 0.04 });
-    setOpacity(node, 0.2 + enter * 0.8);
+    setTransform(node, { y: (1 - enter) * 16, scale: 0.98 + enter * 0.02 });
+    setOpacity(node, 0.85 + enter * 0.15);
   });
 
   const impact = root.querySelector<HTMLElement>("[data-ip-impact]");
   if (impact) {
     const m = chapterLocal(local, 0.78, 0.95);
-    setOpacity(impact, Math.max(0.2, m));
-    setTransform(impact, { y: (1 - easeOutCubic(m)) * 24 });
+    setOpacity(impact, Math.max(0.88, m));
+    setTransform(impact, { y: (1 - easeOutCubic(m)) * 18 });
     if (shouldUpdateMetric(frame, 2)) {
       impact.querySelectorAll<HTMLElement>("[data-metric-value]").forEach((el) => {
         writeMetric(el, m);

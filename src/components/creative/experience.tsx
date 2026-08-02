@@ -13,18 +13,13 @@ import { DelightHooks } from "@/components/layout/delight-hooks";
 import { ActTransitionVeil } from "@/components/layout/act-transition-veil";
 import { ScrollRoot, ActIndicators } from "@/components/scroll";
 import { CanvasRoot } from "@/components/canvas";
+import { SceneHost } from "@/components/creative/scene-host";
 import { useKeyboardNavigation } from "@/hooks/use-keyboard-navigation";
 import { useSoundHotkey } from "@/hooks/use-sound";
 
 const HeroField = dynamic(
   () =>
     import("@/components/canvas/hero-field").then((m) => m.HeroField),
-  { ssr: false, loading: () => null },
-);
-
-const SceneHost = dynamic(
-  () =>
-    import("@/components/creative/scene-host").then((m) => m.SceneHost),
   { ssr: false, loading: () => null },
 );
 

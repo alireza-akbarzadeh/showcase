@@ -236,7 +236,7 @@ export function SceneHost({ ready }: SceneHostProps) {
         <div ref={projectsRoot} className="will-change-transform">
           <div
             ref={projectsHeading}
-            className="flex min-h-[50svh] flex-col justify-end pb-16 pt-32"
+            className="flex min-h-[50svh] flex-col justify-end pb-12 pt-32"
           >
             <p className="font-mono text-[11px] tracking-[0.35em] text-[var(--signal)] uppercase">
               Act III · Projects
@@ -245,8 +245,33 @@ export function SceneHost({ ready }: SceneHostProps) {
               Selected work
             </h2>
             <p className="mt-5 max-w-lg text-lg text-[var(--muted-foreground)]">
-              Depth over quantity — three immersive case studies, scrubbed by scroll.
+              Three case studies — problem, approach, architecture, and measurable
+              impact. Jump in or keep scrolling.
             </p>
+            <ul className="mt-10 grid gap-3 sm:grid-cols-3" role="list">
+              {PROJECTS.map((project, i) => (
+                <li key={project.id}>
+                  <a
+                    href={`#${project.id}`}
+                    className="block border border-[var(--border)] px-4 py-4 transition-colors hover:border-[var(--signal)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--signal)]"
+                    onClick={(event) => {
+                      event.preventDefault();
+                      getScrollManager().scrollTo(`#${project.id}`);
+                    }}
+                  >
+                    <p className="font-mono text-[10px] tracking-[0.22em] text-[var(--signal)] uppercase">
+                      0{i + 1} · {project.year}
+                    </p>
+                    <p className="font-display mt-2 text-2xl tracking-[-0.02em]">
+                      {project.name}
+                    </p>
+                    <p className="mt-2 text-sm text-[var(--muted-foreground)]">
+                      {project.tagline}
+                    </p>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="pb-24">
